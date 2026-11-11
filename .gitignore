@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+
+# Manter o exemplo de configuração
+!.env.example
+
+# macOS
+.DS_Store
