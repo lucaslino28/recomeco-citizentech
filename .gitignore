@@ -4,6 +4,11 @@ __pycache__/
 .venv/
 venv/
 .pytest_cache/
+*.tmp
+
+# Ensaios locais; não são resultados de participantes externos
+/data/teste_manual*/
+/data/demonstracao*/
 
 # Variáveis de ambiente e credenciais
 .env

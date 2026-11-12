@@ -3,7 +3,7 @@
 **Projeto:** RECOMEÇO — CitizenTech  
 **Instituição:** FIAP — Ciência da Computação  
 **Global Solution:** 2026.2  
-**Status:** Arquitetura inicial definida — desenvolvimento pendente
+**Status:** PCP implementado e validado tecnicamente; IA e SERS pendentes. Testes externos e entregas acadêmicas ainda pendentes.
 
 ## 1. Visão geral
 
@@ -67,7 +67,7 @@ O menu terá quatro opções principais: orientações após enchentes, document
 
 **`orientacao.py`**
 
-Implementará a classe `Orientacao`.
+Implementa a classe `Orientacao`.
 
 Responsabilidades:
 
@@ -77,7 +77,7 @@ Responsabilidades:
 
 **`base_conhecimento.py`**
 
-Implementará a classe `BaseConhecimento`.
+Implementa a classe `BaseConhecimento`.
 
 Responsabilidades:
 
@@ -98,7 +98,7 @@ A pontuação inicial seguirá os critérios do professor:
 
 **`assistente.py`**
 
-Implementará a classe `Assistente`.
+Implementa a classe `Assistente`.
 
 Responsabilidades:
 
@@ -187,7 +187,7 @@ O projeto utilizará arquivos locais, sem necessidade inicial de banco de dados 
 | Arquivo | Finalidade |
 |---|---|
 | `data/base_conhecimento.json` | Orientações oficiais do PCP |
-| `data/historico.json` | Histórico seguro de atendimentos |
+| `data/historico.json` | Resultados com rótulos controlados, sem perguntas livres |
 | `data/atendimentos.csv` | Relatório exportado dos atendimentos |
 | `modulos/documentos_ia/fichas/` | Base fictícia de Prompt & IA |
 | `modulos/energia/analise.json` | Parâmetros e resultados energéticos |
@@ -292,3 +292,9 @@ O MVP estará pronto quando:
 ---
 
 **RECOMEÇO — Porque depois do desastre, a vida precisa continuar.**
+
+## 10. Atualização de PCP em 12/11/2026
+
+PCP mantém as três classes e usa somente bibliotecas nativas. A pergunta livre é processada em memória e não é persistida; o histórico e CSV usam rótulos controlados. Reformulações atualizam o mesmo atendimento. A facilidade é calculada por sessão aleatória, sem identificação pessoal. A opção `--dados` separa a coleta externa dos ensaios e dados de desenvolvimento. O ciclo de encerramento exporta CSV mesmo em EOF ou Ctrl+C, desde que o histórico esteja legível.
+
+As regras detalhadas e limites estão em `decisoes_pcp.md`; fontes em `fontes_pcp.md`; roteiro externo em `plano_testes.md`. Partes anteriores que descrevem IA e SERS continuam como planejamento. Os testes reais exigidos por PCP e os vídeos permanecem pendentes.

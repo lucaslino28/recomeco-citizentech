@@ -1,1 +1,194 @@
-[]
+[
+  {
+    "id": 1,
+    "categoria": "Segurança e emergência",
+    "titulo": "Pedir ajuda em situação de emergência",
+    "palavras_chave": [
+      "socorro",
+      "emergencia",
+      "defesa civil",
+      "bombeiros",
+      "pedir ajuda",
+      "pedir socorro",
+      "preciso de ajuda",
+      "ajuda depois de uma enchente"
+    ],
+    "resposta": "Se houver risco à vida ou à segurança por causa de enchentes, acione a Defesa Civil pelo 199 ou o Corpo de Bombeiros pelo 193. Siga as orientações das autoridades.",
+    "documentos": [],
+    "onde": "Defesa Civil (199) ou Bombeiros (193)",
+    "fonte": "https://www.policiamilitar.sp.gov.br/noticias/noticia-interna/2020/2/2253/fique-por-dentro",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 2,
+    "categoria": "Segurança e emergência",
+    "titulo": "Evitar atravessar ruas alagadas",
+    "palavras_chave": [
+      "rua alagada",
+      "atravessar alagamento",
+      "correnteza",
+      "ruas alagadas",
+      "atravessar ruas alagadas",
+      "atravessar a enchente"
+    ],
+    "resposta": "Não atravesse ruas alagadas a pé ou de carro. A água pode esconder buracos e correntezas perigosas. Procure permanecer em local seguro e siga as orientações da Defesa Civil.",
+    "documentos": [],
+    "onde": "Orientações da Defesa Civil",
+    "fonte": "https://www.policiamilitar.sp.gov.br/noticias/noticia-interna/2020/2/2253/fique-por-dentro",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 3,
+    "categoria": "Segurança e emergência",
+    "titulo": "Rachaduras e riscos na residência",
+    "palavras_chave": [
+      "rachaduras",
+      "parede rachada",
+      "casa insegura",
+      "deslizamento",
+      "casa em risco",
+      "casa estiver em risco",
+      "casa esta em risco",
+      "risco de desabamento"
+    ],
+    "resposta": "Se aparecerem rachaduras ou sinais de desabamento após a chuva, saia do local e procure um lugar seguro. Acione a Defesa Civil pelo 199; em situação de emergência, acione os Bombeiros pelo 193. Siga as orientações das autoridades.",
+    "documentos": [],
+    "onde": "Defesa Civil municipal",
+    "fonte": "https://www.policiamilitar.sp.gov.br/noticias/noticia-interna/2020/2/2253/fique-por-dentro",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 4,
+    "categoria": "Segurança e emergência",
+    "titulo": "Receber alertas da Defesa Civil no celular",
+    "palavras_chave": [
+      "alerta de chuva",
+      "sms defesa civil",
+      "40199",
+      "alertas",
+      "celular",
+      "alerta",
+      "alertas da defesa civil",
+      "receber alertas"
+    ],
+    "resposta": "Para receber alertas por SMS, envie o CEP da área de interesse para o número 40199. O cadastro é gratuito. Não é necessário informar seu CEP ao RECOMEÇO.",
+    "documentos": [],
+    "onde": "Serviço de alertas da Defesa Civil, pelo SMS 40199",
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/alertas-de-desastres-1",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 5,
+    "categoria": "Assistência social",
+    "titulo": "Procurar acolhimento após uma enchente",
+    "palavras_chave": [
+      "abrigo",
+      "desabrigado",
+      "acolhimento",
+      "sem moradia",
+      "abrigos",
+      "desabrigada",
+      "sem casa",
+      "onde ficar"
+    ],
+    "resposta": "Pessoas desabrigadas por desastres podem receber acolhimento por meio da rede de assistência social. Procure a Secretaria de Assistência Social do município para conhecer os serviços e locais disponibilizados. A existência de vagas deve ser confirmada pelo órgão responsável.",
+    "documentos": [],
+    "onde": "Secretaria Municipal de Assistência Social",
+    "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/pessoas-e-familias-em-situacoes-de-calamidades-publicas-e-de-emergencias",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 6,
+    "categoria": "Assistência social",
+    "titulo": "Buscar informações sobre benefícios eventuais",
+    "palavras_chave": [
+      "beneficios eventuais",
+      "assistencia social",
+      "auxilio",
+      "calamidade",
+      "auxilios",
+      "beneficio eventual",
+      "beneficios"
+    ],
+    "resposta": "A rede de assistência social pode orientar famílias afetadas por desastres sobre serviços e possíveis benefícios eventuais. Entre em contato com a Secretaria de Assistência Social do município para saber quais atendimentos estão disponíveis e quais critérios se aplicam. O benefício não é garantido automaticamente.",
+    "documentos": [],
+    "onde": "Secretaria Municipal de Assistência Social",
+    "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/pessoas-e-familias-em-situacoes-de-calamidades-publicas-e-de-emergencias",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 7,
+    "categoria": "Saúde e higiene",
+    "titulo": "Tornar a água segura para consumo",
+    "palavras_chave": [
+      "agua potavel",
+      "agua para beber",
+      "ferver agua",
+      "tratamento da agua",
+      "agua contaminada",
+      "beber agua",
+      "tratar agua",
+      "agua para consumo"
+    ],
+    "resposta": "Após uma enchente, prefira água considerada segura pelas autoridades. Caso precise tratar água e não tenha hipoclorito adequado, o Ministério da Saúde orienta filtrar ou coar e ferver por cinco minutos após o início da fervura. Consulte a fonte para conhecer todos os procedimentos.",
+    "documentos": [],
+    "onde": "Orientações do Ministério da Saúde",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes/cuidados-com-a-agua",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 8,
+    "categoria": "Saúde e higiene",
+    "titulo": "Descartar alimentos atingidos pela enchente",
+    "palavras_chave": [
+      "alimento molhado",
+      "comida enchente",
+      "alimentos contaminados",
+      "descartar alimentos",
+      "alimentos",
+      "comida contaminada",
+      "comida molhada"
+    ],
+    "resposta": "Alimentos que entraram em contato com água de enchente ou lama devem ser descartados. Não experimente alimentos para verificar se estão seguros. Em caso de dúvida sobre a contaminação, descarte-os.",
+    "documentos": [],
+    "onde": "Orientações do Ministério da Saúde",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes/cuidados-com-os-alimentos",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 9,
+    "categoria": "Saúde e higiene",
+    "titulo": "Prevenir leptospirose após enchentes",
+    "palavras_chave": [
+      "leptospirose",
+      "agua suja",
+      "lama contaminada",
+      "febre apos enchente"
+    ],
+    "resposta": "Evite contato com água e lama de enchentes. Use botas e luvas de proteção na limpeza de locais atingidos. Se apresentar febre, dor de cabeça ou dores musculares após a exposição, procure um serviço de saúde e informe o contato com a enchente.",
+    "documentos": [],
+    "onde": "Unidade de saúde ou serviço de atendimento médico",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/l/leptospirose/leptospirose/",
+    "verificado_em": "2026-11-12"
+  },
+  {
+    "id": 10,
+    "categoria": "Saúde e higiene",
+    "titulo": "Cuidados com ferimentos e risco de tétano",
+    "palavras_chave": [
+      "corte na enchente",
+      "tetano",
+      "ferimento com entulho",
+      "vacina tetano",
+      "ferimento",
+      "ferimentos",
+      "corte",
+      "vacina contra tetano"
+    ],
+    "resposta": "Ferimentos provocados por objetos contaminados podem trazer risco de tétano. Limpe o ferimento e procure um profissional de saúde para avaliar o atendimento necessário e a situação da vacinação.",
+    "documentos": [],
+    "onde": "Unidade de saúde",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes/cuidados-com-risco-de-tetano/cuidados-com-risco-de-tetano",
+    "verificado_em": "2026-11-12"
+  }
+]

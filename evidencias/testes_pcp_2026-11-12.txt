@@ -1,0 +1,51 @@
+test_base_atende_minimos_e_ids_unicos (test_pcp.TestePCP.test_base_atende_minimos_e_ids_unicos) ... ok
+test_base_ausente (test_pcp.TestePCP.test_base_ausente) ... ok
+test_base_json_corrompido_e_utf8_invalido (test_pcp.TestePCP.test_base_json_corrompido_e_utf8_invalido) ... ok
+test_base_raiz_invalida (test_pcp.TestePCP.test_base_raiz_invalida) ... ok
+test_base_valida_registros_e_continua (test_pcp.TestePCP.test_base_valida_registros_e_continua) ... ok
+test_bloqueio_de_dados_pessoais (test_pcp.TestePCP.test_bloqueio_de_dados_pessoais) ... ok
+test_caminho_relativo_da_base_independe_do_cwd (test_pcp.TestePCP.test_caminho_relativo_da_base_independe_do_cwd) ... ok
+test_categoria_normalizada (test_pcp.TestePCP.test_categoria_normalizada) ... ok
+test_composicao (test_pcp.TestePCP.test_composicao) ... ok
+test_confianca_media_e_alta (test_pcp.TestePCP.test_confianca_media_e_alta) ... ok
+test_confirmacao_invalida_e_retorno (test_pcp.TestePCP.test_confirmacao_invalida_e_retorno) ... ok
+test_csv_tem_campos_e_uma_linha_por_atendimento (test_pcp.TestePCP.test_csv_tem_campos_e_uma_linha_por_atendimento) ... ok
+test_dado_bloqueado_na_reformulacao_nao_conta_tentativa (test_pcp.TestePCP.test_dado_bloqueado_na_reformulacao_nao_conta_tentativa) ... ok
+test_entrada_unicode_e_numero_muito_longo (test_pcp.TestePCP.test_entrada_unicode_e_numero_muito_longo) ... ok
+test_eof_na_confirmacao_preserva_atendimento (test_pcp.TestePCP.test_eof_na_confirmacao_preserva_atendimento) ... ok
+test_exemplo_de_sete_pontos_do_enunciado (test_pcp.TestePCP.test_exemplo_de_sete_pontos_do_enunciado) ... ok
+test_exibe_ate_duas_alternativas (test_pcp.TestePCP.test_exibe_ate_duas_alternativas) ... ok
+test_exibicao_transparente (test_pcp.TestePCP.test_exibicao_transparente) ... ok
+test_facilidade_pode_ser_omitida (test_pcp.TestePCP.test_facilidade_pode_ser_omitida) ... ok
+test_facilidade_validada_e_persistida (test_pcp.TestePCP.test_facilidade_validada_e_persistida) ... ok
+test_falha_de_exportacao_preserva_csv_anterior (test_pcp.TestePCP.test_falha_de_exportacao_preserva_csv_anterior) ... ok
+test_falha_de_gravacao_preserva_historico_anterior (test_pcp.TestePCP.test_falha_de_gravacao_preserva_historico_anterior) ... ok
+test_historico_com_registros_invalidos (test_pcp.TestePCP.test_historico_com_registros_invalidos) ... ok
+test_historico_corrompido_preservado_sem_sobrescrever_csv (test_pcp.TestePCP.test_historico_corrompido_preservado_sem_sobrescrever_csv) ... ok
+test_historico_utf8_invalido_e_preservado (test_pcp.TestePCP.test_historico_utf8_invalido_e_preservado) ... ok
+test_indicadores_e_nota_por_sessao (test_pcp.TestePCP.test_indicadores_e_nota_por_sessao) ... ok
+test_indicadores_vazios (test_pcp.TestePCP.test_indicadores_vazios) ... ok
+test_limites_de_palavras (test_pcp.TestePCP.test_limites_de_palavras) ... ok
+test_menu_atendimento_avaliacao_e_csv (test_pcp.TestePCP.test_menu_atendimento_avaliacao_e_csv) ... ok
+test_menu_com_base_ausente (test_pcp.TestePCP.test_menu_com_base_ausente) ... ok
+test_menu_completo_de_outro_diretorio (test_pcp.TestePCP.test_menu_completo_de_outro_diretorio) ... ok
+test_migracao_legada_preserva_metricas_e_remove_texto_e_campos_extras (test_pcp.TestePCP.test_migracao_legada_preserva_metricas_e_remove_texto_e_campos_extras) ... ok
+test_navegacao_categoria_e_retorno (test_pcp.TestePCP.test_navegacao_categoria_e_retorno) ... ok
+test_normalizacao (test_pcp.TestePCP.test_normalizacao) ... ok
+test_nova_duvida_cria_outro_atendimento (test_pcp.TestePCP.test_nova_duvida_cria_outro_atendimento) ... ok
+test_pergunta_bloqueada_nao_vira_atendimento (test_pcp.TestePCP.test_pergunta_bloqueada_nao_vira_atendimento) ... ok
+test_pergunta_vazia_sem_sentido_e_longa (test_pcp.TestePCP.test_pergunta_vazia_sem_sentido_e_longa) ... ok
+test_perguntas_gerais_nao_sao_bloqueadas (test_pcp.TestePCP.test_perguntas_gerais_nao_sao_bloqueadas) ... ok
+test_perguntas_previstas (test_pcp.TestePCP.test_perguntas_previstas) ... ok
+test_pontuacao_e_ordem (test_pcp.TestePCP.test_pontuacao_e_ordem) ... ok
+test_recarregar_historico_nao_duplica_atendimentos (test_pcp.TestePCP.test_recarregar_historico_nao_duplica_atendimentos) ... ok
+test_reformulacao_conta_no_mesmo_atendimento (test_pcp.TestePCP.test_reformulacao_conta_no_mesmo_atendimento) ... ok
+test_resposta_nao_ajudou_e_reformulacao (test_pcp.TestePCP.test_resposta_nao_ajudou_e_reformulacao) ... ok
+test_retorno_durante_confirmacao (test_pcp.TestePCP.test_retorno_durante_confirmacao) ... ok
+test_sem_correspondencia (test_pcp.TestePCP.test_sem_correspondencia) ... ok
+test_texto_identificavel_que_escapa_do_filtro_nao_e_persistido (test_pcp.TestePCP.test_texto_identificavel_que_escapa_do_filtro_nao_e_persistido) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 0.193s
+
+OK
