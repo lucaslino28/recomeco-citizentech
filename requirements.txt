@@ -1,0 +1,4 @@
+# RECOMEÇO - Dependências do projeto
+# PCP: bibliotecas nativas do Python
+# SERS: bibliotecas a definir, se necessárias
+# Prompt & IA: framework de agentes e modelo a definir
