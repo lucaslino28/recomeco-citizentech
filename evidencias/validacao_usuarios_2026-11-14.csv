@@ -1,0 +1,12 @@
+data,origem,pergunta,id_orientacao,encontrou,ajudou,tentativas,tempo_segundos,facilidade,sessao
+2026-11-12T18:20:40,pergunta,Orientação 5; texto livre omitido.,5,True,True,1,80.6,,
+2026-11-14T20:06:41-03:00,pergunta,Orientação 5; texto livre omitido.,5,True,True,1,84.9,5,8301f2559c83421b8658cd0db3f42868
+2026-11-14T20:08:37-03:00,pergunta,Orientação 12; texto livre omitido.,12,True,True,1,34.6,4,2f3cbe7a666e4203a58472ad2f11c99c
+2026-11-14T20:09:51-03:00,pergunta,Orientação 5; texto livre omitido.,5,True,True,1,46.3,1,860919fc71ec4b1d92333d3bd5e5b015
+2026-11-14T20:11:52-03:00,pergunta,Orientação 5; texto livre omitido.,5,True,True,1,48.6,4,b3515401c5c542b98e3ffc2251e4ba46
+2026-11-14T20:13:42-03:00,pergunta,Orientação 1; texto livre omitido.,1,True,False,1,45.2,1,c98a48c2c8be4a46a2cedcb304a983f2
+2026-11-14T20:14:47-03:00,pergunta,Orientação 1; texto livre omitido.,1,True,True,1,31.9,2,9e2679f541804f25b738efb8aa9f1cce
+2026-11-14T20:15:28-03:00,pergunta,Orientação 1; texto livre omitido.,1,True,True,1,37.1,5,b5dcf9fa09fe45aaba6d50bb53c083b3
+2026-11-14T20:17:20-03:00,pergunta,Sem correspondência; texto livre omitido.,,False,False,1,44.7,2,51f55da8f38a4aff9452c59852744f43
+2026-11-14T20:17:54-03:00,pergunta,Orientação 16; texto livre omitido.,16,True,True,1,34.6,5,acdbbb0a20a640749a8562ae613b9a8b
+2026-11-14T20:18:47-03:00,pergunta,Sem correspondência; texto livre omitido.,,False,False,1,24.5,1,6e5468fa5fec488a9484e4aa2d5da1d1
