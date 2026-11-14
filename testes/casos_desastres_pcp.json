@@ -1,0 +1,352 @@
+[
+  {
+    "pergunta": "O barranco está cedendo. O que fazer?",
+    "modo": "resposta",
+    "ids": [
+      19
+    ]
+  },
+  {
+    "pergunta": "Como agir em um deslizamento?",
+    "modo": "resposta",
+    "ids": [
+      19
+    ]
+  },
+  {
+    "pergunta": "Houve queda de barreira perto de casa.",
+    "modo": "resposta",
+    "ids": [
+      19
+    ]
+  },
+  {
+    "pergunta": "A terra está cedendo na encosta.",
+    "modo": "resposta",
+    "ids": [
+      19
+    ]
+  },
+  {
+    "pergunta": "O que fazer durante um vendaval?",
+    "modo": "resposta",
+    "ids": [
+      20
+    ]
+  },
+  {
+    "pergunta": "Como me proteger de ventos fortes?",
+    "modo": "resposta",
+    "ids": [
+      20
+    ]
+  },
+  {
+    "pergunta": "Minha casa ficou destelhada.",
+    "modo": "resposta",
+    "ids": [
+      20
+    ]
+  },
+  {
+    "pergunta": "Há muita ventania.",
+    "modo": "resposta",
+    "ids": [
+      20
+    ]
+  },
+  {
+    "pergunta": "Como me proteger de raios?",
+    "modo": "resposta",
+    "ids": [
+      21
+    ]
+  },
+  {
+    "pergunta": "Posso usar chuveiro durante chuva com raios?",
+    "modo": "resposta",
+    "ids": [
+      21
+    ]
+  },
+  {
+    "pergunta": "O que fazer em uma tempestade elétrica?",
+    "modo": "resposta",
+    "ids": [
+      21
+    ]
+  },
+  {
+    "pergunta": "Tem muitos relâmpagos.",
+    "modo": "resposta",
+    "ids": [
+      21
+    ]
+  },
+  {
+    "pergunta": "Está caindo granizo. O que faço?",
+    "modo": "resposta",
+    "ids": [
+      22
+    ]
+  },
+  {
+    "pergunta": "Como agir na chuva de pedras?",
+    "modo": "resposta",
+    "ids": [
+      22
+    ]
+  },
+  {
+    "pergunta": "Há pedras de gelo caindo do céu.",
+    "modo": "resposta",
+    "ids": [
+      22
+    ]
+  },
+  {
+    "pergunta": "Como economizar água na seca?",
+    "modo": "resposta",
+    "ids": [
+      23
+    ]
+  },
+  {
+    "pergunta": "A estiagem está durando meses.",
+    "modo": "resposta",
+    "ids": [
+      23
+    ]
+  },
+  {
+    "pergunta": "Como lidar com escassez de água?",
+    "modo": "resposta",
+    "ids": [
+      23
+    ]
+  },
+  {
+    "pergunta": "Estamos em um período sem chuva.",
+    "modo": "resposta",
+    "ids": [
+      23
+    ]
+  },
+  {
+    "pergunta": "Está faltando água no bairro.",
+    "modo": "resposta",
+    "ids": [
+      24
+    ]
+  },
+  {
+    "pergunta": "O que fazer na falta de água prolongada?",
+    "modo": "resposta",
+    "ids": [
+      24
+    ]
+  },
+  {
+    "pergunta": "Como buscar apoio no racionamento?",
+    "modo": "resposta",
+    "ids": [
+      24
+    ]
+  },
+  {
+    "pergunta": "Estamos sem água na seca.",
+    "modo": "resposta",
+    "ids": [
+      24
+    ]
+  },
+  {
+    "pergunta": "Como me proteger do calor?",
+    "modo": "resposta",
+    "ids": [
+      25
+    ]
+  },
+  {
+    "pergunta": "Quais cuidados tomar na onda de calor?",
+    "modo": "resposta",
+    "ids": [
+      25
+    ]
+  },
+  {
+    "pergunta": "O dia está muito quente.",
+    "modo": "resposta",
+    "ids": [
+      25
+    ]
+  },
+  {
+    "pergunta": "Quais cuidados com idosos no calor?",
+    "modo": "resposta",
+    "ids": [
+      25
+    ]
+  },
+  {
+    "pergunta": "Meu avô está passando mal com o calor.",
+    "modo": "resposta",
+    "ids": [
+      26
+    ]
+  },
+  {
+    "pergunta": "Estou com tontura no calor.",
+    "modo": "resposta",
+    "ids": [
+      26
+    ]
+  },
+  {
+    "pergunta": "Quais são os sinais de alerta do calor?",
+    "modo": "resposta",
+    "ids": [
+      26
+    ]
+  },
+  {
+    "pergunta": "O que fazer diante de uma insolação?",
+    "modo": "resposta",
+    "ids": [
+      26
+    ]
+  },
+  {
+    "pergunta": "Há fogo no mato perto de casa.",
+    "modo": "resposta",
+    "ids": [
+      27
+    ]
+  },
+  {
+    "pergunta": "Como agir em uma queimada?",
+    "modo": "resposta",
+    "ids": [
+      27
+    ]
+  },
+  {
+    "pergunta": "Há um incêndio na vegetação.",
+    "modo": "resposta",
+    "ids": [
+      27
+    ]
+  },
+  {
+    "pergunta": "O que fazer em incêndios florestais?",
+    "modo": "resposta",
+    "ids": [
+      27
+    ]
+  },
+  {
+    "pergunta": "Respirei fumaça e estou com falta de ar.",
+    "modo": "resposta",
+    "ids": [
+      28
+    ]
+  },
+  {
+    "pergunta": "Como reduzir a exposição à fumaça?",
+    "modo": "resposta",
+    "ids": [
+      28
+    ]
+  },
+  {
+    "pergunta": "A rua está com muita fumaça.",
+    "modo": "resposta",
+    "ids": [
+      28
+    ]
+  },
+  {
+    "pergunta": "Como agir numa enchente?",
+    "modo": "resposta",
+    "ids": [
+      29
+    ]
+  },
+  {
+    "pergunta": "O que fazer na enchente?",
+    "modo": "resposta",
+    "ids": [
+      29
+    ]
+  },
+  {
+    "pergunta": "Uma enxurrada está se aproximando.",
+    "modo": "resposta",
+    "ids": [
+      29
+    ]
+  },
+  {
+    "pergunta": "Como preparar um kit de emergência?",
+    "modo": "resposta",
+    "ids": [
+      30
+    ]
+  },
+  {
+    "pergunta": "Quero montar um plano familiar.",
+    "modo": "resposta",
+    "ids": [
+      30
+    ]
+  },
+  {
+    "pergunta": "Como me preparar antes de um desastre?",
+    "modo": "resposta",
+    "ids": [
+      30
+    ]
+  },
+  {
+    "pergunta": "enchente",
+    "modo": "sugerir",
+    "ids": [
+      29
+    ]
+  },
+  {
+    "pergunta": "calor",
+    "modo": "sugerir",
+    "ids": [
+      25,
+      26
+    ]
+  },
+  {
+    "pergunta": "tempestade",
+    "modo": "sugerir",
+    "ids": [
+      20,
+      21,
+      22
+    ]
+  },
+  {
+    "pergunta": "kit de higiene",
+    "modo": "esclarecer",
+    "ids": [
+      11,
+      30
+    ]
+  },
+  {
+    "pergunta": "Qual a previsão de terremoto?",
+    "modo": "fora",
+    "ids": []
+  },
+  {
+    "pergunta": "Como faço um bolo?",
+    "modo": "fora",
+    "ids": []
+  }
+]

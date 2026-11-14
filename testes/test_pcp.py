@@ -92,7 +92,8 @@ class TestePCP(unittest.TestCase):
 
     def test_categoria_normalizada(self):
         itens = self.base.por_categoria("SAUDE E HIGIENE")
-        self.assertEqual({o.id for o in itens}, {7, 8, 9, 10})
+        self.assertTrue({7, 8, 9, 10, 13, 14}.issubset({o.id for o in itens}))
+        self.assertTrue(all(o.categoria == "Saúde e higiene" for o in itens))
 
     def test_base_ausente(self):
         base = BaseConhecimento(self.pasta / "ausente.json")
@@ -164,8 +165,8 @@ class TestePCP(unittest.TestCase):
     def test_confianca_media_e_alta(self):
         with patch("builtins.input", side_effect=["abrigo", "s", "socorro emergencia", "s", "0"]):
             self.assistente.perguntar()
-        self.assertIn("MÉDIA (3 pontos)", self.saida.getvalue())
-        self.assertIn("ALTA (7 pontos)", self.saida.getvalue())
+        self.assertIn("MÉDIA (3 pontos na busca por palavras)", self.saida.getvalue())
+        self.assertIn("ALTA (7 pontos na busca por palavras)", self.saida.getvalue())
 
     def test_exibe_ate_duas_alternativas(self):
         with patch("builtins.input", side_effect=["socorro emergência abrigo agua potavel tetano", "s", "0"]):
@@ -342,7 +343,7 @@ class TestePCP(unittest.TestCase):
     def test_menu_completo_de_outro_diretorio(self):
         processo = self.executar_menu("x\n2\n3\n4\n1\n0\n0\n")
         self.assertEqual(processo.returncode, 0, processo.stderr)
-        self.assertIn("Base carregada: 10 orientações", processo.stdout)
+        self.assertIn("Base carregada: 30 orientações", processo.stdout)
         self.assertNotIn("DEBUG", processo.stdout)
         self.assertIn("Módulo de documentação pessoal", processo.stdout)
         self.assertIn("Módulo de energia", processo.stdout)
@@ -373,6 +374,213 @@ class TestePCP(unittest.TestCase):
         processo = self.executar_menu("1\n0\n", self.pasta / "dados_isolados", projeto)
         self.assertEqual(processo.returncode, 0, processo.stderr)
         self.assertIn("orientações estão indisponíveis", processo.stdout)
+
+    def test_base_com_passos_e_campos_opcionais_invalidos(self):
+        valido = json.loads((RAIZ / "data/base_conhecimento.json").read_text())[0]
+        self.assertTrue(self.base.registro_valido(valido))
+        for campo, valor in [("passos", "texto"), ("passos", [None]),
+                             ("observacao", []), ("assuntos", [42]), ("desastres", [None])]:
+            with self.subTest(campo=campo, valor=valor):
+                self.assertFalse(self.base.registro_valido(dict(valido, **{campo: valor})))
+
+    def test_base_legada_sem_campos_opcionais(self):
+        registro = json.loads((RAIZ / "data/base_conhecimento.json").read_text())[0]
+        for campo in ["passos", "observacao", "assuntos", "desastres"]:
+            registro.pop(campo)
+        base = BaseConhecimento(self.gravar_json("legada.json", [registro]))
+        self.assertTrue(base.carregar())
+        self.assertEqual(base.orientacoes[0].passos, [])
+
+    def test_ambiguidade_alimentos_pergunta_antes_de_responder(self):
+        with patch("builtins.input", side_effect=["alimentos", "2", "s", "0"]):
+            self.assistente.perguntar()
+        self.assertEqual(self.assistente.historico[0]["id_orientacao"], 11)
+        self.assertEqual(self.assistente.historico[0]["tentativas"], 1)
+        texto = self.saida.getvalue()
+        self.assertIn("mais de um assunto", texto)
+        self.assertNotIn("Alimentos atingidos por água de enchente", texto)
+
+    def test_ambiguidade_pode_ser_recusada(self):
+        with patch("builtins.input", side_effect=["alimentos", "0", "0"]):
+            self.assistente.perguntar()
+        self.assertFalse(self.assistente.historico[0]["encontrou"])
+        self.assertNotIn("Alimentos atingidos por água de enchente", self.saida.getvalue())
+
+    def test_alternativa_aberta_atualiza_mesmo_atendimento(self):
+        with patch("builtins.input", side_effect=["Onde consigo água potável?", "n", "4", "1", "s", "0"]):
+            self.assistente.perguntar()
+        self.assertEqual(len(self.assistente.historico), 1)
+        self.assertEqual(self.assistente.historico[0]["id_orientacao"], 7)
+        self.assertEqual(self.assistente.historico[0]["tentativas"], 2)
+        self.assertTrue(self.assistente.historico[0]["ajudou"])
+
+    def test_sem_resultado_pode_abrir_categoria_no_mesmo_atendimento(self):
+        with patch("builtins.input", side_effect=["astronomia", "3", "1", "1", "s", "0"]):
+            self.assistente.perguntar()
+        self.assertEqual(len(self.assistente.historico), 1)
+        self.assertEqual(self.assistente.historico[0]["id_orientacao"], 5)
+        self.assertEqual(self.assistente.historico[0]["tentativas"], 2)
+        self.assertNotIn("Confiança: ALTA", self.saida.getvalue())
+
+    def test_sugestao_de_digitacao_exige_confirmacao(self):
+        self.assertEqual(self.base.buscar("soccoro"), [])
+        with patch("builtins.input", side_effect=["soccoro", "1", "s", "0"]):
+            self.assistente.perguntar()
+        self.assertEqual(self.assistente.historico[0]["id_orientacao"], 1)
+        self.assertIn("Não achei uma correspondência exata", self.saida.getvalue())
+        self.assertNotIn("Confiança:", self.saida.getvalue())
+
+    def test_sugestao_nao_aceita_nao_e_resposta_encontrada(self):
+        with patch("builtins.input", side_effect=["soccoro", "0", "0"]):
+            self.assistente.perguntar()
+        self.assertFalse(self.assistente.historico[0]["encontrou"])
+
+    def test_assunto_agua_diferencia_tratamento_e_abastecimento(self):
+        self.assertEqual([o.id for o in self.base.sugerir("água")], [7, 11, 14])
+        with patch("builtins.input", side_effect=["água", "2", "s", "0"]):
+            self.assistente.perguntar()
+        self.assertEqual(self.assistente.historico[0]["id_orientacao"], 11)
+
+    def test_continuacao_exige_confirmacao_do_assunto(self):
+        with patch("builtins.input", side_effect=["abrigo", "s", "E quais documentos preciso levar?", "1", "s", "0"]):
+            self.assistente.perguntar()
+        self.assertEqual([r["id_orientacao"] for r in self.assistente.historico], [5, 5])
+        self.assertIn("Sua dúvida continua sobre o assunto anterior", self.saida.getvalue())
+        self.assertIs(self.assistente.ultima_orientacao, self.base.orientacoes[4])
+
+    def test_exemplos_nao_contam_como_atendimento(self):
+        with patch("builtins.input", side_effect=["?", "0"]):
+            self.assistente.perguntar()
+        self.assertEqual(self.assistente.historico, [])
+
+    def test_confirmacao_por_numero(self):
+        with patch("builtins.input", return_value="1"):
+            self.assertTrue(self.assistente.confirmar())
+        with patch("builtins.input", return_value="2"):
+            self.assertFalse(self.assistente.confirmar())
+
+    def test_perguntas_naturais_e_intencoes(self):
+        casos = json.loads((RAIZ / "testes/casos_perguntas_pcp.json").read_text())
+        for caso in casos:
+            with self.subTest(pergunta=caso["pergunta"]):
+                resultados = self.base.buscar(caso["pergunta"])
+                if caso["modo"] == "resposta":
+                    self.assertTrue(resultados)
+                    self.assertEqual(resultados[0][1].id, caso["ids"][0])
+                    self.assertTrue(len(resultados) == 1 or resultados[0][0] - resultados[1][0] > 1)
+                elif caso["modo"] == "esclarecer":
+                    ids = [o.id for p, o in resultados if resultados[0][0] - p <= 1][:3]
+                    self.assertEqual(set(ids), set(caso["ids"]))
+                elif caso["modo"] == "sugerir":
+                    self.assertEqual(resultados, [])
+                    self.assertEqual([o.id for o in self.base.sugerir(caso["pergunta"])], caso["ids"])
+                else:
+                    self.assertEqual(resultados, [])
+                    self.assertEqual(self.base.sugerir(caso["pergunta"]), [])
+
+    def test_eof_durante_esclarecimento_nao_inventa_orientacao(self):
+        processo = self.executar_menu("1\n1\nalimentos\n")
+        self.assertEqual(processo.returncode, 0, processo.stderr)
+        registro = json.loads((self.pasta / "historico.json").read_text())[0]
+        self.assertFalse(registro["encontrou"])
+        self.assertIsNone(registro["id_orientacao"])
+
+    def test_privacidade_tambem_na_sugestao_guiada(self):
+        with patch("builtins.input", side_effect=["água", "2", "1", "0"]):
+            self.assistente.perguntar()
+        self.assistente.exportar_csv()
+        conteudo = self.assistente.caminho_historico.read_text()
+        self.assertNotIn('"água"', conteudo)
+        self.assertNotIn("ultima_orientacao", conteudo)
+        self.assertIn("texto livre omitido", conteudo)
+
+    def test_tipos_de_desastre_e_apoio_compartilhado(self):
+        tipos = self.base.tipos_desastre()
+        self.assertEqual(len(tipos), 9)
+        self.assertNotIn("Apoio geral", tipos)
+        self.assertIn("Calor intenso", tipos)
+        calor = self.base.por_tipo_desastre("CALOR INTENSO")
+        self.assertEqual([o.id for o in calor[:2]], [25, 26])
+        self.assertIn(5, [o.id for o in calor])
+        self.assertNotIn(13, [o.id for o in calor])
+
+    def test_tipo_inexistente_nao_retorna_apoio_como_se_fosse_cobertura(self):
+        self.assertEqual(self.base.por_tipo_desastre("terremotos"), [])
+
+    def test_base_legada_sem_classificacao_de_desastres(self):
+        registro = json.loads((RAIZ / "data/base_conhecimento.json").read_text())[0]
+        registro.pop("desastres")
+        base = BaseConhecimento(self.gravar_json("sem_temas.json", [registro]))
+        self.assertTrue(base.carregar())
+        self.assertEqual(base.tipos_desastre(), [])
+        assistente = Assistente("Legado", base, self.pasta / "isolado")
+        self.assertIsNone(assistente.escolher_tipo_desastre())
+
+    def test_navegacao_por_desastre_sem_texto_pessoal(self):
+        indice = self.base.tipos_desastre().index("Calor intenso") + 1
+        with patch("builtins.input", side_effect=[str(indice), "1", "s", "0"]):
+            self.assistente.navegar(por_desastre=True)
+        self.assertEqual(len(self.assistente.historico), 1)
+        registro = self.assistente.historico[0]
+        self.assertEqual(registro["id_orientacao"], 25)
+        self.assertEqual(registro["origem"], "categoria")
+        self.assertEqual(registro["tentativas"], 1)
+        self.assertTrue(registro["ajudou"])
+        self.assertNotIn("Confiança:", self.saida.getvalue())
+
+    def test_retorno_do_tipo_sem_escolher_orientacao_nao_cria_atendimento(self):
+        with patch("builtins.input", side_effect=["1", "0", "0"]):
+            self.assistente.navegar(por_desastre=True)
+        self.assertEqual(self.assistente.historico, [])
+
+    def test_menu_completo_por_tipo_de_desastre(self):
+        indice = self.base.tipos_desastre().index("Vendavais") + 1
+        processo = self.executar_menu(f"1\n4\n{indice}\n1\ns\n0\n0\n0\n4\n")
+        self.assertEqual(processo.returncode, 0, processo.stderr)
+        historico = json.loads((self.pasta / "historico.json").read_text())
+        self.assertEqual(len(historico), 1)
+        self.assertEqual(historico[0]["id_orientacao"], 20)
+        self.assertEqual(historico[0]["facilidade"], 4)
+
+    def test_comandos_e_exemplos_nao_limitados_a_enchentes(self):
+        processo = self.executar_menu("1\n3\n0\n0\n")
+        self.assertEqual(processo.returncode, 0, processo.stderr)
+        self.assertIn("Orientações sobre desastres", processo.stdout)
+        self.assertIn("tipo de desastre", processo.stdout)
+        self.assertIn("incêndio na vegetação", processo.stdout)
+        self.assertNotIn("ORIENTAÇÕES APÓS ENCHENTES", processo.stdout)
+
+    def test_sugestoes_nao_usam_palavras_comuns_como_contexto(self):
+        self.assertEqual(self.base.sugerir("Como faço um bolo?"), [])
+        self.assertEqual([o.id for o in self.base.sugerir("tempestade")], [20, 21, 22])
+        self.assertEqual([o.id for o in self.base.sugerir("soccoro")], [1])
+
+    def test_sinais_de_alerta_do_calor_tem_encaminhamento(self):
+        resultados = self.base.buscar("Meu avô está passando mal com o calor")
+        self.assertEqual(resultados[0][1].id, 26)
+        orientacao = resultados[0][1]
+        self.assertIn("192", " ".join(orientacao.passos))
+        self.assertIn("não diagnostica", orientacao.observacao)
+
+    def test_casos_multidesastres(self):
+        casos = json.loads((RAIZ / "testes/casos_desastres_pcp.json").read_text())
+        for caso in casos:
+            with self.subTest(pergunta=caso["pergunta"]):
+                resultados = self.base.buscar(caso["pergunta"])
+                if caso["modo"] == "resposta":
+                    self.assertTrue(resultados)
+                    self.assertEqual(resultados[0][1].id, caso["ids"][0])
+                    self.assertTrue(len(resultados) == 1 or resultados[0][0] - resultados[1][0] > 1)
+                elif caso["modo"] == "esclarecer":
+                    self.assertTrue(resultados)
+                    proximos = [o.id for p, o in resultados if resultados[0][0] - p <= 1][:3]
+                    self.assertEqual(set(proximos), set(caso["ids"]))
+                elif caso["modo"] == "sugerir":
+                    self.assertEqual(resultados, [])
+                    self.assertEqual([o.id for o in self.base.sugerir(caso["pergunta"])], caso["ids"])
+                else:
+                    self.assertEqual(resultados, [])
+                    self.assertEqual(self.base.sugerir(caso["pergunta"]), [])
 
 
 if __name__ == "__main__":

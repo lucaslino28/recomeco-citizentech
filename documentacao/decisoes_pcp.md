@@ -1,6 +1,6 @@
 # Decisões de PCP
 
-Atualização: 12/11/2026. As três classes e os métodos exigidos foram mantidos. Não foram adicionadas classes, bibliotecas externas ou serviços de IA em PCP.
+Atualização: 14/11/2026. As três classes e os métodos exigidos foram mantidos. Não foram adicionadas classes, bibliotecas externas ou serviços de IA em PCP.
 
 ## Busca
 
@@ -39,3 +39,25 @@ O CSV é reconstruído com campos controlados e sem texto livre, inclusive quand
 ## Limites da implementação
 
 O filtro de privacidade é preventivo e incompleto; a ausência de texto livre no armazenamento é a proteção principal. O programa não usa rede nem envia a pergunta para um LLM. A base é um arquivo curado pela equipe e a pontuação textual pode errar a intenção. Não são suportadas gravações simultâneas por duas execuções usando a mesma pasta de dados.
+
+## Refinamento da interação em 14/11/2026
+
+Os pesos de `pontuar()` e a ordenação de `buscar()` permanecem iguais. Uma etapa no `Assistente` compara as primeiras pontuações: se duas candidatas estiverem a até um ponto da melhor, oferece até três títulos para escolha antes de responder. Não se altera a pontuação para decidir arbitrariamente entre receber e descartar alimentos.
+
+O JSON agora possui 18 orientações e três campos opcionais: passos, observação e assuntos. A classe `Orientacao` continua responsável pela exibição. `BaseConhecimento.sugerir()` usa assuntos cadastrados e semelhança de escrita da biblioteca padrão; uma sugestão só vira resposta após escolha. Não há novas classes, dependências externas ou acesso à internet durante o atendimento.
+
+`Assistente.atender()` concentra a exibição e a recuperação após resposta não útil: reformular, iniciar outra dúvida, escolher categoria ou abrir alternativa. A seleção de assunto inicial não aumenta tentativas; abrir outra orientação depois de receber uma resposta soma uma tentativa no mesmo atendimento. A origem representa a entrada pela pergunta ou pelas categorias, mesmo que a pessoa navegue por outras opções depois.
+
+A última orientação confirmada como útil pode ser apresentada para uma pergunta curta de continuação, mediante escolha explícita. Só o objeto com conteúdo público é mantido em memória; não há histórico textual de conversa. O campo `encontrou` considera tanto a resposta por pontuação quanto a orientação escolhida em navegação assistida. As telas distinguem confiança textual de escolha guiada.
+
+As novas situações e erros foram levantados por revisão técnica; os resultados não substituem a melhoria baseada em participantes externos exigida pelo professor.
+
+## Ampliação para desastres e eventos ambientais
+
+Foram mantidos os IDs anteriores e adicionadas orientações de 19 a 30. O recorte cobre oito grupos de eventos e preparação, sem pretensão de classificar estatisticamente sua frequência. Alguns eventos, como incêndios, também podem ter origem humana. O cenário energético de SERS continua sendo iluminação de abrigo; esse estudo de caso não limita a abrangência das orientações de PCP.
+
+`Orientacao.desastres` é uma lista opcional de etiquetas do JSON. `BaseConhecimento.tipos_desastre()` lista os temas; `por_tipo_desastre()` reúne orientações específicas e apoio compartilhado. As que se aplicam a menos tipos vêm primeiro. Um tema inexistente retorna lista vazia, em vez de exibir apoio e dar a impressão de cobertura inexistente. O `Assistente` reaproveita o fluxo de categorias; no histórico, essa seleção tem origem `categoria`.
+
+A fórmula de pontuação não foi alterada. Novas palavras-chave e expressões foram avaliadas junto dos cenários antigos. Em sugestões de digitação, palavras comuns são ignoradas para evitar que uma palavra como `como` provoque uma sugestão sobre enchente para uma pergunta sobre bolo. Assuntos ambíguos como `tempestade` oferecem vendaval, raios e granizo, com escolha explícita.
+
+O público de PCP passou a ser cidadãos buscando orientação diante de desastres e eventos ambientais no Brasil. Conteúdos específicos de enchentes permanecem marcados e não são apresentados como procedimentos universais. Histórico, privacidade, notas por sessão e exportação foram preservados. Testes externos reais continuam pendentes.

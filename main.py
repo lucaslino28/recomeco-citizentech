@@ -9,15 +9,21 @@ def menu_pcp(assistente):
         print("\nAs orientações estão indisponíveis. Confira a base de conhecimento.")
         return
     while True:
-        print("\nORIENTAÇÕES APÓS ENCHENTES")
-        print("1 - Fazer uma pergunta")
-        print("2 - Consultar por categorias")
+        print("\nORIENTAÇÕES SOBRE DESASTRES")
+        print("1 - Escrever minha dúvida")
+        print("2 - Escolher um assunto passo a passo")
+        print("3 - Ver exemplos de perguntas")
+        print("4 - Escolher o tipo de desastre")
         print("0 - Voltar ao menu principal")
         opcao = input("\nEscolha uma opção: ").strip()
         if opcao == "1":
             assistente.perguntar()
         elif opcao == "2":
             assistente.navegar()
+        elif opcao == "3":
+            assistente.exemplos()
+        elif opcao == "4":
+            assistente.navegar(por_desastre=True)
         elif opcao == "0":
             return
         else:
@@ -37,7 +43,7 @@ def menu_principal(pasta_dados=None):
             print("                RECOMEÇO")
             print("             CITIZEN ASSIST AI")
             print("========================================")
-            print("1 - Orientações após enchentes")
+            print("1 - Orientações sobre desastres")
             print("2 - Documentação pessoal (IA)")
             print("3 - Energia e sustentabilidade")
             print("4 - Indicadores de atendimento")
@@ -68,7 +74,7 @@ def menu_principal(pasta_dados=None):
 
 
 if __name__ == "__main__":
-    argumentos = argparse.ArgumentParser(description="RECOMEÇO — orientações após enchentes")
+    argumentos = argparse.ArgumentParser(description="RECOMEÇO — orientações sobre desastres no Brasil")
     argumentos.add_argument("--dados", help="Pasta separada para histórico e CSV, por exemplo em testes externos")
     opcoes = argumentos.parse_args()
     menu_principal(opcoes.dados)

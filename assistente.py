@@ -32,6 +32,7 @@ class Assistente:
         self.historico = []
         self.atendimentos_sessao = []
         self.sessao = uuid4().hex
+        self.ultima_orientacao = None
         self.pode_salvar_historico = True
         self.carregar_historico()
 
@@ -148,14 +149,14 @@ class Assistente:
 
     def confirmar(self):
         while True:
-            resposta = input("\nEssa orientação respondeu sua dúvida? (s/n, 0 para voltar): ").strip().lower()
-            if resposta == "s":
+            resposta = input("\nEssa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar): ").strip().lower()
+            if resposta in ["s", "1"]:
                 return True
-            if resposta == "n":
+            if resposta in ["n", "2"]:
                 return False
             if resposta == "0":
                 return None
-            print("Digite s, n ou 0.")
+            print("Digite s ou 1 para sim, n ou 2 para não, ou 0 para voltar.")
 
     def registrar(self, origem, orientacao, encontrou, ajudou, tentativas, inicio, registro=None):
         identificador = orientacao.id if orientacao else None
@@ -180,91 +181,192 @@ class Assistente:
         self.salvar_historico()
         return registro
 
+    def exemplos(self):
+        print("\nVocê pode perguntar, por exemplo:")
+        print("- Fiquei sem ter onde dormir depois da inundação.")
+        print("- O barranco está cedendo. O que fazer?")
+        print("- Como me proteger de raios ou vento forte?")
+        print("- O que fazer durante uma seca ou onda de calor?")
+        print("- Há um incêndio na vegetação perto de casa.")
+        print("- Preciso de alimentos e acolhimento após um desastre.")
+        print("Digite ? para ver estes exemplos novamente ou 0 para voltar.")
+
+    def escolher_lista(self, orientacoes, mensagem):
+        print(f"\n{mensagem}")
+        for numero, orientacao in enumerate(orientacoes, 1):
+            print(f"{numero} - {orientacao.titulo}")
+        print("0 - Nenhum destes / voltar")
+        escolha = ler_opcao("Escolha o assunto: ", len(orientacoes))
+        return orientacoes[escolha - 1] if escolha else None
+
+    def escolher_categoria(self):
+        categorias = self.base.categorias()
+        if not categorias:
+            print("Nenhuma categoria disponível.")
+            return None
+        while True:
+            print("\nSobre qual assunto você precisa de orientação?")
+            for numero, categoria in enumerate(categorias, 1):
+                print(f"{numero} - {categoria}")
+            print("0 - Voltar")
+            escolha = ler_opcao("Escolha uma categoria: ", len(categorias))
+            if escolha == 0:
+                return None
+            orientacao = self.escolher_lista(
+                self.base.por_categoria(categorias[escolha - 1]), "Escolha a situação mais parecida com a sua:"
+            )
+            if orientacao is not None:
+                return orientacao
+
+    def escolher_resultado(self, resultados):
+        proximos = [(p, o) for p, o in resultados if resultados[0][0] - p <= 1][:3]
+        if len(proximos) == 1:
+            return resultados[0]
+        orientacao = self.escolher_lista(
+            [o for _, o in proximos],
+            "Encontrei mais de um assunto possível. Qual deles responde melhor à sua dúvida?"
+        )
+        for pontos, candidata in proximos:
+            if candidata is orientacao:
+                return pontos, orientacao
+        return None, None
+
+    def escolher_tipo_desastre(self):
+        tipos = self.base.tipos_desastre()
+        if not tipos:
+            print("Nenhum tipo de desastre disponível nesta base.")
+            return None
+        while True:
+            print("\nQual situação você quer consultar?")
+            for numero, tipo in enumerate(tipos, 1):
+                print(f"{numero} - {tipo}")
+            print("0 - Voltar")
+            escolha = ler_opcao("Escolha o tipo de situação: ", len(tipos))
+            if escolha == 0:
+                return None
+            orientacao = self.escolher_lista(self.base.por_tipo_desastre(tipos[escolha - 1]),
+                                             "Escolha uma orientação ou um serviço de apoio:")
+            if orientacao is not None:
+                return orientacao
+
+    def atender(self, orientacao, pontos, alternativas, registro, inicio):
+        while True:
+            registro = self.registrar(registro["origem"], orientacao, orientacao is not None,
+                                      False, registro["tentativas"], inicio, registro)
+            if orientacao is not None:
+                if pontos is not None:
+                    confianca = "ALTA" if pontos >= 6 else "MÉDIA"
+                    print(f"\nConfiança: {confianca} ({pontos} pontos na busca por palavras)")
+                else:
+                    print("\nOrientação aberta pela sua escolha de assunto.")
+                orientacao.exibir()
+                if alternativas:
+                    print("\nOutras orientações relacionadas:")
+                    for _, alternativa in alternativas:
+                        print(f"- {alternativa.titulo}")
+                    print("Se a resposta não ajudar, você poderá abrir uma delas.")
+                ajudou = self.confirmar()
+                registro["ajudou"] = ajudou is True
+                registro["tempo_segundos"] = round(max(0, time.time() - inicio), 1)
+                self.salvar_historico()
+                if ajudou is None:
+                    return "voltar"
+                if ajudou:
+                    self.ultima_orientacao = orientacao
+                    return "nova"
+            else:
+                print("\nNão encontrei uma orientação confirmada para essa dúvida.")
+                print("Tente outras palavras ou escolha um assunto abaixo.")
+
+            print("\nComo você quer continuar?")
+            print("1 - Explicar a mesma dúvida de outro jeito")
+            print("2 - Encerrar este atendimento e fazer outra pergunta")
+            print("3 - Escolher um assunto nas categorias")
+            if alternativas:
+                print("4 - Abrir outra orientação relacionada")
+            print("0 - Voltar")
+            while True:
+                opcao = ler_opcao("Escolha uma opção: ", 4 if alternativas else 3)
+                if opcao == 0:
+                    return "voltar"
+                if opcao == 1:
+                    return "reformular"
+                if opcao == 2:
+                    return "nova"
+                if opcao == 3:
+                    escolhida = self.escolher_categoria()
+                    novos_pontos = None
+                else:
+                    escolhida = self.escolher_lista([o for _, o in alternativas], "Qual orientação deseja abrir?")
+                    novos_pontos = next((p for p, o in alternativas if o is escolhida), None)
+                if escolhida is not None:
+                    if orientacao is not None:
+                        alternativas = [(pontos, orientacao)] + [(p, o) for p, o in alternativas if o is not escolhida]
+                    alternativas = [(p, o) for p, o in alternativas if o is not escolhida][:2]
+                    orientacao, pontos = escolhida, novos_pontos
+                    registro["tentativas"] += 1
+                    break
+                print("Escolha como continuar (1 = reformular, 2 = nova dúvida, 3 = categorias, 0 = voltar).")
+
     def perguntar(self):
+        print("\nVou buscar orientações oficiais sobre desastres no Brasil.")
+        print("Não informe dados pessoais. Endereços, vagas e atendimento local precisam ser confirmados no município.")
+        self.exemplos()
         while True:
             inicio = time.time()
             tentativas = 0
             registro = None
             while True:
-                pergunta = input("\nDigite sua dúvida (0 para voltar): ").strip()
+                pergunta = input("\nQual é sua dúvida? (0 para voltar, ? para exemplos): ").strip()
                 if pergunta == "0":
                     return
+                if pergunta == "?":
+                    self.exemplos()
+                    continue
                 if self.contem_dados_pessoais(pergunta):
                     print("Atenção: não informe dados pessoais. Reescreva sua pergunta.")
                     continue
                 if not normalizar(pergunta) or len(pergunta) > 500:
                     print("Digite uma pergunta com letras ou números e até 500 caracteres.")
                     continue
-
                 tentativas += 1
+                registro = self.registrar("pergunta", None, False, False, tentativas, inicio, registro)
                 resultados = self.base.buscar(pergunta)
-                orientacao = resultados[0][1] if resultados else None
-                # Registra antes da confirmação para preservar a tentativa em uma interrupção.
-                registro = self.registrar("pergunta", orientacao, bool(resultados), False,
-                                          tentativas, inicio, registro)
+                pontos, orientacao = None, None
                 if resultados:
-                    pontos, orientacao = resultados[0]
-                    confianca = "ALTA" if pontos >= 6 else "MÉDIA"
-                    print(f"\nConfiança: {confianca} ({pontos} pontos)")
-                    orientacao.exibir()
-                    if len(resultados) > 1:
-                        print("\nOutras orientações relacionadas:")
-                        for _, alternativa in resultados[1:3]:
-                            print(f"- {alternativa.titulo}")
-                    ajudou = self.confirmar()
-                    registro["ajudou"] = ajudou is True
-                    registro["tempo_segundos"] = round(max(0, time.time() - inicio), 1)
-                    self.salvar_historico()
-                    if ajudou is None:
-                        return
-                    if ajudou:
-                        break
+                    pontos, orientacao = self.escolher_resultado(resultados)
                 else:
-                    print("\nNão encontrei uma orientação para essa dúvida.")
-                    print("Tente outras palavras ou consulte as categorias.")
-
-                print("\n1 - Reformular a mesma dúvida")
-                print("2 - Encerrar este atendimento e fazer outra pergunta")
-                print("0 - Voltar")
-                opcao = ler_opcao("Escolha uma opção: ", 2)
-                if opcao == 0:
+                    continuacao = any(termo in normalizar(pergunta) for termo in
+                                      ["quais documentos", "o que levar", "onde procuro", "qual a fonte"])
+                    if continuacao and self.ultima_orientacao is not None:
+                        orientacao = self.escolher_lista([self.ultima_orientacao],
+                                                        "Sua dúvida continua sobre o assunto anterior?")
+                    else:
+                        sugestoes = self.base.sugerir(pergunta)
+                        if sugestoes:
+                            orientacao = self.escolher_lista(sugestoes,
+                                "Não achei uma correspondência exata. Você está perguntando sobre um destes assuntos?")
+                alternativas = [(p, o) for p, o in resultados if o is not orientacao][:2]
+                acao = self.atender(orientacao, pontos, alternativas, registro, inicio)
+                tentativas = registro["tentativas"]
+                if acao == "voltar":
                     return
-                if opcao == 2:
+                if acao == "nova":
                     break
 
-    def navegar(self):
+    def navegar(self, por_desastre=False):
         while True:
-            categorias = self.base.categorias()
-            if not categorias:
-                print("\nNenhuma categoria disponível.")
+            inicio = time.time()
+            orientacao = self.escolher_tipo_desastre() if por_desastre else self.escolher_categoria()
+            if orientacao is None:
                 return
-            print("\nCategorias:")
-            for numero, categoria in enumerate(categorias, 1):
-                print(f"{numero} - {categoria}")
-            print("0 - Voltar")
-            opcao = ler_opcao("Escolha uma categoria: ", len(categorias))
-            if opcao == 0:
+            registro = self.registrar("categoria", orientacao, True, False, 1, inicio)
+            acao = self.atender(orientacao, None, [], registro, inicio)
+            if acao == "voltar":
                 return
-            categoria = categorias[opcao - 1]
-            orientacoes = self.base.por_categoria(categoria)
-            while True:
-                inicio = time.time()
-                print(f"\n{categoria}")
-                for numero, orientacao in enumerate(orientacoes, 1):
-                    print(f"{numero} - {orientacao.titulo}")
-                print("0 - Voltar")
-                escolha = ler_opcao("Escolha uma orientação: ", len(orientacoes))
-                if escolha == 0:
-                    break
-                orientacao = orientacoes[escolha - 1]
-                registro = self.registrar("categoria", orientacao, True, False, 1, inicio)
-                orientacao.exibir()
-                ajudou = self.confirmar()
-                registro["ajudou"] = ajudou is True
-                registro["tempo_segundos"] = round(max(0, time.time() - inicio), 1)
-                self.salvar_historico()
-                if ajudou is None:
-                    break
+            if acao == "reformular":
+                self.perguntar()
+                return
 
     def avaliar_facilidade(self):
         if not self.atendimentos_sessao:

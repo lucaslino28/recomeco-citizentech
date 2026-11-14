@@ -4,6 +4,7 @@ import unicodedata
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
+from difflib import get_close_matches
 
 from orientacao import Orientacao
 
@@ -52,6 +53,13 @@ class BaseConhecimento:
         if "" in chaves or len(chaves) < 3:
             return False
 
+        for campo in ["passos", "assuntos", "desastres"]:
+            itens = registro.get(campo, [])
+            if not isinstance(itens, list) or any(not isinstance(p, str) or not p.strip() for p in itens):
+                return False
+        if not isinstance(registro.get("observacao", ""), str):
+            return False
+
         try:
             data = date.fromisoformat(registro["verificado_em"])
             fonte = urlparse(registro["fonte"])
@@ -86,7 +94,8 @@ class BaseConhecimento:
 
                 orientacao = Orientacao(**{
                     campo: registro[campo] for campo in campos
-                })
+                }, passos=registro.get("passos", []), observacao=registro.get("observacao", ""),
+                   assuntos=registro.get("assuntos", []), desastres=registro.get("desastres", []))
 
                 self.orientacoes.append(orientacao)
                 ids.add(orientacao.id)
@@ -125,6 +134,24 @@ class BaseConhecimento:
                 resultado.append(orientacao)
 
         return resultado
+
+    def tipos_desastre(self):
+        tipos = set()
+        for orientacao in self.orientacoes:
+            tipos.update(tipo for tipo in orientacao.desastres if tipo != "Apoio geral")
+        return sorted(tipos)
+
+    def por_tipo_desastre(self, tipo):
+        especificas = []
+        apoio = []
+        for orientacao in self.orientacoes:
+            if any(normalizar(tema) == normalizar(tipo) for tema in orientacao.desastres):
+                especificas.append(orientacao)
+            elif "Apoio geral" in orientacao.desastres:
+                apoio.append(orientacao)
+        # Uma orientação exclusiva do evento vem antes de cuidados compartilhados.
+        especificas.sort(key=lambda orientacao: len(orientacao.desastres))
+        return especificas + apoio if especificas else []
 
     def pontuar(self, pergunta, orientacao):
         pergunta_normalizada = normalizar(pergunta)
@@ -167,3 +194,22 @@ class BaseConhecimento:
         )
 
         return resultados
+
+    def sugerir(self, pergunta):
+        # Sem alterar a pontuação: sugestões só são abertas após escolha da pessoa.
+        tema = normalizar(pergunta)
+        diretas = [o for o in self.orientacoes if tema in [normalizar(a) for a in o.assuntos]]
+        if diretas:
+            return diretas[:3]
+        palavras_comuns = {"como", "onde", "para", "pela", "pelo", "esse", "essa", "isso",
+                           "quero", "posso", "fazer", "tenho", "depois", "antes", "preciso",
+                           "minha", "minhas", "meus", "qual", "quais"}
+        palavras = [p for p in normalizar(pergunta).split()
+                    if 4 <= len(p) <= 30 and p not in palavras_comuns]
+        sugestoes = []
+        for orientacao in self.orientacoes:
+            termos = set(" ".join(normalizar(c) for c in orientacao.palavras_chave).split())
+            termos = {p for p in termos if len(p) >= 4 and p not in palavras_comuns}
+            if any(get_close_matches(p, sorted(termos), n=1, cutoff=0.84) for p in palavras):
+                sugestoes.append(orientacao)
+        return sugestoes[:3]

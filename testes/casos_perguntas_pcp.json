@@ -1,0 +1,294 @@
+[
+  {
+    "pergunta": "Onde encontro um abrigo?",
+    "modo": "resposta",
+    "ids": [
+      5
+    ]
+  },
+  {
+    "pergunta": "Fiquei sem ter onde dormir depois da inundação.",
+    "modo": "resposta",
+    "ids": [
+      5
+    ]
+  },
+  {
+    "pergunta": "Não tenho onde ficar depois da chuva.",
+    "modo": "resposta",
+    "ids": [
+      5
+    ]
+  },
+  {
+    "pergunta": "Preciso de acolhimento.",
+    "modo": "resposta",
+    "ids": [
+      5
+    ]
+  },
+  {
+    "pergunta": "socorro emergência",
+    "modo": "resposta",
+    "ids": [
+      1
+    ]
+  },
+  {
+    "pergunta": "A água invadiu minha casa. Para quem eu ligo?",
+    "modo": "resposta",
+    "ids": [
+      1
+    ]
+  },
+  {
+    "pergunta": "Preciso de resgate.",
+    "modo": "resposta",
+    "ids": [
+      1
+    ]
+  },
+  {
+    "pergunta": "A parede da casa está rachando.",
+    "modo": "resposta",
+    "ids": [
+      3
+    ]
+  },
+  {
+    "pergunta": "Minha casa pode cair.",
+    "modo": "resposta",
+    "ids": [
+      3
+    ]
+  },
+  {
+    "pergunta": "O que fazer se minha casa estiver em risco?",
+    "modo": "resposta",
+    "ids": [
+      3
+    ]
+  },
+  {
+    "pergunta": "Como obter alertas da Defesa Civil?",
+    "modo": "resposta",
+    "ids": [
+      4
+    ]
+  },
+  {
+    "pergunta": "Como receber alertas de chuva?",
+    "modo": "resposta",
+    "ids": [
+      4
+    ]
+  },
+  {
+    "pergunta": "Como pedir auxílio para comprar alimentos?",
+    "modo": "resposta",
+    "ids": [
+      11
+    ]
+  },
+  {
+    "pergunta": "Onde consigo água potável?",
+    "modo": "resposta",
+    "ids": [
+      11
+    ]
+  },
+  {
+    "pergunta": "Preciso de alimentos para minha família.",
+    "modo": "resposta",
+    "ids": [
+      11
+    ]
+  },
+  {
+    "pergunta": "Estou sem comida.",
+    "modo": "resposta",
+    "ids": [
+      11
+    ]
+  },
+  {
+    "pergunta": "Quero doar alimentos para as vítimas.",
+    "modo": "resposta",
+    "ids": [
+      17
+    ]
+  },
+  {
+    "pergunta": "Como fazer doação de alimentos?",
+    "modo": "resposta",
+    "ids": [
+      17
+    ]
+  },
+  {
+    "pergunta": "Minha comida molhou. Posso aproveitar?",
+    "modo": "resposta",
+    "ids": [
+      8
+    ]
+  },
+  {
+    "pergunta": "Posso consumir alimentos contaminados?",
+    "modo": "resposta",
+    "ids": [
+      8
+    ]
+  },
+  {
+    "pergunta": "Não preciso de abrigo, quero ajuda financeira.",
+    "modo": "resposta",
+    "ids": [
+      6
+    ]
+  },
+  {
+    "pergunta": "Como pedir um benefício eventual?",
+    "modo": "resposta",
+    "ids": [
+      6
+    ]
+  },
+  {
+    "pergunta": "Perdi meus documentos na enchente.",
+    "modo": "resposta",
+    "ids": [
+      12
+    ]
+  },
+  {
+    "pergunta": "Posso pedir apoio sem documentos?",
+    "modo": "resposta",
+    "ids": [
+      12
+    ]
+  },
+  {
+    "pergunta": "Como limpar a casa depois que a água baixou?",
+    "modo": "resposta",
+    "ids": [
+      13
+    ]
+  },
+  {
+    "pergunta": "Como retirar lama?",
+    "modo": "resposta",
+    "ids": [
+      13
+    ]
+  },
+  {
+    "pergunta": "Como cuidar da caixa de água?",
+    "modo": "resposta",
+    "ids": [
+      14
+    ]
+  },
+  {
+    "pergunta": "O reservatório foi atingido pela enchente.",
+    "modo": "resposta",
+    "ids": [
+      14
+    ]
+  },
+  {
+    "pergunta": "Posso voltar para casa?",
+    "modo": "resposta",
+    "ids": [
+      15
+    ]
+  },
+  {
+    "pergunta": "Quando retornar para casa após a enchente?",
+    "modo": "resposta",
+    "ids": [
+      15
+    ]
+  },
+  {
+    "pergunta": "O equipamento molhado pode dar choque elétrico?",
+    "modo": "resposta",
+    "ids": [
+      16
+    ]
+  },
+  {
+    "pergunta": "Posso mexer no disjuntor?",
+    "modo": "resposta",
+    "ids": [
+      16
+    ]
+  },
+  {
+    "pergunta": "Onde fica o CRAS?",
+    "modo": "resposta",
+    "ids": [
+      18
+    ]
+  },
+  {
+    "pergunta": "O que é o Cadastro Único?",
+    "modo": "resposta",
+    "ids": [
+      18
+    ]
+  },
+  {
+    "pergunta": "Como prevenir leptospirose?",
+    "modo": "resposta",
+    "ids": [
+      9
+    ]
+  },
+  {
+    "pergunta": "Me cortei na enchente.",
+    "modo": "resposta",
+    "ids": [
+      10
+    ]
+  },
+  {
+    "pergunta": "alimentos",
+    "modo": "esclarecer",
+    "ids": [
+      8,
+      11,
+      17
+    ]
+  },
+  {
+    "pergunta": "água",
+    "modo": "sugerir",
+    "ids": [
+      7,
+      11,
+      14
+    ]
+  },
+  {
+    "pergunta": "soccoro",
+    "modo": "sugerir",
+    "ids": [
+      1
+    ]
+  },
+  {
+    "pergunta": "astronomia galáctica",
+    "modo": "fora",
+    "ids": []
+  },
+  {
+    "pergunta": "Quanto custa o passaporte?",
+    "modo": "fora",
+    "ids": []
+  },
+  {
+    "pergunta": "Como faço um bolo?",
+    "modo": "fora",
+    "ids": []
+  }
+]

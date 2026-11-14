@@ -11,13 +11,30 @@
       "pedir ajuda",
       "pedir socorro",
       "preciso de ajuda",
-      "ajuda depois de uma enchente"
+      "ajuda depois de uma enchente",
+      "agua invadiu minha casa",
+      "agua invadiu",
+      "para quem eu ligo",
+      "quem chamar",
+      "pedir resgate",
+      "preciso de resgate",
+      "estou ilhado",
+      "estou ilhada"
     ],
-    "resposta": "Se houver risco à vida ou à segurança por causa de enchentes, acione a Defesa Civil pelo 199 ou o Corpo de Bombeiros pelo 193. Siga as orientações das autoridades.",
+    "resposta": "Em risco imediato, procure o serviço oficial adequado: Bombeiros (193), emergência de saúde/SAMU (192) ou Defesa Civil (199). O RECOMEÇO não recebe pedidos de resgate.",
     "documentos": [],
     "onde": "Defesa Civil (199) ou Bombeiros (193)",
-    "fonte": "https://www.policiamilitar.sp.gov.br/noticias/noticia-interna/2020/2/2253/fique-por-dentro",
-    "verificado_em": "2026-11-12"
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/deslizamento.pdf",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Em emergência, ligue diretamente para o serviço oficial e siga as instruções.",
+      "Informe a situação ao atendente; não registre dados pessoais neste assistente."
+    ],
+    "observacao": "O RECOMEÇO não aciona resgate. Faça o contato diretamente com o serviço oficial.",
+    "assuntos": [],
+    "desastres": [
+      "Apoio geral"
+    ]
   },
   {
     "id": 2,
@@ -31,11 +48,20 @@
       "atravessar ruas alagadas",
       "atravessar a enchente"
     ],
-    "resposta": "Não atravesse ruas alagadas a pé ou de carro. A água pode esconder buracos e correntezas perigosas. Procure permanecer em local seguro e siga as orientações da Defesa Civil.",
+    "resposta": "Evite atravessar áreas inundadas. Siga as orientações das autoridades para chegar a um local seguro.",
     "documentos": [],
     "onde": "Orientações da Defesa Civil",
-    "fonte": "https://www.policiamilitar.sp.gov.br/noticias/noticia-interna/2020/2/2253/fique-por-dentro",
-    "verificado_em": "2026-11-12"
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/informacoes-uteis/centro-nacional-de-gerenciamento-de-riscos-e-desastres-cenad/Inundaes.pdf",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Evite o contato com a água da inundação.",
+      "Siga a rota e o ponto seguro indicados pelas autoridades locais."
+    ],
+    "observacao": "O assistente não conhece rotas seguras nem condições de trânsito em tempo real.",
+    "assuntos": [],
+    "desastres": [
+      "Enchentes e enxurradas"
+    ]
   },
   {
     "id": 3,
@@ -45,17 +71,30 @@
       "rachaduras",
       "parede rachada",
       "casa insegura",
-      "deslizamento",
       "casa em risco",
       "casa estiver em risco",
       "casa esta em risco",
-      "risco de desabamento"
+      "risco de desabamento",
+      "parede esta rachando",
+      "parede da casa esta rachando",
+      "parede rachando",
+      "casa pode cair",
+      "casa com rachadura"
     ],
-    "resposta": "Se aparecerem rachaduras ou sinais de desabamento após a chuva, saia do local e procure um lugar seguro. Acione a Defesa Civil pelo 199; em situação de emergência, acione os Bombeiros pelo 193. Siga as orientações das autoridades.",
+    "resposta": "Rachaduras ou sinais de desabamento após chuvas exigem afastamento do local e orientação da Defesa Civil.",
     "documentos": [],
     "onde": "Defesa Civil municipal",
     "fonte": "https://www.policiamilitar.sp.gov.br/noticias/noticia-interna/2020/2/2253/fique-por-dentro",
-    "verificado_em": "2026-11-12"
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Afaste-se do imóvel com sinais de desabamento e procure local seguro.",
+      "Peça orientação à Defesa Civil pelo 199; em emergência, ligue 193."
+    ],
+    "observacao": "Este programa não avalia a estrutura da casa nem autoriza retorno ao imóvel.",
+    "assuntos": [],
+    "desastres": [
+      "Deslizamentos"
+    ]
   },
   {
     "id": 4,
@@ -75,12 +114,21 @@
     "documentos": [],
     "onde": "Serviço de alertas da Defesa Civil, pelo SMS 40199",
     "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/alertas-de-desastres-1",
-    "verificado_em": "2026-11-12"
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "No aplicativo de SMS do seu celular, envie o CEP de interesse para 40199.",
+      "Aguarde a confirmação do cadastro e acompanhe as mensagens recebidas."
+    ],
+    "observacao": "Não digite seu CEP aqui. O cadastro é feito diretamente no serviço oficial.",
+    "assuntos": [],
+    "desastres": [
+      "Apoio geral"
+    ]
   },
   {
     "id": 5,
     "categoria": "Assistência social",
-    "titulo": "Procurar acolhimento após uma enchente",
+    "titulo": "Procurar acolhimento após um desastre",
     "palavras_chave": [
       "abrigo",
       "desabrigado",
@@ -89,13 +137,28 @@
       "abrigos",
       "desabrigada",
       "sem casa",
-      "onde ficar"
+      "onde ficar",
+      "sem onde dormir",
+      "sem ter onde dormir",
+      "nao tenho onde dormir",
+      "nao tenho onde ficar",
+      "fiquei sem casa",
+      "preciso de acolhimento"
     ],
-    "resposta": "Pessoas desabrigadas por desastres podem receber acolhimento por meio da rede de assistência social. Procure a Secretaria de Assistência Social do município para conhecer os serviços e locais disponibilizados. A existência de vagas deve ser confirmada pelo órgão responsável.",
+    "resposta": "Se ficou sem lugar para dormir após um desastre, procure a rede municipal de assistência social para orientação sobre acolhimento.",
     "documentos": [],
     "onde": "Secretaria Municipal de Assistência Social",
     "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/pessoas-e-familias-em-situacoes-de-calamidades-publicas-e-de-emergencias",
-    "verificado_em": "2026-11-12"
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Procure a Secretaria de Assistência Social pelos canais oficiais do município.",
+      "Explique que precisa de acolhimento após o desastre e confirme o local indicado."
+    ],
+    "observacao": "Não temos lista nacional de endereços ou vagas de abrigo. A disponibilidade é confirmada pelo município.",
+    "assuntos": [],
+    "desastres": [
+      "Apoio geral"
+    ]
   },
   {
     "id": 6,
@@ -108,13 +171,27 @@
       "calamidade",
       "auxilios",
       "beneficio eventual",
-      "beneficios"
+      "beneficios",
+      "ajuda financeira",
+      "financeira",
+      "perdi meus moveis",
+      "perdeu os moveis",
+      "apoio financeiro"
     ],
-    "resposta": "A rede de assistência social pode orientar famílias afetadas por desastres sobre serviços e possíveis benefícios eventuais. Entre em contato com a Secretaria de Assistência Social do município para saber quais atendimentos estão disponíveis e quais critérios se aplicam. O benefício não é garantido automaticamente.",
+    "resposta": "Benefícios eventuais podem apoiar pessoas em vulnerabilidade ou calamidade, mediante avaliação da Assistência Social.",
     "documentos": [],
     "onde": "Secretaria Municipal de Assistência Social",
-    "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/pessoas-e-familias-em-situacoes-de-calamidades-publicas-e-de-emergencias",
-    "verificado_em": "2026-11-12"
+    "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficios-eventuais",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Procure uma unidade da Assistência Social municipal.",
+      "Peça avaliação para benefício eventual e confirme as regras locais."
+    ],
+    "observacao": "Critérios e formas de apoio dependem da avaliação municipal. Não há benefício automático garantido.",
+    "assuntos": [],
+    "desastres": [
+      "Apoio geral"
+    ]
   },
   {
     "id": 7,
@@ -130,11 +207,22 @@
       "tratar agua",
       "agua para consumo"
     ],
-    "resposta": "Após uma enchente, prefira água considerada segura pelas autoridades. Caso precise tratar água e não tenha hipoclorito adequado, o Ministério da Saúde orienta filtrar ou coar e ferver por cinco minutos após o início da fervura. Consulte a fonte para conhecer todos os procedimentos.",
+    "resposta": "Após enchentes, a água pode estar contaminada. O tratamento exige cuidados indicados pelo Ministério da Saúde.",
     "documentos": [],
     "onde": "Orientações do Ministério da Saúde",
     "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes/cuidados-com-a-agua",
-    "verificado_em": "2026-11-12"
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Prefira água de abastecimento considerado seguro pelas autoridades.",
+      "Na falta de hipoclorito adequado: filtre ou coe e ferva por cinco minutos após iniciar a fervura."
+    ],
+    "observacao": "Não beba água da enchente. Esta orientação é sobre tratamento, não sobre pontos de distribuição.",
+    "assuntos": [
+      "água"
+    ],
+    "desastres": [
+      "Enchentes e enxurradas"
+    ]
   },
   {
     "id": 8,
@@ -147,13 +235,29 @@
       "descartar alimentos",
       "alimentos",
       "comida contaminada",
-      "comida molhada"
+      "comida molhada",
+      "alimento",
+      "comida",
+      "comida molhou",
+      "minha comida molhou",
+      "comida estragada",
+      "posso aproveitar",
+      "alimento contaminado"
     ],
-    "resposta": "Alimentos que entraram em contato com água de enchente ou lama devem ser descartados. Não experimente alimentos para verificar se estão seguros. Em caso de dúvida sobre a contaminação, descarte-os.",
+    "resposta": "Alimentos atingidos por água de enchente ou lama devem ser descartados, mesmo que pareçam próprios para consumo.",
     "documentos": [],
     "onde": "Orientações do Ministério da Saúde",
     "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes/cuidados-com-os-alimentos",
-    "verificado_em": "2026-11-12"
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Separe para descarte os alimentos que tiveram contato com água de enchente ou lama.",
+      "Não prove a comida para decidir se está segura."
+    ],
+    "observacao": "A aparência ou o cheiro não garantem segurança. Esta resposta trata de alimentos atingidos pela enchente.",
+    "assuntos": [],
+    "desastres": [
+      "Enchentes e enxurradas"
+    ]
   },
   {
     "id": 9,
@@ -163,13 +267,25 @@
       "leptospirose",
       "agua suja",
       "lama contaminada",
-      "febre apos enchente"
+      "febre apos enchente",
+      "peguei enchente e estou com febre",
+      "febre depois da enchente",
+      "tive contato com lama"
     ],
-    "resposta": "Evite contato com água e lama de enchentes. Use botas e luvas de proteção na limpeza de locais atingidos. Se apresentar febre, dor de cabeça ou dores musculares após a exposição, procure um serviço de saúde e informe o contato com a enchente.",
+    "resposta": "O contato com água e lama de enchentes pode transmitir leptospirose. A prevenção e o atendimento precoce são importantes.",
     "documentos": [],
     "onde": "Unidade de saúde ou serviço de atendimento médico",
     "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/l/leptospirose/leptospirose/",
-    "verificado_em": "2026-11-12"
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Evite contato com a água e use botas e luvas na limpeza.",
+      "Se houver febre ou dores após exposição, procure serviço de saúde e relate o contato."
+    ],
+    "observacao": "O sistema não realiza diagnóstico nem indica medicamentos.",
+    "assuntos": [],
+    "desastres": [
+      "Enchentes e enxurradas"
+    ]
   },
   {
     "id": 10,
@@ -183,12 +299,655 @@
       "ferimento",
       "ferimentos",
       "corte",
-      "vacina contra tetano"
+      "vacina contra tetano",
+      "me cortei",
+      "machucado",
+      "machuquei",
+      "ferida"
     ],
-    "resposta": "Ferimentos provocados por objetos contaminados podem trazer risco de tétano. Limpe o ferimento e procure um profissional de saúde para avaliar o atendimento necessário e a situação da vacinação.",
+    "resposta": "Cortes e perfurações por objetos contaminados podem causar tétano. Procure avaliação de saúde.",
     "documentos": [],
     "onde": "Unidade de saúde",
     "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/e/enchentes/cuidados-com-risco-de-tetano/cuidados-com-risco-de-tetano",
-    "verificado_em": "2026-11-12"
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Limpe o ferimento e procure atendimento de saúde.",
+      "Peça avaliação do ferimento e da situação vacinal."
+    ],
+    "observacao": "Somente um profissional pode avaliar o tratamento e a necessidade de vacinação.",
+    "assuntos": [],
+    "desastres": [
+      "Preparação e apoio"
+    ]
+  },
+  {
+    "id": 11,
+    "categoria": "Assistência social",
+    "titulo": "Solicitar alimentos, água e itens essenciais",
+    "palavras_chave": [
+      "alimentos",
+      "alimento",
+      "comida",
+      "preciso de alimentos",
+      "receber alimentos",
+      "comprar alimentos",
+      "cesta basica",
+      "sem comida",
+      "sem alimentos",
+      "sem agua",
+      "onde consigo agua",
+      "consigo agua",
+      "preciso de agua",
+      "agua para beber no abrigo",
+      "kit"
+    ],
+    "resposta": "A rede de assistência social pode avaliar necessidades básicas decorrentes do desastre.",
+    "documentos": [],
+    "onde": "Assistência Social municipal ou equipe responsável pelo acolhimento.",
+    "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficios-eventuais",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Informe a necessidade de alimentação, água ou outros itens à Assistência Social local.",
+      "Confirme o atendimento disponível e o encaminhamento indicado."
+    ],
+    "observacao": "Oferta e critérios dependem do município; não há estoque, ponto de entrega ou prazo confirmado neste programa.",
+    "assuntos": [
+      "água"
+    ],
+    "desastres": [
+      "Apoio geral"
+    ]
+  },
+  {
+    "id": 12,
+    "categoria": "Assistência social",
+    "titulo": "Pedir apoio mesmo sem documentos",
+    "palavras_chave": [
+      "sem documentos",
+      "perdi os documentos",
+      "perdi meus documentos",
+      "nao tenho documentos",
+      "perda de documentos",
+      "documentos molharam"
+    ],
+    "resposta": "A falta de documentação de pessoas em territórios afetados por desastres não deve impedir a concessão de benefícios eventuais.",
+    "documentos": [],
+    "onde": "Unidade da Assistência Social municipal.",
+    "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficios-eventuais",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Procure a Assistência Social e informe a perda documental.",
+      "Peça avaliação do apoio necessário e orientação sobre os próximos passos."
+    ],
+    "observacao": "Isso não garante benefício automático nem dispensa documentos de todo serviço público.",
+    "assuntos": [],
+    "desastres": [
+      "Preparação e apoio"
+    ]
+  },
+  {
+    "id": 13,
+    "categoria": "Saúde e higiene",
+    "titulo": "Limpar a casa após a enchente",
+    "palavras_chave": [
+      "limpar",
+      "limpeza da casa",
+      "limpar a casa",
+      "limpar casa",
+      "tirar lama",
+      "retirar lama",
+      "lavar a casa",
+      "desinfetar a casa"
+    ],
+    "resposta": "Lama de enchente pode causar doenças. A limpeza exige lavagem e desinfecção do ambiente.",
+    "documentos": [],
+    "onde": "Orientações do Ministério da Saúde e Vigilância em Saúde municipal.",
+    "fonte": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/enchentes/folder-cuidados-com-casas-escolas-e-estabelecimentos.pdf",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Use botas e luvas; retire a lama com utensílios adequados.",
+      "Lave o local com água e sabão.",
+      "Siga a diluição e o procedimento completos do material oficial para desinfetar, em ambiente arejado."
+    ],
+    "observacao": "Este resumo não substitui as instruções completas da fonte. Não entre em imóvel com risco estrutural ou elétrico.",
+    "assuntos": [],
+    "desastres": [
+      "Enchentes e enxurradas"
+    ]
+  },
+  {
+    "id": 14,
+    "categoria": "Saúde e higiene",
+    "titulo": "Cuidar da caixa de água atingida pela enchente",
+    "palavras_chave": [
+      "caixa de agua",
+      "caixa d agua",
+      "caixa dagua",
+      "reservatorio",
+      "reservatorios",
+      "limpar reservatorio"
+    ],
+    "resposta": "Reservatórios atingidos ou abastecidos por sistema afetado precisam de limpeza e desinfecção.",
+    "documentos": [],
+    "onde": "Material oficial do Ministério da Saúde; Vigilância em Saúde municipal.",
+    "fonte": "https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/enchentes/folder-limpeza-de-caixa-dagua.pdf",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Confira no material oficial o procedimento adequado ao reservatório.",
+      "Na lavagem, não use sabão ou detergente dentro da caixa.",
+      "Para a desinfecção, siga as quantidades, etapas e tempos completos da fonte; peça orientação sanitária se houver dúvida."
+    ],
+    "observacao": "Lavar a caixa não basta para desinfetar. O assistente não calcula dosagem nem verifica a potabilidade.",
+    "assuntos": [
+      "água"
+    ],
+    "desastres": [
+      "Enchentes e enxurradas"
+    ]
+  },
+  {
+    "id": 15,
+    "categoria": "Segurança e emergência",
+    "titulo": "Confirmar segurança antes de voltar para casa",
+    "palavras_chave": [
+      "voltar para casa",
+      "voltar pra casa",
+      "retornar para casa",
+      "posso voltar",
+      "agua baixou",
+      "retorno ao imovel"
+    ],
+    "resposta": "Não retorne a área de risco sem a liberação da Defesa Civil ou do órgão competente.",
+    "documentos": [],
+    "onde": "Defesa Civil ou órgão competente do município.",
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/deslizamento.pdf",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Confirme as orientações e restrições das autoridades antes de voltar.",
+      "Não entre em local de deslizamento sem autorização."
+    ],
+    "observacao": "O assistente não inspeciona imóveis, define rotas nem autoriza retorno. Medidas de limpeza após enchente estão em orientação própria.",
+    "assuntos": [],
+    "desastres": [
+      "Deslizamentos"
+    ]
+  },
+  {
+    "id": 16,
+    "categoria": "Segurança e emergência",
+    "titulo": "Evitar choque elétrico em local molhado",
+    "palavras_chave": [
+      "choque",
+      "choque eletrico",
+      "energia",
+      "eletricidade",
+      "disjuntor",
+      "tomada",
+      "fio caido",
+      "fios caidos",
+      "equipamento molhado"
+    ],
+    "resposta": "Água e equipamentos elétricos aumentam o risco de acidentes. Evite manusear instalações ou aparelhos molhados.",
+    "documentos": [],
+    "onde": "Serviço de emergência, distribuidora local ou profissional qualificado, conforme a situação.",
+    "fonte": "https://www.gov.br/mme/pt-br/assuntos/secretarias/secretaria-nacional-energia-eletrica/mais-noticias/saiba-como-evitar-acidentes-eletricos-dentro-de-casa",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Mantenha distância de equipamentos e fios danificados ou molhados.",
+      "Não faça reparos improvisados; procure profissionais qualificados.",
+      "Em acidente elétrico, acione 193 ou 192; corte a energia somente se isso puder ser feito sem se expor ao risco."
+    ],
+    "observacao": "Não toque no disjuntor se o acesso estiver inundado. O assistente não avalia a instalação elétrica.",
+    "assuntos": [],
+    "desastres": [
+      "Enchentes e enxurradas",
+      "Vendavais",
+      "Tempestades e raios",
+      "Granizo"
+    ]
+  },
+  {
+    "id": 17,
+    "categoria": "Assistência social",
+    "titulo": "Doar alimentos com segurança",
+    "palavras_chave": [
+      "alimentos",
+      "alimento",
+      "comida",
+      "doar",
+      "doacao",
+      "doacoes",
+      "doar alimentos",
+      "doacao de alimentos",
+      "ajudar com doacoes"
+    ],
+    "resposta": "A segurança dos alimentos também precisa ser preservada durante a doação.",
+    "documentos": [],
+    "onde": "Organização responsável pela campanha; orientações sanitárias na fonte.",
+    "fonte": "https://www.rj.gov.br/saude/node/1406",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Selecione alimentos em boas condições, com validade e embalagens verificadas.",
+      "Proteja os alimentos de contaminação no transporte e armazenamento.",
+      "Consulte o canal oficial da campanha sobre o recebimento dos itens."
+    ],
+    "observacao": "Não temos lista nacional de campanhas ou pontos de coleta ativos; confirme o recebimento com o responsável.",
+    "assuntos": [],
+    "desastres": [
+      "Preparação e apoio"
+    ]
+  },
+  {
+    "id": 18,
+    "categoria": "Assistência social",
+    "titulo": "Encontrar orientação no CRAS",
+    "palavras_chave": [
+      "cras",
+      "centro de referencia",
+      "atendimento social",
+      "cadastro unico",
+      "cadunico",
+      "orientacao social"
+    ],
+    "resposta": "O CRAS é uma porta de entrada pública da Assistência Social e orienta sobre serviços e benefícios.",
+    "documentos": [],
+    "onde": "CRAS do município; link de localização disponível na página oficial do MDS.",
+    "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/centro-de-referencia-de-assistencia-social-cras",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Consulte o portal oficial da prefeitura ou a página do MDS para localizar a unidade.",
+      "Confirme o funcionamento local antes de se deslocar."
+    ],
+    "observacao": "O CRAS não é serviço de resgate. Este programa não informa horários ou endereços atualizados de cada unidade.",
+    "assuntos": [],
+    "desastres": [
+      "Preparação e apoio"
+    ]
+  },
+  {
+    "id": 19,
+    "categoria": "Segurança e emergência",
+    "titulo": "Agir diante de deslizamentos e encostas instáveis",
+    "palavras_chave": [
+      "deslizamento",
+      "deslizamentos",
+      "barranco",
+      "encosta",
+      "encostas",
+      "terra cedendo",
+      "barranco esta cedendo",
+      "queda de barreira",
+      "morro deslizando",
+      "barreira caiu"
+    ],
+    "resposta": "Movimentação de terra, fendas no terreno e árvores inclinadas podem indicar risco. Afaste-se do local e comunique as autoridades.",
+    "passos": [
+      "Saia imediatamente ao notar sinais de movimentação e avise os serviços oficiais.",
+      "Não entre no local do deslizamento nem retorne sem liberação."
+    ],
+    "onde": "Defesa Civil (199) ou Bombeiros (193).",
+    "observacao": "Não se aproxime para observar ou tentar resgates por conta própria; siga o atendimento oficial.",
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/deslizamento.pdf",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [],
+    "desastres": [
+      "Deslizamentos"
+    ]
+  },
+  {
+    "id": 20,
+    "categoria": "Segurança e emergência",
+    "titulo": "Proteger-se de vendaval e ventos fortes",
+    "palavras_chave": [
+      "vendaval",
+      "vendavais",
+      "vento forte",
+      "ventos fortes",
+      "ventania",
+      "destelhamento",
+      "telhado arrancado",
+      "casa destelhada",
+      "destelhada",
+      "destelhado",
+      "destelhou"
+    ],
+    "resposta": "Ventos fortes podem lançar objetos, derrubar árvores e destelhar imóveis. Procure proteção.",
+    "passos": [
+      "Se estiver em local seguro, permaneça nele e proteja-se de objetos que possam cair.",
+      "Evite árvores, torres, placas e cabos elétricos caídos.",
+      "Feche portas e janelas se isso puder ser feito sem exposição ao vento."
+    ],
+    "onde": "Defesa Civil (199) e Bombeiros (193), conforme a situação.",
+    "observacao": "Não suba no telhado durante o evento; o assistente não avalia a resistência da construção.",
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/vendaval.pdf",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [
+      "tempestade",
+      "tempestades",
+      "temporal"
+    ],
+    "desastres": [
+      "Vendavais"
+    ]
+  },
+  {
+    "id": 21,
+    "categoria": "Segurança e emergência",
+    "titulo": "Proteger-se de raios durante tempestades",
+    "palavras_chave": [
+      "raio",
+      "raios",
+      "relampago",
+      "relampagos",
+      "trovoada",
+      "trovoadas",
+      "tempestade eletrica",
+      "chuva com raios"
+    ],
+    "resposta": "Durante descargas elétricas, procure uma edificação segura e evite exposição ao ar livre.",
+    "passos": [
+      "Afaste-se de árvores, campos abertos, água e objetos metálicos expostos.",
+      "Dentro de casa, evite chuveiro elétrico, telefone com fio e equipamentos ligados à tomada.",
+      "Não use celular conectado ao carregador durante a tempestade."
+    ],
+    "onde": "Orientações da Defesa Civil; serviços de emergência se houver acidente.",
+    "observacao": "A fonte estadual fornece cuidados gerais; este assistente não informa onde há raios agora.",
+    "fonte": "https://www.defesacivil.rs.gov.br/saiba-como-se-proteger-em-caso-de-vendavais-raios-e-granizo",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [
+      "tempestade",
+      "tempestades",
+      "temporal"
+    ],
+    "desastres": [
+      "Tempestades e raios"
+    ]
+  },
+  {
+    "id": 22,
+    "categoria": "Segurança e emergência",
+    "titulo": "Proteger-se da queda de granizo",
+    "palavras_chave": [
+      "granizo",
+      "chuva de pedra",
+      "chuva de pedras",
+      "pedras de gelo",
+      "temporal de granizo",
+      "chuva de gelo"
+    ],
+    "resposta": "Pedras de gelo podem causar ferimentos e danificar coberturas. Procure abrigo resistente.",
+    "passos": [
+      "Evite árvores e coberturas frágeis.",
+      "Não suba em telhados molhados para reparar danos.",
+      "Se houver risco de desabamento, saia do local e avise as autoridades."
+    ],
+    "onde": "Defesa Civil (199) ou Bombeiros (193).",
+    "observacao": "Depois da chuva, cuidado com o piso escorregadio. A base não prevê tamanho ou trajeto do granizo.",
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/granizo.pdf",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [
+      "tempestade",
+      "tempestades",
+      "temporal"
+    ],
+    "desastres": [
+      "Granizo"
+    ]
+  },
+  {
+    "id": 23,
+    "categoria": "Saúde e higiene",
+    "titulo": "Cuidar da água durante seca e estiagem",
+    "palavras_chave": [
+      "seca",
+      "estiagem",
+      "secas",
+      "estiagens",
+      "economizar agua",
+      "escassez de agua",
+      "periodo sem chuva"
+    ],
+    "resposta": "A escassez de água exige reduzir desperdícios sem comprometer a hidratação e a higiene.",
+    "passos": [
+      "Priorize água segura para beber, preparar alimentos e higiene.",
+      "Reduza desperdícios e proteja as fontes de abastecimento.",
+      "Observe sinais de desidratação e procure orientação de saúde se necessário."
+    ],
+    "onde": "Unidade de saúde e canais oficiais locais sobre abastecimento.",
+    "observacao": "Este resumo não garante água potável de fontes alternativas nem informa o fim da seca.",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/secas",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [],
+    "desastres": [
+      "Seca e estiagem"
+    ]
+  },
+  {
+    "id": 24,
+    "categoria": "Assistência social",
+    "titulo": "Buscar apoio na falta de água prolongada",
+    "palavras_chave": [
+      "falta de agua",
+      "sem agua na seca",
+      "abastecimento",
+      "racionamento",
+      "acabou a agua",
+      "agua acabou",
+      "agua na estiagem",
+      "faltando agua",
+      "sem abastecimento",
+      "agua nao chega",
+      "torneira seca",
+      "sem agua"
+    ],
+    "resposta": "Na escassez prolongada, procure informações oficiais sobre abastecimento e apoio à comunidade.",
+    "passos": [
+      "Confirme com os canais municipais como acessar água segura e apoio local.",
+      "Não reduza a hidratação para economizar água; em sintomas, procure atendimento de saúde."
+    ],
+    "onde": "Prefeitura e rede de apoio local; unidade de saúde para orientação sanitária.",
+    "observacao": "O programa não confirma caminhão-pipa, pontos de entrega ou horários de fornecimento.",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/secas",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [],
+    "desastres": [
+      "Seca e estiagem"
+    ]
+  },
+  {
+    "id": 25,
+    "categoria": "Saúde e higiene",
+    "titulo": "Proteger-se do calor intenso",
+    "palavras_chave": [
+      "calor intenso",
+      "calor extremo",
+      "onda de calor",
+      "ondas de calor",
+      "muito quente",
+      "temperatura alta",
+      "me proteger do calor",
+      "cuidados no calor",
+      "evitar o calor",
+      "criancas no calor",
+      "idosos no calor"
+    ],
+    "resposta": "Calor intenso pode afetar a saúde. Reduza a exposição e mantenha hidratação adequada.",
+    "passos": [
+      "Beba água regularmente e procure ambiente fresco.",
+      "Use roupas leves e prefira horários mais frescos para atividades externas.",
+      "Redobre a atenção com crianças, pessoas idosas e gestantes."
+    ],
+    "onde": "Orientações do Ministério da Saúde; unidade de saúde para dúvidas individuais.",
+    "observacao": "Mal-estar no calor precisa de avaliação de saúde. Não altere medicamentos por conta própria; o programa não confirma alertas vigentes.",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/o/ondas-de-calor",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [
+      "calor"
+    ],
+    "desastres": [
+      "Calor intenso"
+    ]
+  },
+  {
+    "id": 26,
+    "categoria": "Saúde e higiene",
+    "titulo": "Reconhecer sinais de alerta associados ao calor",
+    "palavras_chave": [
+      "passando mal no calor",
+      "passando mal com o calor",
+      "tontura no calor",
+      "desmaio no calor",
+      "insolacao",
+      "golpe de calor",
+      "sinais de alerta do calor"
+    ],
+    "resposta": "Tontura, fraqueza e náuseas no calor precisam de avaliação. Confusão, convulsões ou perda de consciência podem indicar emergência.",
+    "passos": [
+      "Procure atendimento de saúde diante de sinais de alerta.",
+      "Em emergência de saúde, acione o SAMU (192)."
+    ],
+    "onde": "Unidade de saúde ou SAMU (192) em emergência.",
+    "observacao": "Esta orientação não diagnostica insolação ou outras doenças nem indica medicamentos.",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/o/ondas-de-calor",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [
+      "calor"
+    ],
+    "desastres": [
+      "Calor intenso"
+    ]
+  },
+  {
+    "id": 27,
+    "categoria": "Segurança e emergência",
+    "titulo": "Agir quando há incêndio na vegetação",
+    "palavras_chave": [
+      "incendio florestal",
+      "incendios florestais",
+      "queimada",
+      "queimadas",
+      "fogo no mato",
+      "fogo na mata",
+      "incendio na vegetacao",
+      "fogo perto de casa"
+    ],
+    "resposta": "Se o fogo na vegetação ameaça pessoas ou moradias, procure proteção e acione o atendimento oficial.",
+    "passos": [
+      "Acione os Bombeiros (193) e siga as orientações locais.",
+      "Não tente combater o incêndio sozinho.",
+      "Deixe a área afetada somente por caminho seguro, conforme as autoridades."
+    ],
+    "onde": "Bombeiros (193) e Defesa Civil (199).",
+    "observacao": "Este assistente não prevê a direção do fogo nem indica rotas de fuga.",
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/IncndiosFlorestais.pdf",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [],
+    "desastres": [
+      "Incêndios florestais e fumaça"
+    ]
+  },
+  {
+    "id": 28,
+    "categoria": "Saúde e higiene",
+    "titulo": "Reduzir exposição à fumaça de queimadas",
+    "palavras_chave": [
+      "fumaca",
+      "fumaca de queimada",
+      "fumaca das queimadas",
+      "inalei fumaca",
+      "respirei fumaca",
+      "ar com fumaca",
+      "tosse com fumaca"
+    ],
+    "resposta": "Fumaça pode irritar olhos e vias respiratórias e agravar doenças. Reduza a exposição.",
+    "passos": [
+      "Evite esforço ao ar livre quando a qualidade do ar estiver ruim; procure ambiente protegido da fumaça.",
+      "Em saídas indispensáveis, máscaras PFF2 ou N95 bem ajustadas podem reduzir a inalação de partículas.",
+      "Procure atendimento em falta de ar ou dor no peito; em emergência, ligue 192."
+    ],
+    "onde": "Unidade de saúde, UPA ou SAMU (192), conforme a gravidade.",
+    "observacao": "Máscaras não tornam seguro entrar em incêndio. Siga ordens de evacuação se houver ameaça do fogo.",
+    "fonte": "https://www.gov.br/saude/pt-br/assuntos/noticias/2026/outubro/fumaca-das-queimadas-saiba-como-proteger-a-sua-saude-e-onde-buscar-atendimento/",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [],
+    "desastres": [
+      "Incêndios florestais e fumaça"
+    ]
+  },
+  {
+    "id": 29,
+    "categoria": "Segurança e emergência",
+    "titulo": "Agir em enchentes e enxurradas",
+    "palavras_chave": [
+      "enxurrada",
+      "enxurradas",
+      "como agir na enchente",
+      "agir numa enchente",
+      "o que fazer na enchente",
+      "agua subindo rapidamente",
+      "inundacao repentina"
+    ],
+    "resposta": "Água subindo rapidamente pode arrastar pessoas e veículos. Evite áreas inundadas e acompanhe as autoridades.",
+    "passos": [
+      "Não atravesse ruas alagadas a pé, de bicicleta ou de veículo.",
+      "Evite contato com água e lama.",
+      "Peça resgate profissional em emergência e siga as orientações oficiais."
+    ],
+    "onde": "Defesa Civil (199) ou Bombeiros (193).",
+    "observacao": "Não há acompanhamento de nível de rios ou rotas seguras neste programa.",
+    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/enxurrada.pdf",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [
+      "enchente",
+      "enchentes",
+      "inundacao",
+      "inundacoes",
+      "alagamento",
+      "alagamentos"
+    ],
+    "desastres": [
+      "Enchentes e enxurradas"
+    ]
+  },
+  {
+    "id": 30,
+    "categoria": "Segurança e emergência",
+    "titulo": "Preparar um plano familiar e kit de emergência",
+    "palavras_chave": [
+      "kit de emergencia",
+      "mochila de emergencia",
+      "plano familiar",
+      "preparar para um desastre",
+      "antes de um desastre",
+      "preparacao para desastre",
+      "mochila de evacuacao",
+      "kit"
+    ],
+    "resposta": "Conhecer os riscos locais e preparar a família ajuda a agir com mais organização em emergências.",
+    "passos": [
+      "Conheça os riscos da região e acompanhe alertas oficiais.",
+      "Planeje como sua família deve agir em uma emergência.",
+      "Separe água, alimentos não perecíveis, documentos, medicamentos de uso contínuo e lanterna."
+    ],
+    "onde": "Defesa Civil municipal e canais oficiais de prevenção.",
+    "observacao": "Preparar um kit é prevenção; não é previsão de desastre. Não informe dados pessoais ao assistente.",
+    "fonte": "https://www.defesacivil.ms.gov.br/fale-conosco/perguntas-frequentes/1-como-posso-me-preparar-antes-de-um-desastre/",
+    "verificado_em": "2026-11-14",
+    "documentos": [],
+    "assuntos": [],
+    "desastres": [
+      "Preparação e apoio"
+    ]
   }
 ]

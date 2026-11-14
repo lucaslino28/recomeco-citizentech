@@ -298,3 +298,11 @@ O MVP estará pronto quando:
 PCP mantém as três classes e usa somente bibliotecas nativas. A pergunta livre é processada em memória e não é persistida; o histórico e CSV usam rótulos controlados. Reformulações atualizam o mesmo atendimento. A facilidade é calculada por sessão aleatória, sem identificação pessoal. A opção `--dados` separa a coleta externa dos ensaios e dados de desenvolvimento. O ciclo de encerramento exporta CSV mesmo em EOF ou Ctrl+C, desde que o histórico esteja legível.
 
 As regras detalhadas e limites estão em `decisoes_pcp.md`; fontes em `fontes_pcp.md`; roteiro externo em `plano_testes.md`. Partes anteriores que descrevem IA e SERS continuam como planejamento. Os testes reais exigidos por PCP e os vídeos permanecem pendentes.
+
+## 11. Refinamento de usabilidade em 14/11/2026
+
+A base passou de 10 para 18 orientações. Campos opcionais permitem apresentar passos e observações e sugerir assuntos. A pontuação continua em `BaseConhecimento`; o esclarecimento e a seleção de alternativas ficam no `Assistente`, que agora compartilha o fluxo de atendimento entre pergunta e categorias. A última orientação aceita é guardada só em memória para continuação confirmada. A estrutura permanece com as mesmas três classes, sem bibliotecas externas em PCP.
+
+## 12. Cobertura de diferentes desastres
+
+PCP contém agora 30 orientações, preservando os IDs e os dados anteriores. A lista opcional `desastres` no JSON permite a opção de navegação por tipo, reutilizando as mesmas classes e o mesmo fluxo de avaliação. Há oito grupos de eventos mais preparação/apoio. A busca por pontuação e o histórico sem texto livre permanecem. O foco anterior em enchentes, descrito nas etapas históricas deste documento, passou a ser parte de um recorte mais amplo. IA e o estudo energético de SERS continuam sem alteração de implementação.

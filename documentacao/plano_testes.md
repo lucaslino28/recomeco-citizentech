@@ -33,7 +33,7 @@ Pode-se pedir adicionalmente que a pessoa encontre uma resposta inválida de men
 
 ## Coleta e encerramento
 
-A própria pessoa responde `s` ou `n` à pergunta de utilidade. Ao sair, registra uma nota de facilidade de 1 a 5, ou opta por não avaliar. Não preencher avaliações pela pessoa. Os tempos são medidos pelo programa e incluem a interação; o tempo de digitação e leitura faz parte da medida.
+A própria pessoa responde `s`/`1` ou `n`/`2` à pergunta de utilidade. Ao sair, registra uma nota de facilidade de 1 a 5, ou opta por não avaliar. Não preencher avaliações pela pessoa. Os tempos são medidos pelo programa e incluem a interação; o tempo de digitação e leitura faz parte da medida.
 
 Na opção 4, os indicadores são calculados sobre todos os registros daquela pasta de coleta. O CSV é exportado ali. Copiar os resultados observados para `evidencias/modelo_resultados_pcp.md` e depois para o README. Conferir que há pelo menos dez atendimentos e que, de fato, participaram três pessoas externas; o número de sessões sozinho não comprova pessoas diferentes.
 
@@ -54,3 +54,21 @@ Demonstrar: equipe/público/problema; um registro JSON e as tuplas da busca; atr
 Para a alteração ao vivo, usar uma cópia da base ou restaurar a edição depois do ensaio. Uma pergunta controlada como `refúgio temporário` não deve ser encontrada antes da mudança; acrescentar essa expressão à orientação de abrigo, reiniciar para recarregar o JSON e mostrar a diferença. Confirmar o comportamento antes da gravação. Esse ensaio demonstra a busca e não constitui melhoria baseada em usuário.
 
 Manter demonstrações em pasta separada: `python main.py --dados data/demonstracao_pcp`. Elas não devem alterar os indicadores da coleta externa.
+
+## Interações adicionais da versão de 14/11
+
+Experimentar também a pergunta curta `alimentos`, escolher entre receber, doar ou descartar e observar se as opções são compreensíveis. Na pergunta `água`, conferir se a pessoa distingue tratamento, abastecimento e reservatório. Usar `soccoro` como exemplo fictício de erro de digitação e conferir que a sugestão exige escolha antes de abrir.
+
+Depois de uma resposta negativa, a opção 3 abre categorias no mesmo atendimento; a opção 4 aparece quando há alternativas relacionadas. Abrir uma nova orientação nesses caminhos aumenta tentativas, sem criar outro atendimento. `?` e ver exemplos não contam como atendimento.
+
+Essas são tarefas adicionais possíveis, não resultados já coletados. Anotar ambiguidades e dificuldades observadas de fato; não orientar a pessoa a responder que a tela é fácil.
+
+## Tarefas para a cobertura ampliada
+
+O mínimo continua sendo três pessoas externas e dez atendimentos no total. Para representar o novo escopo, a equipe pode substituir as dez situações do roteiro anterior por: (1) barranco cedendo, (2) vendaval, (3) raios, (4) granizo, (5) seca e economia de água, (6) calor intenso, (7) fumaça de queimadas, (8) acolhimento após desastre, (9) enchente e (10) plano familiar/kit. Distribuir em 4 + 3 + 3 tarefas, com situações fictícias e sem identificação dos participantes.
+
+Incluir pelo menos uma consulta pela opção 4 do submenu de PCP, escolhendo o tipo de desastre. Conferir se a pessoa entende a diferença entre cuidados específicos e apoio comum. Selecionar apenas o tipo e voltar não conta como atendimento; abrir uma orientação conta. Usar as avaliações reais da pessoa, sem preencher por ela.
+
+Os exemplos de mal-estar são situações fictícias de encaminhamento, não avaliação de saúde dos participantes. Não coletar relatos clínicos reais. Se houver emergência real, interromper o teste e buscar o serviço oficial adequado.
+
+Preservar os resultados de qualquer rodada anterior como pertencentes à versão testada. Uma nova rodada da base ampliada deve usar pasta própria, sem misturar indicadores de versões diferentes.
