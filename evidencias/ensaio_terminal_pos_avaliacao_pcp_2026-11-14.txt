@@ -1,0 +1,334 @@
+Ensaio técnico automatizado do menu real — 14/11/2026
+
+Executado com subprocess, pasta temporária e entradas programadas. As respostas s e a nota 3 são valores sintéticos de teste: não são avaliações humanas, não entram no CSV original e não demonstram satisfação.
+Comando: python main.py --dados <pasta temporária> --data-indicadores 2026-11-14
+Resultado: dez orientações esperadas, um atendimento e uma tentativa por pergunta; CSV e histórico temporários.
+
+Saída real do programa (espaços ao final das linhas removidos para apresentação):
+Base carregada: 34 orientações.
+
+Protótipo educacional. Não é um canal oficial nem de emergência.
+Não informe nome, documentos, telefone, endereço ou outros dados pessoais.
+O texto digitado não é salvo; os registros usam apenas rótulos de orientação.
+
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+ORIENTAÇÕES SOBRE DESASTRES
+1 - Escrever minha dúvida
+2 - Escolher um assunto passo a passo
+3 - Ver exemplos de perguntas
+4 - Escolher o tipo de desastre
+0 - Voltar ao menu principal
+
+Escolha uma opção:
+Vou buscar orientações oficiais sobre desastres no Brasil.
+Não informe dados pessoais. Endereços, vagas e atendimento local precisam ser confirmados no município.
+
+Você pode perguntar, por exemplo:
+- Fiquei sem ter onde dormir depois da inundação.
+- O barranco está cedendo. O que fazer?
+- Como me proteger de raios ou vento forte?
+- O que fazer durante uma seca ou onda de calor?
+- Há um incêndio na vegetação perto de casa.
+- Preciso de alimentos e acolhimento após um desastre.
+Digite ? para ver estes exemplos novamente ou 0 para voltar.
+
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: MÉDIA (3 pontos na busca por palavras)
+
+Procurar acolhimento após um desastre [Assistência social]
+----------------------------------------
+Se ficou sem lugar para dormir após um desastre, procure a rede municipal de assistência social para orientação sobre acolhimento.
+
+O que fazer:
+1. Consulte o portal oficial da prefeitura e procure por “abrigos”, “acolhimento” ou “Assistência Social”.
+2. Se não encontrar a informação, procure a Assistência Social municipal ou a Defesa Civil para confirmar o local de acolhimento.
+3. Confirme o funcionamento e a disponibilidade diretamente com a equipe responsável antes do deslocamento, quando for seguro fazê-lo.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Secretaria Municipal de Assistência Social
+Atenção: Não temos lista nacional de endereços ou vagas de abrigo. A disponibilidade é confirmada pelo município.
+Fonte: https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/pessoas-e-familias-em-situacoes-de-calamidades-publicas-e-de-emergencias
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: MÉDIA (4 pontos na busca por palavras)
+
+Pedir apoio mesmo sem documentos [Assistência social]
+----------------------------------------
+A falta de documentação de pessoas em territórios afetados por desastres não deve impedir a concessão de benefícios eventuais.
+
+O que fazer:
+1. Procure a Assistência Social e informe a perda documental.
+2. Peça avaliação do apoio necessário e orientação sobre os próximos passos.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Unidade da Assistência Social municipal.
+Atenção: Isso não garante benefício automático nem dispensa documentos de todo serviço público.
+Fonte: https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/beneficios-assistenciais/beneficios-eventuais
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: ALTA (8 pontos na busca por palavras)
+
+Pedir acolhimento em abrigo sem documento pessoal [Assistência social]
+----------------------------------------
+Procure acolhimento mesmo se perdeu RG ou CPF e informe a situação à equipe. As orientações do MDS recomendam atender necessidades imediatas sem esperar a conclusão do cadastro; a equipe local orientará como registrar sua entrada.
+
+O que fazer:
+1. Procure a Assistência Social municipal ou a equipe responsável pelo abrigo e explique a perda dos documentos.
+2. Pergunte como realizar o cadastro nessa situação e como obter apoio para recuperar a documentação.
+3. Não digite números de documentos aqui; trate informações pessoais diretamente com a equipe oficial.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Equipe do abrigo temporário e Assistência Social do município.
+Atenção: O assistente não confirma vagas nem as exigências locais. A orientação do MDS não equivale a uma garantia de entrada em qualquer abrigo.
+Fonte: https://mds.gov.br/webarquivos/MDS/2_Acoes_e_Programas/Calamidade_Publica_e_Emergencias/SUAS/Gestao_e_Funcionamento_de_Abrigos_Provisorios_no_SUAS.pdf
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Outras orientações relacionadas:
+- Procurar acolhimento após um desastre
+Se a resposta não ajudar, você poderá abrir uma delas.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: MÉDIA (3 pontos na busca por palavras)
+
+Procurar acolhimento após um desastre [Assistência social]
+----------------------------------------
+Se ficou sem lugar para dormir após um desastre, procure a rede municipal de assistência social para orientação sobre acolhimento.
+
+O que fazer:
+1. Consulte o portal oficial da prefeitura e procure por “abrigos”, “acolhimento” ou “Assistência Social”.
+2. Se não encontrar a informação, procure a Assistência Social municipal ou a Defesa Civil para confirmar o local de acolhimento.
+3. Confirme o funcionamento e a disponibilidade diretamente com a equipe responsável antes do deslocamento, quando for seguro fazê-lo.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Secretaria Municipal de Assistência Social
+Atenção: Não temos lista nacional de endereços ou vagas de abrigo. A disponibilidade é confirmada pelo município.
+Fonte: https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/pessoas-e-familias-em-situacoes-de-calamidades-publicas-e-de-emergencias
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: MÉDIA (3 pontos na busca por palavras)
+
+Evitar atravessar ruas alagadas [Segurança e emergência]
+----------------------------------------
+Não atravesse ruas alagadas para chegar ao trabalho ou a outro destino, seja a pé ou de veículo. Água e correnteza podem esconder riscos.
+
+O que fazer:
+1. Evite entrar na água ou tentar atravessar a correnteza.
+2. Acompanhe os avisos da Defesa Civil e as interdições informadas pelas autoridades locais.
+3. Se houver pessoas em perigo e necessidade de resgate, ligue 193 (Bombeiros).
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Orientações da Defesa Civil
+Atenção: O assistente não conhece rotas seguras nem condições de trânsito em tempo real.
+Fonte: https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/informacoes-uteis/centro-nacional-de-gerenciamento-de-riscos-e-desastres-cenad/Inundaes.pdf
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+RISCO IMEDIATO: se você está preso em veículo na inundação, ligue 193 (Bombeiros).
+Siga as instruções do atendente. O RECOMEÇO não envia equipes de resgate.
+Informe sua localização diretamente ao serviço oficial, não neste programa.
+Fonte: https://www.parana.pr.gov.br/servicos/Seguranca/Bombeiros/Acionar-Corpo-de-Bombeiros-193-0A30a4rk
+
+Confiança: MÉDIA (3 pontos na busca por palavras)
+
+Pedir ajuda em situação de emergência [Segurança e emergência]
+----------------------------------------
+Em risco imediato, procure o serviço oficial adequado: Bombeiros (193), emergência de saúde/SAMU (192) ou Defesa Civil (199). O RECOMEÇO não recebe pedidos de resgate.
+
+O que fazer:
+1. Em emergência, ligue diretamente para o serviço oficial e siga as instruções.
+2. Informe a situação ao atendente; não registre dados pessoais neste assistente.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Defesa Civil (199) ou Bombeiros (193)
+Atenção: O RECOMEÇO não aciona resgate. Faça o contato diretamente com o serviço oficial.
+Fonte: https://www.parana.pr.gov.br/servicos/Seguranca/Bombeiros/Acionar-Corpo-de-Bombeiros-193-0A30a4rk
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: MÉDIA (3 pontos na busca por palavras)
+
+Pedir ajuda em situação de emergência [Segurança e emergência]
+----------------------------------------
+Em risco imediato, procure o serviço oficial adequado: Bombeiros (193), emergência de saúde/SAMU (192) ou Defesa Civil (199). O RECOMEÇO não recebe pedidos de resgate.
+
+O que fazer:
+1. Em emergência, ligue diretamente para o serviço oficial e siga as instruções.
+2. Informe a situação ao atendente; não registre dados pessoais neste assistente.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Defesa Civil (199) ou Bombeiros (193)
+Atenção: O RECOMEÇO não aciona resgate. Faça o contato diretamente com o serviço oficial.
+Fonte: https://www.parana.pr.gov.br/servicos/Seguranca/Bombeiros/Acionar-Corpo-de-Bombeiros-193-0A30a4rk
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: MÉDIA (5 pontos na busca por palavras)
+
+Cuidados gerais durante tempestade forte [Segurança e emergência]
+----------------------------------------
+Procure proteção em uma edificação segura e acompanhe os avisos oficiais. Tempestades podem combinar ventos, raios e granizo.
+
+O que fazer:
+1. Evite árvores, estruturas frágeis, placas e cabos elétricos caídos.
+2. Em local seguro, mantenha distância de janelas; durante raios, evite chuveiro elétrico e aparelhos ligados à tomada.
+3. Não atravesse áreas alagadas. Se houver necessidade de resgate, ligue 193; para orientações de Defesa Civil, 199.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Defesa Civil municipal, alertas oficiais e Bombeiros em emergência.
+Atenção: Não há previsão do tempo nem avaliação do imóvel neste programa. Consulte também as orientações específicas para raios, vendaval, granizo e alagamento.
+Fonte: https://www.defesacivil.rs.gov.br/saiba-como-se-proteger-em-caso-de-vendavais-raios-e-granizo
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: MÉDIA (5 pontos na busca por palavras)
+
+Comunicar falta de energia após chuva [Segurança e emergência]
+----------------------------------------
+Comunique a interrupção à distribuidora que atende seu imóvel e guarde o protocolo. O programa não informa o prazo de restabelecimento.
+
+O que fazer:
+1. Confira o nome da distribuidora na conta de energia e use os canais oficiais para informar a falta de luz.
+2. Se não souber o contato, consulte a página “Fale com a sua distribuidora” da ANEEL. Para a Enel, pergunte “Qual o número da Enel?”.
+3. Mantenha distância de fios caídos e instalações molhadas. Não faça reparos nem toque em disjuntor com acesso inundado. Em perigo imediato, ligue 193.
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Distribuidora local; lista de contatos no portal da ANEEL.
+Atenção: Uma falta de luz não permite concluir a causa. Informe seus dados apenas nos canais oficiais da distribuidora, nunca neste assistente.
+Fonte: https://www.gov.br/aneel/pt-br/canais_atendimento/reclame-da-distribuidora/consumidor-govbr
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+Confiança: ALTA (7 pontos na busca por palavras)
+
+Consultar telefone e canais oficiais da Enel [Assistência social]
+----------------------------------------
+O telefone depende da distribuidora Enel que atende sua área. Confira o nome na conta de energia e use o contato correspondente abaixo.
+
+O que fazer:
+1. Enel São Paulo — falta de luz: 0800 72 72 196. Site: https://www.enel.com.br/pt-saopaulo.html
+2. Enel Rio de Janeiro — Central de Relacionamento: 0800 28 00 120. Site: https://www.enel.com.br/pt.html
+3. Enel Ceará — Central de Relacionamento: 0800 2850 196. Site: https://www.enel.com.br/pt-ceara.html
+
+Documentos necessários:
+Não especificados nesta orientação; confirme com o órgão responsável.
+
+Onde: Canais oficiais da Enel da área atendida; confira a distribuidora na sua conta.
+Atenção: Esses contatos não atendem toda distribuidora nem todo município desses estados. Confirme o canal no site oficial; o programa não faz ligações nem registra solicitações. Em risco de vida, acione 193.
+Fonte: https://www.enel.com.br/pt.html
+Verificado em: 2026-11-14
+
+Aviso: este assistente NÃO é um canal oficial.
+
+Essa orientação respondeu sua dúvida? (s/1 = sim, n/2 = não, 0 = voltar):
+Qual é sua dúvida? (0 para voltar, ? para exemplos):
+ORIENTAÇÕES SOBRE DESASTRES
+1 - Escrever minha dúvida
+2 - Escolher um assunto passo a passo
+3 - Ver exemplos de perguntas
+4 - Escolher o tipo de desastre
+0 - Voltar ao menu principal
+
+Escolha uma opção:
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+Indicadores de atendimento:
+Período: 2026-11-14
+O CSV exportado contém todo o histórico da pasta, sem filtro de data.
+Total de atendimentos: 10
+Resposta encontrada: 100.0%
+Taxa de acerto (ajudou): 100.0%
+Tempo médio por atendimento: 0.0 segundos
+Tentativas por atendimento: 1.0
+Facilidade de uso: ainda não avaliada por sessão
+
+Dúvidas sem solução (resumos sem texto pessoal):
+Nenhuma.
+
+CSV de atendimentos exportado.
+
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+De 1 a 5, qual a facilidade de uso? (0 para não avaliar): Obrigado pela avaliação!
+
+Obrigado por utilizar o RECOMEÇO!
+
+CSV de atendimentos exportado.

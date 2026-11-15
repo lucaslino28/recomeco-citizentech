@@ -1,0 +1,19 @@
+{
+  "data_avaliacao": "2026-11-14",
+  "arquivo": "validacao_usuarios_2026-11-14.csv",
+  "sha256": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+  "registros_excluidos_pelo_filtro": 1,
+  "atendimentos": 10,
+  "orientacoes_encontradas": 8,
+  "encontrados_percentual": 80.0,
+  "ajudaram": 7,
+  "ajudaram_percentual": 70.0,
+  "encontrou_mas_nao_ajudou": 1,
+  "sem_correspondencia": 2,
+  "sem_solucao": 3,
+  "facilidade_media_por_sessao": 3.0,
+  "sessoes_avaliadas": 10,
+  "tempo_medio_registrado_segundos": 43.24,
+  "tentativas_media": 1.0,
+  "participantes": "Quantidade e metodologia informadas pela equipe; sessões não identificam pessoas."
+}

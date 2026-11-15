@@ -1,0 +1,240 @@
+{
+  "tipo": "Regressão técnica; não é nova avaliação humana",
+  "codigo_antes": "fb0b073",
+  "estado_registros_antes": "b56f7a6",
+  "codigo_depois": "Revisão posterior à avaliação, identificada pelos hashes de revisao_local_sha256.",
+  "base_antes": 30,
+  "base_depois": 34,
+  "original_preservado_sha256": {
+    "data/historico.json": "57189351ebaf2b9467aeae40c9b493523228db7102cd4d68a42c9755a64e8be9",
+    "data/atendimentos.csv": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+    "evidencias/validacao_usuarios_2026-11-14.csv": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8"
+  },
+  "casos": [
+    {
+      "caso": 1,
+      "pergunta_fornecida_pela_equipe": "Como procuro abrigo para dormir?",
+      "antes": {
+        "resultados": [
+          {
+            "id": 5,
+            "pontos": 3
+          }
+        ],
+        "sugestoes": []
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 5,
+            "pontos": 3
+          }
+        ],
+        "id_esperado": 5
+      }
+    },
+    {
+      "caso": 2,
+      "pergunta_fornecida_pela_equipe": "Perdi meus documentos na chuva.",
+      "antes": {
+        "resultados": [
+          {
+            "id": 12,
+            "pontos": 4
+          }
+        ],
+        "sugestoes": []
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 12,
+            "pontos": 4
+          }
+        ],
+        "id_esperado": 12
+      }
+    },
+    {
+      "caso": 3,
+      "pergunta_fornecida_pela_equipe": "Eu consigo entrar no abrigo sem meu documento com RG e CPF?",
+      "antes": {
+        "resultados": [
+          {
+            "id": 5,
+            "pontos": 3
+          }
+        ],
+        "sugestoes": []
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 31,
+            "pontos": 8
+          },
+          {
+            "id": 5,
+            "pontos": 3
+          }
+        ],
+        "id_esperado": 31
+      }
+    },
+    {
+      "caso": 4,
+      "pergunta_fornecida_pela_equipe": "E como posso saber se minha cidade oferece abrigo?",
+      "antes": {
+        "resultados": [
+          {
+            "id": 5,
+            "pontos": 3
+          }
+        ],
+        "sugestoes": []
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 5,
+            "pontos": 3
+          }
+        ],
+        "id_esperado": 5
+      }
+    },
+    {
+      "caso": 5,
+      "pergunta_fornecida_pela_equipe": "Está tendo uma enchente na rua do meu serviço.",
+      "antes": {
+        "resultados": [],
+        "sugestoes": [
+          1,
+          2,
+          3
+        ]
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 2,
+            "pontos": 3
+          }
+        ],
+        "id_esperado": 2
+      }
+    },
+    {
+      "caso": 6,
+      "pergunta_fornecida_pela_equipe": "Estou preso dentro do meu carro na enchente.",
+      "antes": {
+        "resultados": [],
+        "sugestoes": [
+          1,
+          2,
+          8
+        ]
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 1,
+            "pontos": 3
+          }
+        ],
+        "id_esperado": 1
+      }
+    },
+    {
+      "caso": 7,
+      "pergunta_fornecida_pela_equipe": "Como ligar para os bombeiros me resgatar?",
+      "antes": {
+        "resultados": [
+          {
+            "id": 1,
+            "pontos": 3
+          }
+        ],
+        "sugestoes": []
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 1,
+            "pontos": 3
+          }
+        ],
+        "id_esperado": 1
+      }
+    },
+    {
+      "caso": 8,
+      "pergunta_fornecida_pela_equipe": "Está acontecendo uma tempestade forte na minha cidade, o que devo fazer?",
+      "antes": {
+        "resultados": [],
+        "sugestoes": [
+          3,
+          11,
+          19
+        ]
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 34,
+            "pontos": 5
+          }
+        ],
+        "id_esperado": 34
+      }
+    },
+    {
+      "caso": 9,
+      "pergunta_fornecida_pela_equipe": "Por conta da chuva minha casa está sem energia.",
+      "antes": {
+        "resultados": [
+          {
+            "id": 16,
+            "pontos": 3
+          }
+        ],
+        "sugestoes": []
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 32,
+            "pontos": 5
+          }
+        ],
+        "id_esperado": 32
+      }
+    },
+    {
+      "caso": 10,
+      "pergunta_fornecida_pela_equipe": "Você tem o número da Enel?",
+      "antes": {
+        "resultados": [],
+        "sugestoes": []
+      },
+      "depois": {
+        "resultados": [
+          {
+            "id": 33,
+            "pontos": 7
+          }
+        ],
+        "id_esperado": 33
+      }
+    }
+  ],
+  "revisao_local_sha256": {
+    "main.py": "a1480871c75f7ab201e331a70d1ea60a441810c174d70330da340a8157aceaa8",
+    "assistente.py": "13297d7fd8477d073e33d1a4886bfd0ca44442f56b8ff30a12678dc0be55fa90",
+    "base_conhecimento.py": "73f67cfd565fdea1b7b79222c380c350bd4c8826b3c95cf0b65a07173a7d9578",
+    "orientacao.py": "eea9d91a1cc5f6e149a0779765ec417e54f79f1f57ed6cde3492fca9bf13d11c",
+    "data/base_conhecimento.json": "2402522fc03601750dbb11f5251d11d5b8401719d5a5166bf71a7c3dea3d575e",
+    "testes/test_pcp.py": "4826c860b6d247f7cb12444f86f22af9a8051cd09d7bcb22637b92acaef30da4",
+    "testes/casos_avaliacao_pcp.json": "2d42642595306882dec08d64208d19baa95b55eba33b7c4588752a22dce80a33"
+  }
+}

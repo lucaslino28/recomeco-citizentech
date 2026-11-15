@@ -19,12 +19,20 @@
       "pedir resgate",
       "preciso de resgate",
       "estou ilhado",
-      "estou ilhada"
+      "estou ilhada",
+      "preso dentro do meu carro",
+      "presa dentro do meu carro",
+      "preso no carro",
+      "presa no carro",
+      "preso em um carro",
+      "presa em um carro",
+      "presos no carro",
+      "presas no carro"
     ],
     "resposta": "Em risco imediato, procure o serviço oficial adequado: Bombeiros (193), emergência de saúde/SAMU (192) ou Defesa Civil (199). O RECOMEÇO não recebe pedidos de resgate.",
     "documentos": [],
     "onde": "Defesa Civil (199) ou Bombeiros (193)",
-    "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/deslizamento.pdf",
+    "fonte": "https://www.parana.pr.gov.br/servicos/Seguranca/Bombeiros/Acionar-Corpo-de-Bombeiros-193-0A30a4rk",
     "verificado_em": "2026-11-14",
     "passos": [
       "Em emergência, ligue diretamente para o serviço oficial e siga as instruções.",
@@ -46,16 +54,22 @@
       "correnteza",
       "ruas alagadas",
       "atravessar ruas alagadas",
-      "atravessar a enchente"
+      "atravessar a enchente",
+      "enchente na rua",
+      "enchente na minha rua",
+      "alagamento na rua",
+      "rua inundada",
+      "rua do trabalho alagada"
     ],
-    "resposta": "Evite atravessar áreas inundadas. Siga as orientações das autoridades para chegar a um local seguro.",
+    "resposta": "Não atravesse ruas alagadas para chegar ao trabalho ou a outro destino, seja a pé ou de veículo. Água e correnteza podem esconder riscos.",
     "documentos": [],
     "onde": "Orientações da Defesa Civil",
     "fonte": "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/informacoes-uteis/centro-nacional-de-gerenciamento-de-riscos-e-desastres-cenad/Inundaes.pdf",
     "verificado_em": "2026-11-14",
     "passos": [
-      "Evite o contato com a água da inundação.",
-      "Siga a rota e o ponto seguro indicados pelas autoridades locais."
+      "Evite entrar na água ou tentar atravessar a correnteza.",
+      "Acompanhe os avisos da Defesa Civil e as interdições informadas pelas autoridades locais.",
+      "Se houver pessoas em perigo e necessidade de resgate, ligue 193 (Bombeiros)."
     ],
     "observacao": "O assistente não conhece rotas seguras nem condições de trânsito em tempo real.",
     "assuntos": [],
@@ -151,8 +165,9 @@
     "fonte": "https://www.gov.br/mds/pt-br/acoes-e-programas/SUAS/unidades-de-atendimento/pessoas-e-familias-em-situacoes-de-calamidades-publicas-e-de-emergencias",
     "verificado_em": "2026-11-14",
     "passos": [
-      "Procure a Secretaria de Assistência Social pelos canais oficiais do município.",
-      "Explique que precisa de acolhimento após o desastre e confirme o local indicado."
+      "Consulte o portal oficial da prefeitura e procure por “abrigos”, “acolhimento” ou “Assistência Social”.",
+      "Se não encontrar a informação, procure a Assistência Social municipal ou a Defesa Civil para confirmar o local de acolhimento.",
+      "Confirme o funcionamento e a disponibilidade diretamente com a equipe responsável antes do deslocamento, quando for seguro fazê-lo."
     ],
     "observacao": "Não temos lista nacional de endereços ou vagas de abrigo. A disponibilidade é confirmada pelo município.",
     "assuntos": [],
@@ -479,7 +494,6 @@
     "palavras_chave": [
       "choque",
       "choque eletrico",
-      "energia",
       "eletricidade",
       "disjuntor",
       "tomada",
@@ -948,6 +962,129 @@
     "assuntos": [],
     "desastres": [
       "Preparação e apoio"
+    ]
+  },
+  {
+    "id": 31,
+    "categoria": "Assistência social",
+    "titulo": "Pedir acolhimento em abrigo sem documento pessoal",
+    "palavras_chave": [
+      "abrigo sem meu documento",
+      "abrigo sem meus documentos",
+      "abrigo sem documentos",
+      "abrigo sem documento",
+      "entrar no abrigo sem",
+      "entrar em abrigo sem",
+      "abrigo sem rg",
+      "abrigo sem cpf",
+      "rg e cpf no abrigo"
+    ],
+    "resposta": "Procure acolhimento mesmo se perdeu RG ou CPF e informe a situação à equipe. As orientações do MDS recomendam atender necessidades imediatas sem esperar a conclusão do cadastro; a equipe local orientará como registrar sua entrada.",
+    "documentos": [],
+    "onde": "Equipe do abrigo temporário e Assistência Social do município.",
+    "fonte": "https://mds.gov.br/webarquivos/MDS/2_Acoes_e_Programas/Calamidade_Publica_e_Emergencias/SUAS/Gestao_e_Funcionamento_de_Abrigos_Provisorios_no_SUAS.pdf",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Procure a Assistência Social municipal ou a equipe responsável pelo abrigo e explique a perda dos documentos.",
+      "Pergunte como realizar o cadastro nessa situação e como obter apoio para recuperar a documentação.",
+      "Não digite números de documentos aqui; trate informações pessoais diretamente com a equipe oficial."
+    ],
+    "observacao": "O assistente não confirma vagas nem as exigências locais. A orientação do MDS não equivale a uma garantia de entrada em qualquer abrigo.",
+    "assuntos": [],
+    "desastres": [
+      "Apoio geral"
+    ]
+  },
+  {
+    "id": 32,
+    "categoria": "Segurança e emergência",
+    "titulo": "Comunicar falta de energia após chuva",
+    "palavras_chave": [
+      "sem energia",
+      "falta de energia",
+      "sem luz",
+      "falta de luz",
+      "acabou a luz",
+      "energia acabou",
+      "luz acabou",
+      "energia caiu",
+      "queda de energia"
+    ],
+    "resposta": "Comunique a interrupção à distribuidora que atende seu imóvel e guarde o protocolo. O programa não informa o prazo de restabelecimento.",
+    "documentos": [],
+    "onde": "Distribuidora local; lista de contatos no portal da ANEEL.",
+    "fonte": "https://www.gov.br/aneel/pt-br/canais_atendimento/reclame-da-distribuidora/consumidor-govbr",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Confira o nome da distribuidora na conta de energia e use os canais oficiais para informar a falta de luz.",
+      "Se não souber o contato, consulte a página “Fale com a sua distribuidora” da ANEEL. Para a Enel, pergunte “Qual o número da Enel?”.",
+      "Mantenha distância de fios caídos e instalações molhadas. Não faça reparos nem toque em disjuntor com acesso inundado. Em perigo imediato, ligue 193."
+    ],
+    "observacao": "Uma falta de luz não permite concluir a causa. Informe seus dados apenas nos canais oficiais da distribuidora, nunca neste assistente.",
+    "assuntos": [],
+    "desastres": [
+      "Enchentes e enxurradas",
+      "Vendavais",
+      "Tempestades e raios",
+      "Granizo"
+    ]
+  },
+  {
+    "id": 33,
+    "categoria": "Assistência social",
+    "titulo": "Consultar telefone e canais oficiais da Enel",
+    "palavras_chave": [
+      "enel",
+      "numero da enel",
+      "telefone da enel",
+      "contato da enel",
+      "ligar para enel",
+      "falar com a enel"
+    ],
+    "resposta": "O telefone depende da distribuidora Enel que atende sua área. Confira o nome na conta de energia e use o contato correspondente abaixo.",
+    "documentos": [],
+    "onde": "Canais oficiais da Enel da área atendida; confira a distribuidora na sua conta.",
+    "fonte": "https://www.enel.com.br/pt.html",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Enel São Paulo — falta de luz: 0800 72 72 196. Site: https://www.enel.com.br/pt-saopaulo.html",
+      "Enel Rio de Janeiro — Central de Relacionamento: 0800 28 00 120. Site: https://www.enel.com.br/pt.html",
+      "Enel Ceará — Central de Relacionamento: 0800 2850 196. Site: https://www.enel.com.br/pt-ceara.html"
+    ],
+    "observacao": "Esses contatos não atendem toda distribuidora nem todo município desses estados. Confirme o canal no site oficial; o programa não faz ligações nem registra solicitações. Em risco de vida, acione 193.",
+    "assuntos": [],
+    "desastres": [
+      "Preparação e apoio"
+    ]
+  },
+  {
+    "id": 34,
+    "categoria": "Segurança e emergência",
+    "titulo": "Cuidados gerais durante tempestade forte",
+    "palavras_chave": [
+      "tempestade forte",
+      "tempestades fortes",
+      "temporal forte",
+      "chuva forte",
+      "chuvas fortes",
+      "forte tempestade"
+    ],
+    "resposta": "Procure proteção em uma edificação segura e acompanhe os avisos oficiais. Tempestades podem combinar ventos, raios e granizo.",
+    "documentos": [],
+    "onde": "Defesa Civil municipal, alertas oficiais e Bombeiros em emergência.",
+    "fonte": "https://www.defesacivil.rs.gov.br/saiba-como-se-proteger-em-caso-de-vendavais-raios-e-granizo",
+    "verificado_em": "2026-11-14",
+    "passos": [
+      "Evite árvores, estruturas frágeis, placas e cabos elétricos caídos.",
+      "Em local seguro, mantenha distância de janelas; durante raios, evite chuveiro elétrico e aparelhos ligados à tomada.",
+      "Não atravesse áreas alagadas. Se houver necessidade de resgate, ligue 193; para orientações de Defesa Civil, 199."
+    ],
+    "observacao": "Não há previsão do tempo nem avaliação do imóvel neste programa. Consulte também as orientações específicas para raios, vendaval, granizo e alagamento.",
+    "assuntos": [],
+    "desastres": [
+      "Tempestades e raios",
+      "Vendavais",
+      "Granizo"
     ]
   }
 ]

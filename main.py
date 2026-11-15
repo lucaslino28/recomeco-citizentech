@@ -1,4 +1,5 @@
 import argparse
+from datetime import date
 
 from base_conhecimento import BaseConhecimento
 from assistente import Assistente
@@ -30,7 +31,7 @@ def menu_pcp(assistente):
             print("\nOpção inválida. Tente novamente.")
 
 
-def menu_principal(pasta_dados=None):
+def menu_principal(pasta_dados=None, data_indicadores=None):
     base = BaseConhecimento("data/base_conhecimento.json")
     base.carregar()
     assistente = Assistente("RECOMEÇO", base, pasta_dados)
@@ -59,7 +60,7 @@ def menu_principal(pasta_dados=None):
                 print("\nMódulo de energia e sustentabilidade.")
                 print("Funcionalidade em desenvolvimento.")
             elif opcao == "4":
-                assistente.indicadores()
+                assistente.indicadores(data_indicadores)
                 assistente.exportar_csv()
             elif opcao == "0":
                 assistente.avaliar_facilidade()
@@ -76,5 +77,7 @@ def menu_principal(pasta_dados=None):
 if __name__ == "__main__":
     argumentos = argparse.ArgumentParser(description="RECOMEÇO — orientações sobre desastres no Brasil")
     argumentos.add_argument("--dados", help="Pasta separada para histórico e CSV, por exemplo em testes externos")
+    argumentos.add_argument("--data-indicadores", type=date.fromisoformat, metavar="AAAA-MM-DD",
+                            help="Filtrar a exibição dos indicadores por data; o CSV continua completo")
     opcoes = argumentos.parse_args()
-    menu_principal(opcoes.dados)
+    menu_principal(opcoes.dados, opcoes.data_indicadores)

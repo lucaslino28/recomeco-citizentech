@@ -343,7 +343,7 @@ class TestePCP(unittest.TestCase):
     def test_menu_completo_de_outro_diretorio(self):
         processo = self.executar_menu("x\n2\n3\n4\n1\n0\n0\n")
         self.assertEqual(processo.returncode, 0, processo.stderr)
-        self.assertIn("Base carregada: 30 orientações", processo.stdout)
+        self.assertIn(f"Base carregada: {len(self.base.orientacoes)} orientações", processo.stdout)
         self.assertNotIn("DEBUG", processo.stdout)
         self.assertIn("Módulo de documentação pessoal", processo.stdout)
         self.assertIn("Módulo de energia", processo.stdout)
@@ -581,6 +581,184 @@ class TestePCP(unittest.TestCase):
                 else:
                     self.assertEqual(resultados, [])
                     self.assertEqual(self.base.sugerir(caso["pergunta"]), [])
+
+
+    def test_dez_perguntas_da_avaliacao(self):
+        casos = json.loads((RAIZ / "testes/casos_avaliacao_pcp.json").read_text())
+        self.assertEqual(len(casos), 10)
+        for caso in casos:
+            with self.subTest(caso=caso["caso"]):
+                resultados = self.base.buscar(caso["pergunta"])
+                self.assertTrue(resultados)
+                self.assertEqual(resultados[0][1].id, caso["id_esperado"])
+                self.assertTrue(len(resultados) == 1 or resultados[0][0] - resultados[1][0] > 1)
+
+    def test_assunto_reconhecido_dentro_da_frase(self):
+        self.assertEqual([o.id for o in self.base.sugerir("Está tendo tempestade na minha cidade")], [20, 21, 22])
+        self.assertEqual([o.id for o in self.base.sugerir("Há um alagamento por aqui")], [29])
+        self.assertEqual(self.base.sugerir("antitempestade"), [])
+
+    def test_palavras_neutras_nao_sugerem_cesta_ou_rachaduras(self):
+        for frase in ["Está acontecendo na minha cidade", "Estou aqui e quero saber", "O que devo fazer?"]:
+            with self.subTest(frase=frase):
+                self.assertEqual(self.base.sugerir(frase), [])
+
+    def test_sugestao_exata_vem_antes_da_aproximada(self):
+        aproximada = self.base.orientacoes[0]
+        aproximada.assuntos = []
+        aproximada.palavras_chave = ["cesta", "doacao", "alimento"]
+        exata = self.base.orientacoes[1]
+        exata.assuntos = []
+        exata.palavras_chave = ["teste", "exame", "prova"]
+        self.base.orientacoes = [aproximada, exata]
+        self.assertEqual(self.base.sugerir("teste")[0].id, exata.id)
+
+    def test_alerta_urgente_antes_da_escolha_de_assuntos(self):
+        def responder(mensagem):
+            if "Escolha o assunto" in mensagem:
+                self.assertIn("RISCO IMEDIATO", self.saida.getvalue())
+                return "1"
+            if "respondeu sua dúvida" in mensagem:
+                return "s"
+            return next(perguntas)
+        perguntas = iter(["Estou preso dentro do meu carro na enchente. abrigo", "0"])
+        with patch("builtins.input", side_effect=responder):
+            self.assistente.perguntar()
+        texto = self.saida.getvalue()
+        self.assertLess(texto.index("RISCO IMEDIATO"), texto.index("mais de um assunto"))
+        self.assertIn("193", texto)
+        self.assertEqual(len(self.assistente.historico), 1)
+
+    def test_alerta_nao_trata_prevencao_ou_negacao_como_pessoa_presa(self):
+        for frase in ["Como evitar enchente na rua?", "Não estou preso no carro na enchente.",
+                      "Estou preso no trânsito.", "Como preparar o carro antes da enchente?"]:
+            self.assistente.avisar_risco_imediato(frase)
+        self.assertNotIn("RISCO IMEDIATO", self.saida.getvalue())
+
+    def test_carro_enchente_sem_escolha_adicional(self):
+        with patch("builtins.input", side_effect=["Estou preso dentro do meu carro na enchente.", "s", "0"]):
+            self.assistente.perguntar()
+        self.assertIn("RISCO IMEDIATO", self.saida.getvalue())
+        self.assertEqual(self.assistente.historico[0]["id_orientacao"], 1)
+        self.assertEqual(self.assistente.historico[0]["tentativas"], 1)
+
+    def test_novas_respostas_no_fluxo_completo(self):
+        frases = ["Está tendo uma enchente na rua do meu serviço.",
+                  "Está acontecendo uma tempestade forte na minha cidade, o que devo fazer?",
+                  "Eu consigo entrar no abrigo sem meu documento com RG e CPF?",
+                  "Por conta da chuva minha casa está sem energia.", "Você tem o número da Enel?"]
+        entradas = []
+        for frase in frases:
+            entradas.extend([frase, "s"])
+        with patch("builtins.input", side_effect=entradas + ["0"]):
+            self.assistente.perguntar()
+        self.assertEqual([r["id_orientacao"] for r in self.assistente.historico], [2, 34, 31, 32, 33])
+        self.assertTrue(all(r["ajudou"] for r in self.assistente.historico))
+        texto_persistido = self.assistente.caminho_historico.read_text()
+        self.assertNotIn(frases[0], texto_persistido)
+
+    def test_falta_de_luz_diferente_de_risco_de_choque(self):
+        for frase in ["Minha casa está sem luz", "Acabou a luz depois da chuva"]:
+            self.assertEqual(self.base.buscar(frase)[0][1].id, 32)
+        self.assertEqual(self.base.buscar("Tem fio caído na rua")[0][1].id, 16)
+        self.assertEqual(self.base.buscar("Posso mexer no disjuntor molhado?")[0][1].id, 16)
+
+    def test_enel_tem_contatos_com_identificacao_da_area(self):
+        orientacao = self.base.buscar("Qual o telefone da Enel?")[0][1]
+        self.assertEqual(orientacao.id, 33)
+        orientacao.exibir()
+        for trecho in ["São Paulo", "Rio de Janeiro", "Ceará", "0800 72 72 196", "0800 28 00 120", "0800 2850 196"]:
+            self.assertIn(trecho, self.saida.getvalue())
+        self.assertIn("confira", normalizar(orientacao.onde))
+
+    def test_documentos_no_abrigo_nao_promete_vaga(self):
+        self.assertEqual(self.base.buscar("Como entrar no abrigo?")[0][1].id, 5)
+        self.assertNotEqual(self.base.buscar("Posso pedir apoio sem documentos?")[0][1].id, 31)
+        orientacao = self.base.buscar("Posso entrar no abrigo sem meu documento?")[0][1]
+        self.assertEqual(orientacao.id, 31)
+        self.assertIn("sem esperar a conclusão do cadastro", orientacao.resposta)
+        self.assertIn("não confirma vagas", orientacao.observacao)
+
+    def test_tempo_inclui_menu_de_recuperacao_ao_voltar(self):
+        relogio = {"agora": 100}
+        def responder(mensagem):
+            if "Qual é sua dúvida" in mensagem:
+                return "astronomia"
+            relogio["agora"] = 145
+            return "0"
+        with patch("assistente.time.time", side_effect=lambda: relogio["agora"]), patch("builtins.input", side_effect=responder):
+            self.assistente.perguntar()
+        self.assertEqual(self.assistente.historico[0]["tempo_segundos"], 45)
+        self.assertFalse(self.assistente.historico[0]["ajudou"])
+
+    def test_tempo_finalizado_em_interrupcao_do_atendimento(self):
+        registro = self.registrar(ajudou=False)
+        with patch("assistente.time.time", return_value=150), patch("builtins.input", side_effect=EOFError):
+            with self.assertRaises(EOFError):
+                self.assistente.atender(None, None, [], registro, 100)
+        self.assertEqual(registro["tempo_segundos"], 50)
+        self.assertFalse(registro["ajudou"])
+
+    def test_filtro_data_nao_modifica_historico(self):
+        antigo = self.registrar()
+        antigo["data"] = "2026-11-12T10:00:00-03:00"
+        antigo["facilidade"] = 5
+        atual = self.registrar(ajudou=False, encontrou=False)
+        atual.update(data="2026-11-14T10:00:00-03:00", sessao="a" * 32, facilidade=1)
+        self.assistente.salvar_historico()
+        antes = self.assistente.caminho_historico.read_bytes()
+        indicadores = self.assistente.calcular_indicadores("2026-11-14")
+        self.assertEqual(indicadores["total"], 1)
+        self.assertEqual(indicadores["facilidade_media"], 1)
+        self.assertEqual(indicadores["encontrados_percentual"], 0)
+        self.assertEqual(self.assistente.calcular_indicadores()["total"], 2)
+        self.assertEqual(self.assistente.calcular_indicadores("2026-11-15")["total"], 0)
+        self.assertEqual(self.assistente.caminho_historico.read_bytes(), antes)
+
+    def test_menu_aceita_filtro_data_e_informa_escopo_do_csv(self):
+        self.registrar()
+        processo = subprocess.run(
+            [sys.executable, "-B", str(RAIZ / "main.py"), "--dados", str(self.pasta),
+             "--data-indicadores", "2026-11-14"],
+            input="4\n0\n", capture_output=True, text=True, cwd=self.pasta, timeout=10)
+        self.assertEqual(processo.returncode, 0, processo.stderr)
+        self.assertIn("Período: 2026-11-14", processo.stdout)
+        self.assertIn("CSV exportado contém todo o histórico", processo.stdout)
+
+    def test_data_invalida_nao_inicia_programa_nem_grava_dados(self):
+        processo = subprocess.run(
+            [sys.executable, "-B", str(RAIZ / "main.py"), "--dados", str(self.pasta),
+             "--data-indicadores", "2026-02-30"],
+            capture_output=True, text=True, cwd=self.pasta, timeout=10)
+        self.assertEqual(processo.returncode, 2)
+        self.assertFalse(self.assistente.caminho_historico.exists())
+
+    def test_script_de_indicadores_filtra_csv_sem_alterar_arquivo(self):
+        antigo = self.registrar()
+        antigo.update(data="2026-11-12T10:00:00-03:00", facilidade=5)
+        atual = self.registrar(ajudou=False, encontrou=False)
+        atual.update(data="2026-11-14T10:00:00-03:00", facilidade=2, sessao="b" * 32)
+        self.assistente.exportar_csv()
+        antes = self.assistente.caminho_csv.read_bytes()
+        processo = subprocess.run(
+            [sys.executable, "-B", str(RAIZ / "testes/analisar_validacao_pcp.py"),
+             "--arquivo", str(self.assistente.caminho_csv), "--data", "2026-11-14"],
+            capture_output=True, text=True, cwd=self.pasta, timeout=10)
+        self.assertEqual(processo.returncode, 0, processo.stderr)
+        indicadores = json.loads(processo.stdout)
+        self.assertEqual(indicadores["atendimentos"], 1)
+        self.assertEqual(indicadores["registros_excluidos_pelo_filtro"], 1)
+        self.assertEqual(indicadores["ajudaram_percentual"], 0)
+        self.assertEqual(indicadores["facilidade_media_por_sessao"], 2)
+        self.assertEqual(self.assistente.caminho_csv.read_bytes(), antes)
+
+    def test_script_de_indicadores_informa_csv_ausente(self):
+        processo = subprocess.run(
+            [sys.executable, "-B", str(RAIZ / "testes/analisar_validacao_pcp.py"),
+             "--arquivo", str(self.pasta / "ausente.csv")],
+            capture_output=True, text=True, cwd=self.pasta, timeout=10)
+        self.assertEqual(processo.returncode, 1)
+        self.assertIn("Não foi possível analisar o CSV", processo.stderr)
 
 
 if __name__ == "__main__":

@@ -1,63 +1,71 @@
 # Decisões de PCP
 
-Atualização: 14/11/2026. As três classes e os métodos exigidos foram mantidos. Não foram adicionadas classes, bibliotecas externas ou serviços de IA em PCP.
+Atualização: 14/11/2026, após a avaliação documentada. A solução usa as três classes existentes, JSON e biblioteca padrão do Python. Não foram acrescentadas classes, serviços de IA ou dependências externas ao programa.
 
-## Busca
+## Busca e confiança
 
-Os pesos e limites do enunciado foram preservados: 3 por palavra-chave, 1 por palavra distinta com quatro letras ou mais no título, resultado a partir de 3 e confiança alta a partir de 6. Expressões são procuradas completas, com limites de palavras. Em empate, permanece a ordem do JSON.
+`pontuar()` mantém +3 por palavra-chave/expressão completa encontrada e +1 por palavra distinta da pergunta com quatro ou mais letras no título. As expressões respeitam limites de palavras. `buscar()` devolve tuplas `(pontos, orientacao)` em ordem decrescente, com resultado a partir de 3 e confiança ALTA a partir de 6. Empates mantêm a ordem do JSON. Confiança é correspondência textual, não garantia de utilidade.
 
-A palavra-chave genérica `enchente` foi retirada da orientação sobre atravessar alagamentos porque fazia uma pergunta sobre pedir ajuda encontrar uma resposta pouco adequada. Foram acrescentadas expressões específicas sobre ajuda, casa em risco, abrigos e água contaminada. Essa é uma melhoria técnica; a melhoria exigida após testes com pessoas ainda está pendente.
+Não foi recolocada a chave genérica “enchente” na orientação de atravessar alagamentos, pois isso prejudicava outras intenções. Foram adicionadas expressões específicas, como “enchente na rua”. A frase isolada “enchente” continua oferecendo seleção de assunto, sem pontuação inventada.
+
+## Sugestões e esclarecimento
+
+Candidatas com diferença de até um ponto da melhor geram escolha entre até três títulos. A orientação aberta pode apresentar até duas alternativas, que a pessoa consegue selecionar depois de uma resposta negativa.
+
+Sem resultado por pontuação, `sugerir()` procura assuntos cadastrados em qualquer posição da frase, com limites de palavras. Depois usa termos exatos e só então aproximações do `difflib`, com limite 0,84. Termos neutros como “está”, “estou” e “cidade” não são usados como contexto. Essa mudança corrige as sugestões de cesta/rachaduras observadas na pergunta de tempestade. Toda sugestão exige escolha e não recebe confiança fictícia.
+
+A última orientação confirmada como útil fica apenas em memória. Uma pergunta curta de continuação pode oferecer esse assunto, com confirmação; nunca é guardado histórico textual da conversa.
+
+## Conteúdo e urgência
+
+A base possui 34 orientações, três categorias funcionais e navegação por oito grupos de eventos, além de preparação/apoio. `desastres` é uma lista opcional do JSON; “Apoio geral” inclui serviços comuns sem criar uma categoria de desastre. As orientações específicas aparecem antes das compartilhadas.
+
+Os IDs 31 a 34 tratam de documentos no acolhimento, interrupção de energia, canais regionais da Enel e tempestade forte. Os IDs anteriores foram mantidos. “Energia” deixou de ser uma chave isolada da orientação de choque, evitando que qualquer falta de luz gere a mesma resposta.
+
+`avisar_risco_imediato()` usa condições simples: expressões de pessoa presa, veículo e inundação. Exibe encaminhamento ao 193 antes de possíveis escolhas; a busca e as pontuações continuam sendo executadas. É uma proteção limitada para expressões conhecidas, não um detector geral de emergência. O sistema não despacha resgate nem define como sair do veículo.
+
+O conteúdo documental não garante vaga ou procedimento universal de admissão. Os contatos da Enel são associados às áreas atendidas. Fontes e limites estão em [fontes PCP](fontes_pcp.md).
+
+## Atendimento, tentativas e tempo
+
+Uma pergunta válida cria um dicionário no histórico. Reformular atualiza o mesmo atendimento e soma uma tentativa; começar nova dúvida cria outro. Abrir outra orientação durante a recuperação soma uma tentativa, enquanto o esclarecimento inicial não soma. Categorias e tipos usam o mesmo fluxo de avaliação, com origem `categoria`.
+
+O resultado final corresponde à última tentativa. Só uma confirmação positiva marca `ajudou=True`. Voltar ou interromper sem confirmar mantém o atendimento não resolvido.
+
+O tempo usa `time.time()` e inclui digitação, leitura, escolhas e reformulações. `atender()` usa `try/finally` para salvar o tempo ao sair, inclusive por retorno ou interrupção. A limitação antiga foi documentada, sem alterar os tempos já registrados. Uma interrupção antes de entrar nesse fluxo, como durante a primeira seleção de assunto, ainda pode manter o tempo da última gravação; não é uma medição externa de desempenho.
 
 ## Histórico sem texto livre
 
-O enunciado exige um campo `pergunta` e proíbe guardar perguntas com oito ou mais dígitos ou `@`. O pedido do projeto acrescenta a necessidade de proteger outras formas de identificação. Uma lista de padrões não consegue garantir a remoção de todos os nomes, endereços ou relatos identificáveis. Por isso, mantivemos o campo exigido com rótulos controlados e sem o texto original.
+O enunciado exige o campo `pergunta` e bloqueio de entradas com oito ou mais dígitos ou `@`. O projeto também evita guardar outras identificações. Como padrões não reconhecem todos os nomes e endereços, o campo recebe apenas “Orientação N; texto livre omitido.” ou “Sem correspondência; texto livre omitido.”.
 
-Essa decisão reduz a informação disponível sobre falhas de busca. A equipe deve usar tarefas fictícias identificadas pelo roteiro para investigar dúvidas sem solução nos testes externos. Não completar os relatórios com relatos pessoais recebidos.
+O filtro preventivo bloqueia também algumas expressões de identificação. Ele é incompleto; a proteção principal é não persistir texto livre. Isso reduz os detalhes disponíveis para analisar falhas: frases da avaliação de 14/11 vieram da contextualização da equipe, não do JSON.
 
-Na migração, o histórico é reconstruído apenas com campos conhecidos, valores validados e rótulos gerados pelo programa. Não são preservados campos extras de identificação. Dados numéricos válidos do legado permanecem; não se presume que tenham vindo de participantes externos. Uma cópia local prévia do projeto foi guardada fora do Git antes das alterações.
+A validação do histórico reconstrói campos controlados e elimina dados desconhecidos de registros legados. Na revisão atual, os três arquivos válidos da avaliação foram preservados byte a byte, com hashes na comparação técnica. Não foi feita migração dos resultados, correção de notas ou estimativa de tempos.
 
-## Atendimento e tentativas
+## Facilidade e indicadores
 
-`registrar()` cria o dicionário do atendimento e devolve esse registro. Quando a pessoa escolhe reformular, o mesmo dicionário é atualizado e `tentativas` aumenta. Uma nova dúvida inicia outro registro. Erros de entrada e mensagens bloqueadas não aumentam o contador.
+Cada execução tem código aleatório `uuid4`, sem identificação pessoal. A nota de facilidade fica associada aos atendimentos da execução, mas entra uma única vez na média por sessão. Sessões sem nota são excluídas, sem assumir zero. Registros antigos sem sessão não recebem sessão inventada.
 
-Uma tentativa válida é salva antes de pedir confirmação, evitando perdê-la em EOF ou Ctrl+C. Se a pessoa não confirmar que ajudou, o registro fica como não resolvido. A última tentativa determina orientação e resposta encontrada. O tempo acumulado inclui interação e reformulação, em segundos; não representa só o tempo da busca.
+`calcular_indicadores(data_filtro=None)` usa todos os registros por padrão. Com uma data, calcula sobre os registros daquele dia e suas notas. `--data-indicadores AAAA-MM-DD` permite usar isso na opção 4 do programa, com data validada. A tela informa que o CSV exportado continua completo. O filtro não apaga registros.
 
-## Facilidade por sessão
-
-Cada execução recebe um código aleatório com `uuid4`, sem relação com dados pessoais. A nota é associada aos registros da sessão, mas a média usa uma nota por código. Sessões sem nota são excluídas da média, sem assumir nota zero. Notas legadas sem sessão permanecem armazenadas, mas não entram nessa média: não há informação suficiente para reconstruir as sessões antigas.
+A rodada de 14/11 é recalculável pelo script de leitura `testes/analisar_validacao_pcp.py`, que não inicia atendimentos nem escreve no histórico.
 
 ## Arquivos e recuperação
 
-Os caminhos relativos partem da pasta do projeto, não do diretório de onde o usuário lançou o Python. `--dados` permite uma pasta separada para histórico e CSV, mantendo a base oficial comum. A opção permite isolar testes externos, demonstrações e desenvolvimento.
+Caminhos relativos partem da pasta do projeto. `--dados` separa histórico e CSV de cada coleta ou demonstração, sem duplicar a base oficial.
 
-A validação da base verifica campos, tipos, IDs únicos e positivos, três chaves distintas, data ISO e formato de URL. Não acessa a internet durante a execução: a oficialidade e a atualidade do conteúdo são conferidas manualmente e documentadas em `fontes_pcp.md`.
+A validação do JSON confere tipos, campos, IDs, pelo menos três chaves distintas, data ISO e formato de URL. A consulta a fontes ocorre na revisão manual, não durante a execução do programa.
 
-Gravações passam por um arquivo temporário; somente uma escrita concluída substitui o destino. Se a escrita falhar, o programa informa que os dados permanecem em memória. Um histórico inteiramente ilegível não é sobrescrito, e o CSV anterior é preservado. A equipe deve recuperar ou corrigir o arquivo antes de reiniciar; o programa não tenta inventar registros para recuperar JSON truncado. Não encerrar uma sessão com dados apenas em memória esperando que eles reapareçam depois.
+Gravações passam por arquivo temporário e substituição após completar a escrita. Em falha, os dados permanecem em memória. Histórico inteiramente ilegível e CSV anterior são preservados; a equipe deve recuperar o arquivo e reiniciar. Registros individuais inválidos são ignorados com aviso. O CSV usa `csv.DictWriter` e campos controlados.
 
-O CSV é reconstruído com campos controlados e sem texto livre, inclusive quando o histórico é legado. O identificador de sessão é validado e as datas são normalizadas. Dessa forma, perguntas iniciadas por `=` não viram fórmulas na exportação.
+Não há coordenação entre programas simultâneos na mesma pasta. Não encerrar esperando recuperar dados que ficaram apenas em memória após falha de gravação.
 
-## Limites da implementação
+## Avaliação e melhoria de PCP
 
-O filtro de privacidade é preventivo e incompleto; a ausência de texto livre no armazenamento é a proteção principal. O programa não usa rede nem envia a pergunta para um LLM. A base é um arquivo curado pela equipe e a pontuação textual pode errar a intenção. Não são suportadas gravações simultâneas por duas execuções usando a mesma pasta de dados.
+O [relatório da rodada](validacao_pcp.md) documenta três participantes externos conforme relato da equipe, dez atendimentos nos arquivos, indicadores, dificuldades e ajustes aplicados. A divisão de atendimentos por pessoa não foi informada.
 
-## Refinamento da interação em 14/11/2026
+A revisão técnica posterior passou em 89 testes e verificou as dez frases contra a versão anterior. Esses resultados não são uma nova coleta com pessoas. Os 80% encontrados, 70% de utilidade e facilidade 3,0 continuam sendo os valores da versão avaliada. Uma melhoria na satisfação só poderá ser afirmada após nova avaliação humana.
 
-Os pesos de `pontuar()` e a ordenação de `buscar()` permanecem iguais. Uma etapa no `Assistente` compara as primeiras pontuações: se duas candidatas estiverem a até um ponto da melhor, oferece até três títulos para escolha antes de responder. Não se altera a pontuação para decidir arbitrariamente entre receber e descartar alimentos.
+## Limites
 
-O JSON agora possui 18 orientações e três campos opcionais: passos, observação e assuntos. A classe `Orientacao` continua responsável pela exibição. `BaseConhecimento.sugerir()` usa assuntos cadastrados e semelhança de escrita da biblioteca padrão; uma sugestão só vira resposta após escolha. Não há novas classes, dependências externas ou acesso à internet durante o atendimento.
-
-`Assistente.atender()` concentra a exibição e a recuperação após resposta não útil: reformular, iniciar outra dúvida, escolher categoria ou abrir alternativa. A seleção de assunto inicial não aumenta tentativas; abrir outra orientação depois de receber uma resposta soma uma tentativa no mesmo atendimento. A origem representa a entrada pela pergunta ou pelas categorias, mesmo que a pessoa navegue por outras opções depois.
-
-A última orientação confirmada como útil pode ser apresentada para uma pergunta curta de continuação, mediante escolha explícita. Só o objeto com conteúdo público é mantido em memória; não há histórico textual de conversa. O campo `encontrou` considera tanto a resposta por pontuação quanto a orientação escolhida em navegação assistida. As telas distinguem confiança textual de escolha guiada.
-
-As novas situações e erros foram levantados por revisão técnica; os resultados não substituem a melhoria baseada em participantes externos exigida pelo professor.
-
-## Ampliação para desastres e eventos ambientais
-
-Foram mantidos os IDs anteriores e adicionadas orientações de 19 a 30. O recorte cobre oito grupos de eventos e preparação, sem pretensão de classificar estatisticamente sua frequência. Alguns eventos, como incêndios, também podem ter origem humana. O cenário energético de SERS continua sendo iluminação de abrigo; esse estudo de caso não limita a abrangência das orientações de PCP.
-
-`Orientacao.desastres` é uma lista opcional de etiquetas do JSON. `BaseConhecimento.tipos_desastre()` lista os temas; `por_tipo_desastre()` reúne orientações específicas e apoio compartilhado. As que se aplicam a menos tipos vêm primeiro. Um tema inexistente retorna lista vazia, em vez de exibir apoio e dar a impressão de cobertura inexistente. O `Assistente` reaproveita o fluxo de categorias; no histórico, essa seleção tem origem `categoria`.
-
-A fórmula de pontuação não foi alterada. Novas palavras-chave e expressões foram avaliadas junto dos cenários antigos. Em sugestões de digitação, palavras comuns são ignoradas para evitar que uma palavra como `como` provoque uma sugestão sobre enchente para uma pergunta sobre bolo. Assuntos ambíguos como `tempestade` oferecem vendaval, raios e granizo, com escolha explícita.
-
-O público de PCP passou a ser cidadãos buscando orientação diante de desastres e eventos ambientais no Brasil. Conteúdos específicos de enchentes permanecem marcados e não são apresentados como procedimentos universais. Histórico, privacidade, notas por sessão e exportação foram preservados. Testes externos reais continuam pendentes.
+As regras não entendem toda negação, sinônimo ou pergunta com várias intenções. O assistente não consulta serviços, vagas, previsões, rotas ou alertas em tempo real. Não diagnostica, não inspeciona imóveis e não garante concessões. IA e SERS permanecem separados e serão desenvolvidos depois. As referências e os registros técnicos de versões anteriores foram preservados para consulta histórica.

@@ -250,63 +250,83 @@ class Assistente:
                 return orientacao
 
     def atender(self, orientacao, pontos, alternativas, registro, inicio):
-        while True:
-            registro = self.registrar(registro["origem"], orientacao, orientacao is not None,
-                                      False, registro["tentativas"], inicio, registro)
-            if orientacao is not None:
-                if pontos is not None:
-                    confianca = "ALTA" if pontos >= 6 else "MÉDIA"
-                    print(f"\nConfiança: {confianca} ({pontos} pontos na busca por palavras)")
-                else:
-                    print("\nOrientação aberta pela sua escolha de assunto.")
-                orientacao.exibir()
-                if alternativas:
-                    print("\nOutras orientações relacionadas:")
-                    for _, alternativa in alternativas:
-                        print(f"- {alternativa.titulo}")
-                    print("Se a resposta não ajudar, você poderá abrir uma delas.")
-                ajudou = self.confirmar()
-                registro["ajudou"] = ajudou is True
-                registro["tempo_segundos"] = round(max(0, time.time() - inicio), 1)
-                self.salvar_historico()
-                if ajudou is None:
-                    return "voltar"
-                if ajudou:
-                    self.ultima_orientacao = orientacao
-                    return "nova"
-            else:
-                print("\nNão encontrei uma orientação confirmada para essa dúvida.")
-                print("Tente outras palavras ou escolha um assunto abaixo.")
-
-            print("\nComo você quer continuar?")
-            print("1 - Explicar a mesma dúvida de outro jeito")
-            print("2 - Encerrar este atendimento e fazer outra pergunta")
-            print("3 - Escolher um assunto nas categorias")
-            if alternativas:
-                print("4 - Abrir outra orientação relacionada")
-            print("0 - Voltar")
+        try:
             while True:
-                opcao = ler_opcao("Escolha uma opção: ", 4 if alternativas else 3)
-                if opcao == 0:
-                    return "voltar"
-                if opcao == 1:
-                    return "reformular"
-                if opcao == 2:
-                    return "nova"
-                if opcao == 3:
-                    escolhida = self.escolher_categoria()
-                    novos_pontos = None
+                registro = self.registrar(registro["origem"], orientacao, orientacao is not None,
+                                          False, registro["tentativas"], inicio, registro)
+                if orientacao is not None:
+                    if pontos is not None:
+                        confianca = "ALTA" if pontos >= 6 else "MÉDIA"
+                        print(f"\nConfiança: {confianca} ({pontos} pontos na busca por palavras)")
+                    else:
+                        print("\nOrientação aberta pela sua escolha de assunto.")
+                    orientacao.exibir()
+                    if alternativas:
+                        print("\nOutras orientações relacionadas:")
+                        for _, alternativa in alternativas:
+                            print(f"- {alternativa.titulo}")
+                        print("Se a resposta não ajudar, você poderá abrir uma delas.")
+                    ajudou = self.confirmar()
+                    registro["ajudou"] = ajudou is True
+                    registro["tempo_segundos"] = round(max(0, time.time() - inicio), 1)
+                    self.salvar_historico()
+                    if ajudou is None:
+                        return "voltar"
+                    if ajudou:
+                        self.ultima_orientacao = orientacao
+                        return "nova"
                 else:
-                    escolhida = self.escolher_lista([o for _, o in alternativas], "Qual orientação deseja abrir?")
-                    novos_pontos = next((p for p, o in alternativas if o is escolhida), None)
-                if escolhida is not None:
-                    if orientacao is not None:
-                        alternativas = [(pontos, orientacao)] + [(p, o) for p, o in alternativas if o is not escolhida]
-                    alternativas = [(p, o) for p, o in alternativas if o is not escolhida][:2]
-                    orientacao, pontos = escolhida, novos_pontos
-                    registro["tentativas"] += 1
-                    break
-                print("Escolha como continuar (1 = reformular, 2 = nova dúvida, 3 = categorias, 0 = voltar).")
+                    print("\nNão encontrei uma orientação confirmada para essa dúvida.")
+                    print("Ainda não tenho informação suficiente para responder. Escolha uma categoria ou explique o que precisa saber.")
+
+                print("\nComo você quer continuar?")
+                print("1 - Explicar a mesma dúvida de outro jeito")
+                print("2 - Encerrar este atendimento e fazer outra pergunta")
+                print("3 - Escolher um assunto nas categorias")
+                if alternativas:
+                    print("4 - Abrir outra orientação relacionada")
+                print("0 - Voltar")
+                while True:
+                    opcao = ler_opcao("Escolha uma opção: ", 4 if alternativas else 3)
+                    if opcao == 0:
+                        return "voltar"
+                    if opcao == 1:
+                        return "reformular"
+                    if opcao == 2:
+                        return "nova"
+                    if opcao == 3:
+                        escolhida = self.escolher_categoria()
+                        novos_pontos = None
+                    else:
+                        escolhida = self.escolher_lista([o for _, o in alternativas], "Qual orientação deseja abrir?")
+                        novos_pontos = next((p for p, o in alternativas if o is escolhida), None)
+                    if escolhida is not None:
+                        if orientacao is not None:
+                            alternativas = [(pontos, orientacao)] + [(p, o) for p, o in alternativas if o is not escolhida]
+                        alternativas = [(p, o) for p, o in alternativas if o is not escolhida][:2]
+                        orientacao, pontos = escolhida, novos_pontos
+                        registro["tentativas"] += 1
+                        break
+                    print("Escolha como continuar (1 = reformular, 2 = nova dúvida, 3 = categorias, 0 = voltar).")
+
+        finally:
+            registro["tempo_segundos"] = round(max(0, time.time() - inicio), 1)
+            self.salvar_historico()
+
+    def avisar_risco_imediato(self, pergunta):
+        texto = f" {normalizar(pergunta)} "
+        situacoes = ["estou preso", "estou presa", "fiquei preso", "fiquei presa",
+                     "estamos presos", "estamos presas", "pessoa presa", "pessoas presas"]
+        preso = any(f" {situacao} " in texto and f" nao {situacao} " not in texto
+                    for situacao in situacoes)
+        veiculo = any(f" {palavra} " in texto for palavra in ["carro", "veiculo", "automovel"])
+        inundacao = any(f" {palavra} " in texto for palavra in
+                       ["enchente", "inundacao", "alagamento", "enxurrada", "enchentes"])
+        if preso and veiculo and inundacao:
+            print("\nRISCO IMEDIATO: se você está preso em veículo na inundação, ligue 193 (Bombeiros).")
+            print("Siga as instruções do atendente. O RECOMEÇO não envia equipes de resgate.")
+            print("Informe sua localização diretamente ao serviço oficial, não neste programa.")
+            print("Fonte: https://www.parana.pr.gov.br/servicos/Seguranca/Bombeiros/Acionar-Corpo-de-Bombeiros-193-0A30a4rk")
 
     def perguntar(self):
         print("\nVou buscar orientações oficiais sobre desastres no Brasil.")
@@ -331,6 +351,7 @@ class Assistente:
                     continue
                 tentativas += 1
                 registro = self.registrar("pergunta", None, False, False, tentativas, inicio, registro)
+                self.avisar_risco_imediato(pergunta)
                 resultados = self.base.buscar(pergunta)
                 pontos, orientacao = None, None
                 if resultados:
@@ -379,27 +400,31 @@ class Assistente:
         self.salvar_historico()
         print("Obrigado pela avaliação!")
 
-    def calcular_indicadores(self):
-        total = len(self.historico)
+    def calcular_indicadores(self, data_filtro=None):
+        registros = [r for r in self.historico
+                     if data_filtro is None or r["data"][:10] == str(data_filtro)]
+        total = len(registros)
         notas_por_sessao = {}
-        for registro in self.historico:
+        for registro in registros:
             if registro["sessao"] and registro["facilidade"] is not None:
                 notas_por_sessao[registro["sessao"]] = registro["facilidade"]
         notas = list(notas_por_sessao.values())
         return {
             "total": total,
-            "encontrados_percentual": sum(r["encontrou"] for r in self.historico) / total * 100 if total else 0,
-            "ajudaram_percentual": sum(r["ajudou"] for r in self.historico) / total * 100 if total else 0,
-            "tempo_medio_segundos": sum(r["tempo_segundos"] for r in self.historico) / total if total else 0,
-            "tentativas_media": sum(r["tentativas"] for r in self.historico) / total if total else 0,
+            "encontrados_percentual": sum(r["encontrou"] for r in registros) / total * 100 if total else 0,
+            "ajudaram_percentual": sum(r["ajudou"] for r in registros) / total * 100 if total else 0,
+            "tempo_medio_segundos": sum(r["tempo_segundos"] for r in registros) / total if total else 0,
+            "tentativas_media": sum(r["tentativas"] for r in registros) / total if total else 0,
             "facilidade_media": sum(notas) / len(notas) if notas else None,
             "sessoes_avaliadas": len(notas),
-            "sem_solucao": [r for r in self.historico if not r["ajudou"]]
+            "sem_solucao": [r for r in registros if not r["ajudou"]]
         }
 
-    def indicadores(self):
-        indicadores = self.calcular_indicadores()
+    def indicadores(self, data_filtro=None):
+        indicadores = self.calcular_indicadores(data_filtro)
         print("\nIndicadores de atendimento:")
+        print(f"Período: {data_filtro}" if data_filtro else "Período: todo o histórico desta pasta")
+        print("O CSV exportado contém todo o histórico da pasta, sem filtro de data.")
         if indicadores["total"] == 0:
             print("Nenhum atendimento registrado.")
             return

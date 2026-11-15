@@ -197,19 +197,25 @@ class BaseConhecimento:
 
     def sugerir(self, pergunta):
         # Sem alterar a pontuação: sugestões só são abertas após escolha da pessoa.
-        tema = normalizar(pergunta)
-        diretas = [o for o in self.orientacoes if tema in [normalizar(a) for a in o.assuntos]]
+        tema = f" {normalizar(pergunta)} "
+        diretas = [o for o in self.orientacoes
+                   if any(f" {normalizar(a)} " in tema for a in o.assuntos)]
         if diretas:
             return diretas[:3]
         palavras_comuns = {"como", "onde", "para", "pela", "pelo", "esse", "essa", "isso",
                            "quero", "posso", "fazer", "tenho", "depois", "antes", "preciso",
-                           "minha", "minhas", "meus", "qual", "quais"}
+                           "minha", "minhas", "meus", "qual", "quais", "esta", "estao",
+                           "estou", "estamos", "tendo", "acontecendo", "cidade", "meu",
+                           "pode", "devo", "seria", "sobre", "aqui", "ainda", "muito"}
         palavras = [p for p in normalizar(pergunta).split()
                     if 4 <= len(p) <= 30 and p not in palavras_comuns]
-        sugestoes = []
+        exatas = []
+        aproximadas = []
         for orientacao in self.orientacoes:
             termos = set(" ".join(normalizar(c) for c in orientacao.palavras_chave).split())
             termos = {p for p in termos if len(p) >= 4 and p not in palavras_comuns}
-            if any(get_close_matches(p, sorted(termos), n=1, cutoff=0.84) for p in palavras):
-                sugestoes.append(orientacao)
-        return sugestoes[:3]
+            if any(p in termos for p in palavras):
+                exatas.append(orientacao)
+            elif any(get_close_matches(p, sorted(termos), n=1, cutoff=0.84) for p in palavras):
+                aproximadas.append(orientacao)
+        return (exatas + aproximadas)[:3]

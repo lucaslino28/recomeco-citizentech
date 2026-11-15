@@ -1,117 +1,45 @@
-# Arquitetura Técnica — RECOMEÇO
+# Arquitetura técnica — RECOMEÇO
 
-**Projeto:** RECOMEÇO — CitizenTech  
-**Instituição:** FIAP — Ciência da Computação  
-**Global Solution:** 2026.2  
-**Status:** PCP implementado e validado tecnicamente; IA e SERS pendentes. Testes externos e entregas acadêmicas ainda pendentes.
+FIAP — Ciência da Computação, turma 1CCPX — Global Solution 2026.2. Atualização: 14/11/2026.
 
-## 1. Visão geral
+## 1. Estado atual
 
-O RECOMEÇO será um assistente digital desenvolvido em Python para auxiliar cidadãos afetados por enchentes e desastres climáticos.
+PCP está implementado no terminal, com 34 orientações em três categorias. A avaliação de 14/11 e as melhorias posteriores estão documentadas; a regressão técnica atual passou em 89 testes. A entrega ainda depende de integrantes/RMs completos, revisão/publicação, vídeo e envio do TXT.
 
-O MVP será executado no terminal, com uma interface única que permitirá acessar três módulos:
+Prompt & IA e SERS continuam em planejamento. As opções 2 e 3 informam desenvolvimento pendente. A base fictícia de Aurora não é usada por PCP. Não há novas dependências no programa de PCP.
 
-1. **PCP:** Orientações sobre recuperação após enchentes.
-2. **Prompt & IA:** Assistente de documentação pessoal, utilizando dados fictícios.
-3. **SERS:** Análise de alternativas de energia para abrigos temporários.
-
-Cada módulo terá responsabilidades próprias, mas todos serão acessados pelo mesmo programa principal.
-
-## 2. Arquitetura do sistema
+## 2. Organização
 
 ```text
-                  USUÁRIO
-                     |
-                     v
-                 main.py
-              Menu principal
-                     |
-        +------------+------------+
-        |            |            |
-        v            v            v
-       PCP       PROMPT & IA      SERS
-        |            |            |
-   Busca por      Agente de    Calculadora
-   pontuação      IA           energética
-        |            |            |
-   JSON com       7 fichas     Dados, cálculos
-   fontes         fictícias    e referências
-   oficiais
-        |            |            |
-        +------------+------------+
-                     |
-                     v
-             Resposta no terminal
+main.py — menu principal e parâmetros de execução
+  ├── PCP: Assistente
+  │     └── base: BaseConhecimento
+  │           └── orientacoes: lista de Orientacao
+  ├── Prompt & IA — em desenvolvimento
+  └── SERS — em desenvolvimento
 ```
 
-## 3. Responsabilidade dos arquivos
+A composição permite que o `Assistente` use uma base, e que a base reúna várias orientações. A busca por pontuação é independente de APIs e do futuro módulo de IA.
+
+## 3. Responsabilidades
 
 ### 3.1. Sistema principal
 
-**`main.py`**
-
-Responsável por iniciar o RECOMEÇO e apresentar o menu principal.
-
-Funcionalidades previstas:
-
-- Exibir o nome e a apresentação do projeto.
-- Permitir a escolha do módulo.
-- Encaminhar o usuário para a funcionalidade selecionada.
-- Tratar opções inválidas.
-- Permitir retornar ao menu principal.
-- Encerrar o programa corretamente.
-
-O menu terá quatro opções principais: orientações após enchentes, documentação pessoal, energia e sustentabilidade e indicadores de atendimento.
+`main.py` carrega a base, cria o assistente, apresenta menus, trata interrupções e exporta o CSV ao encerrar. A opção `--dados` escolhe a pasta de resultados. `--data-indicadores` valida a data e filtra a exibição de indicadores; não filtra a exportação completa.
 
 ### 3.2. Módulo PCP
 
-**`orientacao.py`**
+| Classe | Atributos principais | Responsabilidades |
+|---|---|---|
+| `Orientacao` | id, categoria, título, palavras-chave, resposta, documentos, onde, fonte, data; campos opcionais de passos/assuntos/desastres | Representar e exibir a orientação |
+| `BaseConhecimento` | caminho, orientacoes | Ler/validar JSON, listar categorias/tipos, pontuar, buscar e sugerir assuntos |
+| `Assistente` | nome, base, historico, sessao, atendimentos_sessao | Receber perguntas, proteger privacidade, esclarecer escolhas, avaliar, registrar e gerar indicadores/CSV |
 
-Implementa a classe `Orientacao`.
+`pontuar()` mantém +3 por expressão-chave completa e +1 por palavra distinta de quatro ou mais letras presente no título. `buscar()` retorna tuplas ordenadas `(pontos, orientacao)`, com resultado a partir de 3 e confiança ALTA a partir de 6. A escolha entre candidatas próximas não modifica os pontos.
 
-Responsabilidades:
+`sugerir()` procura assuntos dentro da frase; depois considera termos exatos e aproximações de escrita. O `Assistente` exige escolha antes de abrir sugestões. O aviso limitado de pessoa presa em veículo aparece antes das escolhas, sem substituir a busca.
 
-- Representar uma orientação da base JSON.
-- Armazenar categoria, título, palavras-chave, resposta, documentos, local de atendimento, fonte e data de verificação.
-- Exibir a orientação em linguagem acessível.
-
-**`base_conhecimento.py`**
-
-Implementa a classe `BaseConhecimento`.
-
-Responsabilidades:
-
-- Carregar e validar as informações do JSON.
-- Organizar e listar as categorias.
-- Pesquisar orientações por categoria.
-- Normalizar textos.
-- Calcular a pontuação das orientações.
-- Retornar os resultados ordenados por pontuação.
-
-A pontuação inicial seguirá os critérios do professor:
-
-- +3 pontos por palavra-chave encontrada.
-- +1 ponto por palavra da pergunta, com quatro letras ou mais, encontrada no título.
-- 6 ou mais pontos: confiança ALTA.
-- 3 a 5 pontos: confiança MÉDIA.
-- Menos de 3 pontos: orientação não encontrada.
-
-**`assistente.py`**
-
-Implementa a classe `Assistente`.
-
-Responsabilidades:
-
-- Receber perguntas do cidadão.
-- Consultar a classe `BaseConhecimento`.
-- Exibir a melhor resposta e até duas alternativas.
-- Impedir o processamento de entradas com dados pessoais identificados.
-- Solicitar avaliação do atendimento.
-- Registrar histórico seguro.
-- Calcular indicadores.
-- Exportar relatórios CSV.
-
-A busca por pontuação será independente do módulo de inteligência artificial.
+Pergunta e categorias usam `atender()`. Reformulações e alternativas atualizam o mesmo registro, enquanto nova dúvida cria outro. O fluxo registra confirmação e tempo, inclusive ao sair dos menus de recuperação.
 
 ### 3.3. Módulo Prompt & IA
 
@@ -180,129 +108,26 @@ Documentará fontes, premissas, fórmulas, justificativas e limitações utiliza
 
 As recomendações serão integradas ao menu principal do assistente.
 
-## 4. Armazenamento de dados
-
-O projeto utilizará arquivos locais, sem necessidade inicial de banco de dados relacional.
+## 4. Armazenamento e privacidade
 
 | Arquivo | Finalidade |
 |---|---|
-| `data/base_conhecimento.json` | Orientações oficiais do PCP |
-| `data/historico.json` | Resultados com rótulos controlados, sem perguntas livres |
-| `data/atendimentos.csv` | Relatório exportado dos atendimentos |
-| `modulos/documentos_ia/fichas/` | Base fictícia de Prompt & IA |
-| `modulos/energia/analise.json` | Parâmetros e resultados energéticos |
+| `data/base_conhecimento.json` | Conteúdo oficial curado de PCP, 34 orientações |
+| `data/historico.json` | Resultados sem perguntas livres |
+| `data/atendimentos.csv` | Exportação do histórico da pasta |
+| `evidencias/validacao_usuarios_2026-11-14.csv` | Evidência original preservada da rodada, incluindo linha anterior excluída dos cálculos |
+| `testes/casos_avaliacao_pcp.json` | Frases fornecidas pela equipe e orientação esperada na regressão |
+| `modulos/documentos_ia/fichas/` | Sete fichas fictícias, exclusivas de IA |
+| `modulos/energia/analise.json` | Planejamento dos parâmetros e resultados de SERS |
 
-O sistema deverá tratar arquivos JSON ausentes ou inválidos sem encerrar inesperadamente.
+Não há cadastro. O texto da pergunta só fica em memória. O campo `pergunta` recebe rótulo controlado. O filtro recusa oito ou mais dígitos, `@` e alguns padrões de identificação. A nota de facilidade é considerada uma vez por sessão aleatória, sem reconstruir identidade.
 
-## 5. Segurança e privacidade
+A gravação usa arquivo temporário e substituição. Arquivos inteiramente ilegíveis são preservados. As pastas devem ser usadas por uma execução de cada vez. As limitações completas estão em [decisões de PCP](decisoes_pcp.md).
 
-O RECOMEÇO deverá:
+## 5. Validação e sequência de trabalho
 
-- Não solicitar cadastro ou identificação do usuário.
-- Bloquear dados pessoais antes de consultar serviços externos.
-- Não armazenar dados pessoais em históricos ou logs.
-- Evitar repetir informações pessoais fornecidas indevidamente.
-- Exibir fontes e datas de verificação.
-- Informar que não representa um canal oficial.
-- Não inventar orientações, procedimentos ou resultados.
+A regressão técnica usa `unittest` e arquivos temporários. A análise do CSV usa apenas leitura e filtro por data. Os resultados da avaliação e os da regressão ficam separados em [validação PCP](validacao_pcp.md).
 
-As credenciais de serviços externos deverão ser armazenadas em variáveis de ambiente, sem publicação no GitHub.
+A arquitetura e a pontuação foram mantidas durante a melhoria incremental. O próximo desenvolvimento será IA, seguido de SERS. As fichas fictícias não devem se misturar às fontes oficiais de PCP; indisponibilidade de IA não deve impedir PCP.
 
-## 6. Estratégia de integração
-
-O sistema utilizará uma arquitetura modular.
-
-O `main.py` será responsável apenas pela navegação e pelo acionamento das funcionalidades.
-
-Cada módulo deverá ser capaz de executar suas operações sem depender desnecessariamente dos demais.
-
-O módulo de PCP utilizará busca por regras. O módulo de Prompt & IA utilizará um agente de linguagem. O módulo de SERS utilizará cálculos e dados estruturados.
-
-A indisponibilidade do serviço de IA não deverá impedir a utilização das funcionalidades independentes de PCP e SERS.
-
-## 7. Testes previstos
-
-**PCP**
-
-- Testar busca e pontuação.
-- Validar categorias e respostas.
-- Testar entradas inválidas e dados pessoais.
-- Validar indicadores e exportação CSV.
-- Realizar pelo menos 10 atendimentos com 3 participantes externos.
-
-**Prompt & IA**
-
-- Executar o golden dataset de 26 perguntas.
-- Avaliar as respostas com LLM as a Judge.
-- Documentar uma melhoria e executar novamente os testes.
-- Realizar testes com pelo menos 5 participantes externos, utilizando 3 tarefas simples.
-
-**SERS**
-
-- Validar fórmulas, unidades e resultados.
-- Verificar a coerência da comparação energética.
-- Confirmar a apresentação das referências e limitações.
-- Realizar testes de compreensão e utilidade das recomendações.
-
-## 8. Ordem de desenvolvimento
-
-**Etapa 1 — Preparação**
-
-- Criar e publicar o repositório.
-- Organizar os arquivos e diretórios.
-- Elaborar README e documentação da arquitetura.
-- Preparar ambiente Python e arquivos de referência.
-
-**Etapa 2 — PCP**
-
-- Implementar as três classes obrigatórias.
-- Construir a base de conhecimento.
-- Implementar busca, navegação, histórico e indicadores.
-
-**Etapa 3 — Prompt & IA**
-
-- Carregar as sete fichas.
-- Implementar o agente.
-- Criar o avaliador automatizado.
-
-**Etapa 4 — SERS**
-
-- Definir parâmetros energéticos.
-- Implementar cálculos.
-- Comparar alternativas e integrar recomendações.
-
-**Etapa 5 — Validação**
-
-- Integrar os três módulos ao menu.
-- Executar testes.
-- Registrar evidências e melhorias.
-- Atualizar documentação e preparar entregas.
-
-## 9. Critérios para conclusão
-
-O MVP estará pronto quando:
-
-- O sistema executar corretamente pelo terminal.
-- Os três módulos estiverem acessíveis pelo menu.
-- Os requisitos específicos das disciplinas estiverem implementados.
-- As respostas apresentarem referências e limitações.
-- Os testes obrigatórios estiverem registrados.
-- O GitHub contiver códigos, documentação e evidências necessárias.
-
----
-
-**RECOMEÇO — Porque depois do desastre, a vida precisa continuar.**
-
-## 10. Atualização de PCP em 12/11/2026
-
-PCP mantém as três classes e usa somente bibliotecas nativas. A pergunta livre é processada em memória e não é persistida; o histórico e CSV usam rótulos controlados. Reformulações atualizam o mesmo atendimento. A facilidade é calculada por sessão aleatória, sem identificação pessoal. A opção `--dados` separa a coleta externa dos ensaios e dados de desenvolvimento. O ciclo de encerramento exporta CSV mesmo em EOF ou Ctrl+C, desde que o histórico esteja legível.
-
-As regras detalhadas e limites estão em `decisoes_pcp.md`; fontes em `fontes_pcp.md`; roteiro externo em `plano_testes.md`. Partes anteriores que descrevem IA e SERS continuam como planejamento. Os testes reais exigidos por PCP e os vídeos permanecem pendentes.
-
-## 11. Refinamento de usabilidade em 14/11/2026
-
-A base passou de 10 para 18 orientações. Campos opcionais permitem apresentar passos e observações e sugerir assuntos. A pontuação continua em `BaseConhecimento`; o esclarecimento e a seleção de alternativas ficam no `Assistente`, que agora compartilha o fluxo de atendimento entre pergunta e categorias. A última orientação aceita é guardada só em memória para continuação confirmada. A estrutura permanece com as mesmas três classes, sem bibliotecas externas em PCP.
-
-## 12. Cobertura de diferentes desastres
-
-PCP contém agora 30 orientações, preservando os IDs e os dados anteriores. A lista opcional `desastres` no JSON permite a opção de navegação por tipo, reutilizando as mesmas classes e o mesmo fluxo de avaliação. Há oito grupos de eventos mais preparação/apoio. A busca por pontuação e o histórico sem texto livre permanecem. O foco anterior em enchentes, descrito nas etapas históricas deste documento, passou a ser parte de um recorte mais amplo. IA e o estudo energético de SERS continuam sem alteração de implementação.
+A entrega de PCP deve ser conferida pelo [checklist](checklist.md), pelas [fontes](fontes_pcp.md) e pelo [roteiro do vídeo](roteiro_video_pcp.md). Os critérios de implementação dos demais módulos permanecem pendentes e não são declarados concluídos por esta revisão.

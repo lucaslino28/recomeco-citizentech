@@ -1,74 +1,48 @@
-# Plano de testes externos de PCP
+# Plano de testes de PCP
 
-Situação: roteiro preparado, coleta ainda não realizada. A equipe precisa testar com pelo menos três pessoas de fora do grupo, somando dez atendimentos, antes de gravar o vídeo. Testes técnicos automatizados não substituem essa etapa.
+## Situação atual
 
-## Preparação
+A rodada de 14/11 está documentada em [validação PCP](validacao_pcp.md): três participantes externos conforme relato da equipe e dez atendimentos nos arquivos. A versão avaliada tinha 30 orientações; a revisão posterior tem 34. O roteiro abaixo orienta verificações futuras, sem reconstruir retroativamente como a rodada anterior foi aplicada.
 
-1. Executar os testes técnicos: `python -B -m unittest discover -s testes -v`.
-2. Usar uma pasta nova exclusivamente para a coleta real: `python main.py --dados data/testes_externos_pcp`. Se ela já contiver ensaios, escolher uma nova pasta; não misturar os resultados.
-3. Cada pessoa usa uma execução distinta do programa, sempre com a mesma pasta da coleta. Não abrir execuções simultâneas.
-4. Explicar que é um protótipo acadêmico e pedir que não sejam digitados dados pessoais nem situações pessoais identificáveis.
-5. Usar somente as situações fictícias abaixo. Não anotar nome, documento, contato, idade, endereço ou gravação de voz dos participantes. Identificar as sessões apenas pelos códigos aleatórios do programa, sem lista que os vincule às pessoas.
+## Regressão técnica
 
-## Dez atendimentos sugeridos
+```bash
+python -B -m unittest discover -s testes -v
+python -B testes/analisar_validacao_pcp.py
+```
 
-A distribuição de tarefas abaixo é planejada; não comprova participação real.
+A suíte utiliza arquivos temporários e situações sintéticas. Conferir busca +3/+1, categorias e tipos, privacidade, confirmação, reformulação, alternativas, entradas inválidas, JSON, CSV e indicadores. As dez perguntas fornecidas pela equipe estão em `testes/casos_avaliacao_pcp.json`; o resultado esperado é uma orientação específica, não uma nota humana prevista.
 
-| Sessão planejada | Tarefa | Situação fictícia | O que observar |
-|---|---|---|---|
-| Primeira | T01 | Encontrar onde procurar abrigo | Local de encaminhamento e limites sobre vagas |
-| Primeira | T02 | Saber como pedir ajuda depois de enchente | Orientação de emergência e fonte |
-| Primeira | T03 | Procurar alertas da Defesa Civil | Procedimento e aviso para não digitar CEP no assistente |
-| Primeira | T04 | Encontrar benefícios eventuais pela categoria Assistência social | Navegação, critérios e ausência de garantia de benefício |
-| Segunda | T05 | Saber o que fazer se a casa fictícia estiver em risco | Correspondência adequada e encaminhamento |
-| Segunda | T06 | Consultar cuidados com água contaminada | Clareza da resposta e referência |
-| Segunda | T07 | Consultar alimentos atingidos pela enchente | Localizar e compreender orientação |
-| Terceira | T08 | Buscar prevenção de leptospirose pela categoria Saúde e higiene | Acesso à orientação e limites do protótipo |
-| Terceira | T09 | Perguntar sobre um assunto fora da base, como astronomia | Mensagem sem correspondência e opção de retorno |
-| Terceira | T10 | Perguntar como atravessar uma rua alagada | Resposta e compreensão dos cuidados |
+Verificações adicionadas após a rodada: assunto dentro de frases, descarte de palavras neutras, sugestão exata antes da aproximada, aviso de urgência antes das escolhas, distinção entre falta de energia e choque, documentos no acolhimento, contatos regionais, tempo ao retornar e filtro de datas. Resultado atual: 89 testes aprovados; log em `evidencias/testes_pos_avaliacao_pcp_2026-11-14.txt`.
 
-Para manter dez atendimentos separados, encerrar cada tarefa antes de iniciar a seguinte. Se uma tarefa precisar de reformulação, escolher essa opção: haverá um atendimento com mais tentativas, sem aumentar artificialmente o total.
+O script de análise apenas lê o CSV. Para outra rodada, use `--arquivo caminho/atendimentos.csv --data AAAA-MM-DD`. O filtro exclui outras datas dos cálculos, sem apagar linhas. Não somar cenários técnicos como se fossem atendimentos externos.
 
-Pode-se pedir adicionalmente que a pessoa encontre uma resposta inválida de menu e retorne com `0`. Isso não conta como atendimento. Não usar dados pessoais reais para testar o filtro; os testes automatizados já usam exemplos sintéticos controlados.
+## Ensaio no terminal
 
-## Coleta e encerramento
+```bash
+python main.py --dados data/demonstracao_pcp
+```
 
-A própria pessoa responde `s`/`1` ou `n`/`2` à pergunta de utilidade. Ao sair, registra uma nota de facilidade de 1 a 5, ou opta por não avaliar. Não preencher avaliações pela pessoa. Os tempos são medidos pelo programa e incluem a interação; o tempo de digitação e leitura faz parte da medida.
+Experimentar as dez perguntas da regressão, uma pergunta fora do escopo, uma sugestão recusada, retorno com `0`, reformulação e navegação por tipo. A própria equipe pode ensaiar diferentes perfis, identificando isso como simulação técnica. O ensaio não altera a evidência da avaliação.
 
-Na opção 4, os indicadores são calculados sobre todos os registros daquela pasta de coleta. O CSV é exportado ali. Copiar os resultados observados para `evidencias/modelo_resultados_pcp.md` e depois para o README. Conferir que há pelo menos dez atendimentos e que, de fato, participaram três pessoas externas; o número de sessões sozinho não comprova pessoas diferentes.
+## Nova rodada com participantes, se realizada
 
-Os comentários devem ser resumidos pela equipe sem identificar a pessoa. Usar o código da tarefa, não o texto livre digitado. O histórico omite o texto intencionalmente; uma falha sem correspondência deve ser relacionada à situação fictícia do roteiro, sem tentar recuperar relatos pessoais.
+1. Escolher uma pasta nova, por exemplo `python main.py --dados data/validacao_pcp_rodada2`. Não reutilizar a avaliação anterior e não executar simultaneamente.
+2. Registrar a versão do código/base, a data e a quantidade de participantes externos efetivamente envolvidos. Não coletar nome, contato, documento, endereço ou relato identificável.
+3. Explicar o objetivo acadêmico e pedir perguntas sobre situações hipotéticas, permitindo que cada pessoa formule a própria frase.
+4. Incluir acolhimento sem documentos, alagamento na rua, encaminhamento de urgência hipotética, tempestade e energia; complementar com outros desastres e navegação. Uma distribuição planejada não deve ser descrita como realizada.
+5. Deixar a pessoa escolher caminhos e marcar utilidade e facilidade. Não sugerir notas ou preencher por ela.
+6. Registrar o código da tarefa e a dificuldade observada, sem dados pessoais. O histórico omite o texto livre intencionalmente.
+7. Usar o modelo em `evidencias/modelo_resultados_pcp.md` para uma nova cópia datada. Conferir os indicadores da pasta e preservar os dados originais.
 
-## Melhoria obrigatória
+O mínimo do enunciado é três pessoas de fora da equipe e dez atendimentos no total. Número de execuções não comprova pessoas diferentes. Na rodada de 14/11 foram informadas dez execuções para três participantes; a divisão por pessoa não está registrada e não deve ser inventada.
 
-Depois da coleta, identificar uma dificuldade real, aplicar uma mudança pequena e registrá-la com evidência. Exemplo possível: uma palavra-chave que realmente faltou para uma das tarefas. Esse exemplo é apenas uma possibilidade, não um resultado já observado.
+Uma nova rodada pode medir se facilidade e utilidade melhoraram; até que ocorra, não há notas humanas posteriores às correções. O requisito de melhoria após a rodada inicial está documentado com a mudança aplicada e sua verificação técnica.
 
-Documentar: tarefa que falhou, observação recebida, mudança aplicada, teste após a mudança e limitação restante. Preservar os resultados anteriores em vez de reescrevê-los para parecer que a falha não aconteceu. Se houver nova rodada com pessoas, usar outra pasta para não misturar antes e depois.
+## Melhorias e evidências
 
-## Vídeo de PCP
+Manter a sequência: dificuldade observada → causa no código/conteúdo → mudança pequena → teste técnico → limitação restante. Preservar os CSVs e as notas anteriores. Não corrigir tempos antigos com base em estimativas. Em emergência real, interromper a avaliação e acionar o serviço oficial adequado.
 
-Preparar vídeo técnico de 5 a 8 minutos, não listado, com código legível e todos os integrantes explicando uma parte. Não usar voz sintética.
+## Vídeo
 
-Demonstrar: equipe/público/problema; um registro JSON e as tuplas da busca; atributos, métodos, `self` e composição; cálculo real de pontuação; resposta encontrada e não encontrada; entrada inválida e dado fictício bloqueado; categorias; alteração ao vivo de palavra-chave; histórico sem texto livre, CSV e indicadores reais; decisão de privacidade e uma limitação.
-
-Para a alteração ao vivo, usar uma cópia da base ou restaurar a edição depois do ensaio. Uma pergunta controlada como `refúgio temporário` não deve ser encontrada antes da mudança; acrescentar essa expressão à orientação de abrigo, reiniciar para recarregar o JSON e mostrar a diferença. Confirmar o comportamento antes da gravação. Esse ensaio demonstra a busca e não constitui melhoria baseada em usuário.
-
-Manter demonstrações em pasta separada: `python main.py --dados data/demonstracao_pcp`. Elas não devem alterar os indicadores da coleta externa.
-
-## Interações adicionais da versão de 14/11
-
-Experimentar também a pergunta curta `alimentos`, escolher entre receber, doar ou descartar e observar se as opções são compreensíveis. Na pergunta `água`, conferir se a pessoa distingue tratamento, abastecimento e reservatório. Usar `soccoro` como exemplo fictício de erro de digitação e conferir que a sugestão exige escolha antes de abrir.
-
-Depois de uma resposta negativa, a opção 3 abre categorias no mesmo atendimento; a opção 4 aparece quando há alternativas relacionadas. Abrir uma nova orientação nesses caminhos aumenta tentativas, sem criar outro atendimento. `?` e ver exemplos não contam como atendimento.
-
-Essas são tarefas adicionais possíveis, não resultados já coletados. Anotar ambiguidades e dificuldades observadas de fato; não orientar a pessoa a responder que a tela é fácil.
-
-## Tarefas para a cobertura ampliada
-
-O mínimo continua sendo três pessoas externas e dez atendimentos no total. Para representar o novo escopo, a equipe pode substituir as dez situações do roteiro anterior por: (1) barranco cedendo, (2) vendaval, (3) raios, (4) granizo, (5) seca e economia de água, (6) calor intenso, (7) fumaça de queimadas, (8) acolhimento após desastre, (9) enchente e (10) plano familiar/kit. Distribuir em 4 + 3 + 3 tarefas, com situações fictícias e sem identificação dos participantes.
-
-Incluir pelo menos uma consulta pela opção 4 do submenu de PCP, escolhendo o tipo de desastre. Conferir se a pessoa entende a diferença entre cuidados específicos e apoio comum. Selecionar apenas o tipo e voltar não conta como atendimento; abrir uma orientação conta. Usar as avaliações reais da pessoa, sem preencher por ela.
-
-Os exemplos de mal-estar são situações fictícias de encaminhamento, não avaliação de saúde dos participantes. Não coletar relatos clínicos reais. Se houver emergência real, interromper o teste e buscar o serviço oficial adequado.
-
-Preservar os resultados de qualquer rodada anterior como pertencentes à versão testada. Uma nova rodada da base ampliada deve usar pasta própria, sem misturar indicadores de versões diferentes.
+Use [roteiro do vídeo PCP](roteiro_video_pcp.md). As demonstrações devem usar uma pasta própria e uma cópia da base para a alteração ao vivo de palavra-chave. Não mudar o histórico da rodada externa durante a gravação.

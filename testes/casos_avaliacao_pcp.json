@@ -1,0 +1,52 @@
+[
+  {
+    "caso": 1,
+    "pergunta": "Como procuro abrigo para dormir?",
+    "id_esperado": 5
+  },
+  {
+    "caso": 2,
+    "pergunta": "Perdi meus documentos na chuva.",
+    "id_esperado": 12
+  },
+  {
+    "caso": 3,
+    "pergunta": "Eu consigo entrar no abrigo sem meu documento com RG e CPF?",
+    "id_esperado": 31
+  },
+  {
+    "caso": 4,
+    "pergunta": "E como posso saber se minha cidade oferece abrigo?",
+    "id_esperado": 5
+  },
+  {
+    "caso": 5,
+    "pergunta": "Está tendo uma enchente na rua do meu serviço.",
+    "id_esperado": 2
+  },
+  {
+    "caso": 6,
+    "pergunta": "Estou preso dentro do meu carro na enchente.",
+    "id_esperado": 1
+  },
+  {
+    "caso": 7,
+    "pergunta": "Como ligar para os bombeiros me resgatar?",
+    "id_esperado": 1
+  },
+  {
+    "caso": 8,
+    "pergunta": "Está acontecendo uma tempestade forte na minha cidade, o que devo fazer?",
+    "id_esperado": 34
+  },
+  {
+    "caso": 9,
+    "pergunta": "Por conta da chuva minha casa está sem energia.",
+    "id_esperado": 32
+  },
+  {
+    "caso": 10,
+    "pergunta": "Você tem o número da Enel?",
+    "id_esperado": 33
+  }
+]
