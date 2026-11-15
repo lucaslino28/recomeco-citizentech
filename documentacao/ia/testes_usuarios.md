@@ -6,7 +6,7 @@
 
 ## Situação
 
-Roteiro preparado; nenhuma coleta humana de IA é declarada realizada neste documento. O enunciado pede pelo menos cinco pessoas de fora da equipe, três tarefas por pessoa e cinco questões de facilidade em escala de 1 a 5. A rodada anterior de PCP é de outra disciplina.
+A rodada de 15/11 foi informada pelo aplicador com cinco pessoas externas, três tarefas por código e 25 notas. O [relatório da aplicação](usuarios_2026-11-15.md) contém as perguntas efetivas, que variaram em relação ao roteiro abaixo. Os resultados estão em `evidencias/ia/usuarios/rodada_2026-11-15/`. O roteiro original foi preservado como planejamento e orientação para futuras rodadas. A rodada anterior de PCP é de outra disciplina.
 
 ## Preparação e aplicação
 
@@ -16,7 +16,7 @@ Roteiro preparado; nenhuma coleta humana de IA é declarada realizada neste docu
 4. Cronometrar desde a apresentação da tarefa até a pessoa localizar e compreender o resultado. Anotar o tempo total, incluindo digitação, navegação, espera e leitura. Registrar separadamente uma eventual indisponibilidade da API.
 5. Conferir o resultado da tarefa com as fichas, sem orientar a pessoa a dar uma resposta positiva. Depois das três tarefas, aplicar as cinco perguntas.
 
-## Três tarefas
+## Três tarefas originalmente propostas
 
 | Tarefa | Situação fictícia | Critério de conclusão |
 |---|---|---|

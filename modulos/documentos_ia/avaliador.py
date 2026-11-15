@@ -165,7 +165,7 @@ def comparar(antes, depois):
 
 if __name__ == "__main__":
     argumentos = argparse.ArgumentParser(description="Golden dataset e LLM as a Judge — RECOMEÇO")
-    argumentos.add_argument("--versao", choices=["v1", "v2", "v3"], default="v1")
+    argumentos.add_argument("--versao", choices=["v1", "v2", "v3", "v4"], default="v1")
     argumentos.add_argument("--saida", type=Path, default=RAIZ / "evidencias/ia/antes.json")
     argumentos.add_argument("--retomar", action="store_true")
     argumentos.add_argument("--pausa", type=float, default=3)

@@ -24,6 +24,6 @@
 <text x="870" y="511" class="h">LLM as a Judge</text><text x="870" y="541" class="p">GPT-OSS 120B, quatro critérios</text><text x="870" y="568" class="p">JSON antes/depois + análise</text><path d="M770 533H850" class="link"/>
 <path d="M1000 230V475" class="link"/>
 <rect x="50" y="655" width="1100" height="100" rx="14" fill="#e2edf9"/>
-<text x="73" y="692" class="h">Avaliação humana: etapa própria, ainda pendente</text>
+<text x="73" y="692" class="h">Avaliação humana: etapa própria</text>
 <text x="73" y="723" class="p">Cinco pessoas externas × três tarefas; tempos e questionário com cinco itens. Sem identificação pessoal.</text>
 </svg>

@@ -46,10 +46,12 @@ Atualizado em 15/11/2026. Os itens marcados foram implementados ou verificados t
 - [x] LLM juiz com quatro critérios, registros por caso e retomada de rodada.
 - [x] Rodadas completas, melhorias e comparação automática preservadas.
 - [x] Notebook executado com tabelas reais e análise crítica do juiz.
-- [ ] Conferência manual da amostra pelos integrantes, sem alterar vereditos originais.
+- [x] Amostra de seis casos conferida e confirmada manualmente pelo aplicador; ressalvas e vereditos originais preservados.
 - [x] Plano e modelos vazios para avaliação humana.
-- [ ] Cinco pessoas externas, três tarefas cada, tempos e questionário de cinco itens.
-- [ ] Relatório dos três indicadores com dados humanos efetivamente coletados.
+- [x] Coleta documentada conforme relato do aplicador: cinco pessoas externas, três tarefas por código, 15 tempos e 25 notas; tarefas efetivas variadas.
+- [x] Relatório com acerto do juiz, tempo humano e facilidade, separados da conclusão informada das tarefas.
+- [x] CSVs fornecidos preservados, origem e transcrição documentadas; análise local reproduzível.
+- [x] V4 corrige os casos identificados de banco, lista documental do RG e limite de recuperação de CPF; 135 testes locais aprovados.
 - [ ] Revisão/publicação da implementação de IA.
 
 ### SERS

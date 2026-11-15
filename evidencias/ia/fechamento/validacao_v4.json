@@ -1,0 +1,59 @@
+{
+  "versao": "v4",
+  "natureza": "Regressão técnica local; não é nova coleta de pessoas nem avaliação LLM-as-a-Judge.",
+  "chamadas_api_nesta_validacao": 0,
+  "benchmark_novo_v4_executado": false,
+  "ultimo_benchmark_llm": "v3: 25/26, conforme artefato original.",
+  "testes_locais_aprovados": 135,
+  "resultados": [
+    {
+      "pergunta_de_regressao": "Você pode fazer uma transferência bancária para mim?",
+      "resultado_obtido": {
+        "texto": "Não realizo transferências bancárias. Esse serviço não consta nas sete fichas. Consulte os canais oficiais da instituição responsável.\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+        "status": "fora_escopo",
+        "fontes": [],
+        "origem": "regra"
+      }
+    },
+    {
+      "pergunta_de_regressao": "Fui roubado e fiquei sem meu RG. Preciso apresentar boletim de ocorrência? Quais outros documentos são exigidos?",
+      "resultado_obtido": {
+        "texto": "Documentos para a segunda via do RG, conforme a ficha:\n1. Certidão de nascimento ou de casamento (original ou cópia autenticada).\n2. Comprovante de residência dos últimos 90 dias.\n3. Em caso de roubo ou furto: boletim de ocorrência. Em caso de perda: declaração de extravio, assinada no próprio balcão (o boletim de ocorrência não é exigido).\nAgendamento e pagamento são etapas separadas do procedimento. A guia não aparece na lista de documentos necessários da FC-01.\nFonte: FC-01, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+        "status": "respondido",
+        "fontes": [
+          "FC-01"
+        ],
+        "origem": "regra"
+      }
+    },
+    {
+      "pergunta_de_regressao": "Perdi meus documentos na enchente. Como faço para recuperar meu CPF?",
+      "resultado_obtido": {
+        "texto": "A FC-02 descreve inscrição e correção de dados, mas não detalha um procedimento para recuperar o CPF após perda de documentos. Confirme o procedimento no portal ou balcão da Central do Cidadão de Aurora. Não é possível concluir por essa ficha que você precise fazer nova inscrição.\nFonte: FC-02, versão 01/10/2026; Fonte: FC-07, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+        "status": "respondido",
+        "fontes": [
+          "FC-02",
+          "FC-07"
+        ],
+        "origem": "regra"
+      }
+    },
+    {
+      "pergunta_de_regressao": "O que é o RG?",
+      "resultado_obtido": {
+        "texto": "Nas fichas de Aurora, RG identifica a Carteira de Identidade. A FC-01 apresenta orientações para a primeira e a segunda via.\nFonte: FC-01, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+        "status": "respondido",
+        "fontes": [
+          "FC-01"
+        ],
+        "origem": "regra"
+      }
+    }
+  ],
+  "fontes_usadas": "Somente as sete fichas originais de Aurora.",
+  "hashes_codigo": {
+    "modulos/documentos_ia/agente.py": "677fde76801e84660c41523acd0c88754d59dfc197e29b1e48d9073f58a9d9af",
+    "modulos/documentos_ia/avaliador.py": "55e12594dba8363df455e97462f701118fd656d2041e70966014898804d42fe9",
+    "modulos/documentos_ia/prompts/v4.txt": "d61004889dc3002093c226267212838657f962dde1e52cfb192ffdd3581b5ea7"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "observacao": "Arquivos conferidos antes e depois das correções v4; nenhuma nota, tempo, resposta ou veredito original alterado.",
+  "hashes": {
+    "data/historico.json": "57189351ebaf2b9467aeae40c9b493523228db7102cd4d68a42c9755a64e8be9",
+    "data/atendimentos.csv": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+    "evidencias/validacao_usuarios_2026-11-14.csv": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+    "evidencias/ia/antes.json": "904ea14ded87fdf6f880dd1cd6130e61dc7cdf871a0b91d4436c8a4132ef8f62",
+    "evidencias/ia/intermediaria_v2.json": "e47730f1030ebad1eeeb741f54e4f31635facfb8a59352026b7bd8cc4f0d762f",
+    "evidencias/ia/depois.json": "358036d32358ac01a761fea56e4e8122784270ac3487dfd062b6f67e53c32ef7",
+    "evidencias/ia/usuarios/rodada_2026-11-15/tarefas.csv": "d6739e197a41bcbf425220af0aade5b3761f630f3e3de2b13edf83a37ab819de",
+    "evidencias/ia/usuarios/rodada_2026-11-15/questionario.csv": "219888f502cf75e42dc97d439d75aa82e74aec19a2983b4a6033eeebc308f7a1",
+    "modulos/documentos_ia/fichas/FC-04_carteira_de_trabalho.md": "111dd5a4209d12fffb2000899ab3435a4f4ebf38a680eb47edf8bf9cb2caa0d8",
+    "modulos/documentos_ia/fichas/FC-07_regras_gerais.md": "01c63d84bf591a1383ad043b0925a578c6672fc309c9bd8647e4bda14062e283",
+    "modulos/documentos_ia/fichas/FC-02_cpf.md": "296bfe8546c59fb2cc3741d115f5e21719b2494f3db7d20837c938892cb47e5c",
+    "modulos/documentos_ia/fichas/FC-01_rg_segunda_via.md": "5b96f962f1406a9254ce398111b603a2650e66e58f6554993e3b97d15cda9bf5",
+    "modulos/documentos_ia/fichas/FC-05_certidoes.md": "c2d556b93716f12622bbe3d0e16e3c5310a9cca3d379c0d602810897187cd6aa",
+    "modulos/documentos_ia/fichas/FC-03_titulo_de_eleitor.md": "959fd421c4e87512c35cb513d71ba735052f899d0eac756a4f653c2aca7251c5",
+    "modulos/documentos_ia/fichas/FC-06_cnh_renovacao.md": "1bd2f7883cc67fc2ac5d5ae65f495affa401652fb878583f1618e773d617b3a0"
+  }
+}

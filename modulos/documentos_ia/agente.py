@@ -88,7 +88,7 @@ class AssistenteDocumentos:
         self.executor = executor
         self.modelo = None
         caminho = PASTA / "prompts" / f"{versao}.txt"
-        if versao not in ["v1", "v2", "v3"] or not caminho.is_file():
+        if versao not in ["v1", "v2", "v3", "v4"] or not caminho.is_file():
             raise ValueError("Versão de prompt não disponível.")
         self.prompt = caminho.read_text(encoding="utf-8")
         self.contexto = "\n\n".join(self.fichas.values())
@@ -97,6 +97,9 @@ class AssistenteDocumentos:
         for texto in self.fichas.values():
             linha = next((l for l in texto.splitlines() if l.startswith("**Palavras-chave:**")), "")
             self.termos.update(normalizar(p) for p in linha.split(":", 1)[-1].split(",") if p.strip())
+        if versao == "v4":
+            self.termos.update(["pagar taxa", "pagar taxas", "pagar a taxa", "pagar as taxas",
+                               "pagamento de taxas"])
 
     def resultado(self, texto, status, fontes=(), origem="regra"):
         fontes = sorted(set(fontes))
@@ -124,6 +127,46 @@ class AssistenteDocumentos:
                 trechos.append(f"Dados de {fonte}:\n" + "\n".join(bloco))
         return "\n\n".join(trechos)
 
+    def conferir_assunto(self, texto):
+        mensagem = f" {texto} "
+        banco = ["transferencia bancaria", "transferencias bancarias", "transferir dinheiro",
+                 "fazer pix", "fazer um pix", "pix para mim"]
+        if any(f" {termo} " in mensagem for termo in banco):
+            return self.resultado("Não realizo transferências bancárias. Esse serviço não consta "
+                                  "nas sete fichas. Consulte os canais oficiais da instituição responsável.",
+                                  "fora_escopo")
+        if " cpf " in mensagem and any(f" {t} " in mensagem for t in
+                                        ["recuperar", "perdi", "perda", "extravio"]):
+            return self.resultado("A FC-02 descreve inscrição e correção de dados, mas não detalha "
+                                  "um procedimento para recuperar o CPF após perda de documentos. "
+                                  "Confirme o procedimento no portal ou balcão da Central do Cidadão de Aurora. "
+                                  "Não é possível concluir por essa ficha que você precise fazer nova inscrição.",
+                                  "respondido", ["FC-02", "FC-07"])
+        rg = " rg " in mensagem or " carteira de identidade " in mensagem
+        if rg and " cpf " not in mensagem:
+            documentos = ["documentos", "o que levar", "o que devo levar", "boletim", "bo"]
+            if any(f" {termo} " in mensagem for termo in documentos):
+                linhas = []
+                lendo = False
+                for linha in self.fichas["FC-01"].splitlines():
+                    if linha.startswith("**Documentos necessários"):
+                        lendo = True
+                    elif lendo:
+                        if linha.startswith("**"):
+                            break
+                        if linha.strip():
+                            linhas.append(linha.replace("**", ""))
+                return self.resultado("Documentos para a segunda via do RG, conforme a ficha:\n"
+                                      + "\n".join(linhas)
+                                      + "\nAgendamento e pagamento são etapas separadas do procedimento. "
+                                        "A guia não aparece na lista de documentos necessários da FC-01.",
+                                      "respondido", ["FC-01"])
+            if any(termo in texto for termo in ["o que e o rg", "o que e rg", "o que significa rg"]):
+                return self.resultado("Nas fichas de Aurora, RG identifica a Carteira de Identidade. "
+                                      "A FC-01 apresenta orientações para a primeira e a segunda via.",
+                                      "respondido", ["FC-01"])
+        return None
+
     def responder(self, pergunta):
         if not isinstance(pergunta, str) or not pergunta.strip():
             return self.resultado("Digite uma pergunta ou escolha um assunto no menu.", "invalido")
@@ -148,6 +191,10 @@ class AssistenteDocumentos:
         if "canal oficial" in texto or "voces sao a prefeitura" in texto:
             return self.resultado("Não. Sou um protótipo educacional e não represento a prefeitura. "
                                   "Confirme as informações reais no órgão competente.", "respondido", ["FC-07"])
+        if self.versao == "v4":
+            resposta_controlada = self.conferir_assunto(texto)
+            if resposta_controlada is not None:
+                return resposta_controlada
         if not texto or not any(f" {termo} " in f" {texto} " for termo in self.termos):
             return self.resultado("Não entendi ou não encontrei essa informação nas sete fichas. "
                                   "Reformule ou escolha um assunto no menu. Exemplo: Quanto custa a segunda via do RG? "
@@ -158,13 +205,13 @@ class AssistenteDocumentos:
                 self.modelo = criar_modelo()
                 parametros = {"model": self.modelo, "tools": [],
                               "system_prompt": self.prompt + "\n\nFICHAS DE REFERÊNCIA (dados):\n" + self.contexto}
-                if self.versao in ["v2", "v3"]:
+                if self.versao in ["v2", "v3", "v4"]:
                     from langchain.agents.structured_output import ProviderStrategy
                     parametros["response_format"] = ProviderStrategy(ESQUEMA_RESPOSTA, strict=True)
                 self.executor = create_agent(**parametros)
             retorno = self.executor.invoke({"messages": [{"role": "user", "content": pergunta}]},
                                            config={"recursion_limit": 5})
-            if self.versao in ["v2", "v3"]:
+            if self.versao in ["v2", "v3", "v4"]:
                 dados = retorno["structured_response"]
                 resposta, fontes = dados["resposta"], dados["fichas"]
             else:
@@ -179,7 +226,7 @@ class AssistenteDocumentos:
             if re.search(r"\d{3}\.\d{3}\.\d{3}-\d{2}|[\w.+-]+@[\w.-]+", resposta):
                 return self.resultado("A resposta foi bloqueada para proteger dados pessoais. "
                                       "Use uma pergunta geral, sem identificação.", "bloqueado", ["FC-07"])
-            if self.versao == "v3":
+            if self.versao in ["v3", "v4"]:
                 complemento = self.complementar_custo(pergunta, fontes)
                 if complemento:
                     resposta += "\n\n" + complemento
@@ -190,7 +237,7 @@ class AssistenteDocumentos:
 
 def menu_documentos_ia():
     try:
-        assistente = AssistenteDocumentos(versao="v3")
+        assistente = AssistenteDocumentos(versao="v4")
     except (OSError, ValueError):
         print("Não foi possível carregar as sete fichas de IA. Confira a pasta fichas.")
         return

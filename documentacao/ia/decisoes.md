@@ -68,7 +68,7 @@ O LLM continua interpretando perguntas e produzindo orientação; campos verific
 
 Não há consulta cadastral, emissão de documentos, agendamento ou confirmação de serviços reais. Regras por palavras podem rejeitar formulações válidas ou deixar passar uma identificação não prevista. Referência bem formada não comprova verdade de todos os fatos: o conteúdo ainda precisa ser avaliado.
 
-A comparação antes/depois, a conferência técnica assistida e as limitações estão em [avaliação](avaliacao.md). A conferência manual dos integrantes continua pendente. Os tempos e a facilidade de cinco participantes externos serão coletados separadamente, conforme [plano de usuários](testes_usuarios.md). Não há avaliação humana de IA declarada nesta etapa.
+A comparação antes/depois, a conferência técnica assistida e as limitações estão em [avaliação](avaliacao.md). A [amostra](revisao_amostra.md) teve confirmação manual declarada pelo aplicador, com as divergências registradas. Os tempos e as notas de cinco participantes externos, conforme relato do aplicador, foram registrados no [relatório da rodada](usuarios_2026-11-15.md). Essa coleta variou tarefas e não constitui comparação humana antes/depois. Encaminhamentos sem respaldo encontrados nela foram documentados para correção, sem alterar os resultados originais.
 
 ## Documentação técnica consultada
 
@@ -78,3 +78,9 @@ A comparação antes/depois, a conferência técnica assistida e as limitações
 - [Groq — respostas estruturadas](https://console.groq.com/docs/structured-outputs).
 
 Essas referências sustentam a implementação. Os fatos apresentados ao cidadão continuam restritos às sete fichas didáticas.
+
+## Fechamento v4
+
+A v4 separa pedidos bancários de transferência eleitoral e pagamento de taxas. Usa a seção documental de FC-01 sem acrescentar guia como documento exigido, explicita a ausência de procedimento de recuperação de CPF na FC-02 e limita a definição de RG ao conteúdo disponível. Condições simples precedem o LLM nos casos conhecidos. A arquitetura e as fichas foram mantidas.
+
+A validação é local, com 135 testes e reprodução controlada de casos registrados. Não há novo percentual do juiz ou novas notas humanas para v4. Veja [fechamento](fechamento.md).

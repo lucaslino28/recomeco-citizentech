@@ -1,0 +1,175 @@
+{
+  "origem": "Perguntas e respostas da transcrição; códigos e vínculo com participantes informados pelo aplicador. Tempos e notas não são medidos pelo terminal.",
+  "interacoes": [
+    {
+      "participante_anonimo": "P01",
+      "tarefa": "T01",
+      "tema": "RG perdido",
+      "pergunta_informada_pelo_aplicador": "Perdi meu RG durante uma enchente. Quais documentos preciso apresentar para solicitar a segunda via?",
+      "pergunta_terminal_bruta": " Perdi meu RG durante uma enchente. Quais documentos preciso apresentar para solicitar a segunda via?",
+      "resposta_terminal": "Para solicitar a segunda via do RG perdido, você deve apresentar: 1) Certidão de nascimento ou de casamento (original ou cópia autenticada); 2) Comprovante de residência dos últimos 90 dias; 3) Declaração de extravio, assinada no balcão (não é exigido boletim de ocorrência).\nFonte: FC-01, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-01"
+      ]
+    },
+    {
+      "participante_anonimo": "P01",
+      "tarefa": "T02",
+      "tema": "CNH aos 55 anos",
+      "pergunta_informada_pelo_aplicador": "Tenho 55 anos e acabei de renovar minha CNH. Por quantos anos ela será válida?",
+      "pergunta_terminal_bruta": " Tenho 55 anos e acabei de renovar minha CNH. Por quantos anos ela será válida?",
+      "resposta_terminal": "Sua CNH renovada terá validade de 5 anos.\nFonte: FC-06, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-06"
+      ]
+    },
+    {
+      "participante_anonimo": "P01",
+      "tarefa": "T03",
+      "tema": "Certidão pelo portal",
+      "pergunta_informada_pelo_aplicador": "Quanto custa solicitar a segunda via da certidão de nascimento pelo portal e em quanto tempo recebo o documento?",
+      "pergunta_terminal_bruta": " Quanto custa solicitar a segunda via da certidão de nascimento pelo portal e em quanto tempo recebo o documento?",
+      "resposta_terminal": "A segunda via da certidão de nascimento pelo portal custa R$ 49,00 e o documento fica pronto em 3 dias úteis.\n\nDados de FC-05:\nCusto e prazo (cada certidão):\n- No balcão do Cartório Central de Aurora: R$ 55,00, pronta em 5 dias úteis.\n- Pelo portal, em PDF: R$ 49,00, pronta em 3 dias úteis.\nFonte: FC-05, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-05"
+      ]
+    },
+    {
+      "participante_anonimo": "P02",
+      "tarefa": "T01",
+      "tema": "Segunda via do RG",
+      "pergunta_informada_pelo_aplicador": "Meu RG desapareceu e preciso fazer outro. O que devo levar ao posto de atendimento?",
+      "pergunta_terminal_bruta": " Meu RG desapareceu e preciso fazer outro. O que devo levar ao posto de atendimento?",
+      "resposta_terminal": "Para solicitar a segunda via do RG, vá ao Posto de Identificação de Aurora com os seguintes documentos: 1) Certidão de nascimento ou de casamento (original ou cópia autenticada); 2) Comprovante de residência dos últimos 90 dias; 3) Se o RG foi roubado ou furtado, leve o boletim de ocorrência; se apenas perdeu, leve a declaração de extravio que será assinada no balcão. Agende o atendimento pelo portal da Central do Cidadão e pague a guia de R$ 38,00 antes da visita.\nFonte: FC-01, versão 01/10/2026; Fonte: FC-07, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-01",
+        "FC-07"
+      ]
+    },
+    {
+      "participante_anonimo": "P02",
+      "tarefa": "T02",
+      "tema": "CNH aos 55 anos",
+      "pergunta_informada_pelo_aplicador": "Uma pessoa de 55 anos renovou a carteira de motorista. Quando precisará renovar novamente?",
+      "pergunta_terminal_bruta": " Uma pessoa de 55 anos renovou a carteira de motorista. Quando precisará renovar novamente?",
+      "resposta_terminal": "A carteira de motorista de uma pessoa de 55 anos tem validade de 5 anos após a renovação. Portanto, a próxima renovação deve ser feita 5 anos depois da última.\nFonte: FC-06, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-06"
+      ]
+    },
+    {
+      "participante_anonimo": "P02",
+      "tarefa": "T03",
+      "tema": "Certidão pelo portal",
+      "pergunta_informada_pelo_aplicador": "Preciso de uma nova certidão de nascimento pelo portal. Qual é a taxa e o prazo para receber o PDF?",
+      "pergunta_terminal_bruta": " Preciso de uma nova certidão de nascimento pelo portal. Qual é a taxa e o prazo para receber o PDF?",
+      "resposta_terminal": "Para solicitar a segunda via da certidão de nascimento pelo portal, a taxa é de R$ 49,00 e o prazo para receber o PDF é de 3 dias úteis.\n\nDados de FC-05:\nCusto e prazo (cada certidão):\n- No balcão do Cartório Central de Aurora: R$ 55,00, pronta em 5 dias úteis.\n- Pelo portal, em PDF: R$ 49,00, pronta em 3 dias úteis.\nFonte: FC-05, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-05"
+      ]
+    },
+    {
+      "participante_anonimo": "P03",
+      "tarefa": "T01",
+      "tema": "RG roubado",
+      "pergunta_informada_pelo_aplicador": "Fui roubado e fiquei sem meu RG. Preciso apresentar boletim de ocorrência? Quais outros documentos são exigidos?",
+      "pergunta_terminal_bruta": " Fui roubado e fiquei sem meu RG. Preciso apresentar boletim de ocorrência? Quais outros documentos são exigidos?",
+      "resposta_terminal": "Sim, se o RG foi roubado, é preciso apresentar um boletim de ocorrência. Além disso, você deve levar: 1) Certidão de nascimento ou de casamento (original ou cópia autenticada); 2) Comprovante de residência dos últimos 90 dias; 3) Guia de pagamento de R$ 38,00 gerada no portal da Central do Cidadão. Agende o atendimento pelo portal e compareça ao Posto de Identificação com esses documentos.\nFonte: FC-01, versão 01/10/2026; Fonte: FC-07, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-01",
+        "FC-07"
+      ]
+    },
+    {
+      "participante_anonimo": "P03",
+      "tarefa": "T02",
+      "tema": "CNH por faixas etárias",
+      "pergunta_informada_pelo_aplicador": "Qual é o período de validade da cnh?",
+      "pergunta_terminal_bruta": " Qual é o período de validade da cnh?                                             ",
+      "resposta_terminal": "A validade da CNH renovada depende da idade do condutor:\n- Até 49 anos: 10 anos;\n- De 50 a 69 anos: 5 anos;\n- 70 anos ou mais: 3 anos.\nFonte: FC-06, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-06"
+      ]
+    },
+    {
+      "participante_anonimo": "P03",
+      "tarefa": "T03",
+      "tema": "Futebol fora do escopo",
+      "pergunta_informada_pelo_aplicador": "Você pode me informar os resultados dos últimos jogos de futebol?",
+      "pergunta_terminal_bruta": " Você pode me informar os resultados dos últimos jogos de futebol?",
+      "resposta_terminal": "Não entendi ou não encontrei essa informação nas sete fichas. Reformule ou escolha um assunto no menu. Exemplo: Quanto custa a segunda via do RG? Para assuntos não cobertos, consulte o órgão competente.\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": []
+    },
+    {
+      "participante_anonimo": "P04",
+      "tarefa": "T01",
+      "tema": "Orientações para RG",
+      "pergunta_informada_pelo_aplicador": "Preciso tirar outro RG, mas não sei por onde começar. Pode me orientar?",
+      "pergunta_terminal_bruta": " Preciso tirar outro RG, mas não sei por onde começar. Pode me orientar?",
+      "resposta_terminal": "Para solicitar uma segunda via do RG, agende o atendimento pelo portal da Central do Cidadão, gere e pague a guia de R$ 38,00, e compareça ao Posto de Identificação com os documentos originais exigidos (certidão de nascimento ou casamento, comprovante de residência e, se for perda, declaração de extravio). O prazo é de 10 dias úteis.\nFonte: FC-01, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-01"
+      ]
+    },
+    {
+      "participante_anonimo": "P04",
+      "tarefa": "T02",
+      "tema": "CPF após perda de documentos",
+      "pergunta_informada_pelo_aplicador": "Perdi meus documentos na enchente. Como faço para recuperar meu CPF?",
+      "pergunta_terminal_bruta": " Perdi meus documentos na enchente. Como faço para recuperar meu CPF?",
+      "resposta_terminal": "Para regularizar seu CPF após a perda, acesse o portal da Central do Cidadão e preencha o formulário de inscrição ou correção de dados. Anexe imagens dos documentos exigidos (documento original com foto e certidão de nascimento ou casamento). O comprovante de inscrição ficará disponível em até 2 dias úteis. Se preferir, pode ir ao balcão de atendimento, mas haverá taxa de R$ 7,00.\nFonte: FC-02, versão 01/10/2026; Fonte: FC-07, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-02",
+        "FC-07"
+      ]
+    },
+    {
+      "participante_anonimo": "P04",
+      "tarefa": "T03",
+      "tema": "Transferência bancária fora do escopo",
+      "pergunta_informada_pelo_aplicador": "Você pode fazer uma transferência bancária para mim?",
+      "pergunta_terminal_bruta": " Você pode fazer uma transferência bancária para mim?",
+      "resposta_terminal": "Não consigo fazer transferências bancárias. Consulte o seu banco ou a Central do Cidadão para obter orientações sobre transferências.\nFonte: FC-07, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-07"
+      ]
+    },
+    {
+      "participante_anonimo": "P05",
+      "tarefa": "T01",
+      "tema": "RG após desastre",
+      "pergunta_informada_pelo_aplicador": "xiste algum procedimento para recuperar meu RG após um desastre natural?",
+      "pergunta_terminal_bruta": " xiste algum procedimento para recuperar meu RG após um desastre natural?          [                                         ",
+      "resposta_terminal": "Sim, você pode solicitar a segunda via do RG. Primeiro agende o atendimento pelo portal da Central do Cidadão, gere e pague a guia de R$ 38,00. Depois compareça ao Posto de Identificação com a certidão de nascimento ou casamento, comprovante de residência e, se o RG foi perdido, apenas a declaração de extravio (não é necessário boletim de ocorrência). O documento fica pronto em 10 dias úteis.\nFonte: FC-01, versão 01/10/2026; Fonte: FC-07, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-01",
+        "FC-07"
+      ]
+    },
+    {
+      "participante_anonimo": "P05",
+      "tarefa": "T02",
+      "tema": "Documentos para CPF",
+      "pergunta_informada_pelo_aplicador": "Gostaria de saber quais documentos são necessários para regularizar meu CPF.",
+      "pergunta_terminal_bruta": " Gostaria de saber quais documentos são necessários para regularizar meu CPF.",
+      "resposta_terminal": "Para regularizar seu CPF, você precisa apresentar: 1. Documento original com foto; 2. Certidão de nascimento ou de casamento; 3. Se for menor de 12 anos, documento com foto do responsável legal.\nFonte: FC-02, versão 01/10/2026\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": [
+        "FC-02"
+      ]
+    },
+    {
+      "participante_anonimo": "P05",
+      "tarefa": "T03",
+      "tema": "Reserva de hotel fora do escopo",
+      "pergunta_informada_pelo_aplicador": "Você consegue me ajudar a fazer uma reserva em um hotel?",
+      "pergunta_terminal_bruta": " Você consegue me ajudar a fazer uma reserva em um hotel?",
+      "resposta_terminal": "Não entendi ou não encontrei essa informação nas sete fichas. Reformule ou escolha um assunto no menu. Exemplo: Quanto custa a segunda via do RG? Para assuntos não cobertos, consulte o órgão competente.\n\nProtótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.",
+      "fontes_citadas": []
+    }
+  ],
+  "observacoes": [
+    "Fragmento inicial anterior à primeira pergunta foi excluído da extração.",
+    "Uma entrada vazia após a pergunta de CNH de P03 recebeu mensagem amigável; não é contada como tarefa adicional.",
+    "A pergunta bruta de P05/T01 contém espaços e um colchete isolado após o texto; preservados neste JSON."
+  ]
+}

@@ -55,7 +55,7 @@ python -B -m modulos.documentos_ia.avaliador --versao v1 --saida evidencias/ia/a
 
 Se uma saída já existir, o comando não a sobrescreve. Para continuar casos pendentes, use o mesmo comando com `--retomar`. O programa valida os hashes de prompt, código, fichas e dataset e os modelos configurados. Uma versão alterada precisa de uma nova rodada/arquivo. `--limite 1` permite testar conexão, mas uma rodada parcial não produz percentual final das 26 mensagens.
 
-A melhoria v2 separou texto e códigos de fichas. A versão final v3 reforça a completude e acrescenta, em perguntas de custo, o trecho literal do campo Custo da ficha escolhida. O programa não inventa valores. A opção 2 do menu usa v3. A segunda rodada usa:
+A melhoria v2 separou texto e códigos de fichas. A versão final v3 reforça a completude e acrescenta, em perguntas de custo, o trecho literal do campo Custo da ficha escolhida. O programa não inventa valores. A opção 2 do menu usa v4, com correções pontuais posteriores à coleta. O benchmark abaixo permanece identificado como v3. A segunda rodada usa:
 
 ```bash
 python -B -m modulos.documentos_ia.avaliador --versao v3 --saida evidencias/ia/depois.json --pausa 25
@@ -79,4 +79,10 @@ python -B -m unittest discover -s testes -v
 
 Os testes de IA substituem as chamadas externas por modelos/controladores de teste. Exercitam privacidade, referências, menus, framework e avaliação sem consumir a chave. As evidências reais da API ficam separadas em `evidencias/ia/`. O notebook `notebooks/avaliacao_ia.ipynb` lê esses JSONs e apresenta tabelas sem novas chamadas à API.
 
-Os testes humanos exigidos ainda precisam de cinco pessoas externas, três tarefas por pessoa e questionário de cinco itens. Veja [plano de usuários](testes_usuarios.md). Os resultados de PCP não substituem essa avaliação.
+A coleta informada de 15/11 possui cinco participantes, 15 tarefas e 25 notas: veja o [relatório](usuarios_2026-11-15.md). Para uma nova rodada, use o [plano de usuários](testes_usuarios.md) e arquivos próprios, preservando as versões anteriores. Recalcule a rodada existente com `python -B testes/analisar_usuarios_ia.py`, sem chamadas à API. Os resultados de PCP permanecem separados.
+
+## Versão atual e revisão da amostra
+
+A opção 2 usa v4. Os controles de banco, documentos do RG e limite de recuperação de CPF estão descritos no [fechamento](fechamento.md). O aplicador confirmou a [conferência da amostra](revisao_amostra.md). A v3 foi preservada em `evidencias/ia/codigo_v3.zip`.
+
+A validação da v4 usou 135 testes locais, sem novas chamadas à API. Os 96,15% do juiz e os resultados humanos são da v3. Para uma eventual avaliação nova, use `--versao v4` e outro arquivo de saída; não reutilize os JSONs históricos.

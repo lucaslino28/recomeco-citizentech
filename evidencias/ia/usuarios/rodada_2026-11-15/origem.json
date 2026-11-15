@@ -1,0 +1,24 @@
+{
+  "data_rodada": "2026-11-15",
+  "commit_local_conferido": "25af7f6e3b67f90c39ca47b9aa923ea92607934d",
+  "participacao": "Cinco pessoas externas conforme relato do aplicador; o terminal não identifica pessoas nem atesta o vínculo individual.",
+  "tempos_e_notas": "Coletados manualmente, conforme informado pelo aplicador; não presentes no registro do terminal.",
+  "sem_falhas_api": "Zero falhas segundo o aplicador; a transcrição não mostra mensagens de falha de serviço.",
+  "correcao_informada": "P04/T03 = 19.43 segundos, conforme correção explícita do aplicador. Arquivo local anterior continha apenas cabeçalho.",
+  "significado_acerto_0_1": "Conclusão/adequação da tarefa segundo o aplicador; não é comprovação independente de precisão factual.",
+  "tarefas": "Os códigos T01/T02/T03 são posições na sessão. Os objetivos variaram entre participantes.",
+  "arquivos_fornecidos_sha256": {
+    "resumo_do_aplicador": "f960cde9ba4757a32dd9ef05bb6d245b2d050f5f5cbffddf93da50f4411fdffb",
+    "registro_terminal_original": "f19df03ffb76caf35aeddb6cf8bd905ac09b424c75ef5b7fe3c46da05d4c2d98"
+  },
+  "arquivos_locais_antes_sha256": {
+    "tarefas.csv": "ea0f4c3a94931b67e05677bf246429c6914668e7d4831c30ac2f9ddbb6c17bde",
+    "questionario.csv": "55469c00c7f2f08d6b820d784bcd09e2f09e82d1066edf6be243441ab07e8a74"
+  },
+  "dados_preservados_sha256": {
+    "tarefas.csv": "d6739e197a41bcbf425220af0aade5b3761f630f3e3de2b13edf83a37ab819de",
+    "questionario.csv": "219888f502cf75e42dc97d439d75aa82e74aec19a2983b4a6033eeebc308f7a1",
+    "interacoes.json": "a8a01556eaaf5719770f283cae8ca65094aa134cb3615e3ded5d162be1259ecf",
+    "terminal_organizado.txt": "688f0c9dbfc7328ba5b1c4a30e6a51e86e2da25dcc78b26b1d8a63cef5ba6ccb"
+  }
+}

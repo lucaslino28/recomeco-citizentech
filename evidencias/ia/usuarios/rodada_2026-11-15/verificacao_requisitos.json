@@ -1,0 +1,92 @@
+{
+  "sete_fichas_iguais_ao_zip": true,
+  "golden_igual_tabela_original_26": true,
+  "rodadas_completas": {
+    "antes": {
+      "casos_registrados": 26,
+      "julgados": 26,
+      "acertos": 20,
+      "completo": true,
+      "acerto_percentual_26": 76.92
+    },
+    "intermediaria_v2": {
+      "casos_registrados": 26,
+      "julgados": 26,
+      "acertos": 25,
+      "completo": true,
+      "acerto_percentual_26": 96.15
+    },
+    "depois": {
+      "casos_registrados": 26,
+      "julgados": 26,
+      "acertos": 25,
+      "completo": true,
+      "acerto_percentual_26": 96.15
+    }
+  },
+  "versao_atual_agente_avaliador_igual_benchmark_final": true,
+  "notebook_automatico_executado_sem_erros_de_celula": true,
+  "testes_tecnicos_aprovados": 125,
+  "metrica_usuarios": {
+    "natureza": "Dados de aplicação informados pela equipe; não atestam identidade ou presença por si só.",
+    "participantes_registrados": 5,
+    "tarefas": 15,
+    "questionarios": 5,
+    "avaliacoes_individuais": 25,
+    "minimo_cinco_participantes_registrados": true,
+    "tarefas_concluidas_informadas": 15,
+    "conclusao_percentual": 100.0,
+    "falhas_api_informadas": 0,
+    "tempo_total_segundos": 345.56,
+    "tempo_medio_segundos": 23.04,
+    "tempo_minimo_segundos": 16.53,
+    "tempo_maximo_segundos": 32.45,
+    "media_questionario": 4.04,
+    "medias_por_item": {
+      "p1_menu": 4.4,
+      "p2_encontrar": 3.6,
+      "p3_clareza": 3.6,
+      "p4_fontes_limites": 3.8,
+      "p5_teclado": 4.8
+    },
+    "por_participante": {
+      "P01": {
+        "tempo_medio_segundos": 22.06,
+        "media_questionario": 4.6
+      },
+      "P02": {
+        "tempo_medio_segundos": 23.21,
+        "media_questionario": 3.2
+      },
+      "P03": {
+        "tempo_medio_segundos": 26.61,
+        "media_questionario": 4
+      },
+      "P04": {
+        "tempo_medio_segundos": 21.15,
+        "media_questionario": 4.4
+      },
+      "P05": {
+        "tempo_medio_segundos": 22.15,
+        "media_questionario": 4
+      }
+    },
+    "limites": [
+      "Os códigos T01/T02/T03 indicam a posição; os objetivos da rodada variaram.",
+      "Conclusão informada pelo aplicador não equivale a precisão factual independente.",
+      "O tempo inclui interação humana, conforme método informado, não apenas inferência da API."
+    ],
+    "csvs_sha256": {
+      "tarefas.csv": "d6739e197a41bcbf425220af0aade5b3761f630f3e3de2b13edf83a37ab819de",
+      "questionario.csv": "219888f502cf75e42dc97d439d75aa82e74aec19a2983b4a6033eeebc308f7a1"
+    }
+  },
+  "amostra_manual_pelos_integrantes": "Pendente; coleta de usabilidade não comprova revisão do golden dataset.",
+  "publicacao_ia": "Pendente; commit local 25af7f6 consta à frente de origin/main na inspeção. Nenhum push foi feito nesta etapa.",
+  "limites_tecnicos": [
+    "Encaminhamento bancário à Central sem suporte em FC-07.",
+    "Guia de pagamento acrescentada à lista documental de RG.",
+    "Procedimento específico de recuperação de CPF não explicitado pela ficha.",
+    "Tarefas variaram entre os participantes."
+  ]
+}

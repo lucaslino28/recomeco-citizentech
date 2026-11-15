@@ -14,3 +14,7 @@ Revisão assistida pelo Codex com leitura das respostas e das fichas. **Não equ
 Outros pontos de completude para conferir: no caso 6, a resposta final não explicita o documento com foto do responsável; no caso 7, os passos e prazo estão presentes, mas gratuidade do portal e ausência de agendamento não foram explicitadas; no caso 9, responde corretamente sobre 17 anos sem detalhar as demais faixas. O juiz aprovou esses casos. A equipe deve avaliar a suficiência em relação ao conteúdo esperado, sem confundir aprovação automática com cobertura de todos os detalhes.
 
 Pendência: registrar a conferência efetivamente feita pelos integrantes. Não foram criados comentários, entrevistas ou notas humanas. Os dados de tempo/facilidade com cinco pessoas ainda serão coletados.
+
+## Atualização de fechamento
+
+A coleta humana foi documentada separadamente. O aplicador confirmou neste chat a conferência manual dos seis casos, com concordância às observações. Registro em `documentacao/ia/revisao_amostra.md` e `evidencias/ia/fechamento/confirmacao_amostra.json`. As observações anteriores descrevem a v3; a v4 recebeu correções posteriores, sem reescrever as respostas ou notas anteriores.

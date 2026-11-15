@@ -15,7 +15,7 @@ O projeto orienta sobre segurança, assistência social e cuidados em desastres 
 | Disciplina | Contribuição | Situação em 15/11/2026 |
 |---|---|---|
 | Pensamento Computacional e Automação com Python | Classes, busca por regras, categorias, histórico, indicadores e CSV | Implementado, avaliação de 14/11 documentada e melhorias verificadas; vídeo e dados finais da entrega pendentes |
-| Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Agente LangChain/Groq, comparação automática e documentação implementados; conferência da equipe e testes humanos pendentes |
+| Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Agente v4 corrigido, coleta documentada e amostra confirmada; publicação em fechamento |
 | Soluções em Energias Renováveis e Sustentáveis | Comparação entre rede e sistema solar com bateria para iluminação de abrigo | Cenário planejado; cálculos e integração pendentes |
 
 A opção 2 abre o módulo de IA sobre documentos fictícios de Aurora. A opção 3 informa que SERS está em desenvolvimento. As fichas fictícias de Aurora não participam das respostas de PCP.
@@ -193,7 +193,29 @@ A opção 2 do menu usa um agente LangChain e Groq para orientar sobre as sete f
 - [Diagrama em SVG](documentacao/ia/arquitetura.svg).
 - [Plano de cinco participantes, três tarefas e questionário de cinco itens](documentacao/ia/testes_usuarios.md).
 
-O golden dataset tem as 26 mensagens e respostas esperadas copiadas da tabela original. O pipeline aplica um LLM juiz com critérios de conteúdo, fontes, privacidade e resistência a manipulação. A rodada inicial teve 20/26 (76,92%) e a versão final 25/26 (96,15%) pelo juiz: diferença de 19,23 pontos percentuais. O [relatório](documentacao/ia/avaliacao.md) registra as mudanças, limitações e divergências do juiz. As tabelas e exemplos estão no [notebook executado](notebooks/avaliacao_ia.ipynb). A conferência manual da equipe e os testes de pessoas permanecem pendentes.
+O golden dataset tem as 26 mensagens e respostas esperadas copiadas da tabela original. O pipeline aplica um LLM juiz com critérios de conteúdo, fontes, privacidade e resistência a manipulação. A rodada inicial teve 20/26 (76,92%) e a versão v3 avaliada 25/26 (96,15%) pelo juiz: diferença de 19,23 pontos percentuais. O [relatório](documentacao/ia/avaliacao.md) registra as mudanças, limitações e divergências do juiz. As tabelas e exemplos estão no [notebook executado](notebooks/avaliacao_ia.ipynb). A [amostra de seis casos](documentacao/ia/revisao_amostra.md) foi conferida com confirmação manual declarada pelo aplicador; os vereditos do juiz foram preservados.
+
+### Avaliação com usuários — 15/11/2026
+
+Conforme relato do aplicador, cinco pessoas externas realizaram três tarefas cada. Foram registrados 15 tempos, cinco questionários e 25 notas. As perguntas efetivas variaram entre os participantes; T01/T02/T03 indicam a posição na sessão.
+
+| Medida | Resultado |
+|---|---:|
+| Conclusão informada pelo aplicador | 15/15 — 100% |
+| Falhas de API relatadas | 0 |
+| Tempo humano médio | 23,04 segundos |
+| Facilidade geral | 4,04/5 |
+| Menu / encontrar / clareza / fontes e limites / teclado | 4,4 / 3,6 / 3,6 / 3,8 / 4,8 |
+
+Os [dados e sua origem](evidencias/ia/usuarios/rodada_2026-11-15/README.md) e o [relatório com as tarefas efetivas](documentacao/ia/usuarios_2026-11-15.md) foram organizados sem mudar os tempos ou notas. A transcrição sustenta as respostas; participantes, associação dos códigos, cronometragem e questionários foram informados pelo aplicador. A conclusão de 100% não significa precisão factual independente de 100%: o caso de transferência bancária contém recomendação sem respaldo nas fichas, além de outros pontos de revisão.
+
+Os três indicadores de IA ficam separados: acerto automático pelo juiz de 96,15%, tempo humano de 23,04 s e facilidade 4,04/5. As melhorias automáticas anteriores não foram apresentadas como ganho humano antes/depois. A [conferência dos requisitos](documentacao/ia/requisitos_ia.md) registra a conferência da amostra, as correções pontuais e a publicação como itens do fechamento. A [versão v4](documentacao/ia/fechamento.md) corrige os casos identificados e passou em 135 testes locais. O benchmark de 96,15% e os dados humanos acima pertencem à v3; a v4 não recebeu nova rodada de juiz ou de usuários.
+
+Para recalcular a coleta sem usar a API ou alterar os CSVs:
+
+```bash
+python -B testes/analisar_usuarios_ia.py
+```
 
 ## ODS relacionados
 
