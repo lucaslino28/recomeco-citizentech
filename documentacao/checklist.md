@@ -52,7 +52,7 @@ Atualizado em 15/11/2026. Os itens marcados foram implementados ou verificados t
 - [x] Relatório com acerto do juiz, tempo humano e facilidade, separados da conclusão informada das tarefas.
 - [x] CSVs fornecidos preservados, origem e transcrição documentadas; análise local reproduzível.
 - [x] V4 corrige os casos identificados de banco, lista documental do RG e limite de recuperação de CPF; 135 testes locais aprovados.
-- [ ] Revisão/publicação da implementação de IA.
+- [x] Código v4, revisão da amostra e coleta publicados no GitHub; commit de conteúdo e30872d e acesso HTTP ao repositório conferidos.
 
 ### SERS
 

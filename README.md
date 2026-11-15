@@ -15,7 +15,7 @@ O projeto orienta sobre segurança, assistência social e cuidados em desastres 
 | Disciplina | Contribuição | Situação em 15/11/2026 |
 |---|---|---|
 | Pensamento Computacional e Automação com Python | Classes, busca por regras, categorias, histórico, indicadores e CSV | Implementado, avaliação de 14/11 documentada e melhorias verificadas; vídeo e dados finais da entrega pendentes |
-| Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Agente v4 corrigido, coleta documentada e amostra confirmada; publicação em fechamento |
+| Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Agente v4 corrigido, coleta documentada, amostra confirmada e conteúdo publicado |
 | Soluções em Energias Renováveis e Sustentáveis | Comparação entre rede e sistema solar com bateria para iluminação de abrigo | Cenário planejado; cálculos e integração pendentes |
 
 A opção 2 abre o módulo de IA sobre documentos fictícios de Aurora. A opção 3 informa que SERS está em desenvolvimento. As fichas fictícias de Aurora não participam das respostas de PCP.
@@ -220,3 +220,7 @@ python -B testes/analisar_usuarios_ia.py
 ## ODS relacionados
 
 ODS 7 (Energia Limpa e Acessível), 10 (Redução das Desigualdades), 11 (Cidades e Comunidades Sustentáveis) e 13 (Ação Contra a Mudança Global do Clima).
+
+## Fechamento da revisão de IA
+
+As correções v4, a coleta e a revisão da amostra foram publicadas no commit de conteúdo `e30872d`. O [fechamento](documentacao/ia/fechamento.md) registra os 135 testes locais, a confirmação do aplicador, a preservação dos dados e a verificação do envio. Os indicadores históricos continuam identificados como medições da v3.

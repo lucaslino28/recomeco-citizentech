@@ -28,14 +28,14 @@ Conferência local após a importação da rodada de 15/11/2026. Base: enunciado
 | Imagem da arquitetura para script | PNG e SVG presentes | `arquitetura.png`, `arquitetura.svg` |
 | Protótipo testável e notebook | Código, instruções e notebook automático executado presentes | Guia e `notebooks/avaliacao_ia.ipynb` |
 | Testes técnicos | 135 testes locais aprovados na v4; sem chamadas reais à API na suíte | `fechamento/testes_v4_2026-11-15.txt`; logs de 121 e 125 preservados |
-| Publicação/revisão final | **Pendente**; na inspeção, `main` estava um commit à frente de `origin/main`, além da nova documentação local | Nenhum commit/push feito nesta etapa |
+| Publicação/revisão final | Código e evidências enviados ao GitHub; referência remota e acesso HTTP conferidos | Commit de conteúdo e30872d e `fechamento/publicacao.json` |
 
 ## Fechamento da revisão
 
 1. A conferência da amostra foi confirmada pelo aplicador; casos e ressalvas estão em [revisão da amostra](revisao_amostra.md).
 2. A v4 aplica correções pontuais e passou em 135 testes locais. Veja [fechamento](fechamento.md). O benchmark de 96,15% e os dados humanos de 23,04 s/4,04 pertencem à v3; não foram remensurados na v4.
-3. O commit e a publicação estão autorizados e serão conferidos no encerramento. A chave e os dados originais permanecem preservados.
+3. O conteúdo foi publicado em `e30872d`, com referência remota e acesso HTTP conferidos. A chave e os dados originais permanecem preservados.
 
 A auditoria anterior em [JSON](../../evidencias/ia/usuarios/rodada_2026-11-15/verificacao_requisitos.json) retrata o estado antes da v4. A validação atual está em [validação da v4](../../evidencias/ia/fechamento/validacao_v4.json). Os registros anteriores não foram reescritos.
 
-Após a publicação, a próxima implementação é SERS. PCP conserva suas pendências próprias de vídeo/entrega. Uma eventual nova medição humana ou do modelo deve ser identificada como outra rodada.
+Com o conteúdo de IA publicado, a próxima implementação é SERS. PCP conserva suas pendências próprias de vídeo/entrega. Uma eventual nova medição humana ou do modelo deve ser identificada como outra rodada.

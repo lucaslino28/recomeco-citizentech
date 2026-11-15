@@ -37,4 +37,4 @@ Tempos, notas, transcrição, respostas e vereditos antigos foram preservados. O
 
 ## Publicação
 
-A revisão e as evidências estão preparadas para commit e publicação no repositório autorizado. A conferência do envio será registrada após a execução do push. A chave `.env` permanece local e fora do Git.
+O commit de conteúdo `e30872d` foi enviado ao GitHub em 15/11/2026. A referência `origin/main` foi consultada e correspondeu ao hash enviado. O endereço do repositório respondeu HTTP 200 sem credencial explícita no comando de verificação. O [registro da publicação](../../evidencias/ia/fechamento/publicacao.json) documenta a conferência. A chave `.env` permanece local e fora do Git.
