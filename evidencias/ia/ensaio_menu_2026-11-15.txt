@@ -1,0 +1,76 @@
+Ensaio técnico do menu IA — entradas programadas, sem participantes humanos.
+Verificações: opção inválida, bloqueio de identificador fictício sem eco, limitação e fora de escopo. Não consome API para esses casos.
+
+Base carregada: 34 orientações.
+
+Protótipo educacional. Não é um canal oficial nem de emergência.
+Não informe nome, documentos, telefone, endereço ou outros dados pessoais.
+O texto digitado não é salvo; os registros usam apenas rótulos de orientação.
+
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+Módulo de documentação pessoal — IA
+Aurora é fictícia. Não digite nomes, documentos, endereço ou contato.
+1 - Escrever minha dúvida
+2 - Escolher um documento
+3 - Ver exemplos
+0 - Voltar
+Escolha uma opção: Opção inválida. Digite 0, 1, 2 ou 3.
+
+Módulo de documentação pessoal — IA
+Aurora é fictícia. Não digite nomes, documentos, endereço ou contato.
+1 - Escrever minha dúvida
+2 - Escolher um documento
+3 - Ver exemplos
+0 - Voltar
+Escolha uma opção:
+Qual é sua dúvida? (0 para voltar):
+Não informe dados pessoais aqui. Não consulto situação cadastral. Use a área CPF do portal da Central do Cidadão de Aurora.
+Fonte: FC-02, versão 01/10/2026; Fonte: FC-07, versão 01/10/2026
+
+Protótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.
+
+Qual é sua dúvida? (0 para voltar):
+Não. Sou um protótipo educacional e não represento a prefeitura. Confirme as informações reais no órgão competente.
+Fonte: FC-07, versão 01/10/2026
+
+Protótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.
+
+Qual é sua dúvida? (0 para voltar):
+Não entendi ou não encontrei essa informação nas sete fichas. Reformule ou escolha um assunto no menu. Exemplo: Quanto custa a segunda via do RG? Para assuntos não cobertos, consulte o órgão competente.
+
+Protótipo educacional: Aurora e suas regras são fictícias. Não é um canal oficial. Confirme informações reais no site do órgão competente.
+
+Qual é sua dúvida? (0 para voltar):
+Módulo de documentação pessoal — IA
+Aurora é fictícia. Não digite nomes, documentos, endereço ou contato.
+1 - Escrever minha dúvida
+2 - Escolher um documento
+3 - Ver exemplos
+0 - Voltar
+Escolha uma opção:
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+Obrigado por utilizar o RECOMEÇO!
+
+CSV de atendimentos exportado.

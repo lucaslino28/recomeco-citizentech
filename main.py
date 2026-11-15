@@ -54,8 +54,8 @@ def menu_principal(pasta_dados=None, data_indicadores=None):
             if opcao == "1":
                 menu_pcp(assistente)
             elif opcao == "2":
-                print("\nMódulo de documentação pessoal.")
-                print("Funcionalidade em desenvolvimento.")
+                from modulos.documentos_ia.agente import menu_documentos_ia
+                menu_documentos_ia()
             elif opcao == "3":
                 print("\nMódulo de energia e sustentabilidade.")
                 print("Funcionalidade em desenvolvimento.")

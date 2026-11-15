@@ -1,4 +1,4 @@
-# RECOMEÇO - Dependências do projeto
-# PCP: bibliotecas nativas do Python
-# SERS: bibliotecas a definir, se necessárias
-# Prompt & IA: framework de agentes e modelo a definir
+# PCP e SERS usam a biblioteca padrão. Dependências do módulo de IA:
+langchain==1.5.0
+langchain-groq==1.1.3
+python-dotenv==1.2.4

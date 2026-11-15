@@ -6,23 +6,23 @@ O projeto orienta sobre segurança, assistência social e cuidados em desastres 
 
 ## Equipe
 
-- Lucas Lino Marques da Silva — RM a preencher.
-- Gabriel M. — nome completo e RM a preencher.
-- Gustavo M. — nome completo e RM a preencher.
+- Lucas Lino Marques da Silva — RM 572863.
+- Gabriel Martins Cordeiro Rodrigues — RM 570497.
+- Gustavo Martins da Silva — RM 570584.
 
 ## Disciplinas e situação atual
 
-| Disciplina | Contribuição | Situação em 14/11/2026 |
+| Disciplina | Contribuição | Situação em 15/11/2026 |
 |---|---|---|
 | Pensamento Computacional e Automação com Python | Classes, busca por regras, categorias, histórico, indicadores e CSV | Implementado, avaliação de 14/11 documentada e melhorias verificadas; vídeo e dados finais da entrega pendentes |
-| Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Sete fichas fictícias disponíveis; agente e avaliador pendentes |
+| Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Agente LangChain/Groq, comparação automática e documentação implementados; conferência da equipe e testes humanos pendentes |
 | Soluções em Energias Renováveis e Sustentáveis | Comparação entre rede e sistema solar com bateria para iluminação de abrigo | Cenário planejado; cálculos e integração pendentes |
 
-As opções 2 e 3 do menu informam que estão em desenvolvimento. As fichas fictícias de Aurora não participam das respostas de PCP.
+A opção 2 abre o módulo de IA sobre documentos fictícios de Aurora. A opção 3 informa que SERS está em desenvolvimento. As fichas fictícias de Aurora não participam das respostas de PCP.
 
 ## Instalação e execução
 
-PCP usa somente a biblioteca padrão. A versão efetivamente testada foi Python 3.14.3. Os módulos atuais não exigem instalar pacotes de `requirements.txt`.
+PCP usa somente a biblioteca padrão. A versão efetivamente testada foi Python 3.14.3. Para IA, instale `requirements.txt` e configure a chave Groq conforme o [guia de IA](documentacao/ia/guia_execucao.md).
 
 Na pasta do projeto:
 
@@ -178,9 +178,22 @@ O [relatório completo da avaliação](documentacao/validacao_pcp.md) apresenta 
 
 A [organização da documentação](documentacao/README.md) reúne o guia de uso, fontes, decisões, avaliação, checklist e roteiro do vídeo. O [plano de testes](documentacao/plano_testes.md) agora descreve como fazer novas rodadas sem misturar versões. O [modelo de resultados](evidencias/modelo_resultados_pcp.md) permanece disponível como formulário para futuras coletas.
 
-Pendências da entrega: nomes completos/RMs, revisão da equipe, publicação desta revisão, vídeo técnico de **5 a 8 minutos** com participação de todos e alteração ao vivo de palavra-chave, link do vídeo e envio do TXT. O [roteiro do vídeo](documentacao/roteiro_video_pcp.md) já está preparado.
+Pendências da entrega: revisão da equipe, vídeo técnico de **5 a 8 minutos** com participação de todos e alteração ao vivo de palavra-chave, link do vídeo e envio do TXT. O [roteiro do vídeo](documentacao/roteiro_video_pcp.md) já está preparado.
 
-Entrega PCP: TXT com assistente, público, integrantes/RMs e links do GitHub e do vídeo, conforme o enunciado, até **19/11/2026 às 23h59**. Modelo em [entrega PCP](documentacao/entrega_pcp.txt). IA e SERS serão desenvolvidos na próxima etapa.
+Entrega PCP: TXT com assistente, público, integrantes/RMs e links do GitHub e do vídeo, conforme o enunciado, até **19/11/2026 às 23h59**. Modelo em [entrega PCP](documentacao/entrega_pcp.txt). O módulo de IA está em desenvolvimento; SERS será a etapa seguinte.
+
+## Prompt & Artificial Intelligence
+
+Integrantes: Lucas Lino Marques da Silva (572863), Gabriel Martins Cordeiro Rodrigues (570497) e Gustavo Martins da Silva (570584).
+
+A opção 2 do menu usa um agente LangChain e Groq para orientar sobre as sete fichas fictícias da Central do Cidadão de Aurora. A implementação mantém o conteúdo real de PCP separado. Valores e regras de Aurora não são informações reais sobre documentação pessoal.
+
+- [Guia para instalar, configurar a chave e executar](documentacao/ia/guia_execucao.md).
+- [Arquitetura, modelos, justificativas e limitações](documentacao/ia/decisoes.md).
+- [Diagrama em SVG](documentacao/ia/arquitetura.svg).
+- [Plano de cinco participantes, três tarefas e questionário de cinco itens](documentacao/ia/testes_usuarios.md).
+
+O golden dataset tem as 26 mensagens e respostas esperadas copiadas da tabela original. O pipeline aplica um LLM juiz com critérios de conteúdo, fontes, privacidade e resistência a manipulação. A rodada inicial teve 20/26 (76,92%) e a versão final 25/26 (96,15%) pelo juiz: diferença de 19,23 pontos percentuais. O [relatório](documentacao/ia/avaliacao.md) registra as mudanças, limitações e divergências do juiz. As tabelas e exemplos estão no [notebook executado](notebooks/avaliacao_ia.ipynb). A conferência manual da equipe e os testes de pessoas permanecem pendentes.
 
 ## ODS relacionados
 

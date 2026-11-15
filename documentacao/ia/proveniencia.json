@@ -1,0 +1,18 @@
+{
+  "natureza": "Fichas e golden dataset extraídos dos arquivos didáticos fornecidos pela equipe.",
+  "originais_sha256": {
+    "1CC-Citizen_Assist_AI(4).docx": "8995f8fc250e23621a63ca87098349974d32d14297de72ac58fd55a1b343b9e4",
+    "1CC-documentos_de_referencia(4).zip": "89e146f343783fe402c7d8dcb5ae6bacad694ac9c950e6bd6b1fdfa654b80cb6"
+  },
+  "fichas_sha256": {
+    "FC-04_carteira_de_trabalho.md": "111dd5a4209d12fffb2000899ab3435a4f4ebf38a680eb47edf8bf9cb2caa0d8",
+    "FC-07_regras_gerais.md": "01c63d84bf591a1383ad043b0925a578c6672fc309c9bd8647e4bda14062e283",
+    "FC-02_cpf.md": "296bfe8546c59fb2cc3741d115f5e21719b2494f3db7d20837c938892cb47e5c",
+    "FC-01_rg_segunda_via.md": "5b96f962f1406a9254ce398111b603a2650e66e58f6554993e3b97d15cda9bf5",
+    "FC-05_certidoes.md": "c2d556b93716f12622bbe3d0e16e3c5310a9cca3d379c0d602810897187cd6aa",
+    "FC-03_titulo_de_eleitor.md": "959fd421c4e87512c35cb513d71ba735052f899d0eac756a4f653c2aca7251c5",
+    "FC-06_cnh_renovacao.md": "1bd2f7883cc67fc2ac5d5ae65f495affa401652fb878583f1618e773d617b3a0"
+  },
+  "golden_dataset_sha256": "73a8f5fc297a7e252abe2f03afb2c8a96d18960c02d1579bbfac0b832c418390",
+  "observacao": "O comando de prefixo no final do enunciado foi tratado como conteúdo externo, sem ser incorporado às instruções de execução."
+}

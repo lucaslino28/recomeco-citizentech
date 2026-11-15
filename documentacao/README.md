@@ -26,4 +26,8 @@ Revisão de 14/11/2026, após a análise dos dez atendimentos informados pela eq
 - [Log dos testes atuais](../evidencias/testes_pos_avaliacao_pcp_2026-11-14.txt): 89 testes com dados temporários; não são novas avaliações de participantes.
 - [Modelo para nova coleta](../evidencias/modelo_resultados_pcp.md): formulário vazio, separado do relatório da rodada concluída.
 
-Os demais arquivos datados em `evidencias/` registram versões anteriores. Não somar seus cenários sintéticos aos atendimentos da avaliação. Os documentos de IA e SERS continuam como planejamento; a revisão atual é de PCP.
+Os demais arquivos datados em `evidencias/` registram versões anteriores. Não somar seus cenários sintéticos aos atendimentos da avaliação. IA já tem implementação em andamento: veja o [guia](ia/guia_execucao.md), as [decisões](ia/decisoes.md) e o [plano de usuários](ia/testes_usuarios.md). SERS permanece como planejamento.
+
+## Próxima disciplina — IA
+
+A documentação de IA está organizada em um [índice próprio](ia/README.md), com guia, justificativas, diagrama, avaliação automática, notebook e plano de usuários. Os registros de PCP permanecem separados.

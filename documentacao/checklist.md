@@ -1,6 +1,6 @@
 # Checklist da entrega
 
-Atualizado em 14/11/2026. Os itens marcados foram implementados ou verificados tecnicamente; não representam aprovação do professor.
+Atualizado em 15/11/2026. Os itens marcados foram implementados ou verificados tecnicamente; não representam aprovação do professor.
 
 ## PCP
 
@@ -26,17 +26,34 @@ Atualizado em 14/11/2026. Os itens marcados foram implementados ou verificados t
 - [x] Registros originais preservados e indicadores filtrados sem excluir a linha anterior dos arquivos.
 - [x] Regressão pós-avaliação: 89 testes e reprodução técnica das dez frases, sem criar novas notas humanas.
 - [x] Documentação consolidada e roteiro de vídeo preparado.
-- [ ] Nomes completos e RMs de todos os integrantes.
+- [x] Nomes completos e RMs de todos os integrantes.
 - [ ] Vídeo técnico de 5 a 8 minutos, com todos explicando e alteração ao vivo.
 - [ ] Link do vídeo no README e no TXT de entrega.
 - [x] Publicação da versão inicial de PCP no GitHub, commit cf25bdc.
 - [x] Registros anteriores versionados localmente em ca491d4 e b56f7a6.
-- [ ] Revisão da equipe e publicação da revisão posterior à avaliação, ainda local.
+- [x] Revisão de PCP publicada no GitHub em a4c41c9.
 - [ ] Conferência pública dos links e envio do TXT no Portal.
 
 ## Demais disciplinas
 
-- [ ] Prompt & IA: agente, framework/modelo, golden dataset, juiz antes/depois, justificativas, diagrama e testes reais.
+### Prompt & IA
+
+- [x] Nomes completos e RMs no início dos documentos e notebook.
+- [x] Sete fichas originais de Aurora e 26 mensagens/esperados do enunciado preservados.
+- [x] Um agente LangChain com Groq, opção 2, perguntas livres e menu por assuntos.
+- [x] Filtro de dados pessoais antes da API, avisos, limites e sem histórico de perguntas de IA.
+- [x] Modelos e arquitetura justificados; diagrama SVG/PNG.
+- [x] LLM juiz com quatro critérios, registros por caso e retomada de rodada.
+- [x] Rodadas completas, melhorias e comparação automática preservadas.
+- [x] Notebook executado com tabelas reais e análise crítica do juiz.
+- [ ] Conferência manual da amostra pelos integrantes, sem alterar vereditos originais.
+- [x] Plano e modelos vazios para avaliação humana.
+- [ ] Cinco pessoas externas, três tarefas cada, tempos e questionário de cinco itens.
+- [ ] Relatório dos três indicadores com dados humanos efetivamente coletados.
+- [ ] Revisão/publicação da implementação de IA.
+
+### SERS
+
 - [ ] SERS: premissas, cálculos, referências, comparação, integração, testes reais e vídeo próprio de até 3 minutos.
 
 ## Referências para conferir PCP

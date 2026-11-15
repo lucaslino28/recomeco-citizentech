@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" fill="#f4f7fb"/>
+<defs><marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#375471"/></marker></defs>
+<style>text{font-family:Arial,sans-serif;fill:#16324f}.titulo{font-size:28px;font-weight:bold}.h{font-size:20px;font-weight:bold}.p{font-size:17px}.box{fill:white;stroke:#9bb0c9;stroke-width:2}.link{fill:none;stroke:#375471;stroke-width:2;marker-end:url(#seta)}</style>
+<text x="50" y="52" class="titulo">RECOMEÇO — arquitetura do módulo de IA</text>
+<text x="50" y="83" class="p">Um agente com as sete fichas fictícias. Avaliação automática separada dos testes humanos.</text>
+<rect x="50" y="125" width="300" height="105" rx="14" class="box"/>
+<text x="73" y="161" class="h">Terminal / menu de IA</text><text x="73" y="191" class="p">Pergunta livre ou sete assuntos</text>
+<path d="M350 178H430" class="link"/>
+<rect x="430" y="125" width="340" height="105" rx="14" class="box"/>
+<text x="450" y="161" class="h">Validações em Python</text><text x="450" y="191" class="p">Dados pessoais, tamanho e escopo</text>
+<path d="M600 230V290" class="link"/>
+<rect x="430" y="290" width="340" height="125" rx="14" class="box"/>
+<text x="450" y="325" class="h">Agente LangChain / Groq</text><text x="450" y="355" class="p">GPT-OSS 20B + instruções</text><text x="450" y="385" class="p">Sem navegador ou cadastro</text>
+<rect x="50" y="300" width="300" height="105" rx="14" class="box"/>
+<text x="73" y="337" class="h">Sete fichas de Aurora</text><text x="73" y="367" class="p">FC-01 a FC-07, versão 01/10/2026</text><path d="M350 353H430" class="link"/>
+<path d="M600 415V475" class="link"/>
+<rect x="430" y="475" width="340" height="115" rx="14" class="box"/>
+<text x="450" y="511" class="h">Referências e transparência</text><text x="450" y="541" class="p">Ficha + custo literal + data + aviso</text><text x="450" y="568" class="p">Sem histórico de perguntas de IA</text>
+<rect x="850" y="125" width="300" height="105" rx="14" class="box"/>
+<text x="870" y="161" class="h">Golden dataset</text><text x="870" y="191" class="p">26 mensagens originais</text>
+<path d="M850 215L770 320" class="link"/>
+<rect x="850" y="475" width="300" height="115" rx="14" class="box"/>
+<text x="870" y="511" class="h">LLM as a Judge</text><text x="870" y="541" class="p">GPT-OSS 120B, quatro critérios</text><text x="870" y="568" class="p">JSON antes/depois + análise</text><path d="M770 533H850" class="link"/>
+<path d="M1000 230V475" class="link"/>
+<rect x="50" y="655" width="1100" height="100" rx="14" fill="#e2edf9"/>
+<text x="73" y="692" class="h">Avaliação humana: etapa própria, ainda pendente</text>
+<text x="73" y="723" class="p">Cinco pessoas externas × três tarefas; tempos e questionário com cinco itens. Sem identificação pessoal.</text>
+</svg>

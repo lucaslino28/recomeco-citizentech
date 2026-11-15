@@ -4,9 +4,9 @@ FIAP — Ciência da Computação, turma 1CCPX — Global Solution 2026.2. Atual
 
 ## 1. Estado atual
 
-PCP está implementado no terminal, com 34 orientações em três categorias. A avaliação de 14/11 e as melhorias posteriores estão documentadas; a regressão técnica atual passou em 89 testes. A entrega ainda depende de integrantes/RMs completos, revisão/publicação, vídeo e envio do TXT.
+PCP está implementado no terminal, com 34 orientações em três categorias. A avaliação de 14/11 e as melhorias posteriores estão documentadas; a regressão técnica atual passou em 89 testes. A identificação dos integrantes e a publicação de PCP estão concluídas; a entrega de PCP ainda depende de vídeo, links e envio do TXT.
 
-Prompt & IA e SERS continuam em planejamento. As opções 2 e 3 informam desenvolvimento pendente. A base fictícia de Aurora não é usada por PCP. Não há novas dependências no programa de PCP.
+Prompt & IA está implementado com LangChain/Groq e avaliação automática em andamento. A opção 2 abre o módulo de documentos de Aurora. SERS permanece em planejamento na opção 3. A base fictícia de Aurora não é usada por PCP. Não há novas dependências no programa de PCP.
 
 ## 2. Organização
 
@@ -56,7 +56,7 @@ Funcionalidades previstas:
 - Impedir exposição de dados pessoais.
 - Resistir a tentativas de prompt injection.
 
-O framework de agentes e o modelo de linguagem serão definidos e justificados durante o desenvolvimento.
+Framework definido: LangChain com um agente e contexto contendo as sete fichas completas. O modelo do agente é GPT-OSS 20B na Groq; o juiz usa GPT-OSS 120B. A justificativa, a privacidade e os limites estão em [decisões de IA](ia/decisoes.md).
 
 **`modulos/documentos_ia/avaliador.py`**
 
@@ -73,7 +73,7 @@ Funcionalidades previstas:
 
 **`modulos/documentos_ia/fichas/`**
 
-Armazenará as sete fichas fictícias fornecidas pelo professor.
+Contém as sete fichas fictícias fornecidas pelo professor, conferidas contra o ZIP original. Elas não são modificadas para ajustar resultados.
 
 **Regra obrigatória:** o módulo não poderá misturar as fichas fictícias com as fontes oficiais utilizadas pelo PCP.
 
@@ -128,6 +128,6 @@ A gravação usa arquivo temporário e substituição. Arquivos inteiramente ile
 
 A regressão técnica usa `unittest` e arquivos temporários. A análise do CSV usa apenas leitura e filtro por data. Os resultados da avaliação e os da regressão ficam separados em [validação PCP](validacao_pcp.md).
 
-A arquitetura e a pontuação foram mantidas durante a melhoria incremental. O próximo desenvolvimento será IA, seguido de SERS. As fichas fictícias não devem se misturar às fontes oficiais de PCP; indisponibilidade de IA não deve impedir PCP.
+A arquitetura e a pontuação foram mantidas durante a melhoria incremental. O desenvolvimento atual é IA, seguido de SERS. As fichas fictícias não devem se misturar às fontes oficiais de PCP; indisponibilidade de IA não deve impedir PCP.
 
-A entrega de PCP deve ser conferida pelo [checklist](checklist.md), pelas [fontes](fontes_pcp.md) e pelo [roteiro do vídeo](roteiro_video_pcp.md). Os critérios de implementação dos demais módulos permanecem pendentes e não são declarados concluídos por esta revisão.
+A entrega de PCP deve ser conferida pelo [checklist](checklist.md), pelas [fontes](fontes_pcp.md) e pelo [roteiro do vídeo](roteiro_video_pcp.md). As pendências de IA estão em seu guia e relatório; SERS ainda não foi implementado.
