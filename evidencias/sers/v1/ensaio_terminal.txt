@@ -1,0 +1,215 @@
+ENSAIO TÉCNICO AUTOMATIZADO — SERS, 16/11/2026
+Entradas programadas; não há participante ou avaliação humana.
+Histórico de PCP separado em pasta temporária.
+Sequência: 3 → 1 → 2 (4 Enter, HSP=1, Enter) → 5 → 3 (50%) → 4 → 0 → 0.
+
+Base carregada: 34 orientações.
+
+Protótipo educacional. Não é um canal oficial nem de emergência.
+Não informe nome, documentos, telefone, endereço ou outros dados pessoais.
+O texto digitado não é salvo; os registros usam apenas rótulos de orientação.
+
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+Módulo de energia e sustentabilidade — SERS
+Vamos estudar a iluminação noturna de um abrigo temporário.
+Simulação educacional local, sem API e sem salvar suas entradas.
+
+1 - Comparar rede e solar com bateria
+2 - Simular outro consumo, sol ou preço
+3 - E se faltar luz? Ver duração da bateria
+4 - Consultar fontes, orçamento e premissas
+5 - Restaurar o exemplo inicial
+0 - Voltar ao menu principal
+Escolha uma opção:
+COMPARAÇÃO — MESMA ILUMINAÇÃO, MESMO PERÍODO
+Estimativas didáticas da equipe; valores não são cotações ou garantias.
+20 lâmpadas de 9,00 W; 6,00 h/noite; 30 dias.
+Potência total: 180,00 W.
+Consumo: 1,080 kWh/dia; 32,400 kWh no período.
+
+A — LED ligado à rede existente e segura
+Iluminação e instalação comum: R$ 500,00.
+Energia variável a R$ 1,00/kWh: R$ 32,40.
+Custo estimado A no período: R$ 532,40.
+Depende de rede disponível; sem bateria, não mantém luz numa interrupção.
+
+B — Mesmos LEDs com solar isolado e bateria
+Equipamento fixo: 550 Wp; bateria 2,56 kWh; inversor 300 W.
+Com 4,00 HSP: geração útil estimada 1,650 kWh/dia.
+Energia útil de bateria cheia: 1,843 kWh.
+Autonomia calculada com bateria cheia, sem recarga: 10,24 h nesta carga.
+Demanda noturna atendida no modelo: 100,0%.
+Investimento B, incluindo iluminação: R$ 6.900,00.
+Reserva proporcional de manutenção: R$ 10,00.
+Custo estimado B no período: R$ 6.910,00.
+B cobre a energia noturna calculada nas condições assumidas.
+Até 32,400 kWh de consumo da rede poderiam ser substituídos no período; sem crédito por excedente.
+Com rede funcionando, A tem menor custo estimado neste período.
+
+ORIENTAÇÃO
+Solar com bateria pode ajudar na continuidade da luz, se instalado e carregado.
+Priorize os pontos essenciais sem comprometer a segurança do abrigo.
+Dias nublados e pouca carga reduzem a disponibilidade. Não há retorno financeiro garantido.
+
+IMPACTOS E LIMITES
+A usa a matriz elétrica disponível; não se supõe que a rede seja totalmente fóssil.
+B usa recurso renovável e não queima combustível no uso, mas módulos e bateria têm impactos de fabricação, transporte e descarte; planeje reutilização e destinação adequada.
+Não foi feita análise de ciclo de vida nem calculada redução de CO2.
+Custos ilustrativos: não representam a conta completa ou projeto elétrico/luminotécnico.
+Só iluminação; outras cargas e reposições não estão incluídas.
+Fontes: MME, CEPEL/CRESESB, ANEEL e IEA-PVPS/IRENA; detalhes na opção 4.
+
+1 - Comparar rede e solar com bateria
+2 - Simular outro consumo, sol ou preço
+3 - E se faltar luz? Ver duração da bateria
+4 - Consultar fontes, orçamento e premissas
+5 - Restaurar o exemplo inicial
+0 - Voltar ao menu principal
+Escolha uma opção:
+Enter mantém o valor atual; v cancela sem alterar a simulação.
+HSP resume a energia solar diária; não é a duração do dia.
+Equipamentos e orçamento permanecem fixos para verificar seus limites.
+Quantidade de lâmpadas [20]: Potência de cada lâmpada (W) [9,00]: Horas de luz por noite [6,00]: Período em dias [30]: Horas de sol pleno por dia (HSP) [4,00]: Preço variável da energia (R$/kWh) [1,00]:
+COMPARAÇÃO — MESMA ILUMINAÇÃO, MESMO PERÍODO
+Estimativas didáticas da equipe; valores não são cotações ou garantias.
+20 lâmpadas de 9,00 W; 6,00 h/noite; 30 dias.
+Potência total: 180,00 W.
+Consumo: 1,080 kWh/dia; 32,400 kWh no período.
+
+A — LED ligado à rede existente e segura
+Iluminação e instalação comum: R$ 500,00.
+Energia variável a R$ 1,00/kWh: R$ 32,40.
+Custo estimado A no período: R$ 532,40.
+Depende de rede disponível; sem bateria, não mantém luz numa interrupção.
+
+B — Mesmos LEDs com solar isolado e bateria
+Equipamento fixo: 550 Wp; bateria 2,56 kWh; inversor 300 W.
+Com 1,00 HSP: geração útil estimada 0,413 kWh/dia.
+Energia útil de bateria cheia: 1,843 kWh.
+Autonomia calculada com bateria cheia, sem recarga: 10,24 h nesta carga.
+Demanda noturna atendida no modelo: 38,2%.
+Investimento B, incluindo iluminação: R$ 6.900,00.
+Reserva proporcional de manutenção: R$ 10,00.
+Custo estimado B no período: R$ 6.910,00.
+ATENÇÃO: B NÃO atende toda a iluminação solicitada.
+Déficit noturno: 0,667 kWh/dia.
+O custo B acima entrega serviço parcial; backup/redimensionamento não foi orçado.
+Para a demanda completa, A depende de rede funcionando. Reveja B com um profissional.
+
+ORIENTAÇÃO
+Solar com bateria pode ajudar na continuidade da luz, se instalado e carregado.
+Priorize os pontos essenciais sem comprometer a segurança do abrigo.
+Dias nublados e pouca carga reduzem a disponibilidade. Não há retorno financeiro garantido.
+
+IMPACTOS E LIMITES
+A usa a matriz elétrica disponível; não se supõe que a rede seja totalmente fóssil.
+B usa recurso renovável e não queima combustível no uso, mas módulos e bateria têm impactos de fabricação, transporte e descarte; planeje reutilização e destinação adequada.
+Não foi feita análise de ciclo de vida nem calculada redução de CO2.
+Custos ilustrativos: não representam a conta completa ou projeto elétrico/luminotécnico.
+Só iluminação; outras cargas e reposições não estão incluídas.
+Fontes: MME, CEPEL/CRESESB, ANEEL e IEA-PVPS/IRENA; detalhes na opção 4.
+
+1 - Comparar rede e solar com bateria
+2 - Simular outro consumo, sol ou preço
+3 - E se faltar luz? Ver duração da bateria
+4 - Consultar fontes, orçamento e premissas
+5 - Restaurar o exemplo inicial
+0 - Voltar ao menu principal
+Escolha uma opção: Exemplo inicial restaurado: 20 lâmpadas, 9 W, 6 h/noite, 30 dias, 4 HSP e R$ 1/kWh.
+
+1 - Comparar rede e solar com bateria
+2 - Simular outro consumo, sol ou preço
+3 - E se faltar luz? Ver duração da bateria
+4 - Consultar fontes, orçamento e premissas
+5 - Restaurar o exemplo inicial
+0 - Voltar ao menu principal
+Escolha uma opção:
+Sem sol ou recarga durante a interrupção; Enter mantém 100%; v volta.
+Carga inicial da bateria (%) [100,00]: Com 50,0% de carga: autonomia de 3,84 h.
+Reserva mínima preservada: 20%.
+NÃO cobre a noite calculada.
+É estimativa, não garantia; depende de carga real, temperatura e estado da bateria.
+
+1 - Comparar rede e solar com bateria
+2 - Simular outro consumo, sol ou preço
+3 - E se faltar luz? Ver duração da bateria
+4 - Consultar fontes, orçamento e premissas
+5 - Restaurar o exemplo inicial
+0 - Voltar ao menu principal
+Escolha uma opção:
+FONTES E PREMISSAS — revisão 2026-11-16
+Todos os números são hipóteses didáticas da equipe, não medições, tarifas nacionais, cotações ou especificações de um produto comprado. As fontes fundamentam conceitos e limites.
+
+MME — Potência e consumo de energia
+https://www.gov.br/mme/pt-br/assuntos/noticias/julho-26/potencia-e-consumo-de-energia-o-que-sao-e-como-impactam-na-conta-de-luz
+Uso: Conceitos de W e kWh; não fornece os números do cenário.
+
+CEPEL/CRESESB — Manual de Engenharia para Sistemas Fotovoltaicos (2004)
+https://cresesb.cepel.br/publicacoes/download/Manual_de_Engenharia_FV_2004.pdf
+Uso: Fundamentos de HSP, armazenamento e perdas. Não é cotação nem ficha dos equipamentos simulados.
+
+ANEEL — Custo da energia que chega aos consumidores
+https://www.gov.br/aneel/pt-br/assuntos/tarifas/entenda-a-tarifa/custo-da-energia-que-chega-aos-consumidores
+Uso: A conta inclui componentes além da energia variável; R$ 1/kWh é hipótese da equipe.
+
+IEA-PVPS/IRENA — End-of-Life Solar PV Panels (2016)
+https://iea-pvps.org/key-topics/irena-iea-pvps-end-of-life-solar-pv-panels-2016/
+Uso: Discussão de reutilização e reciclagem de módulos; não quantifica CO2 deste cenário.
+
+PREMISSAS
+- 20 lâmpadas de 9 W representam uma carga pequena para estudo; 6 h noturnas e 30 dias representam um episódio de acolhimento, sem levantamento de um abrigo real.
+- A mesma quantidade de lâmpadas LED, potência e horas é usada nas duas alternativas. Não se atribui economia à troca de lâmpadas, pois ambas já são LED.
+- 550 Wp, 2,56 kWh (exemplo: 25,6 V × 100 Ah) e inversor de 300 W são capacidades hipotéticas. A compatibilidade elétrica não é certificada pelo software.
+- HSP de 4 h/dia é um cenário de simulação, não média do Brasil. Para aplicar, substituir por dados mensais do local no plano dos módulos e considerar o período mais desfavorável.
+- Fator útil de 75% é uma aproximação global painel → luz, incluindo temperatura, cabos, controlador, armazenamento e inversor. Aplicado uma única vez à geração diária; não é eficiência da célula solar.
+- Autonomia usa separadamente 80% de profundidade máxima de descarga e 90% de eficiência do inversor. Essa eficiência não é multiplicada outra vez pela geração diária. Não transfira 80% para uma bateria real sem ficha técnica.
+- Demanda noturna: a energia diária atendida é limitada pela geração útil, pela capacidade útil da bateria e pela potência do inversor. Dias idênticos e recarga anterior a cada noite; não é simulação meteorológica ou de estado de carga hora a hora.
+- R$ 1/kWh representa preço variável hipotético. Custos de disponibilidade, tributos fixos e iluminação pública não são modelados; não representa a conta completa.
+- R$ 500 para iluminação compartilhada, R$ 6400 adicionais para solar e R$ 10 por 30 dias para reserva de manutenção são orçamento didático, não pesquisa de mercado. Comparação de aquisição nova no mesmo período, sem juros ou amortização.
+- A rede e sua instalação interna já existem, estão liberadas e seguras; não se calcula nova ligação/reforma. Custos solares não incluem frete, estrutura específica do imóvel, reposições, descarte ou adequações não previstas.
+- Sem crédito por excedente, venda à rede, valorização do equipamento ou promessa de retorno do investimento. Solar é isolado com bateria, não um sistema conectado à rede sem backup.
+- O estudo abrange somente iluminação, sem geladeira, equipamentos médicos, bombas, tomadas ou recarga de celulares. Não verifica iluminância, distribuição dos pontos, conforto visual ou requisitos de iluminação de emergência.
+
+ORÇAMENTO SOLAR ADICIONAL — valores hipotéticos em R$
+- modulo: 700,00
+- controlador: 450,00
+- inversor: 750,00
+- bateria: 3.000,00
+- cabos e protecoes: 600,00
+- instalacao adicional: 900,00
+Instalação e avaliação de segurança devem ser feitas por profissional habilitado.
+Documentação: documentacao/sers/README.md e modulos/energia/referencias.md.
+
+1 - Comparar rede e solar com bateria
+2 - Simular outro consumo, sol ou preço
+3 - E se faltar luz? Ver duração da bateria
+4 - Consultar fontes, orçamento e premissas
+5 - Restaurar o exemplo inicial
+0 - Voltar ao menu principal
+Escolha uma opção:
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+Obrigado por utilizar o RECOMEÇO!
+
+CSV de atendimentos exportado.

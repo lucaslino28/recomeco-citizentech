@@ -1,12 +1,12 @@
 # Arquitetura técnica — RECOMEÇO
 
-FIAP — Ciência da Computação, turma 1CCPX — Global Solution 2026.2. Atualização: 14/11/2026.
+FIAP — Ciência da Computação, turma 1CCPX — Global Solution 2026.2. Atualização: 16/11/2026.
 
 ## 1. Estado atual
 
 PCP está implementado no terminal, com 34 orientações em três categorias. A avaliação de 14/11 e as melhorias posteriores estão documentadas; a regressão técnica atual passou em 89 testes. A identificação dos integrantes e a publicação de PCP estão concluídas; a entrega de PCP ainda depende de vídeo, links e envio do TXT.
 
-Prompt & IA está implementado com LangChain/Groq e avaliação automática em andamento. A opção 2 abre o módulo de documentos de Aurora. SERS permanece em planejamento na opção 3. A base fictícia de Aurora não é usada por PCP. Não há novas dependências no programa de PCP.
+Prompt & IA está implementado com LangChain/Groq, avaliação e fechamento documentados. A opção 2 abre o módulo de documentos de Aurora. SERS está implementado na opção 3, com consumo, custos e autonomia calculados localmente. A base fictícia de Aurora não é usada por PCP. Não há novas dependências no programa de PCP.
 
 ## 2. Organização
 
@@ -15,11 +15,11 @@ main.py — menu principal e parâmetros de execução
   ├── PCP: Assistente
   │     └── base: BaseConhecimento
   │           └── orientacoes: lista de Orientacao
-  ├── Prompt & IA — em desenvolvimento
-  └── SERS — em desenvolvimento
+  ├── Prompt & IA: agente LangChain/Groq
+  └── SERS: CalculadoraEnergia + analise.json
 ```
 
-A composição permite que o `Assistente` use uma base, e que a base reúna várias orientações. A busca por pontuação é independente de APIs e do futuro módulo de IA.
+A composição permite que o `Assistente` use uma base, e que a base reúna várias orientações. A busca por pontuação é independente de APIs e dos módulos de IA e SERS.
 
 ## 3. Responsabilidades
 
@@ -79,34 +79,13 @@ Contém as sete fichas fictícias fornecidas pelo professor, conferidas contra o
 
 ### 3.4. Módulo SERS
 
-**`modulos/energia/calculadora.py`**
+`modulos/energia/calculadora.py` usa a classe `CalculadoraEnergia` para validar a base, calcular demanda em kWh, geração útil, limite da bateria/inversor, autonomia sem recarga e custos no mesmo período. `menu_energia()` oferece comparação resumida, ajuste de consumo, falta de luz, fontes, restauração, bateria em vários dias, atendimento por necessidade e exportação explícita de relatório técnico.
 
-Responsável pelos cálculos de consumo e comparação das alternativas energéticas.
+O cenário é iluminação noturna de abrigo temporário após desastres. A compara LED ligado à rede existente; B usa os mesmos LEDs com sistema solar isolado e bateria. Recomendações são condicionadas aos resultados: déficit e sobrecarga não recebem promessa de atendimento completo. O custo de serviço parcial é identificado como tal.
 
-Cenário: iluminação essencial de um abrigo temporário após uma enchente.
+`modulos/energia/analise.json` reúne parâmetros estimados, orçamento, justificativas e fontes. A v2 acrescenta NASA POWER em cópia local conferida por hash e exemplos de capacidades dos fabricantes. O balanço cronológico usa lista de HSP, laço diário e saldo de energia equivalente, sem aplicar perdas duas vezes. Resultados reproduzíveis ficam em `evidencias/sers/validacao_tecnica.json`. `modulos/energia/referencias.md` e `documentacao/sers/analise.md` explicam fórmulas, origens, comparação e limites econômicos/ambientais.
 
-Serão comparadas:
-
-- Alternativa A: iluminação LED alimentada pela rede elétrica convencional.
-- Alternativa B: iluminação LED alimentada por sistema solar fotovoltaico com bateria.
-
-Funcionalidades previstas:
-
-- Calcular consumo de energia em kWh.
-- Estimar custos de implantação e operação.
-- Estimar geração e autonomia do sistema.
-- Comparar viabilidade e impactos ambientais.
-- Apresentar recomendações sustentadas pelos resultados.
-
-**`modulos/energia/analise.json`**
-
-Armazenará os parâmetros e resultados estruturados da análise energética.
-
-**`modulos/energia/referencias.md`**
-
-Documentará fontes, premissas, fórmulas, justificativas e limitações utilizadas nos cálculos.
-
-As recomendações serão integradas ao menu principal do assistente.
+O módulo usa apenas a biblioteca padrão, resolve a base a partir do próprio arquivo e não chama IA ou consulta dados em tempo real. Só salva um relatório quando a pessoa escolhe exportar (pasta local ignorada pelo Git); não cria sessões/indicadores de PCP. A análise separa aquisição de operação com equipamentos existentes. A avaliação humana deve ser registrada pelo aplicador conforme `documentacao/sers/testes_usuarios.md`; ainda não foi realizada nesta etapa.
 
 ## 4. Armazenamento e privacidade
 
@@ -118,7 +97,7 @@ As recomendações serão integradas ao menu principal do assistente.
 | `evidencias/validacao_usuarios_2026-11-14.csv` | Evidência original preservada da rodada, incluindo linha anterior excluída dos cálculos |
 | `testes/casos_avaliacao_pcp.json` | Frases fornecidas pela equipe e orientação esperada na regressão |
 | `modulos/documentos_ia/fichas/` | Sete fichas fictícias, exclusivas de IA |
-| `modulos/energia/analise.json` | Planejamento dos parâmetros e resultados de SERS |
+| `modulos/energia/analise.json` | Parâmetros hipotéticos, orçamento, premissas e fontes de SERS |
 
 Não há cadastro. O texto da pergunta só fica em memória. O campo `pergunta` recebe rótulo controlado. O filtro recusa oito ou mais dígitos, `@` e alguns padrões de identificação. A nota de facilidade é considerada uma vez por sessão aleatória, sem reconstruir identidade.
 
@@ -128,6 +107,6 @@ A gravação usa arquivo temporário e substituição. Arquivos inteiramente ile
 
 A regressão técnica usa `unittest` e arquivos temporários. A análise do CSV usa apenas leitura e filtro por data. Os resultados da avaliação e os da regressão ficam separados em [validação PCP](validacao_pcp.md).
 
-A arquitetura e a pontuação foram mantidas durante a melhoria incremental. O desenvolvimento atual é IA, seguido de SERS. As fichas fictícias não devem se misturar às fontes oficiais de PCP; indisponibilidade de IA não deve impedir PCP.
+A arquitetura e a pontuação foram mantidas durante a melhoria incremental. IA e SERS estão implementados, com evidências técnicas próprias e pendências de entrega identificadas. As fichas fictícias não devem se misturar às fontes oficiais de PCP; indisponibilidade de IA não deve impedir PCP.
 
-A entrega de PCP deve ser conferida pelo [checklist](checklist.md), pelas [fontes](fontes_pcp.md) e pelo [roteiro do vídeo](roteiro_video_pcp.md). As pendências de IA estão em seu guia e relatório; SERS ainda não foi implementado.
+A entrega de PCP deve ser conferida pelo [checklist](checklist.md), pelas [fontes](fontes_pcp.md) e pelo [roteiro do vídeo](roteiro_video_pcp.md). O fechamento de IA está em seu índice; execução, análise e pendências de SERS estão no [guia de SERS](sers/README.md).

@@ -12,17 +12,17 @@ O projeto orienta sobre segurança, assistência social e cuidados em desastres 
 
 ## Disciplinas e situação atual
 
-| Disciplina | Contribuição | Situação em 15/11/2026 |
+| Disciplina | Contribuição | Situação em 16/11/2026 |
 |---|---|---|
 | Pensamento Computacional e Automação com Python | Classes, busca por regras, categorias, histórico, indicadores e CSV | Implementado, avaliação de 14/11 documentada e melhorias verificadas; vídeo e dados finais da entrega pendentes |
 | Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Agente v4 corrigido, coleta documentada, amostra confirmada e conteúdo publicado |
-| Soluções em Energias Renováveis e Sustentáveis | Comparação entre rede e sistema solar com bateria para iluminação de abrigo | Cenário planejado; cálculos e integração pendentes |
+| Soluções em Energias Renováveis e Sustentáveis | Comparação entre rede e sistema solar com bateria para iluminação de abrigo | Módulo implementado e validado tecnicamente; testes com usuários, vídeo e publicação desta etapa pendentes |
 
-A opção 2 abre o módulo de IA sobre documentos fictícios de Aurora. A opção 3 informa que SERS está em desenvolvimento. As fichas fictícias de Aurora não participam das respostas de PCP.
+A opção 2 abre o módulo de IA sobre documentos fictícios de Aurora. A opção 3 compara rede e solar com bateria, simula consumo/sol/preço e estima autonomia de iluminação de abrigo. As fichas fictícias de Aurora não participam das respostas de PCP.
 
 ## Instalação e execução
 
-PCP usa somente a biblioteca padrão. A versão efetivamente testada foi Python 3.14.3. Para IA, instale `requirements.txt` e configure a chave Groq conforme o [guia de IA](documentacao/ia/guia_execucao.md).
+PCP e SERS usam somente a biblioteca padrão. A versão efetivamente testada foi Python 3.14.3. Para IA, instale `requirements.txt` e configure a chave Groq conforme o [guia de IA](documentacao/ia/guia_execucao.md).
 
 Na pasta do projeto:
 
@@ -180,7 +180,7 @@ A [organização da documentação](documentacao/README.md) reúne o guia de uso
 
 Pendências da entrega: revisão da equipe, vídeo técnico de **5 a 8 minutos** com participação de todos e alteração ao vivo de palavra-chave, link do vídeo e envio do TXT. O [roteiro do vídeo](documentacao/roteiro_video_pcp.md) já está preparado.
 
-Entrega PCP: TXT com assistente, público, integrantes/RMs e links do GitHub e do vídeo, conforme o enunciado, até **19/11/2026 às 23h59**. Modelo em [entrega PCP](documentacao/entrega_pcp.txt). O módulo de IA está em desenvolvimento; SERS será a etapa seguinte.
+Entrega PCP: TXT com assistente, público, integrantes/RMs e links do GitHub e do vídeo, conforme o enunciado, até **19/11/2026 às 23h59**. Modelo em [entrega PCP](documentacao/entrega_pcp.txt). IA tem documentação própria; a etapa de SERS está implementada e tem pendências de avaliação humana, vídeo e publicação.
 
 ## Prompt & Artificial Intelligence
 
@@ -216,6 +216,25 @@ Para recalcular a coleta sem usar a API ou alterar os CSVs:
 ```bash
 python -B testes/analisar_usuarios_ia.py
 ```
+
+## Soluções em Energias Renováveis e Sustentáveis
+
+A **opção 3** analisa o custo e a continuidade da iluminação noturna de um abrigo temporário para pessoas afetadas por desastres no Brasil. Compara os mesmos LEDs alimentados pela rede existente e por solar isolado com bateria, no mesmo período. A versão `sers-v2` usa biblioteca padrão, sem chamadas de API durante o uso.
+
+O exemplo inicial de 20 lâmpadas de 9 W, 6 h/noite e 30 dias consome **1,08 kWh/dia** e **32,4 kWh no período**. Demanda, perdas e orçamento são estimados. A v2 acrescenta dados públicos NASA POWER para um caso horizontal de São Paulo e referências de fabricante para as capacidades escolhidas, sem generalizá-las como condições de todo o Brasil ou kit orçado.
+
+O módulo oferece resumo com recomendação, ajustes guiados, autonomia por carga inicial, fontes, acompanhamento de bateria em vários dias, atendimento por necessidade e exportação de relatório técnico. Distingue aquisição nova de operação com equipamentos já disponíveis. Informa déficit, sobrecarga, impacto ambiental qualitativo e limites, sem garantir economia ou fornecimento.
+
+Para experimentar, rode `python3 main.py --dados data/demonstracao_sers`, escolha 3 e depois 1. Para acompanhar a bateria, escolha 6 → 2 → Enter: na sequência hipotética de cinco dias com pouco sol, três noites são completas, com déficit total de 1,6518 kWh. Em 7, escolha a necessidade; em 4, consulte fontes. Enter mantém valores; `v` cancela entradas numéricas; 5 restaura; 0 volta.
+
+- [Guia e conferência dos requisitos de SERS](documentacao/sers/README.md).
+- [Memória de cálculo, custos, viabilidade e impactos](documentacao/sers/analise.md).
+- [Fontes, hipóteses e referência solar preservada](modulos/energia/referencias.md).
+- [Explicação do código para a equipe](documentacao/sers/explicacao_codigo.md).
+- [Plano de avaliação com usuários](documentacao/sers/testes_usuarios.md), [roteiro do vídeo](documentacao/sers/roteiro_video.md) e [TXT](documentacao/sers/entrega_sers.txt).
+- [Evidências técnicas e histórico das versões](evidencias/sers/README.md): **166 testes locais aprovados, 31 de SERS**; não são resultados humanos.
+
+**Pendências:** realizar e registrar avaliação de compreensão/utilidade e ajustes; gravar vídeo não listado de até 3 minutos; preencher seu link; publicar esta etapa e conferir acesso antes de enviar somente o TXT no prazo do Portal. SERS não define mínimo de participantes nem exige explicitamente que sejam externos; registrar a modalidade real da avaliação. Coletas de PCP/IA não foram reaproveitadas como testes deste módulo. Relatórios da opção 8 ficam em `data/relatorios_sers/` e são técnicos, locais e ignorados pelo Git.
 
 ## ODS relacionados
 

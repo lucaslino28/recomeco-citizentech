@@ -1,0 +1,226 @@
+{
+  "natureza": "Validação técnica automatizada com cenários hipotéticos; não são testes com usuários.",
+  "versao": "sers-v1",
+  "revisao_base": "2026-11-16",
+  "reproduzir": "python3 -B testes/analisar_sers.py",
+  "sha256": {
+    "modulos/energia/analise.json": "18fab97e203a74e68862e6a96639a09c72ced340b8185b229dd955acdacc7d09",
+    "modulos/energia/calculadora.py": "4ff5879ac6da97fcb49aa7d1a42a49df6b8111d80f756df50783e7a8c1129379"
+  },
+  "premissas": "modulos/energia/referencias.md",
+  "cenarios": [
+    {
+      "situacao": "Exemplo inicial",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 4.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 32.400000000000006,
+        "geracao_util_dia_kwh": 1.6500000000000001,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": true,
+        "solar_atendida_dia_kwh": 1.08,
+        "solar_atendida_periodo_kwh": 32.400000000000006,
+        "deficit_dia_kwh": 0,
+        "cobertura_solar_pct": 100.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 32.400000000000006,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 532.4,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Pouco sol",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 1.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 32.400000000000006,
+        "geracao_util_dia_kwh": 0.41250000000000003,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 0.41250000000000003,
+        "solar_atendida_periodo_kwh": 12.375000000000002,
+        "deficit_dia_kwh": 0.6675,
+        "cobertura_solar_pct": 38.19444444444445,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 32.400000000000006,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 532.4,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Sem sol — regime diário sem energia inicial gratuita",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 0.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 32.400000000000006,
+        "geracao_util_dia_kwh": 0.0,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 0.0,
+        "solar_atendida_periodo_kwh": 0.0,
+        "deficit_dia_kwh": 1.08,
+        "cobertura_solar_pct": 0.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 32.400000000000006,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 532.4,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Bateria limita noite longa",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 12.0,
+          "dias": 30,
+          "hsp": 8.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 2.16,
+        "periodo_kwh": 64.80000000000001,
+        "geracao_util_dia_kwh": 3.3000000000000003,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 1.8432000000000002,
+        "solar_atendida_periodo_kwh": 55.29600000000001,
+        "deficit_dia_kwh": 0.31679999999999997,
+        "cobertura_solar_pct": 85.33333333333334,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 64.80000000000001,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 564.8,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Sobrecarga do inversor",
+      "resultado": {
+        "consumo": {
+          "lampadas": 40,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 4.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 360.0,
+        "diario_kwh": 2.16,
+        "periodo_kwh": 64.80000000000001,
+        "geracao_util_dia_kwh": 1.6500000000000001,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 0,
+        "potencia_inversor_ok": false,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 0,
+        "solar_atendida_periodo_kwh": 0,
+        "deficit_dia_kwh": 2.16,
+        "cobertura_solar_pct": 0.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 64.80000000000001,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 564.8,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "60 dias — mesmo período nas duas alternativas",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 60,
+          "hsp": 4.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 64.80000000000001,
+        "geracao_util_dia_kwh": 1.6500000000000001,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": true,
+        "solar_atendida_dia_kwh": 1.08,
+        "solar_atendida_periodo_kwh": 64.80000000000001,
+        "deficit_dia_kwh": 0,
+        "cobertura_solar_pct": 100.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 64.80000000000001,
+        "manutencao_b_rs": 20.0,
+        "total_a_rs": 564.8,
+        "total_b_rs": 6920.0
+      }
+    }
+  ],
+  "falta_de_luz_sem_recarga": [
+    {
+      "carga_pct": 100.0,
+      "energia_disponivel_kwh": 1.8432000000000002,
+      "autonomia_h": 10.240000000000002,
+      "cobre_noite": true
+    },
+    {
+      "carga_pct": 50.0,
+      "energia_disponivel_kwh": 0.6912000000000001,
+      "autonomia_h": 3.8400000000000007,
+      "cobre_noite": false
+    },
+    {
+      "carga_pct": 20.0,
+      "energia_disponivel_kwh": 1.2789769243681805e-16,
+      "autonomia_h": 7.105427357601003e-16,
+      "cobre_noite": false
+    },
+    {
+      "carga_pct": 0.0,
+      "energia_disponivel_kwh": 0.0,
+      "autonomia_h": 0.0,
+      "cobre_noite": false
+    }
+  ],
+  "limites": "Não mede clima, preços, condições de instalação ou percepção humana. Impactos ambientais qualitativos, sem CO2 ou análise de ciclo de vida."
+}

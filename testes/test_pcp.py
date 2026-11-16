@@ -341,7 +341,7 @@ class TestePCP(unittest.TestCase):
             self.assertIn(esperado, texto)
 
     def test_menu_completo_de_outro_diretorio(self):
-        processo = self.executar_menu("x\n2\n0\n3\n4\n1\n0\n0\n")
+        processo = self.executar_menu("x\n2\n0\n3\n0\n4\n1\n0\n0\n")
         self.assertEqual(processo.returncode, 0, processo.stderr)
         self.assertIn(f"Base carregada: {len(self.base.orientacoes)} orientações", processo.stdout)
         self.assertNotIn("DEBUG", processo.stdout)

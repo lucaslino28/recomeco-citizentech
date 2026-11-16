@@ -19,3 +19,6 @@ venv/
 
 # macOS
 .DS_Store
+
+# Relatórios técnicos exportados localmente pelo módulo de energia
+/data/relatorios_sers/

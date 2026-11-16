@@ -37,7 +37,7 @@ def menu_principal(pasta_dados=None, data_indicadores=None):
     assistente = Assistente("RECOMEÇO", base, pasta_dados)
     print("\nProtótipo educacional. Não é um canal oficial nem de emergência.")
     print("Não informe nome, documentos, telefone, endereço ou outros dados pessoais.")
-    print("O texto digitado não é salvo; os registros usam apenas rótulos de orientação.")
+    print("Nas orientações sobre desastres, os registros usam rótulos e não salvam perguntas.")
     try:
         while True:
             print("\n========================================")
@@ -57,8 +57,8 @@ def menu_principal(pasta_dados=None, data_indicadores=None):
                 from modulos.documentos_ia.agente import menu_documentos_ia
                 menu_documentos_ia()
             elif opcao == "3":
-                print("\nMódulo de energia e sustentabilidade.")
-                print("Funcionalidade em desenvolvimento.")
+                from modulos.energia.calculadora import menu_energia
+                menu_energia()
             elif opcao == "4":
                 assistente.indicadores(data_indicadores)
                 assistente.exportar_csv()
