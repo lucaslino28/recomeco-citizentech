@@ -1,6 +1,6 @@
 # Testes com usuários — SERS
 
-**Situação em 16/11/2026: ainda não realizados para este módulo.** Os testes automatizados e os participantes anteriores de PCP/IA não contam como uma rodada de SERS. Este arquivo é um roteiro e formulário vazio, atualizado para `sers-v2`.
+**Situação em 17/11/2026:** avaliação de uma participante externa conforme relato do aplicador, na versão `sers-v2`. [Registro da rodada e ajuste de HSP](../../evidencias/sers/usuarios/rodada_2026-11-17/README.md). A mudança foi aplicada na `sers-v3` e verificada tecnicamente; nova consulta à participante permanece não realizada. O roteiro abaixo continua disponível para novas sessões.
 
 As situações abaixo são sugestões, não uma quantidade obrigatória. O enunciado pede verificar compreensão e utilidade, registrando situações, comentários e ajustes; **não fixa um número de participantes ou de tarefas nem exige explicitamente participantes externos**. A equipe deve escolher uma coleta possível e informar o que realmente aconteceu, sem importar mínimos de outra disciplina.
 
@@ -50,10 +50,10 @@ Interpretação do aplicador e limitação da observação:
 
 Se não autorizar o registro, não publique suas falas. Não atribua resultados a alguém que não participou ou conclua compreensão só porque a tela mostrou o cálculo correto.
 
-## Consolidação e ajustes — preencher após a coleta
+## Consolidação e ajustes
 
 | Situação / versão | Comentário ou dificuldade observada | Ajuste realizado e motivo, ou justificativa para não alterar | Verificação técnica | Nova consulta ao usuário, se ocorreu |
 |---|---|---|---|---|
-| Pendente de coleta | — | — | — | — |
+| S01, 17/11, sers-v2 | HSP entendida como duração de sol na casa; utilidade percebida favorável, conforme relato do aplicador | sers-v3 explica energia equivalente e pede confirmar/corrigir/cancelar valores altos | Cinco regressões novas; 171 testes gerais aprovados | Ainda não realizada |
 
 Depois da coleta, registre número real de pessoas, situações executadas, modalidade de participação, ajuda necessária, dificuldades, utilidade percebida e limites da amostra. Remova dados pessoais e publique somente os registros autorizados em `evidencias/sers/usuarios/`. Atualize este documento e o checklist para apontar para esses arquivos. Ajustes só devem ser descritos como feitos depois de implementados e conferidos; não declarar melhoria de compreensão sem nova observação.

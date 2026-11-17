@@ -21,3 +21,5 @@ Perguntas para a equipe conferir antes de apresentar:
 - Qual impacto ambiental não foi quantificado? Quais números são fonte pública e quais continuam estimados?
 
 Os testes verificam contas conhecidas, conservação da energia acumulada, déficits, limites, dados de referência, menus e exportação. Eles não comprovam que uma pessoa entendeu a orientação nem certificam uma instalação elétrica.
+
+Após S01, a função `ler_hsp()` reutiliza a leitura numérica e acrescenta uma escolha simples com `if` e `while`: confirmar uma hipótese alta, corrigi-la ou cancelar. `explicar_hsp()` dá o contexto em linguagem cotidiana. O cálculo permanece separado da interface e continua aceitando os cenários hipotéticos para verificações técnicas. A correção surgiu de uma dificuldade relatada; compreender melhor após a mensagem nova ainda precisa ser observado em uma nova consulta.

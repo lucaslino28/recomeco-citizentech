@@ -1,22 +1,16 @@
-# Evidências técnicas de SERS
+# Evidências de SERS
 
-Versão atual `sers-v2`, refinada em 16/11/2026. Os arquivos desta pasta resultam de execução técnica real com parâmetros programados. **Não representam participação, opinião ou compreensão de usuários.** A avaliação humana de SERS ainda está pendente.
+Versão atual **sers-v3**, de 17/11/2026. A avaliação humana e as execuções técnicas ficam separadas para indicar a origem de cada conclusão.
 
-| Arquivo | Conteúdo |
+| Conjunto | Conteúdo |
 |---|---|
-| `validacao_tecnica.json` | Contas e sensibilidade, referência solar pública, autonomia e sequências; inclui hashes dos dados e código utilizados. |
-| `testes_2026-11-16.txt` | Saída real da suíte completa: 166 testes, incluindo 31 de SERS. |
-| `ensaio_terminal.txt` | Execução automatizada do programa, com entradas e natureza técnica informadas. |
-| `v1/` | Código, dados e resultados anteriores ao refinamento: 152 testes gerais, dos quais 17 de SERS. São histórico, não nova rodada ou resultado atual. |
+| [Rodada S01 de 17/11](usuarios/rodada_2026-11-17/README.md) | Uma participante externa conforme relato do aplicador, terminal e relatório da v2, comentários indiretos, dificuldade com HSP e ajuste aplicado. |
+| [Verificação pós-avaliação](pos_usuario_2026-11-17/README.md) | v3: 171 testes gerais, 36 de SERS; ensaio automatizado da confirmação de HSP e cálculos com hashes atuais. Não é nova participação humana. |
+| `validacao_tecnica.json`, `testes_2026-11-16.txt`, `ensaio_terminal.txt` | Evidências históricas da v2: 166 testes gerais, 31 de SERS. Preservadas sem recalcular como se fossem atuais. |
+| `v1/` | Código, dados e resultados da primeira versão, com 152 testes gerais e 17 de SERS. |
 
-Reproduzir os cálculos sem usar rede ou IA:
+Reproduzir os cálculos da versão atual sem rede ou IA: `python3 -B testes/analisar_sers.py`. A cópia NASA original está em `modulos/energia/fontes/nasa_sao_paulo.json`, com URL, unidade, período e hash documentados. As sequências de dias são hipóteses para estudo.
 
-```bash
-python3 -B testes/analisar_sers.py
-```
+Relatórios exportados ficam localmente em `data/relatorios_sers/`, ignorados pelo Git. A cópia do relatório de S01 foi incluída na rodada para evidência, junto à transcrição com identificadores do ambiente substituídos. Nas transcrições foram removidos apenas espaços finais de prompts para formatação; entradas e resultados não foram corrigidos retroativamente.
 
-A cópia original dos dados NASA fica em `modulos/energia/fontes/nasa_sao_paulo.json`. A data, a URL e o hash da consulta estão em `analise.json`; as unidades e o período constam da resposta original. Os dias 4/1/0/1/4 HSP são escolhidos para simulação, não extraídos como previsão dos dados públicos.
-
-Relatórios exportados pelo usuário ficam localmente em `data/relatorios_sers/`, ignorados pelo Git. Para a futura avaliação humana, registrar apenas a modalidade de participação real, as situações executadas, os comentários autorizados e os ajustes efetivamente feitos, conforme `documentacao/sers/testes_usuarios.md`.
-
-Nas transcrições do terminal foram removidos apenas espaços no final das linhas dos prompts para padronizar a formatação no Git; o conteúdo das saídas e os resultados não foram alterados.
+A participante avaliou a v2. A mudança da v3 foi implementada e testada tecnicamente, mas ainda não houve nova consulta à participante. Não se declara melhora de compreensão sem essa observação. Os dados originais de PCP/IA e as evidências técnicas anteriores de SERS foram preservados.

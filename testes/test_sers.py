@@ -296,3 +296,41 @@ class TesteSERS(unittest.TestCase):
     def test_menu_relatorio_trata_falha_de_escrita(self):
         with patch.object(CalculadoraEnergia, "exportar_relatorio", side_effect=OSError("sem espaço")):
             self.assertIn("Não foi possível salvar", self.menu(["8", "0"]))
+
+    def test_hsp_confundida_com_horas_de_sol_pode_ser_corrigida_antes_de_aplicar(self):
+        with patch.object(CalculadoraEnergia, "exportar_relatorio", return_value=Path("relatorio.txt")) as salvar:
+            texto = self.menu(["2", "10", "5", "9", "30", "12", "n", "4", "0,789", "8", "0"])
+            consumo = salvar.call_args.args[0]
+            self.assertEqual(consumo["hsp"], 4)
+            self.assertEqual(consumo["tarifa_kwh"], 0.789)
+            self.assertEqual(consumo["lampadas"], 10)
+            self.assertIn("12 horas de claridade", texto)
+
+    def test_hsp_alta_confirmada_preserva_o_cenario_original_da_avaliacao(self):
+        with patch.object(CalculadoraEnergia, "exportar_relatorio", return_value=Path("relatorio.txt")) as salvar:
+            texto = self.menu(["2", "10", "5", "9", "30", "12", "s", "0,789", "8", "0"])
+            consumo = salvar.call_args.args[0]
+            self.assertEqual(consumo["hsp"], 12)
+            r = self.calculadora.calcular(consumo)
+            self.assertAlmostEqual(r["periodo_kwh"], 13.5)
+            self.assertAlmostEqual(r["total_a_rs"], 510.6515)
+            self.assertIn("Valor mantido como hipótese", texto)
+
+    def test_cancelar_confirmacao_de_hsp_nao_aplica_campos_anteriores(self):
+        with patch.object(CalculadoraEnergia, "exportar_relatorio", return_value=Path("relatorio.txt")) as salvar:
+            self.menu(["2", "10", "5", "9", "30", "12", "v", "8", "0"])
+            self.assertEqual(salvar.call_args.args[0], self.calculadora.dados["consumo"])
+
+    def test_hsp_alta_na_sequencia_tambem_pede_confirmacao_e_permite_correcao(self):
+        with patch.object(CalculadoraEnergia, "exportar_relatorio", return_value=Path("relatorio.txt")) as salvar:
+            self.menu(["6", "3", "1", "12", "talvez", "n", "1", "100", "8", "0"])
+            seq = salvar.call_args.kwargs["sequencia"]
+            self.assertEqual(len(seq["dias"]), 1)
+            self.assertEqual(seq["dias"][0]["hsp"], 1)
+
+    def test_hsp_zero_e_padrao_nao_exigem_confirmacao_adicional(self):
+        from modulos.energia.calculadora import ler_hsp
+        with patch("builtins.input", side_effect=["0"]):
+            self.assertEqual(ler_hsp("HSP", 4), 0)
+        with patch("builtins.input", side_effect=[""]):
+            self.assertEqual(ler_hsp("HSP", 4), 4)

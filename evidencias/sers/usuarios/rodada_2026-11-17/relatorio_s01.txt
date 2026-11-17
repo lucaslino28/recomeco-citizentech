@@ -1,0 +1,216 @@
+RELATÓRIO TÉCNICO — RECOMEÇO / SERS
+
+COMPARAÇÃO — MESMA ILUMINAÇÃO, MESMO PERÍODO
+20 lâmpadas de 9,00 W, 6,00 h/noite, 30 dias.
+Demanda: 180,00 W; 1,080 kWh/dia; 32,400 kWh no período.
+
+A — REDE: custo de aquisição + uso estimado R$ 532,40.
+B — SOLAR + BATERIA: custo de aquisição + uso estimado R$ 6.910,00.
+B entrega 100,0% da demanda noturna no balanço diário.
+DECISÃO COM REDE DISPONÍVEL: A — rede tem menor custo estimado neste período.
+Até 32,400 kWh da rede poderiam ser substituídos, sem crédito por excedente.
+Bateria cheia, sem recarga: até 10,24 h calculadas nesta carga.
+Para manter luz numa interrupção, consulte a carga inicial (3) e a sequência de dias (6).
+
+Valores de planejamento e referências: não são cotação, conta completa ou garantia.
+Só iluminação. Instalação real e iluminância precisam de avaliação profissional.
+Rede: mistura de fontes. Solar: renovável no uso; equipamentos têm impactos de fabricação e descarte.
+Não há cálculo de CO2 ou impacto zero. Priorize pontos essenciais sem comprometer a segurança.
+Fontes: MME, CEPEL/CRESESB, ANEEL, NASA POWER, fabricantes e IEA-PVPS/IRENA (opção 4).
+
+DADOS PARA CONFERÊNCIA
+{
+  "tipo": "Relatório técnico de SERS; não é avaliação com usuários",
+  "versao": "sers-v2",
+  "gerado_em_utc": "2026-11-17T19:28:14.873439+00:00",
+  "comparacao": {
+    "consumo": {
+      "lampadas": 20,
+      "potencia_lampada_w": 9.0,
+      "horas_dia": 6.0,
+      "dias": 30,
+      "hsp": 4.0,
+      "tarifa_kwh": 1.0
+    },
+    "potencia_w": 180.0,
+    "diario_kwh": 1.08,
+    "periodo_kwh": 32.400000000000006,
+    "geracao_util_dia_kwh": 1.6500000000000001,
+    "bateria_util_kwh": 1.8432000000000002,
+    "autonomia_cheia_h": 10.240000000000002,
+    "potencia_inversor_ok": true,
+    "solar_atende": true,
+    "solar_atendida_dia_kwh": 1.08,
+    "solar_atendida_periodo_kwh": 32.400000000000006,
+    "deficit_dia_kwh": 0,
+    "cobertura_solar_pct": 100.0,
+    "implantacao_a_rs": 500,
+    "implantacao_b_rs": 6900,
+    "energia_rede_rs": 32.400000000000006,
+    "manutencao_b_rs": 10.0,
+    "total_a_rs": 532.4,
+    "total_b_rs": 6910.0
+  },
+  "operacao_e_sensibilidade": {
+    "a_operacao_rs": 32.400000000000006,
+    "b_operacao_rs": 10.0,
+    "comparacao_equivalente": true,
+    "b_aquisicao_menos_30pct_rs": 4990.0,
+    "b_aquisicao_mais_30pct_rs": 8830.0
+  },
+  "referencia_publica": {
+    "local": "São Paulo/SP — ponto de referência (-23,55; -46,63)",
+    "unidade": "kW-hr/m^2/day",
+    "periodo": "25-year Meteorological and Solar Monthly & Annual Climatologies (January 2001 - December 2025)",
+    "hsp_anual": 4.5288,
+    "mensais": {
+      "JAN": 5.2289,
+      "FEB": 5.4396,
+      "MAR": 4.9123,
+      "APR": 4.3562,
+      "MAY": 3.5225,
+      "JUN": 3.2578,
+      "JUL": 3.4793,
+      "AUG": 4.1513,
+      "SEP": 4.4232,
+      "OCT": 4.9058,
+      "NOV": 5.2334,
+      "DEC": 5.4898
+    },
+    "mes_menor": "JUN",
+    "hsp_menor": 3.2578,
+    "observacao": "Radiação global no plano horizontal. Usar como cenário horizontal aproximado; não substitui dados no plano inclinado dos módulos, sombreamento ou estudo local.",
+    "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-46.63&latitude=-23.55&format=JSON"
+  },
+  "sequencia_se_executada": {
+    "consumo": {
+      "lampadas": 20,
+      "potencia_lampada_w": 9.0,
+      "horas_dia": 6.0,
+      "dias": 30,
+      "hsp": 4.0,
+      "tarifa_kwh": 1.0
+    },
+    "carga_inicial_pct": 90.0,
+    "potencia_inversor_ok": true,
+    "dias": [
+      {
+        "dia": 1,
+        "hsp": 4.0,
+        "carga_inicio_pct": 90.0,
+        "geracao_util_kwh": 1.6500000000000001,
+        "atendida_kwh": 1.08,
+        "deficit_kwh": 0,
+        "excedente_kwh": 1.4196,
+        "saldo_final_kwh_equivalente": 1.2240000000000002,
+        "carga_final_pct": 53.125
+      },
+      {
+        "dia": 2,
+        "hsp": 1.0,
+        "carga_inicio_pct": 53.125,
+        "geracao_util_kwh": 0.41250000000000003,
+        "atendida_kwh": 1.08,
+        "deficit_kwh": 0,
+        "excedente_kwh": 0,
+        "saldo_final_kwh_equivalente": 0.5565000000000002,
+        "carga_final_pct": 24.15364583333334
+      },
+      {
+        "dia": 3,
+        "hsp": 0.0,
+        "carga_inicio_pct": 24.15364583333334,
+        "geracao_util_kwh": 0.0,
+        "atendida_kwh": 0.09570000000000028,
+        "deficit_kwh": 0.9842999999999997,
+        "excedente_kwh": 0,
+        "saldo_final_kwh_equivalente": 0.46079999999999993,
+        "carga_final_pct": 19.999999999999996
+      },
+      {
+        "dia": 4,
+        "hsp": 1.0,
+        "carga_inicio_pct": 19.999999999999996,
+        "geracao_util_kwh": 0.41250000000000003,
+        "atendida_kwh": 0.41250000000000003,
+        "deficit_kwh": 0.6675,
+        "excedente_kwh": 0,
+        "saldo_final_kwh_equivalente": 0.46079999999999993,
+        "carga_final_pct": 19.999999999999996
+      },
+      {
+        "dia": 5,
+        "hsp": 4.0,
+        "carga_inicio_pct": 19.999999999999996,
+        "geracao_util_kwh": 1.6500000000000001,
+        "atendida_kwh": 1.08,
+        "deficit_kwh": 0,
+        "excedente_kwh": 0,
+        "saldo_final_kwh_equivalente": 1.0308000000000002,
+        "carga_final_pct": 44.739583333333336
+      }
+    ],
+    "demanda_total_kwh": 5.4,
+    "atendida_total_kwh": 3.7482000000000006,
+    "deficit_total_kwh": 1.6517999999999997,
+    "geracao_total_kwh": 4.125,
+    "excedente_total_kwh": 1.4196,
+    "saldo_inicial_kwh_equivalente": 2.0736000000000003,
+    "saldo_final_kwh_equivalente": 1.0308000000000002,
+    "cobertura_pct": 69.41111111111113,
+    "noites_completas": 3
+  },
+  "origem": "Demanda, orçamento, perdas e limites de uso são hipóteses didáticas da equipe. As capacidades de 550 Wp e 2,56 kWh têm exemplos de fabricante. A referência solar de São Paulo vem da NASA POWER; não é previsão do tempo, medição de abrigo ou média nacional.",
+  "premissas": [
+    "20 lâmpadas de 9 W representam uma carga pequena para estudo; 6 h noturnas e 30 dias representam um episódio de acolhimento, sem levantamento de um abrigo real.",
+    "A mesma quantidade de lâmpadas LED, potência e horas é usada nas duas alternativas. Não se atribui economia à troca de lâmpadas, pois ambas já são LED.",
+    "550 Wp e 2,56 kWh são capacidades apoiadas por exemplos de fichas Canadian Solar CS6W-550MS e Victron NG 25,6 V/100 Ah. Servem de referência energética, não compõem um kit especificado ou orçado. O inversor de 300 W continua hipotético.",
+    "O exemplo inicial continua com 4 HSP/dia hipotéticas. Há uma opção adicional de referência horizontal para São Paulo com dados NASA POWER mensais e anuais, sem generalizar para o Brasil ou prever dias futuros.",
+    "Fator útil de 75% é uma aproximação global painel → luz, incluindo temperatura, cabos, controlador, armazenamento e inversor. Aplicado uma única vez à geração diária; não é eficiência da célula solar.",
+    "Autonomia usa separadamente 80% de profundidade máxima de descarga e 90% de eficiência do inversor. Essa eficiência não é multiplicada outra vez pela geração diária. Não transfira 80% para uma bateria real sem ficha técnica.",
+    "A comparação principal é um balanço diário com recarga anterior à noite. A sequência de dias acompanha explicitamente carga inicial, geração, energia armazenada, uso noturno, déficit e excedente, em passos de um dia; não é simulação meteorológica ou elétrica hora a hora.",
+    "R$ 1/kWh representa preço variável hipotético. Custos de disponibilidade, tributos fixos e iluminação pública não são modelados; não representa a conta completa.",
+    "R$ 500 de iluminação, R$ 6400 adicionais de solar e R$ 10/30 dias de manutenção são orçamento de planejamento de 16/11/2026, não cotações dos modelos de referência. A análise mostra aquisição nova, operação com equipamentos já disponíveis e sensibilidade de ±30% no investimento solar, sem afirmar valor de mercado.",
+    "A rede e sua instalação interna já existem, estão liberadas e seguras; não se calcula nova ligação/reforma. Custos solares não incluem frete, estrutura específica do imóvel, reposições, descarte ou adequações não previstas.",
+    "Sem crédito por excedente, venda à rede, valorização do equipamento ou promessa de retorno do investimento. Solar é isolado com bateria, não um sistema conectado à rede sem backup.",
+    "O estudo abrange somente iluminação, sem geladeira, equipamentos médicos, bombas, tomadas ou recarga de celulares. Não verifica iluminância, distribuição dos pontos, conforto visual ou requisitos de iluminação de emergência.",
+    "A sequência usa energia armazenada equivalente na saída AC: geração útil entra uma vez e o inversor não é aplicado novamente à recarga ou ao consumo. O estado de carga resultante é aproximação energética, não leitura de BMS; excedentes com bateria cheia não são vendidos."
+  ],
+  "referencias": [
+    {
+      "titulo": "MME — Potência e consumo de energia",
+      "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/julho-26/potencia-e-consumo-de-energia-o-que-sao-e-como-impactam-na-conta-de-luz",
+      "uso": "Conceitos de W e kWh; não fornece os números do cenário."
+    },
+    {
+      "titulo": "CEPEL/CRESESB — Manual de Engenharia para Sistemas Fotovoltaicos (2004)",
+      "url": "https://cresesb.cepel.br/publicacoes/download/Manual_de_Engenharia_FV_2004.pdf",
+      "uso": "Fundamentos de HSP, armazenamento e perdas. Não é cotação nem ficha dos equipamentos simulados."
+    },
+    {
+      "titulo": "ANEEL — Custo da energia que chega aos consumidores",
+      "url": "https://www.gov.br/aneel/pt-br/assuntos/tarifas/entenda-a-tarifa/custo-da-energia-que-chega-aos-consumidores",
+      "uso": "A conta inclui componentes além da energia variável; R$ 1/kWh é hipótese da equipe."
+    },
+    {
+      "titulo": "IEA-PVPS/IRENA — End-of-Life Solar PV Panels (2016)",
+      "url": "https://iea-pvps.org/key-topics/irena-iea-pvps-end-of-life-solar-pv-panels-2016/",
+      "uso": "Discussão de reutilização e reciclagem de módulos; não quantifica CO2 deste cenário."
+    },
+    {
+      "titulo": "NASA POWER — Climatology API e dados do ponto São Paulo",
+      "url": "https://power.larc.nasa.gov/docs/services/api/temporal/climatology/",
+      "uso": "Dados públicos mensais/anuais de radiação horizontal, preservados em fontes/nasa_sao_paulo.json. O período e as unidades são os do arquivo consultado."
+    },
+    {
+      "titulo": "Canadian Solar — HiKu6 CS6W-MS, ficha V2.9",
+      "url": "https://static.csisolar.com/wp-content/uploads/2024/07/23145733/CS-Datasheet-HiKu6_CS6W-MS_v2.9_EN.pdf",
+      "uso": "Exemplo público de módulo CS6W-550MS com potência nominal de 550 W em STC. Não garante geração contínua ou preço do orçamento."
+    },
+    {
+      "titulo": "Victron — Lithium NG 25,6 V, dados técnicos",
+      "url": "https://www.victronenergy.com/media/pg/Lithium_NG_battery_25%2C6_V/en/technical-data.html",
+      "uso": "Exemplo público de bateria nominal 25,6 V / 100 Ah / 2560 Wh a 25 °C. Não certifica o conjunto simulado; acessórios, BMS, condições e preço exigem projeto/orçamento próprios."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Documentação — RECOMEÇO
 
-PCP revisado em 14/11/2026, após os dez atendimentos informados pela equipe. Índice atualizado em 16/11/2026 para incluir SERS.
+PCP revisado em 14/11/2026, após os dez atendimentos informados pela equipe. Índice atualizado em 17/11/2026 com a avaliação de SERS.
 
 ## Por onde começar
 
@@ -26,7 +26,7 @@ PCP revisado em 14/11/2026, após os dez atendimentos informados pela equipe. Í
 - [Log dos testes atuais](../evidencias/testes_pos_avaliacao_pcp_2026-11-14.txt): 89 testes com dados temporários; não são novas avaliações de participantes.
 - [Modelo para nova coleta](../evidencias/modelo_resultados_pcp.md): formulário vazio, separado do relatório da rodada concluída.
 
-Os demais arquivos datados em `evidencias/` registram versões anteriores. Não somar seus cenários sintéticos aos atendimentos da avaliação. IA tem implementação e fechamento documentados: veja o [guia](ia/guia_execucao.md), as [decisões](ia/decisoes.md) e o [plano de usuários](ia/testes_usuarios.md). SERS está implementado e validado tecnicamente; avaliação humana, vídeo e publicação desta etapa permanecem pendentes.
+Os demais arquivos datados em `evidencias/` registram versões anteriores. Não somar seus cenários sintéticos aos atendimentos da avaliação. IA tem implementação e fechamento documentados: veja o [guia](ia/guia_execucao.md), as [decisões](ia/decisoes.md) e o [plano de usuários](ia/testes_usuarios.md). SERS está implementado e validado tecnicamente; avaliação de uma participante e ajuste de HSP estão documentados, com vídeo e publicação pendentes.
 
 ## Prompt & IA
 
@@ -34,4 +34,4 @@ A documentação de IA está organizada em um [índice próprio](ia/README.md), 
 
 ## SERS — energia e sustentabilidade
 
-O [índice de SERS](sers/README.md) reúne execução, memória de cálculo, referências, evidências técnicas, plano de usuários, roteiro de vídeo e TXT. O módulo funciona na opção 3 sem API. Os dados numéricos são estimativas didáticas justificadas. Ainda não há resultados de usuários de SERS; as coletas anteriores permanecem próprias de PCP/IA.
+O [índice de SERS](sers/README.md) reúne execução, memória de cálculo, referências, evidências técnicas, plano de usuários, roteiro de vídeo e TXT. O módulo funciona na opção 3 sem API. Os dados numéricos são estimativas didáticas justificadas. A [rodada S01](../evidencias/sers/usuarios/rodada_2026-11-17/README.md) documenta participação relatada pelo aplicador, navegação, comentários e ajuste; as coletas anteriores permanecem próprias de PCP/IA.

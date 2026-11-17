@@ -1,6 +1,6 @@
 # Checklist da entrega
 
-Atualizado em 16/11/2026. Os itens marcados foram implementados ou verificados tecnicamente; não representam aprovação do professor.
+Atualizado em 17/11/2026. Os itens marcados foram implementados ou verificados tecnicamente; não representam aprovação do professor.
 
 ## PCP
 
@@ -62,13 +62,13 @@ Atualizado em 16/11/2026. Os itens marcados foram implementados ou verificados t
 - [x] Memória de cálculo, custos de implantação/operação, sensibilidade, viabilidade e impactos ambientais qualitativos.
 - [x] Integração na opção 3, simulação guiada, consulta de autonomia, restauração e fontes no terminal.
 - [x] Limites de geração, bateria e potência do inversor; atendimento parcial sem promessa de economia.
-- [x] 31 testes específicos de SERS e suíte completa de 166 testes locais aprovados; evidências técnicas separadas.
+- [x] 36 testes específicos de SERS e suíte completa de 171 testes locais aprovados; evidências técnicas separadas.
 - [x] Dados públicos NASA POWER com cópia, unidade, período, consulta e hash; exemplos de capacidades dos fabricantes separados do orçamento estimado.
 - [x] Bateria acumulada entre dias, reserva e conservação da energia testadas; déficit e excedente explícitos.
 - [x] Atendimento por necessidade, custos de operação/aquisição separados e sensibilidade hipotética do investimento.
 - [x] Exportação explícita de relatório técnico local, sem se passar por avaliação de usuário.
 - [x] Documentação, explicação do código para a equipe, modelo de teste humano, roteiro de vídeo e TXT preparados.
-- [ ] Executar e registrar avaliação real de compreensão/utilidade de SERS, comentários e ajustes; não há mínimo de participantes nem exigência explícita de externos neste enunciado.
+- [x] Avaliação de 17/11 registrada: uma participante externa conforme aplicador, operações do terminal, comentários indiretos, dificuldade com HSP e ajuste aplicado. Limites da amostra e ausência de reteste explícitos.
 - [ ] Gravar/publicar vídeo não listado específico de SERS, até 3 minutos, e preencher URL.
 - [ ] Revisar hipóteses com a equipe e publicar esta etapa no GitHub.
 - [ ] Conferir acesso aos links e enviar somente o TXT no prazo de SERS informado no Portal.

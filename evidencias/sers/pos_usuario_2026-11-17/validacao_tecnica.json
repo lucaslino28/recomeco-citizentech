@@ -1,0 +1,481 @@
+{
+  "natureza": "Validação técnica automatizada com cenários hipotéticos; não são testes com usuários.",
+  "versao": "sers-v3",
+  "revisao_base": "2026-11-16",
+  "reproduzir": "python3 -B testes/analisar_sers.py",
+  "sha256": {
+    "modulos/energia/analise.json": "f8fb7420ee524a46de4ac0cc215bdf6ce760720f254bc9fe1c9842b192020d6c",
+    "modulos/energia/calculadora.py": "d87c4f39508f03e59fcc2f03e7567e0ad9438c0732218c0965f29ca68e28bc67",
+    "modulos/energia/fontes/nasa_sao_paulo.json": "b03375274c51a2900e1dd209ab2a23fff242d5a2b027a2cc152712d25f2d735a"
+  },
+  "premissas": "modulos/energia/referencias.md",
+  "referencia_publica": {
+    "local": "São Paulo/SP — ponto de referência (-23,55; -46,63)",
+    "unidade": "kW-hr/m^2/day",
+    "periodo": "25-year Meteorological and Solar Monthly & Annual Climatologies (January 2001 - December 2025)",
+    "hsp_anual": 4.5288,
+    "mensais": {
+      "JAN": 5.2289,
+      "FEB": 5.4396,
+      "MAR": 4.9123,
+      "APR": 4.3562,
+      "MAY": 3.5225,
+      "JUN": 3.2578,
+      "JUL": 3.4793,
+      "AUG": 4.1513,
+      "SEP": 4.4232,
+      "OCT": 4.9058,
+      "NOV": 5.2334,
+      "DEC": 5.4898
+    },
+    "mes_menor": "JUN",
+    "hsp_menor": 3.2578,
+    "observacao": "Radiação global no plano horizontal. Usar como cenário horizontal aproximado; não substitui dados no plano inclinado dos módulos, sombreamento ou estudo local.",
+    "url": "https://power.larc.nasa.gov/api/temporal/climatology/point?parameters=ALLSKY_SFC_SW_DWN&community=RE&longitude=-46.63&latitude=-23.55&format=JSON"
+  },
+  "operacao_e_sensibilidade": {
+    "a_operacao_rs": 32.400000000000006,
+    "b_operacao_rs": 10.0,
+    "comparacao_equivalente": true,
+    "b_aquisicao_menos_30pct_rs": 4990.0,
+    "b_aquisicao_mais_30pct_rs": 8830.0
+  },
+  "sequencias": {
+    "cinco_dias_pouco_sol": {
+      "consumo": {
+        "lampadas": 20,
+        "potencia_lampada_w": 9.0,
+        "horas_dia": 6.0,
+        "dias": 30,
+        "hsp": 4.0,
+        "tarifa_kwh": 1.0
+      },
+      "carga_inicial_pct": 100.0,
+      "potencia_inversor_ok": true,
+      "dias": [
+        {
+          "dia": 1,
+          "hsp": 4.0,
+          "carga_inicio_pct": 100.0,
+          "geracao_util_kwh": 1.6500000000000001,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 1.6500000000000004,
+          "saldo_final_kwh_equivalente": 1.2240000000000002,
+          "carga_final_pct": 53.125
+        },
+        {
+          "dia": 2,
+          "hsp": 1.0,
+          "carga_inicio_pct": 53.125,
+          "geracao_util_kwh": 0.41250000000000003,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.5565000000000002,
+          "carga_final_pct": 24.15364583333334
+        },
+        {
+          "dia": 3,
+          "hsp": 0.0,
+          "carga_inicio_pct": 24.15364583333334,
+          "geracao_util_kwh": 0.0,
+          "atendida_kwh": 0.09570000000000028,
+          "deficit_kwh": 0.9842999999999997,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.46079999999999993,
+          "carga_final_pct": 19.999999999999996
+        },
+        {
+          "dia": 4,
+          "hsp": 1.0,
+          "carga_inicio_pct": 19.999999999999996,
+          "geracao_util_kwh": 0.41250000000000003,
+          "atendida_kwh": 0.41250000000000003,
+          "deficit_kwh": 0.6675,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.46079999999999993,
+          "carga_final_pct": 19.999999999999996
+        },
+        {
+          "dia": 5,
+          "hsp": 4.0,
+          "carga_inicio_pct": 19.999999999999996,
+          "geracao_util_kwh": 1.6500000000000001,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 1.0308000000000002,
+          "carga_final_pct": 44.739583333333336
+        }
+      ],
+      "demanda_total_kwh": 5.4,
+      "atendida_total_kwh": 3.7482000000000006,
+      "deficit_total_kwh": 1.6517999999999997,
+      "geracao_total_kwh": 4.125,
+      "excedente_total_kwh": 1.6500000000000004,
+      "saldo_inicial_kwh_equivalente": 2.3040000000000003,
+      "saldo_final_kwh_equivalente": 1.0308000000000002,
+      "cobertura_pct": 69.41111111111113,
+      "noites_completas": 3
+    },
+    "tres_dias_sem_sol": {
+      "consumo": {
+        "lampadas": 20,
+        "potencia_lampada_w": 9.0,
+        "horas_dia": 6.0,
+        "dias": 30,
+        "hsp": 4.0,
+        "tarifa_kwh": 1.0
+      },
+      "carga_inicial_pct": 100.0,
+      "potencia_inversor_ok": true,
+      "dias": [
+        {
+          "dia": 1,
+          "hsp": 0.0,
+          "carga_inicio_pct": 100.0,
+          "geracao_util_kwh": 0.0,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 1.2240000000000002,
+          "carga_final_pct": 53.125
+        },
+        {
+          "dia": 2,
+          "hsp": 0.0,
+          "carga_inicio_pct": 53.125,
+          "geracao_util_kwh": 0.0,
+          "atendida_kwh": 0.7632000000000003,
+          "deficit_kwh": 0.31679999999999975,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.4607999999999999,
+          "carga_final_pct": 19.999999999999993
+        },
+        {
+          "dia": 3,
+          "hsp": 0.0,
+          "carga_inicio_pct": 19.999999999999993,
+          "geracao_util_kwh": 0.0,
+          "atendida_kwh": 0,
+          "deficit_kwh": 1.08,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.4607999999999999,
+          "carga_final_pct": 19.999999999999993
+        }
+      ],
+      "demanda_total_kwh": 3.24,
+      "atendida_total_kwh": 1.8432000000000004,
+      "deficit_total_kwh": 1.3967999999999998,
+      "geracao_total_kwh": 0.0,
+      "excedente_total_kwh": 0,
+      "saldo_inicial_kwh_equivalente": 2.3040000000000003,
+      "saldo_final_kwh_equivalente": 0.4607999999999999,
+      "cobertura_pct": 56.8888888888889,
+      "noites_completas": 1
+    },
+    "bateria_vazia_pouco_sol": {
+      "consumo": {
+        "lampadas": 20,
+        "potencia_lampada_w": 9.0,
+        "horas_dia": 6.0,
+        "dias": 30,
+        "hsp": 4.0,
+        "tarifa_kwh": 1.0
+      },
+      "carga_inicial_pct": 0.0,
+      "potencia_inversor_ok": true,
+      "dias": [
+        {
+          "dia": 1,
+          "hsp": 1.0,
+          "carga_inicio_pct": 0.0,
+          "geracao_util_kwh": 0.41250000000000003,
+          "atendida_kwh": 0,
+          "deficit_kwh": 1.08,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.41250000000000003,
+          "carga_final_pct": 17.903645833333332
+        },
+        {
+          "dia": 2,
+          "hsp": 1.0,
+          "carga_inicio_pct": 17.903645833333332,
+          "geracao_util_kwh": 0.41250000000000003,
+          "atendida_kwh": 0.36420000000000013,
+          "deficit_kwh": 0.7158,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.46079999999999993,
+          "carga_final_pct": 19.999999999999996
+        },
+        {
+          "dia": 3,
+          "hsp": 4.0,
+          "carga_inicio_pct": 19.999999999999996,
+          "geracao_util_kwh": 1.6500000000000001,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 1.0308000000000002,
+          "carga_final_pct": 44.739583333333336
+        }
+      ],
+      "demanda_total_kwh": 3.24,
+      "atendida_total_kwh": 1.4442000000000002,
+      "deficit_total_kwh": 1.7958,
+      "geracao_total_kwh": 2.475,
+      "excedente_total_kwh": 0,
+      "saldo_inicial_kwh_equivalente": 0.0,
+      "saldo_final_kwh_equivalente": 1.0308000000000002,
+      "cobertura_pct": 44.574074074074076,
+      "noites_completas": 1
+    }
+  },
+  "cenarios": [
+    {
+      "situacao": "Exemplo inicial",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 4.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 32.400000000000006,
+        "geracao_util_dia_kwh": 1.6500000000000001,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": true,
+        "solar_atendida_dia_kwh": 1.08,
+        "solar_atendida_periodo_kwh": 32.400000000000006,
+        "deficit_dia_kwh": 0,
+        "cobertura_solar_pct": 100.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 32.400000000000006,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 532.4,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Pouco sol",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 1.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 32.400000000000006,
+        "geracao_util_dia_kwh": 0.41250000000000003,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 0.41250000000000003,
+        "solar_atendida_periodo_kwh": 12.375000000000002,
+        "deficit_dia_kwh": 0.6675,
+        "cobertura_solar_pct": 38.19444444444445,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 32.400000000000006,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 532.4,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Sem sol — regime diário sem energia inicial gratuita",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 0.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 32.400000000000006,
+        "geracao_util_dia_kwh": 0.0,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 0.0,
+        "solar_atendida_periodo_kwh": 0.0,
+        "deficit_dia_kwh": 1.08,
+        "cobertura_solar_pct": 0.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 32.400000000000006,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 532.4,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Bateria limita noite longa",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 12.0,
+          "dias": 30,
+          "hsp": 8.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 2.16,
+        "periodo_kwh": 64.80000000000001,
+        "geracao_util_dia_kwh": 3.3000000000000003,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 1.8432000000000002,
+        "solar_atendida_periodo_kwh": 55.29600000000001,
+        "deficit_dia_kwh": 0.31679999999999997,
+        "cobertura_solar_pct": 85.33333333333334,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 64.80000000000001,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 564.8,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "Sobrecarga do inversor",
+      "resultado": {
+        "consumo": {
+          "lampadas": 40,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 4.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 360.0,
+        "diario_kwh": 2.16,
+        "periodo_kwh": 64.80000000000001,
+        "geracao_util_dia_kwh": 1.6500000000000001,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 0,
+        "potencia_inversor_ok": false,
+        "solar_atende": false,
+        "solar_atendida_dia_kwh": 0,
+        "solar_atendida_periodo_kwh": 0,
+        "deficit_dia_kwh": 2.16,
+        "cobertura_solar_pct": 0.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 64.80000000000001,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 564.8,
+        "total_b_rs": 6910.0
+      }
+    },
+    {
+      "situacao": "60 dias — mesmo período nas duas alternativas",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 60,
+          "hsp": 4.0,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 64.80000000000001,
+        "geracao_util_dia_kwh": 1.6500000000000001,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": true,
+        "solar_atendida_dia_kwh": 1.08,
+        "solar_atendida_periodo_kwh": 64.80000000000001,
+        "deficit_dia_kwh": 0,
+        "cobertura_solar_pct": 100.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 64.80000000000001,
+        "manutencao_b_rs": 20.0,
+        "total_a_rs": 564.8,
+        "total_b_rs": 6920.0
+      }
+    },
+    {
+      "situacao": "Referência pública horizontal São Paulo — menor média mensal",
+      "resultado": {
+        "consumo": {
+          "lampadas": 20,
+          "potencia_lampada_w": 9.0,
+          "horas_dia": 6.0,
+          "dias": 30,
+          "hsp": 3.2578,
+          "tarifa_kwh": 1.0
+        },
+        "potencia_w": 180.0,
+        "diario_kwh": 1.08,
+        "periodo_kwh": 32.400000000000006,
+        "geracao_util_dia_kwh": 1.3438425,
+        "bateria_util_kwh": 1.8432000000000002,
+        "autonomia_cheia_h": 10.240000000000002,
+        "potencia_inversor_ok": true,
+        "solar_atende": true,
+        "solar_atendida_dia_kwh": 1.08,
+        "solar_atendida_periodo_kwh": 32.400000000000006,
+        "deficit_dia_kwh": 0,
+        "cobertura_solar_pct": 100.0,
+        "implantacao_a_rs": 500,
+        "implantacao_b_rs": 6900,
+        "energia_rede_rs": 32.400000000000006,
+        "manutencao_b_rs": 10.0,
+        "total_a_rs": 532.4,
+        "total_b_rs": 6910.0
+      }
+    }
+  ],
+  "falta_de_luz_sem_recarga": [
+    {
+      "carga_pct": 100.0,
+      "energia_disponivel_kwh": 1.8432000000000002,
+      "autonomia_h": 10.240000000000002,
+      "cobre_noite": true
+    },
+    {
+      "carga_pct": 50.0,
+      "energia_disponivel_kwh": 0.6912000000000001,
+      "autonomia_h": 3.8400000000000007,
+      "cobre_noite": false
+    },
+    {
+      "carga_pct": 20.0,
+      "energia_disponivel_kwh": 1.2789769243681805e-16,
+      "autonomia_h": 7.105427357601003e-16,
+      "cobre_noite": false
+    },
+    {
+      "carga_pct": 0.0,
+      "energia_disponivel_kwh": 0.0,
+      "autonomia_h": 0.0,
+      "cobre_noite": false
+    }
+  ],
+  "limites": "Não mede clima, preços, condições de instalação ou percepção humana. Impactos ambientais qualitativos, sem CO2 ou análise de ciclo de vida."
+}

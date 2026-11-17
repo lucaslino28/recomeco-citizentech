@@ -1,5 +1,5 @@
 {
-  "versao": "sers-v2",
+  "versao": "sers-v3",
   "verificado_em": "2026-11-16",
   "cenario": "Iluminação essencial noturna de um abrigo temporário para pessoas afetadas por desastres no Brasil.",
   "origem": "Demanda, orçamento, perdas e limites de uso são hipóteses didáticas da equipe. As capacidades de 550 Wp e 2,56 kWh têm exemplos de fabricante. A referência solar de São Paulo vem da NASA POWER; não é previsão do tempo, medição de abrigo ou média nacional.",
@@ -90,5 +90,6 @@
     "local": "São Paulo/SP — ponto de referência (-23,55; -46,63)",
     "consulta_em": "2026-11-16",
     "observacao": "Radiação global no plano horizontal. Usar como cenário horizontal aproximado; não substitui dados no plano inclinado dos módulos, sombreamento ou estudo local."
-  }
+  },
+  "revisao_interface_em": "2026-11-17"
 }

@@ -78,3 +78,7 @@ Essas fontes apoiam a plausibilidade de capacidades do exercício. **Não define
 O orçamento permanece **estimativa de planejamento de 16/11/2026**, sem pesquisa de preços apresentada como realizada. A faixa de ±30% afeta somente o adicional solar de R$ 6.400: totais B de **R$ 4.990 a R$ 8.830**, mantendo iluminação comum, manutenção, demanda e período. É uma exploração de incerteza, não intervalo de mercado ou previsão.
 
 A consulta de equipamentos existentes pressupõe **ambas as instalações já disponíveis, seguras e prontas**. Nesse caso, mostra somente energia variável de A e provisão de manutenção de B, sem repetir o investimento anterior. Isso não representa custo de vida útil ou retorno financeiro. Quando B não atende à carga, o programa informa que o serviço é parcial também nessa comparação.
+
+## Comunicação de HSP na v3 — 17/11/2026
+
+A distinção entre duração do sol e energia equivalente foi reforçada após a avaliação S01. O conceito segue a seção 6.1.1 do [manual CEPEL/CRESESB](https://cresesb.cepel.br/publicacoes/download/Manual_de_Engenharia_FV_2004.pdf): HSP representa a energia diária por área convertida em duração equivalente à intensidade de referência de 1 kW/m². Não é tempo de sol na casa. O limiar de 8 HSP para confirmação é uma escolha didática da interface, não valor recomendado pelo manual ou limite meteorológico. Dados e fórmulas não foram alterados.

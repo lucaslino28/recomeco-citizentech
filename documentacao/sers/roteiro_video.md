@@ -1,4 +1,4 @@
-# Vídeo de SERS — roteiro da v2 para até 3 minutos
+# Vídeo de SERS — roteiro da v3 para até 3 minutos
 
 Situação: não gravado; link pendente. Publicar no YouTube como **não listado**, máximo de **3 minutos**. Este roteiro prevê 2 min 50 s e prioriza o que sustenta a decisão do usuário.
 
@@ -15,4 +15,4 @@ Antes: entender a [análise](analise.md) e a [explicação do código](explicaca
 
 Se quiser destacar o atendimento guiado, substitua parte da comparação pela opção 7 → 2 e volte com 0 antes da sequência de dias. É preciso ensaiar para respeitar a duração, sem ler saídas inteiras.
 
-Após gravar: conferir áudio, contas e legibilidade; abrir link sem autenticação; preencher URL no README de SERS e em `entrega_sers.txt`; publicar a versão do código demonstrada e conferir acesso. O prazo é o informado no Portal para SERS. Não declarar avaliação humana realizada antes da coleta.
+Após gravar: conferir áudio, contas e legibilidade; abrir link sem autenticação; preencher URL no README de SERS e em `entrega_sers.txt`; publicar a versão do código demonstrada e conferir acesso. O prazo é o informado no Portal para SERS. A rodada de uma participante na v2 está documentada. Se mencionar a melhoria, explique que a dificuldade de HSP motivou a mensagem e a confirmação na v3; não houve nova avaliação da compreensão após a mudança.

@@ -1,6 +1,6 @@
 # Arquitetura técnica — RECOMEÇO
 
-FIAP — Ciência da Computação, turma 1CCPX — Global Solution 2026.2. Atualização: 16/11/2026.
+FIAP — Ciência da Computação, turma 1CCPX — Global Solution 2026.2. Atualização: 17/11/2026.
 
 ## 1. Estado atual
 
@@ -85,7 +85,7 @@ O cenário é iluminação noturna de abrigo temporário após desastres. A comp
 
 `modulos/energia/analise.json` reúne parâmetros estimados, orçamento, justificativas e fontes. A v2 acrescenta NASA POWER em cópia local conferida por hash e exemplos de capacidades dos fabricantes. O balanço cronológico usa lista de HSP, laço diário e saldo de energia equivalente, sem aplicar perdas duas vezes. Resultados reproduzíveis ficam em `evidencias/sers/validacao_tecnica.json`. `modulos/energia/referencias.md` e `documentacao/sers/analise.md` explicam fórmulas, origens, comparação e limites econômicos/ambientais.
 
-O módulo usa apenas a biblioteca padrão, resolve a base a partir do próprio arquivo e não chama IA ou consulta dados em tempo real. Só salva um relatório quando a pessoa escolhe exportar (pasta local ignorada pelo Git); não cria sessões/indicadores de PCP. A análise separa aquisição de operação com equipamentos existentes. A avaliação humana deve ser registrada pelo aplicador conforme `documentacao/sers/testes_usuarios.md`; ainda não foi realizada nesta etapa.
+O módulo usa apenas a biblioteca padrão, resolve a base a partir do próprio arquivo e não chama IA ou consulta dados em tempo real. Só salva um relatório quando a pessoa escolhe exportar (pasta local ignorada pelo Git); não cria sessões/indicadores de PCP. A análise separa aquisição de operação com equipamentos existentes. A avaliação de 17/11 está documentada com uma participante, segundo o aplicador. A v3 acrescenta explicação e confirmação de HSP alta, motivada pela dificuldade observada, sem alterar as fórmulas ou declarar nova avaliação humana.
 
 ## 4. Armazenamento e privacidade
 

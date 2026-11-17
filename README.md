@@ -12,11 +12,11 @@ O projeto orienta sobre segurança, assistência social e cuidados em desastres 
 
 ## Disciplinas e situação atual
 
-| Disciplina | Contribuição | Situação em 16/11/2026 |
+| Disciplina | Contribuição | Situação em 17/11/2026 |
 |---|---|---|
 | Pensamento Computacional e Automação com Python | Classes, busca por regras, categorias, histórico, indicadores e CSV | Implementado, avaliação de 14/11 documentada e melhorias verificadas; vídeo e dados finais da entrega pendentes |
 | Prompt and Artificial Intelligence | Agente sobre documentação pessoal e avaliação por LLM | Agente v4 corrigido, coleta documentada, amostra confirmada e conteúdo publicado |
-| Soluções em Energias Renováveis e Sustentáveis | Comparação entre rede e sistema solar com bateria para iluminação de abrigo | Módulo implementado e validado tecnicamente; testes com usuários, vídeo e publicação desta etapa pendentes |
+| Soluções em Energias Renováveis e Sustentáveis | Comparação entre rede e sistema solar com bateria para iluminação de abrigo | Avaliação de uma participante documentada e HSP refinada; vídeo e publicação pendentes |
 
 A opção 2 abre o módulo de IA sobre documentos fictícios de Aurora. A opção 3 compara rede e solar com bateria, simula consumo/sol/preço e estima autonomia de iluminação de abrigo. As fichas fictícias de Aurora não participam das respostas de PCP.
 
@@ -219,7 +219,7 @@ python -B testes/analisar_usuarios_ia.py
 
 ## Soluções em Energias Renováveis e Sustentáveis
 
-A **opção 3** analisa o custo e a continuidade da iluminação noturna de um abrigo temporário para pessoas afetadas por desastres no Brasil. Compara os mesmos LEDs alimentados pela rede existente e por solar isolado com bateria, no mesmo período. A versão `sers-v2` usa biblioteca padrão, sem chamadas de API durante o uso.
+A **opção 3** analisa o custo e a continuidade da iluminação noturna de um abrigo temporário para pessoas afetadas por desastres no Brasil. Compara os mesmos LEDs alimentados pela rede existente e por solar isolado com bateria, no mesmo período. A versão `sers-v3` usa biblioteca padrão, sem chamadas de API durante o uso.
 
 O exemplo inicial de 20 lâmpadas de 9 W, 6 h/noite e 30 dias consome **1,08 kWh/dia** e **32,4 kWh no período**. Demanda, perdas e orçamento são estimados. A v2 acrescenta dados públicos NASA POWER para um caso horizontal de São Paulo e referências de fabricante para as capacidades escolhidas, sem generalizá-las como condições de todo o Brasil ou kit orçado.
 
@@ -232,9 +232,11 @@ Para experimentar, rode `python3 main.py --dados data/demonstracao_sers`, escolh
 - [Fontes, hipóteses e referência solar preservada](modulos/energia/referencias.md).
 - [Explicação do código para a equipe](documentacao/sers/explicacao_codigo.md).
 - [Plano de avaliação com usuários](documentacao/sers/testes_usuarios.md), [roteiro do vídeo](documentacao/sers/roteiro_video.md) e [TXT](documentacao/sers/entrega_sers.txt).
-- [Evidências técnicas e histórico das versões](evidencias/sers/README.md): **166 testes locais aprovados, 31 de SERS**; não são resultados humanos.
+- [Evidências técnicas e histórico das versões](evidencias/sers/README.md): **171 testes locais aprovados, 36 de SERS**; não são resultados humanos.
 
-**Pendências:** realizar e registrar avaliação de compreensão/utilidade e ajustes; gravar vídeo não listado de até 3 minutos; preencher seu link; publicar esta etapa e conferir acesso antes de enviar somente o TXT no prazo do Portal. SERS não define mínimo de participantes nem exige explicitamente que sejam externos; registrar a modalidade real da avaliação. Coletas de PCP/IA não foram reaproveitadas como testes deste módulo. Relatórios da opção 8 ficam em `data/relatorios_sers/` e são técnicos, locais e ignorados pelo Git.
+A [avaliação de 17/11](evidencias/sers/usuarios/rodada_2026-11-17/README.md) registra uma participante externa conforme relato do aplicador, utilidade percebida e confusão entre HSP e duração de incidência solar. A v3 melhora a explicação e pede confirmação de HSP alta; passou na regressão técnica, sem nova avaliação da participante.
+
+**Pendências:** gravar vídeo não listado de até 3 minutos; preencher seu link; publicar esta etapa e conferir acesso antes de enviar somente o TXT no prazo do Portal. SERS não define mínimo de participantes nem exige explicitamente que sejam externos; registrar a modalidade real da avaliação. Coletas de PCP/IA não foram reaproveitadas como testes deste módulo. Relatórios da opção 8 ficam em `data/relatorios_sers/` e são técnicos, locais e ignorados pelo Git.
 
 ## ODS relacionados
 

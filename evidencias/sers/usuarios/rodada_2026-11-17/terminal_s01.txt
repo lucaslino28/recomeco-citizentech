@@ -1,0 +1,284 @@
+TRANSCRIÇÃO FORNECIDA PELO APLICADOR — sessão S01, versão sers-v2
+Nomes/caminhos do ambiente de execução foram substituídos; números e saídas preservados.
+
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+[terminal]$ cd recomeco-citizentech
+[terminal]$ code .
+[terminal]$ python3 main.py --dados data/demonstracao_sers
+Base carregada: 34 orientações.
+
+Protótipo educacional. Não é um canal oficial nem de emergência.
+Não informe nome, documentos, telefone, endereço ou outros dados pessoais.
+Nas orientações sobre desastres, os registros usam rótulos e não salvam perguntas.
+
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção: 3
+
+Módulo de energia e sustentabilidade — SERS
+Entenda o custo e a continuidade da iluminação de um abrigo temporário.
+Comece em 1 para comparar ou em 7 para escolher sua necessidade.
+Cálculos locais. Entradas só são salvas se você escolher exportar o relatório.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 1
+
+COMPARAÇÃO — MESMA ILUMINAÇÃO, MESMO PERÍODO
+20 lâmpadas de 9,00 W, 6,00 h/noite, 30 dias.
+Demanda: 180,00 W; 1,080 kWh/dia; 32,400 kWh no período.
+
+A — REDE: custo de aquisição + uso estimado R$ 532,40.
+B — SOLAR + BATERIA: custo de aquisição + uso estimado R$ 6.910,00.
+B entrega 100,0% da demanda noturna no balanço diário.
+DECISÃO COM REDE DISPONÍVEL: A — rede tem menor custo estimado neste período.
+Até 32,400 kWh da rede poderiam ser substituídos, sem crédito por excedente.
+Bateria cheia, sem recarga: até 10,24 h calculadas nesta carga.
+Para manter luz numa interrupção, consulte a carga inicial (3) e a sequência de dias (6).
+
+Valores de planejamento e referências: não são cotação, conta completa ou garantia.
+Só iluminação. Instalação real e iluminância precisam de avaliação profissional.
+Rede: mistura de fontes. Solar: renovável no uso; equipamentos têm impactos de fabricação e descarte.
+Não há cálculo de CO2 ou impacto zero. Priorize pontos essenciais sem comprometer a segurança.
+Fontes: MME, CEPEL/CRESESB, ANEEL, NASA POWER, fabricantes e IEA-PVPS/IRENA (opção 4).
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 2
+
+Enter mantém o valor atual; v cancela sem alterar a simulação.
+HSP resume a energia solar diária; não é a duração do dia.
+Exemplo público horizontal de São Paulo: menor média mensal 3,2578 HSP; o valor atual pode ser uma hipótese.
+Equipamentos e orçamento permanecem fixos para verificar seus limites.
+Quantidade de lâmpadas [20]: 10
+Potência de cada lâmpada (W) [9,00]: 5,00
+Horas de luz por noite [6,00]: 9,00
+Período em dias [30]: 30
+Horas de sol pleno por dia (HSP) [4,00]: 12,00
+Preço variável da energia (R$/kWh) [1,00]: 0,789
+Consumo no período: antes 32,400 kWh; agora 13,500 kWh.
+Mudar horas ou pontos altera o serviço; preserve a iluminação necessária à segurança.
+
+COMPARAÇÃO — MESMA ILUMINAÇÃO, MESMO PERÍODO
+10 lâmpadas de 5,00 W, 9,00 h/noite, 30 dias.
+Demanda: 50,00 W; 0,450 kWh/dia; 13,500 kWh no período.
+
+A — REDE: custo de aquisição + uso estimado R$ 510,65.
+B — SOLAR + BATERIA: custo de aquisição + uso estimado R$ 6.910,00.
+B entrega 100,0% da demanda noturna no balanço diário.
+DECISÃO COM REDE DISPONÍVEL: A — rede tem menor custo estimado neste período.
+Até 13,500 kWh da rede poderiam ser substituídos, sem crédito por excedente.
+Bateria cheia, sem recarga: até 36,86 h calculadas nesta carga.
+Para manter luz numa interrupção, consulte a carga inicial (3) e a sequência de dias (6).
+
+Valores de planejamento e referências: não são cotação, conta completa ou garantia.
+Só iluminação. Instalação real e iluminância precisam de avaliação profissional.
+Rede: mistura de fontes. Solar: renovável no uso; equipamentos têm impactos de fabricação e descarte.
+Não há cálculo de CO2 ou impacto zero. Priorize pontos essenciais sem comprometer a segurança.
+Fontes: MME, CEPEL/CRESESB, ANEEL, NASA POWER, fabricantes e IEA-PVPS/IRENA (opção 4).
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 5
+Exemplo inicial restaurado: 20 lâmpadas, 9 W, 6 h/noite, 30 dias, 4 HSP e R$ 1/kWh.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 3
+
+Sem sol ou recarga durante a interrupção; Enter mantém 100%; v volta.
+Carga inicial da bateria (%) [100,00]: 50,00
+Com 50,0% de carga: autonomia de 3,84 h.
+Reserva mínima preservada: 20%.
+NÃO cobre a noite calculada.
+É estimativa, não garantia; depende de carga real, temperatura e estado da bateria.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 6
+
+ESCOLHA UMA SEQUÊNCIA DE SOL
+1 - Cinco dias repetindo as HSP atuais
+2 - Cinco dias com pouco sol: 4, 1, 0, 1 e 4 HSP
+3 - Informar as HSP de cada dia (até 7 dias)
+0 - Cancelar
+Escolha uma opção: 2
+Enter mantém os valores sugeridos; v cancela.
+Carga da bateria antes do primeiro dia (%) [100,00]: 90,00
+
+BATERIA AO LONGO DOS DIAS — sequência hipotética, não previsão do tempo
+Carga inicial: 90,0%. A geração entra durante o dia; o uso ocorre na noite seguinte.
+Dia | HSP  | Gerado kWh | Luz kWh | Falta kWh | Carga após noite
+  1 | 4,00 |      1,650 |   1,080 |     0,000 |   53,1%
+  2 | 1,00 |      0,413 |   1,080 |     0,000 |   24,2%
+  3 | 0,00 |      0,000 |   0,096 |     0,984 |   20,0%
+  4 | 1,00 |      0,413 |   0,413 |     0,667 |   20,0%
+  5 | 4,00 |      1,650 |   1,080 |     0,000 |   44,7%
+Noites completas: 3/5; cobertura acumulada: 69,4%.
+Déficit total: 1,652 kWh. Excedente sem aproveitamento: 1,420 kWh.
+A carga não é reiniciada a cada noite. O modelo só consome energia acima da reserva de 20%.
+A carga final é uma aproximação energética; não inclui consumo em espera ou envelhecimento.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 4
+
+FONTES E PREMISSAS — revisão 2026-11-16
+Demanda, orçamento, perdas e limites de uso são hipóteses didáticas da equipe. As capacidades de 550 Wp e 2,56 kWh têm exemplos de fabricante. A referência solar de São Paulo vem da NASA POWER; não é previsão do tempo, medição de abrigo ou média nacional.
+
+MME — Potência e consumo de energia
+https://www.gov.br/mme/pt-br/assuntos/noticias/julho-26/potencia-e-consumo-de-energia-o-que-sao-e-como-impactam-na-conta-de-luz
+Uso: Conceitos de W e kWh; não fornece os números do cenário.
+
+CEPEL/CRESESB — Manual de Engenharia para Sistemas Fotovoltaicos (2004)
+https://cresesb.cepel.br/publicacoes/download/Manual_de_Engenharia_FV_2004.pdf
+Uso: Fundamentos de HSP, armazenamento e perdas. Não é cotação nem ficha dos equipamentos simulados.
+
+ANEEL — Custo da energia que chega aos consumidores
+https://www.gov.br/aneel/pt-br/assuntos/tarifas/entenda-a-tarifa/custo-da-energia-que-chega-aos-consumidores
+Uso: A conta inclui componentes além da energia variável; R$ 1/kWh é hipótese da equipe.
+
+IEA-PVPS/IRENA — End-of-Life Solar PV Panels (2016)
+https://iea-pvps.org/key-topics/irena-iea-pvps-end-of-life-solar-pv-panels-2016/
+Uso: Discussão de reutilização e reciclagem de módulos; não quantifica CO2 deste cenário.
+
+NASA POWER — Climatology API e dados do ponto São Paulo
+https://power.larc.nasa.gov/docs/services/api/temporal/climatology/
+Uso: Dados públicos mensais/anuais de radiação horizontal, preservados em fontes/nasa_sao_paulo.json. O período e as unidades são os do arquivo consultado.
+
+Canadian Solar — HiKu6 CS6W-MS, ficha V2.9
+https://static.csisolar.com/wp-content/uploads/2024/07/23145733/CS-Datasheet-HiKu6_CS6W-MS_v2.9_EN.pdf
+Uso: Exemplo público de módulo CS6W-550MS com potência nominal de 550 W em STC. Não garante geração contínua ou preço do orçamento.
+
+Victron — Lithium NG 25,6 V, dados técnicos
+https://www.victronenergy.com/media/pg/Lithium_NG_battery_25%2C6_V/en/technical-data.html
+Uso: Exemplo público de bateria nominal 25,6 V / 100 Ah / 2560 Wh a 25 °C. Não certifica o conjunto simulado; acessórios, BMS, condições e preço exigem projeto/orçamento próprios.
+
+PREMISSAS
+- 20 lâmpadas de 9 W representam uma carga pequena para estudo; 6 h noturnas e 30 dias representam um episódio de acolhimento, sem levantamento de um abrigo real.
+- A mesma quantidade de lâmpadas LED, potência e horas é usada nas duas alternativas. Não se atribui economia à troca de lâmpadas, pois ambas já são LED.
+- 550 Wp e 2,56 kWh são capacidades apoiadas por exemplos de fichas Canadian Solar CS6W-550MS e Victron NG 25,6 V/100 Ah. Servem de referência energética, não compõem um kit especificado ou orçado. O inversor de 300 W continua hipotético.
+- O exemplo inicial continua com 4 HSP/dia hipotéticas. Há uma opção adicional de referência horizontal para São Paulo com dados NASA POWER mensais e anuais, sem generalizar para o Brasil ou prever dias futuros.
+- Fator útil de 75% é uma aproximação global painel → luz, incluindo temperatura, cabos, controlador, armazenamento e inversor. Aplicado uma única vez à geração diária; não é eficiência da célula solar.
+- Autonomia usa separadamente 80% de profundidade máxima de descarga e 90% de eficiência do inversor. Essa eficiência não é multiplicada outra vez pela geração diária. Não transfira 80% para uma bateria real sem ficha técnica.
+- A comparação principal é um balanço diário com recarga anterior à noite. A sequência de dias acompanha explicitamente carga inicial, geração, energia armazenada, uso noturno, déficit e excedente, em passos de um dia; não é simulação meteorológica ou elétrica hora a hora.
+- R$ 1/kWh representa preço variável hipotético. Custos de disponibilidade, tributos fixos e iluminação pública não são modelados; não representa a conta completa.
+- R$ 500 de iluminação, R$ 6400 adicionais de solar e R$ 10/30 dias de manutenção são orçamento de planejamento de 16/11/2026, não cotações dos modelos de referência. A análise mostra aquisição nova, operação com equipamentos já disponíveis e sensibilidade de ±30% no investimento solar, sem afirmar valor de mercado.
+- A rede e sua instalação interna já existem, estão liberadas e seguras; não se calcula nova ligação/reforma. Custos solares não incluem frete, estrutura específica do imóvel, reposições, descarte ou adequações não previstas.
+- Sem crédito por excedente, venda à rede, valorização do equipamento ou promessa de retorno do investimento. Solar é isolado com bateria, não um sistema conectado à rede sem backup.
+- O estudo abrange somente iluminação, sem geladeira, equipamentos médicos, bombas, tomadas ou recarga de celulares. Não verifica iluminância, distribuição dos pontos, conforto visual ou requisitos de iluminação de emergência.
+- A sequência usa energia armazenada equivalente na saída AC: geração útil entra uma vez e o inversor não é aplicado novamente à recarga ou ao consumo. O estado de carga resultante é aproximação energética, não leitura de BMS; excedentes com bateria cheia não são vendidos.
+
+ORÇAMENTO SOLAR ADICIONAL — valores hipotéticos em R$
+- modulo: 700,00
+- controlador: 450,00
+- inversor: 750,00
+- bateria: 3.000,00
+- cabos e protecoes: 600,00
+- instalacao adicional: 900,00
+
+REFERÊNCIA PÚBLICA — NASA POWER
+São Paulo/SP — ponto de referência (-23,55; -46,63)
+25-year Meteorological and Solar Monthly & Annual Climatologies (January 2001 - December 2025)
+Unidade original: kW-hr/m^2/day; equivalente numérico em HSP no plano horizontal.
+Média anual: 4,5288; menor média mensal: JUN = 3,2578.
+Radiação global no plano horizontal. Usar como cenário horizontal aproximado; não substitui dados no plano inclinado dos módulos, sombreamento ou estudo local.
+A sequência de dias usa valores escolhidos para explorar o comportamento; não deriva uma previsão dessas médias.
+Instalação e avaliação de segurança devem ser feitas por profissional habilitado.
+Documentação: documentacao/sers/README.md e modulos/energia/referencias.md.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 8
+Relatório salvo em: [PASTA_DO_PROJETO]/data/relatorios_sers/sers_20261117T192814873439Z.txt
+Contém parâmetros, cálculos, fontes e a última sequência compatível; não é avaliação humana.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção: 0
+
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção: 0
+
+Obrigado por utilizar o RECOMEÇO!
+
+CSV de atendimentos exportado.
+[terminal]$

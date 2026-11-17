@@ -14,7 +14,7 @@ CAMPOS = {
     "potencia_lampada_w": ("Potência de cada lâmpada (W)", 0.1, 100, False),
     "horas_dia": ("Horas de luz por noite", 0.1, 24, False),
     "dias": ("Período em dias", 1, 365, True),
-    "hsp": ("Horas de sol pleno por dia (HSP)", 0, 12, False),
+    "hsp": ("Energia solar diária equivalente (HSP)", 0, 12, False),
     "tarifa_kwh": ("Preço variável da energia (R$/kWh)", 0, 10, False),
 }
 
@@ -438,6 +438,36 @@ def ler_numero(rotulo, atual, minimo, maximo, inteiro=False):
             print(erro)
 
 
+
+def explicar_hsp():
+    print("\nCOMO INFORMAR O SOL")
+    print("HSP resume a energia solar do dia em horas equivalentes de uma intensidade de referência.")
+    print("Um dia com várias horas de sol fraco pode acumular menos energia do que poucas horas de sol forte.")
+    print("12 horas de claridade ou de sol na casa não significam 12 HSP.")
+    print("Se não souber as HSP, Enter mantém o valor atual como hipótese do exercício.")
+    print("Para consultar um exemplo público identificado, use 7 → 5; ele se refere a São Paulo.")
+
+
+def ler_hsp(rotulo, atual):
+    while True:
+        valor = ler_numero(rotulo, atual, 0, 12)
+        if valor is None or valor < 8:
+            return valor
+        # Limiar didático para revisar a entrada; não é um limite físico ou meteorológico.
+        print("Confira: o número informado representa HSP, e não as horas em que o sol bate na casa.")
+        print("Valores a partir de 8 pedem revisão neste exercício. Não são validados como condição real.")
+        while True:
+            escolha = input("Usar esse valor somente como hipótese? s = sim; n = corrigir; v = cancelar: ").strip().lower()
+            if escolha == "s":
+                print("Valor mantido como hipótese, sem validação do recurso solar local.")
+                return valor
+            if escolha == "v":
+                return None
+            if escolha == "n":
+                break
+            print("Escolha s, n ou v.")
+
+
 def atendimento_guiado(calculadora, consumo):
     while True:
         print("\nQUAL É SUA NECESSIDADE?")
@@ -484,12 +514,13 @@ def escolher_sequencia(calculadora, consumo):
     elif opcao == "2":
         hsps = [4, 1, 0, 1, 4]
     else:
+        explicar_hsp()
         quantidade = ler_numero("Quantidade de dias", 5, 1, 7, True)
         if quantidade is None:
             return None
         hsps = []
         for dia in range(1, quantidade + 1):
-            hsp = ler_numero(f"HSP do dia {dia}", consumo["hsp"], 0, 12)
+            hsp = ler_hsp(f"Energia solar equivalente do dia {dia} (HSP)", consumo["hsp"])
             if hsp is None:
                 return None
             hsps.append(hsp)
@@ -530,14 +561,17 @@ def menu_energia():
             calculadora.exibir(consumo)
         elif opcao == "2":
             print("\nEnter mantém o valor atual; v cancela sem alterar a simulação.")
-            print("HSP resume a energia solar diária; não é a duração do dia.")
+            explicar_hsp()
             ref = calculadora.referencia_solar()
             print(f"Exemplo público horizontal de São Paulo: menor média mensal "
                   f"{formato(ref['hsp_menor'], 4)} HSP; o valor atual pode ser uma hipótese.")
             print("Equipamentos e orçamento permanecem fixos para verificar seus limites.")
             novo = {}
             for chave, (rotulo, minimo, maximo, inteiro) in CAMPOS.items():
-                valor = ler_numero(rotulo, consumo[chave], minimo, maximo, inteiro)
+                if chave == "hsp":
+                    valor = ler_hsp(rotulo, consumo[chave])
+                else:
+                    valor = ler_numero(rotulo, consumo[chave], minimo, maximo, inteiro)
                 if valor is None:
                     print("Simulação cancelada; valores anteriores mantidos.")
                     break

@@ -170,3 +170,7 @@ Ao variar somente o investimento solar em ±30%, a compra nova de B vai de **R$ 
 | Decisão final | Aplicável quando rede está disponível e segura | Avaliar quando continuidade justifica o investimento e as condições locais permitem |
 
 O atendimento guiado oferece custo, continuidade, operação de equipamentos existentes e explicação das contas. As recomendações usam os resultados calculados e apontam condições e limites. Ajustar quantidade de lâmpadas ou horas pode reduzir consumo, mas muda o serviço: não se declara eficiência maior ou iluminação equivalente sem análise luminotécnica.
+
+## Ajuste de comunicação após S01 — sers-v3, 17/11/2026
+
+A participante usou 12 HSP porque associou o campo ao tempo de incidência de sol na casa, conforme relato do aplicador. A v3 renomeia o campo para energia solar diária equivalente, oferece explicação concreta e solicita decisão explícita para entradas a partir de 8 HSP. A pessoa pode confirmar como hipótese, corrigir ou cancelar; o programa não escolhe um novo valor por ela. O limiar é de revisão didática, não limite físico. As fórmulas deste documento permanecem iguais e as escolhas/resultados originais da v2 foram preservados. Os testes técnicos foram ampliados; ainda não há nova observação de compreensão após o ajuste.

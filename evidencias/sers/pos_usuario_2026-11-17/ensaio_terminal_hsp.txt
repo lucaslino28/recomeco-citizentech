@@ -1,0 +1,130 @@
+ENSAIO AUTOMATIZADO DE INTERFACE — sers-v3, 17/11/2026
+Não é reavaliação da participante. Entradas programadas: ajustar cenário personalizado; HSP 12 → corrigir para 4; sequência de 1 dia, HSP 12 → confirmar hipótese, carga 90%.
+
+Base carregada: 34 orientações.
+
+Protótipo educacional. Não é um canal oficial nem de emergência.
+Não informe nome, documentos, telefone, endereço ou outros dados pessoais.
+Nas orientações sobre desastres, os registros usam rótulos e não salvam perguntas.
+
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+Módulo de energia e sustentabilidade — SERS
+Entenda o custo e a continuidade da iluminação de um abrigo temporário.
+Comece em 1 para comparar ou em 7 para escolher sua necessidade.
+Cálculos locais. Entradas só são salvas se você escolher exportar o relatório.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção:
+Enter mantém o valor atual; v cancela sem alterar a simulação.
+
+COMO INFORMAR O SOL
+HSP resume a energia solar do dia em horas equivalentes de uma intensidade de referência.
+Um dia com várias horas de sol fraco pode acumular menos energia do que poucas horas de sol forte.
+12 horas de claridade ou de sol na casa não significam 12 HSP.
+Se não souber as HSP, Enter mantém o valor atual como hipótese do exercício.
+Para consultar um exemplo público identificado, use 7 → 5; ele se refere a São Paulo.
+Exemplo público horizontal de São Paulo: menor média mensal 3,2578 HSP; o valor atual pode ser uma hipótese.
+Equipamentos e orçamento permanecem fixos para verificar seus limites.
+Quantidade de lâmpadas [20]: Potência de cada lâmpada (W) [9,00]: Horas de luz por noite [6,00]: Período em dias [30]: Energia solar diária equivalente (HSP) [4,00]: Confira: o número informado representa HSP, e não as horas em que o sol bate na casa.
+Valores a partir de 8 pedem revisão neste exercício. Não são validados como condição real.
+Usar esse valor somente como hipótese? s = sim; n = corrigir; v = cancelar: Energia solar diária equivalente (HSP) [4,00]: Preço variável da energia (R$/kWh) [1,00]: Consumo no período: antes 32,400 kWh; agora 13,500 kWh.
+Mudar horas ou pontos altera o serviço; preserve a iluminação necessária à segurança.
+
+COMPARAÇÃO — MESMA ILUMINAÇÃO, MESMO PERÍODO
+10 lâmpadas de 5,00 W, 9,00 h/noite, 30 dias.
+Demanda: 50,00 W; 0,450 kWh/dia; 13,500 kWh no período.
+
+A — REDE: custo de aquisição + uso estimado R$ 510,65.
+B — SOLAR + BATERIA: custo de aquisição + uso estimado R$ 6.910,00.
+B entrega 100,0% da demanda noturna no balanço diário.
+DECISÃO COM REDE DISPONÍVEL: A — rede tem menor custo estimado neste período.
+Até 13,500 kWh da rede poderiam ser substituídos, sem crédito por excedente.
+Bateria cheia, sem recarga: até 36,86 h calculadas nesta carga.
+Para manter luz numa interrupção, consulte a carga inicial (3) e a sequência de dias (6).
+
+Valores de planejamento e referências: não são cotação, conta completa ou garantia.
+Só iluminação. Instalação real e iluminância precisam de avaliação profissional.
+Rede: mistura de fontes. Solar: renovável no uso; equipamentos têm impactos de fabricação e descarte.
+Não há cálculo de CO2 ou impacto zero. Priorize pontos essenciais sem comprometer a segurança.
+Fontes: MME, CEPEL/CRESESB, ANEEL, NASA POWER, fabricantes e IEA-PVPS/IRENA (opção 4).
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção:
+ESCOLHA UMA SEQUÊNCIA DE SOL
+1 - Cinco dias repetindo as HSP atuais
+2 - Cinco dias com pouco sol: 4, 1, 0, 1 e 4 HSP
+3 - Informar as HSP de cada dia (até 7 dias)
+0 - Cancelar
+Escolha uma opção: Enter mantém os valores sugeridos; v cancela.
+
+COMO INFORMAR O SOL
+HSP resume a energia solar do dia em horas equivalentes de uma intensidade de referência.
+Um dia com várias horas de sol fraco pode acumular menos energia do que poucas horas de sol forte.
+12 horas de claridade ou de sol na casa não significam 12 HSP.
+Se não souber as HSP, Enter mantém o valor atual como hipótese do exercício.
+Para consultar um exemplo público identificado, use 7 → 5; ele se refere a São Paulo.
+Quantidade de dias [5]: Energia solar equivalente do dia 1 (HSP) [4,00]: Confira: o número informado representa HSP, e não as horas em que o sol bate na casa.
+Valores a partir de 8 pedem revisão neste exercício. Não são validados como condição real.
+Usar esse valor somente como hipótese? s = sim; n = corrigir; v = cancelar: Valor mantido como hipótese, sem validação do recurso solar local.
+Carga da bateria antes do primeiro dia (%) [100,00]:
+BATERIA AO LONGO DOS DIAS — sequência hipotética, não previsão do tempo
+Carga inicial: 90,0%. A geração entra durante o dia; o uso ocorre na noite seguinte.
+Dia | HSP  | Gerado kWh | Luz kWh | Falta kWh | Carga após noite
+  1 | 12,00 |      4,950 |   0,450 |     0,000 |   80,5%
+Noites completas: 1/1; cobertura acumulada: 100,0%.
+Déficit total: 0,000 kWh. Excedente sem aproveitamento: 4,720 kWh.
+A carga não é reiniciada a cada noite. O modelo só consome energia acima da reserva de 20%.
+A carga final é uma aproximação energética; não inclui consumo em espera ou envelhecimento.
+
+1 - Comparar custos e ver a recomendação
+2 - Ajustar consumo, condições de sol ou preço
+3 - Quanto dura a bateria se faltar luz?
+4 - Consultar fontes, dados públicos e premissas
+5 - Restaurar o exemplo inicial
+6 - Acompanhar a bateria durante vários dias
+7 - Receber orientação pela minha necessidade
+8 - Salvar relatório técnico desta análise
+0 - Voltar ao menu principal
+Escolha uma opção:
+========================================
+                RECOMEÇO
+             CITIZEN ASSIST AI
+========================================
+1 - Orientações sobre desastres
+2 - Documentação pessoal (IA)
+3 - Energia e sustentabilidade
+4 - Indicadores de atendimento
+0 - Encerrar
+========================================
+
+Escolha uma opção:
+Obrigado por utilizar o RECOMEÇO!
+
+CSV de atendimentos exportado.

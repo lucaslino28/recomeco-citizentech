@@ -1,0 +1,140 @@
+{
+  "data": "2026-11-17",
+  "versao_avaliada": "sers-v2",
+  "participantes": 1,
+  "codigo": "S01",
+  "origem_participacao": "Uma pessoa externa à equipe, conforme relato do aplicador; sem identificação publicada.",
+  "ajuda_relatada": "Ajuda para iniciar o terminal. Depois de iniciado, navegação feita pela participante, conforme aplicador.",
+  "situacoes_executadas": [
+    "Comparação inicial de rede e solar",
+    "Ajuste personalizado de demanda, HSP e preço",
+    "Restauração do exemplo e autonomia com carga de 50%",
+    "Cinco dias de pouco sol com carga inicial de 90%",
+    "Consulta de fontes e exportação"
+  ],
+  "sintese_comentarios_aplicador": {
+    "utilidade": "Gostou da ideia e considerou útil apoiar escolhas entre rede e energia solar, especialmente para pessoas sem conhecimento para fazer as contas.",
+    "dificuldade": "Escolheu 12 HSP porque interpretou o campo como o tempo em que o sol incide na casa; confusão entre duração de sol e energia equivalente."
+  },
+  "limites": "Relato do aplicador, sem entrevista transcrita diretamente da participante. Não foram informados tempos, notas ou respostas individuais de compreensão por tarefa. Não foi calculada taxa de acerto humano.",
+  "originais_sha256": {
+    "terminal_recebido": "96ae4c9a1e843e47bff18a7f26a0942a2f0a31d36e3509694ce8a8161be76638",
+    "relatorio_recebido": "50dcc427b761b0709b2e3ea5cd40e2d3dba66da82739f52d940cc2c580351cd9"
+  },
+  "conferencia_tecnica": {
+    "cenario_personalizado": {
+      "consumo": {
+        "lampadas": 10,
+        "potencia_lampada_w": 5.0,
+        "horas_dia": 9.0,
+        "dias": 30,
+        "hsp": 12.0,
+        "tarifa_kwh": 0.789
+      },
+      "potencia_w": 50.0,
+      "diario_kwh": 0.45,
+      "periodo_kwh": 13.5,
+      "geracao_util_dia_kwh": 4.95,
+      "bateria_util_kwh": 1.8432000000000002,
+      "autonomia_cheia_h": 36.864000000000004,
+      "potencia_inversor_ok": true,
+      "solar_atende": true,
+      "solar_atendida_dia_kwh": 0.45,
+      "solar_atendida_periodo_kwh": 13.5,
+      "deficit_dia_kwh": 0,
+      "cobertura_solar_pct": 100.0,
+      "implantacao_a_rs": 500,
+      "implantacao_b_rs": 6900,
+      "energia_rede_rs": 10.6515,
+      "manutencao_b_rs": 10.0,
+      "total_a_rs": 510.6515,
+      "total_b_rs": 6910.0
+    },
+    "autonomia_carga_50": {
+      "carga_pct": 50.0,
+      "energia_disponivel_kwh": 0.6912000000000001,
+      "autonomia_h": 3.8400000000000007,
+      "cobre_noite": false
+    },
+    "sequencia_carga_90": {
+      "consumo": {
+        "lampadas": 20,
+        "potencia_lampada_w": 9.0,
+        "horas_dia": 6.0,
+        "dias": 30,
+        "hsp": 4.0,
+        "tarifa_kwh": 1.0
+      },
+      "carga_inicial_pct": 90.0,
+      "potencia_inversor_ok": true,
+      "dias": [
+        {
+          "dia": 1,
+          "hsp": 4.0,
+          "carga_inicio_pct": 90.0,
+          "geracao_util_kwh": 1.6500000000000001,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 1.4196,
+          "saldo_final_kwh_equivalente": 1.2240000000000002,
+          "carga_final_pct": 53.125
+        },
+        {
+          "dia": 2,
+          "hsp": 1.0,
+          "carga_inicio_pct": 53.125,
+          "geracao_util_kwh": 0.41250000000000003,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.5565000000000002,
+          "carga_final_pct": 24.15364583333334
+        },
+        {
+          "dia": 3,
+          "hsp": 0.0,
+          "carga_inicio_pct": 24.15364583333334,
+          "geracao_util_kwh": 0.0,
+          "atendida_kwh": 0.09570000000000028,
+          "deficit_kwh": 0.9842999999999997,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.46079999999999993,
+          "carga_final_pct": 19.999999999999996
+        },
+        {
+          "dia": 4,
+          "hsp": 1.0,
+          "carga_inicio_pct": 19.999999999999996,
+          "geracao_util_kwh": 0.41250000000000003,
+          "atendida_kwh": 0.41250000000000003,
+          "deficit_kwh": 0.6675,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 0.46079999999999993,
+          "carga_final_pct": 19.999999999999996
+        },
+        {
+          "dia": 5,
+          "hsp": 4.0,
+          "carga_inicio_pct": 19.999999999999996,
+          "geracao_util_kwh": 1.6500000000000001,
+          "atendida_kwh": 1.08,
+          "deficit_kwh": 0,
+          "excedente_kwh": 0,
+          "saldo_final_kwh_equivalente": 1.0308000000000002,
+          "carga_final_pct": 44.739583333333336
+        }
+      ],
+      "demanda_total_kwh": 5.4,
+      "atendida_total_kwh": 3.7482000000000006,
+      "deficit_total_kwh": 1.6517999999999997,
+      "geracao_total_kwh": 4.125,
+      "excedente_total_kwh": 1.4196,
+      "saldo_inicial_kwh_equivalente": 2.0736000000000003,
+      "saldo_final_kwh_equivalente": 1.0308000000000002,
+      "cobertura_pct": 69.41111111111113,
+      "noites_completas": 3
+    }
+  },
+  "ajuste_realizado": "sers-v3: explicação concreta de HSP e confirmação de valores altos nos dois fluxos de entrada manual.",
+  "reteste_com_participante": "Pendente; não há nova medida de compreensão após a correção."
+}

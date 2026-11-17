@@ -2,7 +2,7 @@
 
 Lucas Lino Marques da Silva — RM 572863; Gabriel Martins Cordeiro Rodrigues — RM 570497; Gustavo Martins da Silva — RM 570584.
 
-Versão **sers-v2**, de 16/11/2026. Código, análise e validação técnica preparados. **Avaliação com usuários, vídeo, publicação e envio permanecem pendentes.** Não há garantia de nota; a equipe precisa conferir os cálculos e explicar suas decisões.
+Versão **sers-v3**, de 17/11/2026. Avaliação de uma participante documentada e ajuste de HSP verificado tecnicamente. **Vídeo, publicação e envio permanecem pendentes.** Não há garantia de nota; a equipe precisa conferir os cálculos e explicar suas decisões.
 
 ## Público e necessidade
 
@@ -23,7 +23,7 @@ Escolha **3 — Energia e sustentabilidade**. A pasta do comando separa eventuai
 | Opção de SERS | Finalidade |
 |---|---|
 | 1 | Comparação resumida com conclusão, custo, demanda, cobertura e limites. |
-| 2 | Ajustar lâmpadas, potência, horas/noite, dias, HSP e preço. Enter mantém o valor e `v` cancela sem aplicar parcialmente; ponto ou vírgula decimal são aceitos. |
+| 2 | Ajustar lâmpadas, potência, horas/noite, dias, HSP e preço. Enter mantém o valor e `v` cancela sem aplicar parcialmente; ponto ou vírgula decimal são aceitos. HSP alta pede confirmação como hipótese, correção ou cancelamento. |
 | 3 | Autonomia sem recarga com carga inicial informada. `0` aqui é bateria vazia; `v` volta. |
 | 4 | Fontes, orçamento, premissas e dados públicos com origem/período/unidade. |
 | 5 | Restaurar o exemplo hipotético inicial. |
@@ -66,7 +66,7 @@ Suíte completa, usando o ambiente com as dependências de IA já instaladas:
 .venv/bin/python -B -m unittest discover -s testes -v
 ```
 
-A v2 passou em **166 testes locais, incluindo 31 de SERS**. [Resultados reproduzíveis](../../evidencias/sers/validacao_tecnica.json), [log real da suíte](../../evidencias/sers/testes_2026-11-16.txt), [ensaio automatizado do terminal](../../evidencias/sers/ensaio_terminal.txt) e [histórico v1/v2](../../evidencias/sers/README.md). Esses resultados são técnicos, não opiniões ou compreensão de usuários.
+A v3 passou em **171 testes locais, incluindo 36 de SERS**. [Resultados reproduzíveis](../../evidencias/sers/pos_usuario_2026-11-17/validacao_tecnica.json), [log real da suíte](../../evidencias/sers/pos_usuario_2026-11-17/testes.txt), [ensaio automatizado de HSP](../../evidencias/sers/pos_usuario_2026-11-17/ensaio_terminal_hsp.txt) e [histórico das versões](../../evidencias/sers/README.md). Esses resultados técnicos são separados da avaliação humana.
 
 ## Conferência do enunciado e pendências
 
@@ -80,9 +80,13 @@ Base: GS2026.2_SERS(9).pdf fornecido pela equipe, três páginas; SHA256 `8dabed
 | Custos, viabilidade e impactos | Aquisição, operação, sensibilidade e matriz de decisão; impactos ambientais qualitativos, sem inventário de CO2. |
 | Resultados integrados e linguagem acessível | Opção 3 funcional; resumo, orientação por necessidade, sequência e detalhes consultáveis. |
 | Referências e limites | Visíveis no terminal e nos documentos; sem promessa de geração, economia ou autonomia. |
-| Testes com usuários e ajustes | **Pendente.** SERS não define número mínimo nem exige explicitamente usuários externos. Registrar a modalidade e a participação reais. |
+| Testes com usuários e ajustes | Uma participante externa, conforme relato do aplicador, com terminal, comentários e ajuste documentados. SERS não define mínimo nem exige explicitamente externos. Não houve reteste após a mudança. |
 | GitHub organizado | Conteúdo local preparado; **publicar a etapa e conferir acesso**. |
 | YouTube não listado, até 3 minutos | **Pendente**, roteiro pronto. |
 | Envio somente de TXT com nomes/RMs e links | Modelo com equipe e repositório; falta URL do vídeo. Prazo conforme Portal de SERS. |
 
-As coletas anteriores de PCP/IA não foram reutilizadas como avaliação de SERS. O roteiro humano é um modelo vazio, a ser preenchido após a experiência real, inclusive quando a avaliação for interna à equipe.
+As coletas anteriores de PCP/IA não foram reutilizadas como avaliação de SERS. A [rodada S01](../../evidencias/sers/usuarios/rodada_2026-11-17/README.md) e sua origem estão documentadas. O formulário permanece disponível para novas avaliações; a participante ainda não voltou a avaliar a mudança de HSP.
+
+## Ajuste após a avaliação de 17/11
+
+O relato indicou que a participante escolheu 12 HSP pensando no tempo de sol na casa. A v3 explica que duração de sol e energia equivalente são grandezas diferentes. Para entradas a partir de 8 HSP, pede confirmar como hipótese, corrigir ou cancelar, inclusive na sequência manual. O limiar é didático e não valida clima ou produção. As fórmulas e os resultados originais foram mantidos. Para nova consulta, peça que a pessoa explique com suas palavras a diferença, sem antecipar a resposta, e registre o que de fato ocorrer.
