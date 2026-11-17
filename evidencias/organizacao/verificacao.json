@@ -1,0 +1,43 @@
+{
+  "data": "2026-11-17",
+  "links_locais_conferidos": 308,
+  "links_ausentes": [],
+  "estrutura_obrigatoria_pcp_preservada": [
+    "main.py",
+    "orientacao.py",
+    "base_conhecimento.py",
+    "assistente.py",
+    "data/base_conhecimento.json",
+    "data/historico.json",
+    "data/atendimentos.csv"
+  ],
+  "analises_reproduzidas": {
+    "pcp": "Resultado idêntico ao JSON preservado; executado de outro diretório.",
+    "ia": "Resultado idêntico ao JSON preservado; executado de outro diretório.",
+    "sers": "Resultado idêntico ao JSON preservado; executado de outro diretório."
+  },
+  "programa": "Menus das três disciplinas e indicadores executados de outro diretório, com dados em pasta temporária. Sem nova chamada à API.",
+  "notebook": "Arquivo, quatro células executadas e saídas preservados; reexecução não necessária para esta revisão de caminhos.",
+  "fichas_iguais_ao_zip_original": 7,
+  "fontes_de_requisitos_conferidas": [
+    {
+      "arquivo": "GS2026.2_SERS(9).pdf",
+      "sha256": "8dabed4124f4e0b69db918306599c645ff3a53cd160417232f63d36e20b47b62"
+    },
+    {
+      "arquivo": "GS2026.2 - 1CC-PCP - Pensamento Computacional e Automação com Python(9).pdf",
+      "sha256": "f0816c529f54870f34a0cf571534754ce535a4bab64f5afda1e4f1c9e8ff7432"
+    },
+    {
+      "arquivo": "1CC-Citizen_Assist_AI(4).docx",
+      "sha256": "8995f8fc250e23621a63ca87098349974d32d14297de72ac58fd55a1b343b9e4"
+    },
+    {
+      "arquivo": "1CC-documentos_de_referencia(4).zip",
+      "sha256": "89e146f343783fe402c7d8dcb5ae6bacad694ac9c950e6bd6b1fdfa654b80cb6"
+    }
+  ],
+  "video": "Vídeo técnico integrado PCP + SERS, com duração total de 5 a 8 minutos; gravação pendente.",
+  "testes": "171 testes locais aprovados; ver testes.txt.",
+  "submissao": "Vídeo ainda não gravado/publicado; link e envio no Portal pendentes."
+}

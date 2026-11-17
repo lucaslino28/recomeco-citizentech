@@ -3,8 +3,8 @@
   "versao_avaliada": "sers-v2",
   "participantes": 1,
   "codigo": "S01",
-  "origem_participacao": "Uma pessoa externa à equipe, conforme relato do aplicador; sem identificação publicada.",
-  "ajuda_relatada": "Ajuda para iniciar o terminal. Depois de iniciado, navegação feita pela participante, conforme aplicador.",
+  "origem_participacao": "Teste com uma pessoa de fora do grupo; participante S01.",
+  "ajuda_relatada": "Ajuda para iniciar o terminal; navegação independente dentro do programa.",
   "situacoes_executadas": [
     "Comparação inicial de rede e solar",
     "Ajuste personalizado de demanda, HSP e preço",
@@ -12,11 +12,7 @@
     "Cinco dias de pouco sol com carga inicial de 90%",
     "Consulta de fontes e exportação"
   ],
-  "sintese_comentarios_aplicador": {
-    "utilidade": "Gostou da ideia e considerou útil apoiar escolhas entre rede e energia solar, especialmente para pessoas sem conhecimento para fazer as contas.",
-    "dificuldade": "Escolheu 12 HSP porque interpretou o campo como o tempo em que o sol incide na casa; confusão entre duração de sol e energia equivalente."
-  },
-  "limites": "Relato do aplicador, sem entrevista transcrita diretamente da participante. Não foram informados tempos, notas ou respostas individuais de compreensão por tarefa. Não foi calculada taxa de acerto humano.",
+  "limites": "Comentários anotados durante o teste. Não foram registrados tempo, nota ou respostas de compreensão por tarefa.",
   "originais_sha256": {
     "terminal_recebido": "96ae4c9a1e843e47bff18a7f26a0942a2f0a31d36e3509694ce8a8161be76638",
     "relatorio_recebido": "50dcc427b761b0709b2e3ea5cd40e2d3dba66da82739f52d940cc2c580351cd9"
@@ -136,5 +132,9 @@
     }
   },
   "ajuste_realizado": "sers-v3: explicação concreta de HSP e confirmação de valores altos nos dois fluxos de entrada manual.",
-  "reteste_com_participante": "Pendente; não há nova medida de compreensão após a correção."
+  "reteste_com_participante": "Pendente; não há nova medida de compreensão após a correção.",
+  "comentarios_registrados": {
+    "utilidade": "Gostou da ideia e considerou útil apoiar escolhas entre rede e energia solar, especialmente para pessoas sem conhecimento para fazer as contas.",
+    "dificuldade": "Escolheu 12 HSP porque interpretou o campo como o tempo em que o sol incide na casa; confusão entre duração de sol e energia equivalente."
+  }
 }

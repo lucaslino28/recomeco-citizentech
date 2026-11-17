@@ -1,0 +1,918 @@
+{
+  "data": "2026-11-17",
+  "base_git": "f6486ed20858fa32e0c15eef3cb30d09d069b1a9",
+  "arquivos_originais": 129,
+  "arquivos_movidos": 35,
+  "preservados_byte_a_byte": 91,
+  "excecoes_documentadas": [
+    "Textos, índices e links da documentação atualizados.",
+    "Dois TXT com o mesmo campo para o vídeo técnico integrado.",
+    "Analisador de PCP com caminho atualizado para o mesmo CSV.",
+    "Registros acadêmicos da revisão e do teste mantidos sem mensagens pessoais."
+  ],
+  "arquivos": [
+    {
+      "anterior": ".env.example",
+      "atual": ".env.example",
+      "sha256_antes": "0fc0c82ca10fd5cd16b951e7379034f12cecb01e9cb013399a0fd14b16e73e2a",
+      "sha256_depois": "0fc0c82ca10fd5cd16b951e7379034f12cecb01e9cb013399a0fd14b16e73e2a",
+      "identico": true
+    },
+    {
+      "anterior": ".gitignore",
+      "atual": ".gitignore",
+      "sha256_antes": "f5bc8cf54e405406d26813ed44d4637e1fc4aafe808439499a7a9a6904866a1b",
+      "sha256_depois": "bb8dfbd25778e855dabd9817da929c96a34551c21f82b7ac54d2940e1555e400",
+      "identico": false
+    },
+    {
+      "anterior": "README.md",
+      "atual": "README.md",
+      "sha256_antes": "d64980ad9fc419b1386940f835f6511e4e4d3e31c2848ccf1da114c60b091ab5",
+      "sha256_depois": "189a43f912d6aa4eb77b49aae3b9e8026fbd151c94ceab8c3ff5af85c1aaafd2",
+      "identico": false
+    },
+    {
+      "anterior": "assistente.py",
+      "atual": "assistente.py",
+      "sha256_antes": "13297d7fd8477d073e33d1a4886bfd0ca44442f56b8ff30a12678dc0be55fa90",
+      "sha256_depois": "13297d7fd8477d073e33d1a4886bfd0ca44442f56b8ff30a12678dc0be55fa90",
+      "identico": true
+    },
+    {
+      "anterior": "base_conhecimento.py",
+      "atual": "base_conhecimento.py",
+      "sha256_antes": "73f67cfd565fdea1b7b79222c380c350bd4c8826b3c95cf0b65a07173a7d9578",
+      "sha256_depois": "73f67cfd565fdea1b7b79222c380c350bd4c8826b3c95cf0b65a07173a7d9578",
+      "identico": true
+    },
+    {
+      "anterior": "data/atendimentos.csv",
+      "atual": "data/atendimentos.csv",
+      "sha256_antes": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+      "sha256_depois": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+      "identico": true
+    },
+    {
+      "anterior": "data/base_conhecimento.json",
+      "atual": "data/base_conhecimento.json",
+      "sha256_antes": "2402522fc03601750dbb11f5251d11d5b8401719d5a5166bf71a7c3dea3d575e",
+      "sha256_depois": "2402522fc03601750dbb11f5251d11d5b8401719d5a5166bf71a7c3dea3d575e",
+      "identico": true
+    },
+    {
+      "anterior": "data/historico.json",
+      "atual": "data/historico.json",
+      "sha256_antes": "57189351ebaf2b9467aeae40c9b493523228db7102cd4d68a42c9755a64e8be9",
+      "sha256_depois": "57189351ebaf2b9467aeae40c9b493523228db7102cd4d68a42c9755a64e8be9",
+      "identico": true
+    },
+    {
+      "anterior": "documentacao/README.md",
+      "atual": "documentacao/README.md",
+      "sha256_antes": "54156cadaeb6a468362d1413330e0a1a19d274b9aa28539cba24a348c003a40f",
+      "sha256_depois": "44388dd5ed909ae97870b5ada0f32fa9d6eed7c9d332e4cd946a1f46b855cb1e",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/arquitetura.md",
+      "atual": "documentacao/arquitetura.md",
+      "sha256_antes": "44ed965a663a45479f3bf78c2efa24da3ef785d67ff91e23bc7611c560f8107d",
+      "sha256_depois": "1879519cda57d71d8075e5ebdd628ee4487e1f611fc86f9083a47ba9bcd73691",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/checklist.md",
+      "atual": "documentacao/checklist.md",
+      "sha256_antes": "0ba56720318543a6ccec78d4e475c5f3bac28676f9780e8770ade81544d00704",
+      "sha256_depois": "eda1f5192bd43e852da6ec086236449c717f1aa04a41c678236191535a32f8c1",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/decisoes_pcp.md",
+      "atual": "documentacao/pcp/decisoes.md",
+      "sha256_antes": "f2196bac48eaa2676147c9ead62c25e0bb5d7483ce7eb2ad42eb0c48879ebe8d",
+      "sha256_depois": "63e61683660426c72039c4a665fce1123b95473c8e6fc90c31b6c5e0a985e358",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/entrega_pcp.txt",
+      "atual": "entregas/pcp.txt",
+      "sha256_antes": "ba3c727f62663534eabcbfc3207f530f86fbdb76d77d7c5ad660dda34fade002",
+      "sha256_depois": "8579d585313ef93fab464e2ee32f723aa723ac5d814594e794c05c4c8cb165b9",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/fontes_pcp.md",
+      "atual": "documentacao/pcp/fontes.md",
+      "sha256_antes": "98755984c3081bdb6685dbcf88642ae4291c5b8c28717ba8ee96ec89c1039750",
+      "sha256_depois": "0da39d3933cc5a30e4895fa15bd852c17f96f95070d844e1b6750b6b86e534c2",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/guia_pcp.md",
+      "atual": "documentacao/pcp/guia_execucao.md",
+      "sha256_antes": "046c2e1d08e2d34af62e2b7f40e3aa3faebdb8572bcc49c4fec2a0238129f107",
+      "sha256_depois": "046c2e1d08e2d34af62e2b7f40e3aa3faebdb8572bcc49c4fec2a0238129f107",
+      "identico": true
+    },
+    {
+      "anterior": "documentacao/ia/README.md",
+      "atual": "documentacao/ia/README.md",
+      "sha256_antes": "cc38ff74bf747363ec4ca971d3b44e027ce8131070615a4b9851c8b31c0589ba",
+      "sha256_depois": "795f49b7f2da8f9c873a122f12a1c22dada5c398ceeddb0146bdcd9e0623c667",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/arquitetura.png",
+      "atual": "documentacao/ia/arquitetura.png",
+      "sha256_antes": "c9ab1a9899b67a9ea038d76a1f7864ae84877df07c4e2fc5270cc4e6e16ac94b",
+      "sha256_depois": "c9ab1a9899b67a9ea038d76a1f7864ae84877df07c4e2fc5270cc4e6e16ac94b",
+      "identico": true
+    },
+    {
+      "anterior": "documentacao/ia/arquitetura.svg",
+      "atual": "documentacao/ia/arquitetura.svg",
+      "sha256_antes": "559dd4f23c80f9d706eb8e75855ae2a6256f98ed6a24527c7c7ab150d68b8e12",
+      "sha256_depois": "559dd4f23c80f9d706eb8e75855ae2a6256f98ed6a24527c7c7ab150d68b8e12",
+      "identico": true
+    },
+    {
+      "anterior": "documentacao/ia/avaliacao.md",
+      "atual": "documentacao/ia/avaliacao.md",
+      "sha256_antes": "cadf3607b76940744e16d6243ac61a9e0e25ad5b9134c3e1a76497f70eba4c6c",
+      "sha256_depois": "938df462bff5a34b8ec481241c426e1af9e3154aaec6fdbdabdcd830591eaaac",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/decisoes.md",
+      "atual": "documentacao/ia/decisoes.md",
+      "sha256_antes": "6cd31a6047b953291b62cd2168d8e8f6a16a6d254324ce491077047632150b69",
+      "sha256_depois": "e09a39501f11a96d830724840bf9a117925eb06115a712f4307abcc61c7ea278",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/fechamento.md",
+      "atual": "documentacao/ia/fechamento.md",
+      "sha256_antes": "769ad2c07c6fe8a24e267d00907fa25045e191b43df98c5d8ff66bf8175fa081",
+      "sha256_depois": "a9ebb8e0b9002f1ae5a69be235bccb0ecd97e001e768e1a21825d4342c4507dd",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/guia_execucao.md",
+      "atual": "documentacao/ia/guia_execucao.md",
+      "sha256_antes": "e0b9bc5f7e9a87472d8110bf9d65d6574cc8aaedf8a1a0afd7504cd563ad16ad",
+      "sha256_depois": "a2088ae10efe5c157b6811189d7df60d1fc9b9dfb38a365fd91971631be6d67d",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/proveniencia.json",
+      "atual": "documentacao/ia/proveniencia.json",
+      "sha256_antes": "bb6732696c25ce08c344a0ec65e9a9f47363f4195d428dc825eac0cd8f753013",
+      "sha256_depois": "bb6732696c25ce08c344a0ec65e9a9f47363f4195d428dc825eac0cd8f753013",
+      "identico": true
+    },
+    {
+      "anterior": "documentacao/ia/requisitos_ia.md",
+      "atual": "documentacao/ia/requisitos_ia.md",
+      "sha256_antes": "045a4e2eaded476bbc176a69f75163d375ed0a0a76b427e7fefdbe46e8c1e2b0",
+      "sha256_depois": "4a1d6489a3e45d0b3461d9a487ad1a6ffd56faa62cc237be0d54c3bfc2a5461e",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/revisao_amostra.md",
+      "atual": "documentacao/ia/revisao_amostra.md",
+      "sha256_antes": "3b5ce01edd64d42c58a3846b2c513d6a59278f880b97cdd941b2e5feab25817f",
+      "sha256_depois": "125c108a078f4de670d9d62b77b4b5bd24abf258657807e45875f7a7b96fa39a",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/testes_usuarios.md",
+      "atual": "documentacao/ia/testes_usuarios.md",
+      "sha256_antes": "24c7af21ffe174e32119e2a1ae9f11b8a922d43c67b2b0d53905efd769cbb501",
+      "sha256_depois": "78c850ed64ea3117f47348b9505919f6bb36eda1d6206e69b5e04d6be31f26ca",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/ia/usuarios_2026-11-15.md",
+      "atual": "documentacao/ia/usuarios_2026-11-15.md",
+      "sha256_antes": "7f95e1840bf8a3ffd6695f055cd66324ba3b031c6bd8c0424c46b7752aae1985",
+      "sha256_depois": "46830a502ad4dd8007108595e0f6aec45484d38c0373e8aa721804e1e0cdb66d",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/plano_testes.md",
+      "atual": "documentacao/pcp/plano_testes.md",
+      "sha256_antes": "d72572c16803daa449942057fddf5b915afa40bc45e5e57e689f7f0c2ce7bd79",
+      "sha256_depois": "f14cd807fe02122de7164a166dada501f8c9fd89c80d1f5dfae99dffaeb8020b",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/roteiro_video_pcp.md",
+      "atual": "documentacao/pcp/roteiro_video.md",
+      "sha256_antes": "8b555297c82aeefb639f0bb4bf4d1ff09a6d8f61331fec1adf17dbe217039574",
+      "sha256_depois": "08c77fe83b45058436b1a12398b744bdc615092fadc17462d2533bc6496c85a3",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/sers/README.md",
+      "atual": "documentacao/sers/README.md",
+      "sha256_antes": "6bfb97d9b778d9dc68fb9be7f1f8eea6c33e3117703e36861bd09b1c9b78c8fe",
+      "sha256_depois": "2c6f7f10238350cae4b50a2b697fe3aae5e53e7c6607482d029193af3b19c80c",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/sers/analise.md",
+      "atual": "documentacao/sers/analise.md",
+      "sha256_antes": "6b936df99457914ba4718fedb9158733e38a08c6ca99b87c64a77f9fcf1c4df9",
+      "sha256_depois": "2ab918f15b1d135776127764dc5bb395e65467b723c1213b7d4f20470145c3f1",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/sers/entrega_sers.txt",
+      "atual": "entregas/sers.txt",
+      "sha256_antes": "41612fe9e9143831e8e62605782ac4023c922bf6eda4c67c243de077b6c5b0e4",
+      "sha256_depois": "3496a910a1c19e2232309e21cf8b671822053518f83fd00aee9bdbcfb0279cf3",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/sers/explicacao_codigo.md",
+      "atual": "documentacao/sers/explicacao_codigo.md",
+      "sha256_antes": "86a4a68d887cda1f4b17f47d8df729026a252aa6972650ed619549f6002d987d",
+      "sha256_depois": "81bb5c6ab012d28220bde1a2193934ce91d313b70bd2798ebf4fc0381310524a",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/sers/roteiro_video.md",
+      "atual": "documentacao/sers/roteiro_video.md",
+      "sha256_antes": "cbe89bbefe20ce1fd8029efc512dfa4200a3fc53a82eb1b89ed6ac22f016ab7d",
+      "sha256_depois": "20d99645aa18bacd2606defbb9f8c2ed14fedfdd9f3d8ee3c21124d5ce0816d0",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/sers/testes_usuarios.md",
+      "atual": "documentacao/sers/testes_usuarios.md",
+      "sha256_antes": "ee2941717a7b81570e98986bbcc1d25c0ce6e7e591ba8c855c1c7d85a3e6e6c1",
+      "sha256_depois": "8a0cb9005e0eab97bdb383bbd6027a879aae9c16a3f376e6d03715114a02dcdc",
+      "identico": false
+    },
+    {
+      "anterior": "documentacao/validacao_pcp.md",
+      "atual": "documentacao/pcp/avaliacao_usuarios.md",
+      "sha256_antes": "b33ee247f9d292b1dff52f772f441934d640c20b4e6b892515448bce6c46f940",
+      "sha256_depois": "082aa57e4084457bd095f8ebef0368500574f23a1b1c0fc1e06fee1a114b4458",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/ampliacao_desastres_pcp_2026-11-14.md",
+      "atual": "evidencias/pcp/historico/ampliacao_desastres_pcp_2026-11-14.md",
+      "sha256_antes": "cd0fa3f2b5c1fe5909274f6d74ac31e8f808bb410189013b991782fc2b61cc46",
+      "sha256_depois": "554f30f18e1973ef2e49b921863c647f93ae52c8092ce7b031d4d602e8009b10",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/ensaio_terminal_pos_avaliacao_pcp_2026-11-14.txt",
+      "atual": "evidencias/pcp/tecnicos/revisao_2026-11-14/ensaio_terminal.txt",
+      "sha256_antes": "9b00f06642500dd17e9f1bfc9c2d61f3ca6f6ef77fba317cc56d62b8b4815f9e",
+      "sha256_depois": "9b00f06642500dd17e9f1bfc9c2d61f3ca6f6ef77fba317cc56d62b8b4815f9e",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/ambiente_2026-11-15.txt",
+      "atual": "evidencias/ia/historico/ambiente_2026-11-15.txt",
+      "sha256_antes": "d3f329b4e1321253dd863e684b7e424ae2e617fb6eedc533ac5dd6e8033a981c",
+      "sha256_depois": "d3f329b4e1321253dd863e684b7e424ae2e617fb6eedc533ac5dd6e8033a981c",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/antes.json",
+      "atual": "evidencias/ia/antes.json",
+      "sha256_antes": "904ea14ded87fdf6f880dd1cd6130e61dc7cdf871a0b91d4436c8a4132ef8f62",
+      "sha256_depois": "904ea14ded87fdf6f880dd1cd6130e61dc7cdf871a0b91d4436c8a4132ef8f62",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/codigo_v1.zip",
+      "atual": "evidencias/ia/historico/codigo_v1.zip",
+      "sha256_antes": "e8e58490d098a842382ddac37154be037bc4033622dc1ed8df1990748d1afe63",
+      "sha256_depois": "e8e58490d098a842382ddac37154be037bc4033622dc1ed8df1990748d1afe63",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/codigo_v2.zip",
+      "atual": "evidencias/ia/historico/codigo_v2.zip",
+      "sha256_antes": "8d4f6850d51b36a89055cbf99f642c4e0efab944cb14154755dd411aa0face7b",
+      "sha256_depois": "8d4f6850d51b36a89055cbf99f642c4e0efab944cb14154755dd411aa0face7b",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/codigo_v3.zip",
+      "atual": "evidencias/ia/historico/codigo_v3.zip",
+      "sha256_antes": "119d18b510e4b38c76c7da9b441445a9689983d3bf83a4f3b5beded7e170e0aa",
+      "sha256_depois": "119d18b510e4b38c76c7da9b441445a9689983d3bf83a4f3b5beded7e170e0aa",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/comparacao.csv",
+      "atual": "evidencias/ia/comparacao.csv",
+      "sha256_antes": "38376224e71cf0601f50f08ac56609ff4c42a6657693b047a440b19fdff63935",
+      "sha256_depois": "38376224e71cf0601f50f08ac56609ff4c42a6657693b047a440b19fdff63935",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/comparacao.json",
+      "atual": "evidencias/ia/comparacao.json",
+      "sha256_antes": "ee768f499ce52e1bd604392217069326d085c3955259fcf95cfb6a6cd08a2dc6",
+      "sha256_depois": "ee768f499ce52e1bd604392217069326d085c3955259fcf95cfb6a6cd08a2dc6",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/conferencia_tecnica.md",
+      "atual": "evidencias/ia/conferencia_tecnica.md",
+      "sha256_antes": "17e42b1732ca991fa0e98231356e166ebdacb804bd1063ed1a535bf84bc3f238",
+      "sha256_depois": "81b98824b5f5874c9b3e6512d452ede3b5fd78347c6382ad4216757d5096b4f8",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/ia/depois.json",
+      "atual": "evidencias/ia/depois.json",
+      "sha256_antes": "358036d32358ac01a761fea56e4e8122784270ac3487dfd062b6f67e53c32ef7",
+      "sha256_depois": "358036d32358ac01a761fea56e4e8122784270ac3487dfd062b6f67e53c32ef7",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/ensaio_menu_2026-11-15.txt",
+      "atual": "evidencias/ia/historico/ensaio_menu_2026-11-15.txt",
+      "sha256_antes": "77dfd550838a84dd4ebb67b0e21701536cec36ab4f46f63ac0a05e10de5b979e",
+      "sha256_depois": "77dfd550838a84dd4ebb67b0e21701536cec36ab4f46f63ac0a05e10de5b979e",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/exploratoria_v3_parcial.json",
+      "atual": "evidencias/ia/historico/exploratoria_v3_parcial.json",
+      "sha256_antes": "480fc166270f31f6ad615d823fc7d167e419fb22a1e239dbe6304c0ebb39fb6d",
+      "sha256_depois": "480fc166270f31f6ad615d823fc7d167e419fb22a1e239dbe6304c0ebb39fb6d",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/fechamento/preservacao.json",
+      "atual": "evidencias/ia/fechamento/preservacao.json",
+      "sha256_antes": "a7473dffca51aa399b9f6cdc2e4545fd62c5bc3b7e69c62de15770583fd60035",
+      "sha256_depois": "a7473dffca51aa399b9f6cdc2e4545fd62c5bc3b7e69c62de15770583fd60035",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/fechamento/publicacao.json",
+      "atual": "evidencias/ia/fechamento/publicacao.json",
+      "sha256_antes": "68845a560379457b6064d4c116a12e1990f47c7543e76bb0d5766c0d57d867fb",
+      "sha256_depois": "68845a560379457b6064d4c116a12e1990f47c7543e76bb0d5766c0d57d867fb",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/fechamento/testes_v4_2026-11-15.txt",
+      "atual": "evidencias/ia/fechamento/testes_v4_2026-11-15.txt",
+      "sha256_antes": "c417c5caf95fb3e43562ccd9a2fdeb9a191d05041ea4b502e2ed67189b824951",
+      "sha256_depois": "c417c5caf95fb3e43562ccd9a2fdeb9a191d05041ea4b502e2ed67189b824951",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/fechamento/validacao_v4.json",
+      "atual": "evidencias/ia/fechamento/validacao_v4.json",
+      "sha256_antes": "d1a1e8b2256bb180b7c90719f51288bd1b52ea952da64e987535ef5694544229",
+      "sha256_depois": "d1a1e8b2256bb180b7c90719f51288bd1b52ea952da64e987535ef5694544229",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/intermediaria_v2.json",
+      "atual": "evidencias/ia/historico/intermediaria_v2.json",
+      "sha256_antes": "e47730f1030ebad1eeeb741f54e4f31635facfb8a59352026b7bd8cc4f0d762f",
+      "sha256_depois": "e47730f1030ebad1eeeb741f54e4f31635facfb8a59352026b7bd8cc4f0d762f",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/testes_tecnicos_2026-11-15.txt",
+      "atual": "evidencias/ia/historico/testes_tecnicos_2026-11-15.txt",
+      "sha256_antes": "ead2a1b703f114254baf18aec16bd8628af11b95dd58e7f1d6a947bc4adc318f",
+      "sha256_depois": "ead2a1b703f114254baf18aec16bd8628af11b95dd58e7f1d6a947bc4adc318f",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/README.md",
+      "atual": "evidencias/ia/usuarios/README.md",
+      "sha256_antes": "04fa81491d69f60623bd7341c2b07df5e80ec5d14842b1b0d505d4e75ce62da6",
+      "sha256_depois": "2cb05c12d8e0b1b9377018bee7e45e7516eac2205077f63a728c431029c7473c",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/modelo_questionario.csv",
+      "atual": "evidencias/ia/usuarios/modelo_questionario.csv",
+      "sha256_antes": "55469c00c7f2f08d6b820d784bcd09e2f09e82d1066edf6be243441ab07e8a74",
+      "sha256_depois": "55469c00c7f2f08d6b820d784bcd09e2f09e82d1066edf6be243441ab07e8a74",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/modelo_tarefas.csv",
+      "atual": "evidencias/ia/usuarios/modelo_tarefas.csv",
+      "sha256_antes": "ea0f4c3a94931b67e05677bf246429c6914668e7d4831c30ac2f9ddbb6c17bde",
+      "sha256_depois": "ea0f4c3a94931b67e05677bf246429c6914668e7d4831c30ac2f9ddbb6c17bde",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/README.md",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/README.md",
+      "sha256_antes": "31e26b68348bd978dd92dfadc5d45089dff810d6721d5ef3c76d24bc7ad31b33",
+      "sha256_depois": "3ae193527585c05e2ac8ac1e24fcb10f1797c230c94380c657ce7055f3c46e23",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/indicadores.json",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/indicadores.json",
+      "sha256_antes": "5f8ec2b5b616f60c731c68c76c9acb6e1fb59d1f69c1c87425140650f1506d23",
+      "sha256_depois": "5f8ec2b5b616f60c731c68c76c9acb6e1fb59d1f69c1c87425140650f1506d23",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/interacoes.json",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/interacoes.json",
+      "sha256_antes": "a8a01556eaaf5719770f283cae8ca65094aa134cb3615e3ded5d162be1259ecf",
+      "sha256_depois": "a8a01556eaaf5719770f283cae8ca65094aa134cb3615e3ded5d162be1259ecf",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/origem.json",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/origem.json",
+      "sha256_antes": "0017e730762e49a31778d4bb2eea013969a6e310d498137b9931c9cc8d5af27e",
+      "sha256_depois": "0017e730762e49a31778d4bb2eea013969a6e310d498137b9931c9cc8d5af27e",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/questionario.csv",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/questionario.csv",
+      "sha256_antes": "219888f502cf75e42dc97d439d75aa82e74aec19a2983b4a6033eeebc308f7a1",
+      "sha256_depois": "219888f502cf75e42dc97d439d75aa82e74aec19a2983b4a6033eeebc308f7a1",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/tarefas.csv",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/tarefas.csv",
+      "sha256_antes": "d6739e197a41bcbf425220af0aade5b3761f630f3e3de2b13edf83a37ab819de",
+      "sha256_depois": "d6739e197a41bcbf425220af0aade5b3761f630f3e3de2b13edf83a37ab819de",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/terminal_organizado.txt",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/terminal_organizado.txt",
+      "sha256_antes": "688f0c9dbfc7328ba5b1c4a30e6a51e86e2da25dcc78b26b1d8a63cef5ba6ccb",
+      "sha256_depois": "688f0c9dbfc7328ba5b1c4a30e6a51e86e2da25dcc78b26b1d8a63cef5ba6ccb",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/testes_organizacao.txt",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/testes_organizacao.txt",
+      "sha256_antes": "f866b8b548754214f479f14f7fb361a13aebc38092475ee211a4999bcf932008",
+      "sha256_depois": "f866b8b548754214f479f14f7fb361a13aebc38092475ee211a4999bcf932008",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/ia/usuarios/rodada_2026-11-15/verificacao_requisitos.json",
+      "atual": "evidencias/ia/usuarios/rodada_2026-11-15/verificacao_requisitos.json",
+      "sha256_antes": "e9ffc32cf47629c80c60c0020658f73dc43e8bc8985aa880c699b65a70e6eea3",
+      "sha256_depois": "e9ffc32cf47629c80c60c0020658f73dc43e8bc8985aa880c699b65a70e6eea3",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/indicadores_validacao_pcp_2026-11-14.json",
+      "atual": "evidencias/pcp/usuarios/rodada_2026-11-14/indicadores.json",
+      "sha256_antes": "55f49c683b102d164ba4833861d1b4d515903b4a09d23a6ef6278a1266bae9c1",
+      "sha256_depois": "55f49c683b102d164ba4833861d1b4d515903b4a09d23a6ef6278a1266bae9c1",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/modelo_resultados_pcp.md",
+      "atual": "evidencias/pcp/modelos/avaliacao_usuarios.md",
+      "sha256_antes": "651621c5e9a722bcc72c1eab31acc9cb0f0a7b4879988ea219a321e57288a411",
+      "sha256_depois": "478f09c32ebd54b3f95f8d809d04fb0eb1613b2298c5fc09b81d8620a21de19b",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/refinamento_pcp_2026-11-14.md",
+      "atual": "evidencias/pcp/historico/refinamento_pcp_2026-11-14.md",
+      "sha256_antes": "12acec8a697278e8dde68581ee2157b428bf73836471107d70259d1f8618cbd8",
+      "sha256_depois": "a004dc16f27ebae1cfb980e925bb71a40b1b6a304ced5a11c36a53e473b0f8df",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/revisao_pos_avaliacao_pcp_2026-11-14.json",
+      "atual": "evidencias/pcp/tecnicos/revisao_2026-11-14/comparacao.json",
+      "sha256_antes": "131e7953a5d98816aff83233f55439b7e81cc39e29efa72767f4ea001088d4a4",
+      "sha256_depois": "131e7953a5d98816aff83233f55439b7e81cc39e29efa72767f4ea001088d4a4",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/README.md",
+      "atual": "evidencias/sers/README.md",
+      "sha256_antes": "36100e3b2f49c9299f4e59943982bdbe596b9aa065cba07354d85d1cdf2011bf",
+      "sha256_depois": "b448ce080034e80db1d63ef6d7a2defdb6af2847fa4b975fd4420c0c484b43f0",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/sers/ensaio_terminal.txt",
+      "atual": "evidencias/sers/v2/ensaio_terminal.txt",
+      "sha256_antes": "c065d794049248941eff11c96b9d99e682a28697eb180430656d4c31331552f8",
+      "sha256_depois": "c065d794049248941eff11c96b9d99e682a28697eb180430656d4c31331552f8",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/pos_usuario_2026-11-17/README.md",
+      "atual": "evidencias/sers/v3/README.md",
+      "sha256_antes": "c05ef2175a9982452bc3e80a75ce0d9593a4e8be133762f0ca5a5386d6693241",
+      "sha256_depois": "916d8770c39e63b53dd32114eb34a1b4a4a91bd2d1987abcef78d7a69a8ccc69",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/sers/pos_usuario_2026-11-17/ensaio_terminal_hsp.txt",
+      "atual": "evidencias/sers/v3/ensaio_terminal_hsp.txt",
+      "sha256_antes": "86a49394e0868c24a871373232bd3c256790d5bc4dd85fc5ee18a4a5ff599475",
+      "sha256_depois": "86a49394e0868c24a871373232bd3c256790d5bc4dd85fc5ee18a4a5ff599475",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/pos_usuario_2026-11-17/testes.txt",
+      "atual": "evidencias/sers/v3/testes.txt",
+      "sha256_antes": "4ab4d4f15a114081762e75b9978d01dcf9610103186a29a5e4fa137c69db19cf",
+      "sha256_depois": "4ab4d4f15a114081762e75b9978d01dcf9610103186a29a5e4fa137c69db19cf",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/pos_usuario_2026-11-17/validacao_tecnica.json",
+      "atual": "evidencias/sers/v3/validacao_tecnica.json",
+      "sha256_antes": "873028a2dc1b229faf024befd542f560e9b92c6e23e0ceae19286bfaeb25389b",
+      "sha256_depois": "873028a2dc1b229faf024befd542f560e9b92c6e23e0ceae19286bfaeb25389b",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/testes_2026-11-16.txt",
+      "atual": "evidencias/sers/v2/testes_2026-11-16.txt",
+      "sha256_antes": "ff2ddfe7fff57744ebfcca9a6f5e161704a68e575fb7db25e0242ea1fd8010b0",
+      "sha256_depois": "ff2ddfe7fff57744ebfcca9a6f5e161704a68e575fb7db25e0242ea1fd8010b0",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/usuarios/rodada_2026-11-17/README.md",
+      "atual": "evidencias/sers/usuarios/rodada_2026-11-17/README.md",
+      "sha256_antes": "2025ec2057a19cfacd051832259b121f309a5f8260a5de386bb09923290cddfc",
+      "sha256_depois": "9272f146ff6f99d5180f169aa364f4f1a9027873288b72a87523a667fd11c3a5",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/sers/usuarios/rodada_2026-11-17/registro_s01.json",
+      "atual": "evidencias/sers/usuarios/rodada_2026-11-17/registro_s01.json",
+      "sha256_antes": "d3bbee21694c57e4bd94a69814ad3e064c5eb2174ccdac410c0c89bb49c75739",
+      "sha256_depois": "0dea606174a594950dd7d36aa5218211abaad5fe3f5a429e9dfe8d6ac9a72094",
+      "identico": false
+    },
+    {
+      "anterior": "evidencias/sers/usuarios/rodada_2026-11-17/relatorio_s01.txt",
+      "atual": "evidencias/sers/usuarios/rodada_2026-11-17/relatorio_s01.txt",
+      "sha256_antes": "50dcc427b761b0709b2e3ea5cd40e2d3dba66da82739f52d940cc2c580351cd9",
+      "sha256_depois": "50dcc427b761b0709b2e3ea5cd40e2d3dba66da82739f52d940cc2c580351cd9",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/usuarios/rodada_2026-11-17/terminal_s01.txt",
+      "atual": "evidencias/sers/usuarios/rodada_2026-11-17/terminal_s01.txt",
+      "sha256_antes": "be126891a8b4246e62841c82aa537dba504d3fafada3fe10e2e6c8bc9660b099",
+      "sha256_depois": "be126891a8b4246e62841c82aa537dba504d3fafada3fe10e2e6c8bc9660b099",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/v1/analise.json",
+      "atual": "evidencias/sers/v1/analise.json",
+      "sha256_antes": "18fab97e203a74e68862e6a96639a09c72ced340b8185b229dd955acdacc7d09",
+      "sha256_depois": "18fab97e203a74e68862e6a96639a09c72ced340b8185b229dd955acdacc7d09",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/v1/calculadora.py",
+      "atual": "evidencias/sers/v1/calculadora.py",
+      "sha256_antes": "4ff5879ac6da97fcb49aa7d1a42a49df6b8111d80f756df50783e7a8c1129379",
+      "sha256_depois": "4ff5879ac6da97fcb49aa7d1a42a49df6b8111d80f756df50783e7a8c1129379",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/v1/ensaio_terminal.txt",
+      "atual": "evidencias/sers/v1/ensaio_terminal.txt",
+      "sha256_antes": "71d6550c145f6b609c577a4b18abe81a376fe81505464bac111b430d9da0ae62",
+      "sha256_depois": "71d6550c145f6b609c577a4b18abe81a376fe81505464bac111b430d9da0ae62",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/v1/testes_2026-11-16.txt",
+      "atual": "evidencias/sers/v1/testes_2026-11-16.txt",
+      "sha256_antes": "f152f02275bbcabb66d1c39b402d870998bf4b3906f3640fc77b8e7b59116c45",
+      "sha256_depois": "f152f02275bbcabb66d1c39b402d870998bf4b3906f3640fc77b8e7b59116c45",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/v1/validacao_tecnica.json",
+      "atual": "evidencias/sers/v1/validacao_tecnica.json",
+      "sha256_antes": "9e77266100788ce61d96552bc9d1737724a0cbe67afe70f5c2bd54f6477359cd",
+      "sha256_depois": "9e77266100788ce61d96552bc9d1737724a0cbe67afe70f5c2bd54f6477359cd",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/sers/validacao_tecnica.json",
+      "atual": "evidencias/sers/v2/validacao_tecnica.json",
+      "sha256_antes": "73541597f451f3a65dd7bd8bbea2b45d5004b54b6c0d8ebb85dc3e67504d5170",
+      "sha256_depois": "73541597f451f3a65dd7bd8bbea2b45d5004b54b6c0d8ebb85dc3e67504d5170",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/testes_multidesastres_pcp_2026-11-14.txt",
+      "atual": "evidencias/pcp/historico/testes_multidesastres_pcp_2026-11-14.txt",
+      "sha256_antes": "47e6240f192e4a3398c633bb56931470cb27a928a5b7fc9d75d2954094fd52a9",
+      "sha256_depois": "47e6240f192e4a3398c633bb56931470cb27a928a5b7fc9d75d2954094fd52a9",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/testes_pcp_2026-11-12.txt",
+      "atual": "evidencias/pcp/historico/testes_pcp_2026-11-12.txt",
+      "sha256_antes": "dd6224e628780ca13949130425379c29b32dc1f3d295f128a67cd513a88a9100",
+      "sha256_depois": "dd6224e628780ca13949130425379c29b32dc1f3d295f128a67cd513a88a9100",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/testes_pcp_2026-11-14.txt",
+      "atual": "evidencias/pcp/historico/testes_pcp_2026-11-14.txt",
+      "sha256_antes": "5c21c6057e46ffbbf0e863aa534780c74a7f0aaf25749d90e07b0c10b48515cc",
+      "sha256_depois": "5c21c6057e46ffbbf0e863aa534780c74a7f0aaf25749d90e07b0c10b48515cc",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/testes_pos_avaliacao_pcp_2026-11-14.txt",
+      "atual": "evidencias/pcp/tecnicos/revisao_2026-11-14/testes.txt",
+      "sha256_antes": "c9fc6d72516e177c8db770d107aac6e735f2c8472e1c95b3219dd6b973aea2a2",
+      "sha256_depois": "c9fc6d72516e177c8db770d107aac6e735f2c8472e1c95b3219dd6b973aea2a2",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/validacao_tecnica_pcp.md",
+      "atual": "evidencias/pcp/historico/validacao_tecnica_pcp.md",
+      "sha256_antes": "9be3baab24d1cd3c7d346afcd618d1cb321c73bdedac5c588970400cda6867f2",
+      "sha256_depois": "9be3baab24d1cd3c7d346afcd618d1cb321c73bdedac5c588970400cda6867f2",
+      "identico": true
+    },
+    {
+      "anterior": "evidencias/validacao_usuarios_2026-11-14.csv",
+      "atual": "evidencias/pcp/usuarios/rodada_2026-11-14/validacao_usuarios_2026-11-14.csv",
+      "sha256_antes": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+      "sha256_depois": "799b0f943b64e298d01c756c88f6e1dbd1021af446d551e8f38e3688ba871fb8",
+      "identico": true
+    },
+    {
+      "anterior": "main.py",
+      "atual": "main.py",
+      "sha256_antes": "63a48e6cead7a5d2ae81a4b6e999c564aef8e56c0a47265a4a699c7689383d90",
+      "sha256_depois": "63a48e6cead7a5d2ae81a4b6e999c564aef8e56c0a47265a4a699c7689383d90",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/agente.py",
+      "atual": "modulos/documentos_ia/agente.py",
+      "sha256_antes": "677fde76801e84660c41523acd0c88754d59dfc197e29b1e48d9073f58a9d9af",
+      "sha256_depois": "677fde76801e84660c41523acd0c88754d59dfc197e29b1e48d9073f58a9d9af",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/avaliador.py",
+      "atual": "modulos/documentos_ia/avaliador.py",
+      "sha256_antes": "55e12594dba8363df455e97462f701118fd656d2041e70966014898804d42fe9",
+      "sha256_depois": "55e12594dba8363df455e97462f701118fd656d2041e70966014898804d42fe9",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/00_LEIA-ME.md",
+      "atual": "modulos/documentos_ia/fichas/00_LEIA-ME.md",
+      "sha256_antes": "d730906f203a6eff6771f1bc5cac6463f8b680daa1e62e8760d864c97b19e93f",
+      "sha256_depois": "d730906f203a6eff6771f1bc5cac6463f8b680daa1e62e8760d864c97b19e93f",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/FC-01_rg_segunda_via.md",
+      "atual": "modulos/documentos_ia/fichas/FC-01_rg_segunda_via.md",
+      "sha256_antes": "5b96f962f1406a9254ce398111b603a2650e66e58f6554993e3b97d15cda9bf5",
+      "sha256_depois": "5b96f962f1406a9254ce398111b603a2650e66e58f6554993e3b97d15cda9bf5",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/FC-02_cpf.md",
+      "atual": "modulos/documentos_ia/fichas/FC-02_cpf.md",
+      "sha256_antes": "296bfe8546c59fb2cc3741d115f5e21719b2494f3db7d20837c938892cb47e5c",
+      "sha256_depois": "296bfe8546c59fb2cc3741d115f5e21719b2494f3db7d20837c938892cb47e5c",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/FC-03_titulo_de_eleitor.md",
+      "atual": "modulos/documentos_ia/fichas/FC-03_titulo_de_eleitor.md",
+      "sha256_antes": "959fd421c4e87512c35cb513d71ba735052f899d0eac756a4f653c2aca7251c5",
+      "sha256_depois": "959fd421c4e87512c35cb513d71ba735052f899d0eac756a4f653c2aca7251c5",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/FC-04_carteira_de_trabalho.md",
+      "atual": "modulos/documentos_ia/fichas/FC-04_carteira_de_trabalho.md",
+      "sha256_antes": "111dd5a4209d12fffb2000899ab3435a4f4ebf38a680eb47edf8bf9cb2caa0d8",
+      "sha256_depois": "111dd5a4209d12fffb2000899ab3435a4f4ebf38a680eb47edf8bf9cb2caa0d8",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/FC-05_certidoes.md",
+      "atual": "modulos/documentos_ia/fichas/FC-05_certidoes.md",
+      "sha256_antes": "c2d556b93716f12622bbe3d0e16e3c5310a9cca3d379c0d602810897187cd6aa",
+      "sha256_depois": "c2d556b93716f12622bbe3d0e16e3c5310a9cca3d379c0d602810897187cd6aa",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/FC-06_cnh_renovacao.md",
+      "atual": "modulos/documentos_ia/fichas/FC-06_cnh_renovacao.md",
+      "sha256_antes": "1bd2f7883cc67fc2ac5d5ae65f495affa401652fb878583f1618e773d617b3a0",
+      "sha256_depois": "1bd2f7883cc67fc2ac5d5ae65f495affa401652fb878583f1618e773d617b3a0",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/fichas/FC-07_regras_gerais.md",
+      "atual": "modulos/documentos_ia/fichas/FC-07_regras_gerais.md",
+      "sha256_antes": "01c63d84bf591a1383ad043b0925a578c6672fc309c9bd8647e4bda14062e283",
+      "sha256_depois": "01c63d84bf591a1383ad043b0925a578c6672fc309c9bd8647e4bda14062e283",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/golden_dataset.json",
+      "atual": "modulos/documentos_ia/golden_dataset.json",
+      "sha256_antes": "73a8f5fc297a7e252abe2f03afb2c8a96d18960c02d1579bbfac0b832c418390",
+      "sha256_depois": "73a8f5fc297a7e252abe2f03afb2c8a96d18960c02d1579bbfac0b832c418390",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/prompts/v1.txt",
+      "atual": "modulos/documentos_ia/prompts/v1.txt",
+      "sha256_antes": "b6b80ba66aacaf0e38400145014e52abb747799df1dc1c5d4d546cf4794911ed",
+      "sha256_depois": "b6b80ba66aacaf0e38400145014e52abb747799df1dc1c5d4d546cf4794911ed",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/prompts/v2.txt",
+      "atual": "modulos/documentos_ia/prompts/v2.txt",
+      "sha256_antes": "9928149e6135b9b8b9ec6b0896272dc0525e1edd60e7c0230764cfa9d38a2e31",
+      "sha256_depois": "9928149e6135b9b8b9ec6b0896272dc0525e1edd60e7c0230764cfa9d38a2e31",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/prompts/v3.txt",
+      "atual": "modulos/documentos_ia/prompts/v3.txt",
+      "sha256_antes": "dd2528ab16b2f9adf78e3bfe8adde57fefb07e4062608b63935b0b4f300edc76",
+      "sha256_depois": "dd2528ab16b2f9adf78e3bfe8adde57fefb07e4062608b63935b0b4f300edc76",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/prompts/v4.txt",
+      "atual": "modulos/documentos_ia/prompts/v4.txt",
+      "sha256_antes": "d61004889dc3002093c226267212838657f962dde1e52cfb192ffdd3581b5ea7",
+      "sha256_depois": "d61004889dc3002093c226267212838657f962dde1e52cfb192ffdd3581b5ea7",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/documentos_ia/relatorio.py",
+      "atual": "modulos/documentos_ia/relatorio.py",
+      "sha256_antes": "d8d32acd8409b659a62ba2ecc7b649b0f1c2e9337dc3f38918a58bb468ec591c",
+      "sha256_depois": "d8d32acd8409b659a62ba2ecc7b649b0f1c2e9337dc3f38918a58bb468ec591c",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/energia/analise.json",
+      "atual": "modulos/energia/analise.json",
+      "sha256_antes": "f8fb7420ee524a46de4ac0cc215bdf6ce760720f254bc9fe1c9842b192020d6c",
+      "sha256_depois": "f8fb7420ee524a46de4ac0cc215bdf6ce760720f254bc9fe1c9842b192020d6c",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/energia/calculadora.py",
+      "atual": "modulos/energia/calculadora.py",
+      "sha256_antes": "d87c4f39508f03e59fcc2f03e7567e0ad9438c0732218c0965f29ca68e28bc67",
+      "sha256_depois": "d87c4f39508f03e59fcc2f03e7567e0ad9438c0732218c0965f29ca68e28bc67",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/energia/fontes/nasa_sao_paulo.json",
+      "atual": "modulos/energia/fontes/nasa_sao_paulo.json",
+      "sha256_antes": "b03375274c51a2900e1dd209ab2a23fff242d5a2b027a2cc152712d25f2d735a",
+      "sha256_depois": "b03375274c51a2900e1dd209ab2a23fff242d5a2b027a2cc152712d25f2d735a",
+      "identico": true
+    },
+    {
+      "anterior": "modulos/energia/referencias.md",
+      "atual": "modulos/energia/referencias.md",
+      "sha256_antes": "a302761506d97a57730b7fe364ccd0de9d44dcf30f7d8495d43094fa36f89482",
+      "sha256_depois": "254eebf3ac1b0f1767557c0a71f9b701bbd833fbe78e74a8a0773b5da4ac1757",
+      "identico": false
+    },
+    {
+      "anterior": "notebooks/avaliacao_ia.ipynb",
+      "atual": "notebooks/avaliacao_ia.ipynb",
+      "sha256_antes": "4783552585fab427c6530b17f0e1c44747f152e59d54584a55ffa6880a5117fc",
+      "sha256_depois": "4783552585fab427c6530b17f0e1c44747f152e59d54584a55ffa6880a5117fc",
+      "identico": true
+    },
+    {
+      "anterior": "orientacao.py",
+      "atual": "orientacao.py",
+      "sha256_antes": "eea9d91a1cc5f6e149a0779765ec417e54f79f1f57ed6cde3492fca9bf13d11c",
+      "sha256_depois": "eea9d91a1cc5f6e149a0779765ec417e54f79f1f57ed6cde3492fca9bf13d11c",
+      "identico": true
+    },
+    {
+      "anterior": "requirements.txt",
+      "atual": "requirements.txt",
+      "sha256_antes": "faaf906183f72a1da384dd2ddb973ec55571def79d92cd8b55f6e57b62e99082",
+      "sha256_depois": "faaf906183f72a1da384dd2ddb973ec55571def79d92cd8b55f6e57b62e99082",
+      "identico": true
+    },
+    {
+      "anterior": "testes/analisar_sers.py",
+      "atual": "testes/analisar_sers.py",
+      "sha256_antes": "35ba436673e581d321bd482c3402846b5bc6fd1ce1730f97d6ee106c8ee751b3",
+      "sha256_depois": "35ba436673e581d321bd482c3402846b5bc6fd1ce1730f97d6ee106c8ee751b3",
+      "identico": true
+    },
+    {
+      "anterior": "testes/analisar_usuarios_ia.py",
+      "atual": "testes/analisar_usuarios_ia.py",
+      "sha256_antes": "c3e1a38e2abbf168fb695b01608003e06bae9b49f2d357e0156eb4ed38c88bfc",
+      "sha256_depois": "c3e1a38e2abbf168fb695b01608003e06bae9b49f2d357e0156eb4ed38c88bfc",
+      "identico": true
+    },
+    {
+      "anterior": "testes/analisar_validacao_pcp.py",
+      "atual": "testes/analisar_validacao_pcp.py",
+      "sha256_antes": "cad4326d06d443a928466ad34cb81d3396427977ea9b18172f83a2cf61fcbbd6",
+      "sha256_depois": "d270f097faac2c5bb9164396a1b6d952c60523c6f3d3852d98988f5eaf55f5fe",
+      "identico": false
+    },
+    {
+      "anterior": "testes/casos_avaliacao_pcp.json",
+      "atual": "testes/casos_avaliacao_pcp.json",
+      "sha256_antes": "2d42642595306882dec08d64208d19baa95b55eba33b7c4588752a22dce80a33",
+      "sha256_depois": "2d42642595306882dec08d64208d19baa95b55eba33b7c4588752a22dce80a33",
+      "identico": true
+    },
+    {
+      "anterior": "testes/casos_desastres_pcp.json",
+      "atual": "testes/casos_desastres_pcp.json",
+      "sha256_antes": "9722ee775732912aec6106bca36586d7b064614010b74c2f09ec9df32b800787",
+      "sha256_depois": "9722ee775732912aec6106bca36586d7b064614010b74c2f09ec9df32b800787",
+      "identico": true
+    },
+    {
+      "anterior": "testes/casos_perguntas_pcp.json",
+      "atual": "testes/casos_perguntas_pcp.json",
+      "sha256_antes": "c2b8a11e50c8bf3ed18624eb4b9120c9340f7ecbfe49392bae9fd0d20a4d99ba",
+      "sha256_depois": "c2b8a11e50c8bf3ed18624eb4b9120c9340f7ecbfe49392bae9fd0d20a4d99ba",
+      "identico": true
+    },
+    {
+      "anterior": "testes/test_fechamento_ia.py",
+      "atual": "testes/test_fechamento_ia.py",
+      "sha256_antes": "b63ba667dfbfd1a99eb351332cdddebcd555b2545cbbf225ff5c3d17acba3303",
+      "sha256_depois": "b63ba667dfbfd1a99eb351332cdddebcd555b2545cbbf225ff5c3d17acba3303",
+      "identico": true
+    },
+    {
+      "anterior": "testes/test_ia.py",
+      "atual": "testes/test_ia.py",
+      "sha256_antes": "f0bc62c0afd928ad5ef0c0fe3e12cbe70fa981b5505beea4ab4212ebfe93e011",
+      "sha256_depois": "f0bc62c0afd928ad5ef0c0fe3e12cbe70fa981b5505beea4ab4212ebfe93e011",
+      "identico": true
+    },
+    {
+      "anterior": "testes/test_pcp.py",
+      "atual": "testes/test_pcp.py",
+      "sha256_antes": "0e8500ff0a6094f04ad06037287123f75ca5526e870420b0b6f855fb02e3f2f3",
+      "sha256_depois": "0e8500ff0a6094f04ad06037287123f75ca5526e870420b0b6f855fb02e3f2f3",
+      "identico": true
+    },
+    {
+      "anterior": "testes/test_sers.py",
+      "atual": "testes/test_sers.py",
+      "sha256_antes": "a380f00cb7f87adb274a2601407c0cd3ae570baee468542f657b5e0435cd6717",
+      "sha256_depois": "a380f00cb7f87adb274a2601407c0cd3ae570baee468542f657b5e0435cd6717",
+      "identico": true
+    },
+    {
+      "anterior": "testes/test_usuarios_ia.py",
+      "atual": "testes/test_usuarios_ia.py",
+      "sha256_antes": "6a0b2f8f16ffe65cb7e8380de0152ea4e35fd115c9be59078691e243080f9575",
+      "sha256_depois": "6a0b2f8f16ffe65cb7e8380de0152ea4e35fd115c9be59078691e243080f9575",
+      "identico": true
+    }
+  ]
+}

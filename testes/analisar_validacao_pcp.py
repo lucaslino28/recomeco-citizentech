@@ -44,7 +44,7 @@ if __name__ == "__main__":
     raiz = Path(__file__).resolve().parents[1]
     argumentos = argparse.ArgumentParser(description=__doc__)
     argumentos.add_argument("--arquivo", type=Path,
-                            default=raiz / "evidencias/validacao_usuarios_2026-11-14.csv")
+                            default=raiz / "evidencias/pcp/usuarios/rodada_2026-11-14/validacao_usuarios_2026-11-14.csv")
     argumentos.add_argument("--data", type=date.fromisoformat, default=date(2026, 11, 14))
     opcoes = argumentos.parse_args()
     try:

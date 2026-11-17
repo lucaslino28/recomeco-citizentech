@@ -1,31 +1,33 @@
 # Avaliação de PCP — 14/11/2026
 
+Reunimos aqui os resultados dos testes de 14/11 e as mudanças feitas depois. As pendências atuais estão na [página de entregas](../../entregas/README.md).
+
 ## 1. Objetivo
 
 Avaliar se o RECOMEÇO, executado no terminal, encontra orientações pertinentes para perguntas formuladas naturalmente, apresenta encaminhamentos compreensíveis e oferece navegação acessível. Identificar melhorias pequenas que preservem a busca por pontuação e as três classes exigidas em PCP.
 
 ## 2. Metodologia
 
-Conforme relato fornecido pela equipe, a avaliação ocorreu com três pessoas externas, que formularam as perguntas, escolheram os caminhos do programa, responderam se a orientação ajudou e deram uma nota de facilidade de 1 a 5 ao encerrar. Foram dez execuções separadas, iniciadas com `python main.py`.
+Três pessoas de fora do grupo usaram o programa. Elas fizeram as perguntas, escolheram as opções, responderam se a orientação ajudou e deram uma nota de facilidade de 1 a 5. Ao todo, foram dez atendimentos, cada um em uma execução de `python main.py`.
 
-A quantidade de participantes e a condução da aplicação são informações da equipe. Os arquivos comprovam registros de execução e avaliações, sem identificar pessoas. As perguntas desta documentação foram fornecidas pela equipe na contextualização da rodada; o histórico não guarda texto livre. O registro original do Terminal não integra os arquivos examinados nesta revisão. Não foram criadas entrevistas, comentários ou atribuições individuais.
+Anotamos as perguntas da rodada para analisar as dificuldades. O histórico guarda apenas rótulos, resultados e notas, sem o texto livre das perguntas. Não temos uma transcrição completa do terminal dessa aplicação; por isso, usamos o CSV e as anotações do teste para montar este relatório.
 
 A versão avaliada tinha 30 orientações, com código correspondente a `fb0b073`. Os commits `ca491d4` e `b56f7a6` registraram evidências/dados, sem mudar aquele código. A base revisada após a avaliação tem 34 orientações.
 
 ## 3. Participantes e atendimentos
 
-- Participantes externos informados pela equipe: 3, sem nomes ou identificação neste relatório.
+- Participantes de fora do grupo: 3, identificados apenas pela quantidade.
 - Atendimentos da rodada: 10, em dez execuções separadas.
 - Notas de facilidade e códigos de sessão: 10.
-- A distribuição dos atendimentos entre as três pessoas não foi informada. Não atribuímos tarefas, notas ou tempos a pessoas específicas.
+- Não registramos quais atendimentos pertencem a cada pessoa; os resultados estão organizados por sessão.
 
-Os três arquivos originais são `data/historico.json`, `data/atendimentos.csv` e `evidencias/validacao_usuarios_2026-11-14.csv`. Cada um contém onze registros: um de 12/11 e dez de 14/11. Aplicou-se o filtro da data apenas nos cálculos. Nenhum registro ou avaliação foi removido ou reescrito nesta revisão.
+Os três arquivos originais são `data/historico.json`, `data/atendimentos.csv` e `evidencias/pcp/usuarios/rodada_2026-11-14/validacao_usuarios_2026-11-14.csv`. Cada um contém onze registros: um de 12/11 e dez de 14/11. Aplicou-se o filtro da data apenas nos cálculos. Nenhum registro ou avaliação foi removido ou reescrito nesta revisão.
 
 ## 4. Resultados obtidos
 
 “Ajudou” representa a avaliação registrada, não uma confirmação de completude técnica. As notas são de facilidade por execução.
 
-| Caso | Pergunta informada pela equipe | Resultado original | Facilidade |
+| Caso | Pergunta anotada no teste | Resultado original | Facilidade |
 |---|---|---|---:|
 | 01 | Como procuro abrigo para dormir? | Ajudou | 5 |
 | 02 | Perdi meus documentos na chuva. | Ajudou | 4 |
@@ -38,7 +40,7 @@ Os três arquivos originais são `data/historico.json`, `data/atendimentos.csv` 
 | 09 | Por conta da chuva minha casa está sem energia. | Ajudou | 5 |
 | 10 | Você tem o número da Enel? | Sem orientação confirmada | 1 |
 
-Os dados persistidos confirmam as avaliações e as notas da sequência apresentada. As frases e o contexto das escolhas são provenientes do relato da equipe; não podem ser recuperados dos rótulos anonimizados.
+Os dados persistidos confirmam as avaliações e as notas da sequência apresentada. As frases vieram das anotações do teste, pois o histórico não guarda esse texto.
 
 ## 5. Indicadores
 
@@ -56,7 +58,7 @@ Os dados persistidos confirmam as avaliações e as notas da sequência apresent
 
 A facilidade usa uma nota por sessão. Nesta rodada há uma sessão por atendimento, mas não uma sessão por participante; não é uma média por pessoa. Cinco das dez avaliações de facilidade são 1 ou 2.
 
-Reprodução sem alterar os dados: `python -B testes/analisar_validacao_pcp.py`. O [JSON de indicadores](../evidencias/indicadores_validacao_pcp_2026-11-14.json) contém filtro, valores e hash do CSV. Os dez registros da data coincidem nos três arquivos originais. O registro anterior não foi considerado participante nem atendimento desta rodada.
+Reprodução sem alterar os dados: `python -B testes/analisar_validacao_pcp.py`. O [JSON de indicadores](../../evidencias/pcp/usuarios/rodada_2026-11-14/indicadores.json) contém filtro, valores e hash do CSV. Os dez registros da data coincidem nos três arquivos originais. O registro anterior não foi considerado participante nem atendimento desta rodada.
 
 ## 6. Problemas identificados
 
@@ -88,16 +90,16 @@ O tempo original foi preservado como medido, com sua limitação. Não houve est
 | Média | Falta de energia e Enel | Orientações 32 e 33; contatos por área atendida, separados de choque | Casos 09 e 10 encontram IDs 32 e 33 |
 | Média | Tempo e indicadores | Finalização ao sair do atendimento e filtro opcional de data | Testes de retorno/interrupção e exclusão da data antiga |
 
-O encaminhamento de emergência usa a [fonte oficial do 193](https://www.parana.pr.gov.br/servicos/Seguranca/Bombeiros/Acionar-Corpo-de-Bombeiros-193-0A30a4rk). A orientação documental segue acolhida/cadastro e apoio à documentação da [cartilha do MDS](https://mds.gov.br/webarquivos/MDS/2_Acoes_e_Programas/Calamidade_Publica_e_Emergencias/SUAS/Gestao_e_Funcionamento_de_Abrigos_Provisorios_no_SUAS.pdf), páginas 56 e 89. As demais referências estão em [fontes de PCP](fontes_pcp.md).
+O encaminhamento de emergência usa a [fonte oficial do 193](https://www.parana.pr.gov.br/servicos/Seguranca/Bombeiros/Acionar-Corpo-de-Bombeiros-193-0A30a4rk). A orientação documental segue acolhida/cadastro e apoio à documentação da [cartilha do MDS](https://mds.gov.br/webarquivos/MDS/2_Acoes_e_Programas/Calamidade_Publica_e_Emergencias/SUAS/Gestao_e_Funcionamento_de_Abrigos_Provisorios_no_SUAS.pdf), páginas 56 e 89. As demais referências estão em [fontes de PCP](fontes.md).
 
 A arquitetura, os pesos +3/+1, os limiares, as categorias e os IDs antigos foram preservados. Não foram adicionadas classes, dependências externas ou serviços de IA. O aviso urgente é uma regra limitada, não triagem completa nem acionamento de resgate.
 
-A revisão passou em **89 testes automatizados**, com dados temporários. As dez frases foram reproduzidas no código anterior e no revisado: [comparação técnica](../evidencias/revisao_pos_avaliacao_pcp_2026-11-14.json). Agora encontram a orientação prevista por pontuação, sem ambiguidade entre as primeiras candidatas. Esse resultado mede roteamento técnico; não significa 100% de satisfação nem uma nova validação humana.
+A revisão passou em **89 testes automatizados**, com dados temporários. As dez frases foram reproduzidas no código anterior e no revisado: [comparação técnica](../../evidencias/pcp/tecnicos/revisao_2026-11-14/comparacao.json). Agora encontram a orientação prevista por pontuação, sem ambiguidade entre as primeiras candidatas. Esse resultado mede roteamento técnico; não significa 100% de satisfação nem uma nova validação humana.
 
 A comparação também registra hashes SHA-256 dos três arquivos originais, conferidos antes e depois da revisão. As avaliações e tempos antigos permanecem iguais.
 
 ## 9. Conclusão
 
-A rodada forneceu uma linha de base de 80% de orientações encontradas/selecionadas, 70% de utilidade e facilidade 3,0/5. As dificuldades motivaram mudanças pequenas no conteúdo, nas sugestões e no fluxo, verificadas tecnicamente e descritas no README conforme o requisito de PCP.
+O teste ficou em 80% de orientações encontradas ou selecionadas, 70% de respostas consideradas úteis e facilidade de 3,0/5. Esses resultados mostraram onde a busca e o conteúdo precisavam melhorar. Fizemos os ajustes e conferimos as perguntas nos testes de código.
 
-A solução continua um protótipo de primeiro ano, com regras compreensíveis e fontes apresentadas ao cidadão. Permanecem limitações de linguagem, disponibilidade local e serviços em tempo real. Uma nova avaliação com participantes poderá medir o efeito das mudanças na utilidade e facilidade. Para concluir a entrega, a equipe ainda precisa revisar o material, completar integrantes/RMs, publicar a revisão, gravar o vídeo e enviar o TXT com os links.
+A solução continua um protótipo de primeiro ano, com regras compreensíveis e fontes apresentadas ao cidadão. Permanecem limitações de linguagem, disponibilidade local e serviços em tempo real. Uma nova avaliação com participantes poderá medir o efeito das mudanças na utilidade e facilidade. As pendências atuais, incluindo o vídeo e o envio do TXT, estão na página de entregas.

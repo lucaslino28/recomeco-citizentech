@@ -114,7 +114,7 @@ A utiliza a mistura de fontes da rede brasileira e não foi tratada como totalme
 
 As recomendações do terminal mudam com geração, capacidade, potência e custos calculados. A análise é local e determinística; não depende de respostas geradas por IA nem consulta condições reais de rede/sol.
 
-## Refinamento v2: sequência de dias e carga acumulada
+## Bateria ao longo dos dias — v2
 
 A versão inicial fazia um balanço diário com recarga anterior a cada noite. A v2 mantém esse resultado como referência e adiciona um acompanhamento cronológico simples. O código usa um laço `for`, uma lista com as HSP diárias e um saldo acumulado de energia.
 
@@ -152,7 +152,7 @@ Resultado: **3 de 5 noites completas**, **3,7482 kWh atendidos** de 5,4 kWh nece
 
 O balanço de conservação é conferido nos testes: saldo inicial + geração = energia atendida + excedente + saldo final, com tolerância numérica de ponto flutuante. Também são verificados bateria vazia, reserva, sobrecarga, ausência de sol e excesso de geração. Não se modelam hora a hora potência de carga, consumo em espera, limites de corrente, temperatura, autodescarga ou envelhecimento.
 
-## Refinamento v2: origem, decisão e custos
+## Dados usados e comparação de custos — v2
 
 A [referência pública NASA POWER](../../modulos/energia/referencias.md) permite reproduzir um caso horizontal identificado de São Paulo: junho, menor média mensal da climatologia 2001–2025, com **3,2578 HSP equivalentes** e geração útil aproximada de **1,3438425 kWh/dia**. É um exemplo local; a orientação do sistema continua geral para o Brasil. Outros parâmetros continuam estimados.
 
@@ -173,4 +173,4 @@ O atendimento guiado oferece custo, continuidade, operação de equipamentos exi
 
 ## Ajuste de comunicação após S01 — sers-v3, 17/11/2026
 
-A participante usou 12 HSP porque associou o campo ao tempo de incidência de sol na casa, conforme relato do aplicador. A v3 renomeia o campo para energia solar diária equivalente, oferece explicação concreta e solicita decisão explícita para entradas a partir de 8 HSP. A pessoa pode confirmar como hipótese, corrigir ou cancelar; o programa não escolhe um novo valor por ela. O limiar é de revisão didática, não limite físico. As fórmulas deste documento permanecem iguais e as escolhas/resultados originais da v2 foram preservados. Os testes técnicos foram ampliados; ainda não há nova observação de compreensão após o ajuste.
+No teste acompanhado por Lucas, a participante usou 12 HSP pensando no tempo em que o sol bate na casa. A v3 renomeia o campo para energia solar diária equivalente, oferece explicação concreta e solicita decisão explícita para entradas a partir de 8 HSP. A pessoa pode confirmar como hipótese, corrigir ou cancelar; o programa não escolhe um novo valor por ela. O limiar é de revisão didática, não limite físico. As fórmulas deste documento permanecem iguais e as escolhas/resultados originais da v2 foram preservados. Acrescentamos testes para conferir a entrada e o cancelamento. Ainda não repetimos a avaliação com a participante.

@@ -22,3 +22,5 @@ venv/
 
 # Relatórios técnicos exportados localmente pelo módulo de energia
 /data/relatorios_sers/
+
+/privado/

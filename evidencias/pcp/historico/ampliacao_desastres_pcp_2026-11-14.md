@@ -20,7 +20,7 @@ python -B -m unittest discover -s testes -v
 
 **Resultado: 71 testes executados, todos aprovados.** A saída completa está em [log da ampliação](testes_multidesastres_pcp_2026-11-14.txt).
 
-Foram preservados os [42 cenários anteriores](../testes/casos_perguntas_pcp.json) e adicionados [50 cenários sobre diferentes desastres](../testes/casos_desastres_pcp.json). Os 92 cenários foram conferidos nos testes, incluindo orientação direta, esclarecimento, sugestão e ausência de cobertura. Eles são dados sintéticos de teste, sem representar uma amostra de usuários ou uma medida de acurácia geral.
+Foram preservados os [42 cenários anteriores](../../../testes/casos_perguntas_pcp.json) e adicionados [50 cenários sobre diferentes desastres](../../../testes/casos_desastres_pcp.json). Os 92 cenários foram conferidos nos testes, incluindo orientação direta, esclarecimento, sugestão e ausência de cobertura. Eles são dados sintéticos de teste, sem representar uma amostra de usuários ou uma medida de acurácia geral.
 
 Os testes também verificam a seleção por tipo, retorno sem atendimento, apoio compartilhado, base legada sem o campo opcional, palavras genéricas nas sugestões, encaminhamento em sinais de alerta do calor e fluxo completo pelo menu. A ampliação revelou uma sugestão indevida para a pergunta fora do escopo sobre fazer um bolo: palavras comuns como `como` passaram a ser ignoradas na sugestão. A busca obrigatória por pontuação não foi alterada por essa correção.
 
@@ -30,6 +30,6 @@ Uma conferência em pseudoterminal percorreu a escolha de vendaval por tipo, per
 
 O histórico padrão, o CSV padrão, as fichas e módulos de IA, o módulo energético e as dependências foram preservados. Fontes e documentação de PCP foram atualizadas. Os registros dos testes anteriores permanecem como evidências históricas das versões em que foram executados.
 
-As [fontes por orientação](../documentacao/fontes_pcp.md) incluem cartilhas da Defesa Civil Nacional, orientações do Ministério da Saúde e referências técnicas estaduais. A base não prevê o tempo nem acessa alertas, vagas, qualidade do ar, rotas ou estoques em tempo real. Não diagnostica doenças ou autoriza retorno a imóveis. Incêndios também podem ter origem humana; não foi afirmado que todo evento coberto tem origem exclusivamente natural.
+As [fontes por orientação](../../../documentacao/pcp/fontes.md) incluem cartilhas da Defesa Civil Nacional, orientações do Ministério da Saúde e referências técnicas estaduais. A base não prevê o tempo nem acessa alertas, vagas, qualidade do ar, rotas ou estoques em tempo real. Não diagnostica doenças ou autoriza retorno a imóveis. Incêndios também podem ter origem humana; não foi afirmado que todo evento coberto tem origem exclusivamente natural.
 
 Continuam pendentes os testes com pelo menos três pessoas externas e dez atendimentos, uma melhoria decorrente desses testes, o vídeo técnico e os demais elementos acadêmicos de entrega. Nenhum participante, avaliação ou resultado humano foi inventado.

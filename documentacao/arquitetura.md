@@ -83,9 +83,9 @@ Contém as sete fichas fictícias fornecidas pelo professor, conferidas contra o
 
 O cenário é iluminação noturna de abrigo temporário após desastres. A compara LED ligado à rede existente; B usa os mesmos LEDs com sistema solar isolado e bateria. Recomendações são condicionadas aos resultados: déficit e sobrecarga não recebem promessa de atendimento completo. O custo de serviço parcial é identificado como tal.
 
-`modulos/energia/analise.json` reúne parâmetros estimados, orçamento, justificativas e fontes. A v2 acrescenta NASA POWER em cópia local conferida por hash e exemplos de capacidades dos fabricantes. O balanço cronológico usa lista de HSP, laço diário e saldo de energia equivalente, sem aplicar perdas duas vezes. Resultados reproduzíveis ficam em `evidencias/sers/validacao_tecnica.json`. `modulos/energia/referencias.md` e `documentacao/sers/analise.md` explicam fórmulas, origens, comparação e limites econômicos/ambientais.
+`modulos/energia/analise.json` reúne parâmetros estimados, orçamento, justificativas e fontes. A v2 acrescenta NASA POWER em cópia local conferida por hash e exemplos de capacidades dos fabricantes. O balanço cronológico usa lista de HSP, laço diário e saldo de energia equivalente, sem aplicar perdas duas vezes. Resultados reproduzíveis atuais ficam em `evidencias/sers/v3/validacao_tecnica.json`; as versões anteriores estão identificadas no índice de evidências. `modulos/energia/referencias.md` e `documentacao/sers/analise.md` explicam fórmulas, origens, comparação e limites econômicos/ambientais.
 
-O módulo usa apenas a biblioteca padrão, resolve a base a partir do próprio arquivo e não chama IA ou consulta dados em tempo real. Só salva um relatório quando a pessoa escolhe exportar (pasta local ignorada pelo Git); não cria sessões/indicadores de PCP. A análise separa aquisição de operação com equipamentos existentes. A avaliação de 17/11 está documentada com uma participante, segundo o aplicador. A v3 acrescenta explicação e confirmação de HSP alta, motivada pela dificuldade observada, sem alterar as fórmulas ou declarar nova avaliação humana.
+O módulo usa apenas a biblioteca padrão, resolve a base a partir do próprio arquivo e não chama IA ou consulta dados em tempo real. Só salva um relatório quando a pessoa escolhe exportar (pasta local ignorada pelo Git); não cria sessões/indicadores de PCP. A análise separa aquisição de operação com equipamentos existentes. A avaliação de 17/11 está documentada com uma participante, segundo as anotações de Lucas. A v3 acrescenta explicação e confirmação de HSP alta, motivada pela dificuldade observada, sem alterar as fórmulas ou declarar nova avaliação humana.
 
 ## 4. Armazenamento e privacidade
 
@@ -94,19 +94,19 @@ O módulo usa apenas a biblioteca padrão, resolve a base a partir do próprio a
 | `data/base_conhecimento.json` | Conteúdo oficial curado de PCP, 34 orientações |
 | `data/historico.json` | Resultados sem perguntas livres |
 | `data/atendimentos.csv` | Exportação do histórico da pasta |
-| `evidencias/validacao_usuarios_2026-11-14.csv` | Evidência original preservada da rodada, incluindo linha anterior excluída dos cálculos |
+| `evidencias/pcp/usuarios/rodada_2026-11-14/validacao_usuarios_2026-11-14.csv` | Evidência original preservada da rodada, incluindo linha anterior excluída dos cálculos |
 | `testes/casos_avaliacao_pcp.json` | Frases fornecidas pela equipe e orientação esperada na regressão |
 | `modulos/documentos_ia/fichas/` | Sete fichas fictícias, exclusivas de IA |
 | `modulos/energia/analise.json` | Parâmetros hipotéticos, orçamento, premissas e fontes de SERS |
 
 Não há cadastro. O texto da pergunta só fica em memória. O campo `pergunta` recebe rótulo controlado. O filtro recusa oito ou mais dígitos, `@` e alguns padrões de identificação. A nota de facilidade é considerada uma vez por sessão aleatória, sem reconstruir identidade.
 
-A gravação usa arquivo temporário e substituição. Arquivos inteiramente ilegíveis são preservados. As pastas devem ser usadas por uma execução de cada vez. As limitações completas estão em [decisões de PCP](decisoes_pcp.md).
+A gravação usa arquivo temporário e substituição. Arquivos inteiramente ilegíveis são preservados. As pastas devem ser usadas por uma execução de cada vez. As limitações completas estão em [decisões de PCP](pcp/decisoes.md).
 
 ## 5. Validação e sequência de trabalho
 
-A regressão técnica usa `unittest` e arquivos temporários. A análise do CSV usa apenas leitura e filtro por data. Os resultados da avaliação e os da regressão ficam separados em [validação PCP](validacao_pcp.md).
+A regressão técnica usa `unittest` e arquivos temporários. A análise do CSV usa apenas leitura e filtro por data. Os resultados da avaliação e os da regressão ficam separados em [validação PCP](pcp/avaliacao_usuarios.md).
 
 A arquitetura e a pontuação foram mantidas durante a melhoria incremental. IA e SERS estão implementados, com evidências técnicas próprias e pendências de entrega identificadas. As fichas fictícias não devem se misturar às fontes oficiais de PCP; indisponibilidade de IA não deve impedir PCP.
 
-A entrega de PCP deve ser conferida pelo [checklist](checklist.md), pelas [fontes](fontes_pcp.md) e pelo [roteiro do vídeo](roteiro_video_pcp.md). O fechamento de IA está em seu índice; execução, análise e pendências de SERS estão no [guia de SERS](sers/README.md).
+A entrega de PCP deve ser conferida pelo [checklist](checklist.md), pelas [fontes](pcp/fontes.md) e pelo [roteiro do vídeo](pcp/roteiro_video.md). O fechamento de IA está em seu índice; execução, análise e pendências de SERS estão no [guia de SERS](sers/README.md).

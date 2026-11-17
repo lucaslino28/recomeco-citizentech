@@ -67,26 +67,26 @@ A opção 2 do menu utiliza v3. A implementação preserva a separação entre f
 
 O caso 20 (passaporte) foi marcado como erro por falta de fonte, embora a própria justificativa do juiz reconheça que não há ficha aplicável. A régua diz que fonte não é obrigatória fora do escopo. O veredito original foi preservado; não foi trocado para aumentar o percentual.
 
-A v2 mostrou também que uma resposta aprovada pode omitir um ponto esperado. Isso limita o uso de uma taxa isolada. A [conferência técnica assistida](../../evidencias/ia/conferencia_tecnica.md) registra a amostra e as divergências. A conferência de seis casos foi posteriormente confirmada pelo aplicador; veja [amostra](revisao_amostra.md). A confirmação não altera os vereditos originais.
+A v2 mostrou também que uma resposta aprovada pode omitir um ponto esperado. Isso limita o uso de uma taxa isolada. A [conferência técnica assistida](../../evidencias/ia/conferencia_tecnica.md) registra a amostra e as divergências. A conferência de seis casos foi posteriormente confirmada por Lucas; veja [amostra](revisao_amostra.md). A confirmação não altera os vereditos originais.
 
 ## Coleta humana documentada em 15/11
 
-A coleta informada pelo aplicador está no [relatório com usuários](usuarios_2026-11-15.md): cinco participantes externos, 15 tarefas, tempo médio 23,04 s e 25 notas com média 4,04/5. As tarefas variaram; os tempos e questionários foram coletados manualmente, não medidos pelo terminal. A conclusão informada de 100% não representa precisão factual independente.
+Os testes estão no [relatório com usuários](usuarios_2026-11-15.md): cinco participantes externos, 15 tarefas, tempo médio 23,04 s e 25 notas com média 4,04/5. As tarefas variaram; os tempos e questionários foram coletados manualmente, não medidos pelo terminal. A conclusão informada de 100% não representa precisão factual independente.
 
-Este documento e o notebook preservado tratam da avaliação automática anterior à organização da coleta. O tempo do agente em seus JSONs não substitui o tempo humano. A coleta de usabilidade também não comprova a conferência manual de uma amostra do golden dataset. Essa revisão foi registrada separadamente, com confirmação do aplicador.
+Este documento e o notebook mostram a avaliação automática. O tempo medido pelo programa é diferente do tempo anotado durante o uso pelas pessoas. A leitura manual de seis respostas feita por Lucas está na revisão da amostra.
 
 ## Limitações
 
 Aurora e suas regras são fictícias. O programa não consulta cadastro, agenda serviços nem fornece informação real sobre documentação brasileira. O filtro de privacidade não reconhece toda forma de identificação: usuários devem evitar dados pessoais. Mensagens liberadas são processadas pela Groq, sem controle local sobre a retenção do provedor.
 
-O modelo pode omitir detalhes ou selecionar uma referência pouco adequada; o juiz também pode errar. Temperatura zero não garante repetibilidade perfeita. A complementação de custo protege um campo verificável, sem provar todos os demais fatos da resposta. A conferência da amostra foi confirmada pelo aplicador, e a avaliação humana de tempo/facilidade foi documentada separadamente, com suas limitações.
+O modelo pode omitir detalhes ou selecionar uma referência pouco adequada; o juiz também pode errar. Temperatura zero não garante repetibilidade perfeita. A complementação de custo protege um campo verificável, sem provar todos os demais fatos da resposta. A conferência da amostra foi confirmada por Lucas, e a avaliação humana de tempo/facilidade foi documentada separadamente, com suas limitações.
 
 ## Reproduzir e consultar
 
 - [Guia de execução](guia_execucao.md) e [decisões](decisoes.md).
 - [Notebook executado](../../notebooks/avaliacao_ia.ipynb), com tabelas dos JSONs e exemplos, sem novas chamadas à API.
-- [Antes](../../evidencias/ia/antes.json), [intermediária](../../evidencias/ia/intermediaria_v2.json), [depois](../../evidencias/ia/depois.json) e [comparação](../../evidencias/ia/comparacao.json).
-- [CSV da comparação](../../evidencias/ia/comparacao.csv) e [testes técnicos](../../evidencias/ia/testes_tecnicos_2026-11-15.txt).
+- [Antes](../../evidencias/ia/antes.json), [intermediária](../../evidencias/ia/historico/intermediaria_v2.json), [depois](../../evidencias/ia/depois.json) e [comparação](../../evidencias/ia/comparacao.json).
+- [CSV da comparação](../../evidencias/ia/comparacao.csv) e [testes técnicos](../../evidencias/ia/historico/testes_tecnicos_2026-11-15.txt).
 - [Plano de usuários](testes_usuarios.md) e [diagrama](arquitetura.png).
 
 `python -B -m modulos.documentos_ia.relatorio` regenera os derivados sem chamar o LLM nem alterar as rodadas originais. Reexecutar a avaliação exige outro arquivo de saída; não sobrescrever as evidências históricas.

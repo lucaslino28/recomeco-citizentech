@@ -64,4 +64,4 @@ O cadastro inicial do CGE que não pôde ser recuperado integralmente em 12/11 p
 - A orientação 33 diferencia Enel São Paulo (0800 72 72 196 para falta de luz), Enel Rio de Janeiro (0800 28 00 120) e Enel Ceará (0800 2850 196), conferidos nas páginas regionais acima. Não afirma que a empresa atende todo município desses estados. A conta de energia e o site oficial devem ser usados para confirmar a área e o canal. O programa não precisa receber CPF, endereço ou número de instalação.
 - A orientação 34 resume cuidados da Defesa Civil RS e mantém o cuidado de não atravessar alagamentos, tratado também na fonte federal do ID 2. Não reproduz alertas locais como se estivessem ativos em todo o país.
 
-As novas orientações são resumos educacionais; não há consulta à rede durante o atendimento. Fontes podem mudar, e a equipe precisa revisar contatos e conteúdo antes de novas entregas.
+As novas orientações são resumos educacionais; não há consulta à rede durante o atendimento. Precisamos revisar os contatos e as orientações antes de novas entregas, pois essas informações podem mudar.

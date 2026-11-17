@@ -4,7 +4,7 @@ Equipe: Lucas Lino Marques da Silva — 572863; Gabriel Martins Cordeiro Rodrigu
 
 ## Como os dados foram obtidos
 
-Não houve medição de abrigo, visita técnica, compra de equipamentos ou pesquisa de preços. A demanda, as perdas, os limites de uso e o orçamento de [analise.json](analise.json) são hipóteses da equipe. O refinamento v2, descrito ao final, acrescenta dados públicos de radiação e exemplos de capacidades de fabricante. As fontes gerais abaixo **não fornecem o orçamento nem o preço variável da energia**.
+Fizemos o estudo com valores estimados, sem medir um abrigo real ou comprar os equipamentos. O orçamento serve para comparar as alternativas e não veio de cotações de lojas. A demanda, as perdas, os limites de uso e o orçamento de [analise.json](analise.json) são hipóteses da equipe. O refinamento v2, descrito ao final, acrescenta dados públicos de radiação e exemplos de capacidades de fabricante. As fontes gerais abaixo **não fornecem o orçamento nem o preço variável da energia**.
 
 | Fonte primária | Uso e limite |
 |---|---|
@@ -52,7 +52,7 @@ O estudo atende somente iluminação. Não dimensiona geladeiras, aparelhos méd
 
 [Memória de cálculo e comparação](../../documentacao/sers/analise.md) · [Guia de SERS](../../documentacao/sers/README.md)
 
-## Refinamento v2 — dados públicos e referências de capacidade
+## Dados públicos e capacidades usadas na v2
 
 A versão `sers-v2`, de 16/11/2026, mantém o exemplo inicial de 4 HSP como hipótese e acrescenta uma referência pública identificada. Assim, o exercício geral para o Brasil não atribui a todas as cidades o recurso solar de um único ponto.
 
@@ -75,7 +75,7 @@ Essas fontes apoiam a plausibilidade de capacidades do exercício. **Não define
 
 ### Custos e sensibilidade
 
-O orçamento permanece **estimativa de planejamento de 16/11/2026**, sem pesquisa de preços apresentada como realizada. A faixa de ±30% afeta somente o adicional solar de R$ 6.400: totais B de **R$ 4.990 a R$ 8.830**, mantendo iluminação comum, manutenção, demanda e período. É uma exploração de incerteza, não intervalo de mercado ou previsão.
+O orçamento permanece **estimativa de planejamento de 16/11/2026**, sem pesquisa de preços em lojas. A faixa de ±30% afeta somente o adicional solar de R$ 6.400: totais B de **R$ 4.990 a R$ 8.830**, mantendo iluminação comum, manutenção, demanda e período. É uma exploração de incerteza, não intervalo de mercado ou previsão.
 
 A consulta de equipamentos existentes pressupõe **ambas as instalações já disponíveis, seguras e prontas**. Nesse caso, mostra somente energia variável de A e provisão de manutenção de B, sem repetir o investimento anterior. Isso não representa custo de vida útil ou retorno financeiro. Quando B não atende à carga, o programa informa que o serviço é parcial também nessa comparação.
 

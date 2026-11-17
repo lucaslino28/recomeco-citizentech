@@ -1,28 +1,31 @@
-# Documentação de Prompt & Artificial Intelligence
+# IA — documentação
 
-- Lucas Lino Marques da Silva — RM 572863
-- Gabriel Martins Cordeiro Rodrigues — RM 570497
-- Gustavo Martins da Silva — RM 570584
+Lucas Lino Marques da Silva — RM 572863; Gabriel Martins Cordeiro Rodrigues — RM 570497; Gustavo Martins da Silva — RM 570584.
 
-FIAP, Ciência da Computação, 1CCPX — GS 2026.2.
+**Prompt and Artificial Intelligence.** Usamos LangChain e Groq para responder perguntas com base nas sete fichas de Aurora fornecidas pelo professor. A opção 2 abre essa parte do programa. Aurora é fictícia; essas regras não valem como orientação real sobre documentos brasileiros.
 
-| Material | Uso |
+## Arquivos da disciplina
+
+| Etapa | Material |
 |---|---|
-| [Guia de execução](guia_execucao.md) | Instalar dependências, configurar Groq e usar a opção 2 |
-| [Decisões e limitações](decisoes.md) | Framework, modelos, agente, algoritmos, privacidade e juiz |
-| [Diagrama PNG](arquitetura.png) / [SVG](arquitetura.svg) | Imagem da arquitetura para a entrega do script |
-| [Avaliação e análise](avaliacao.md) | Rodadas reais, melhoria, comparação e limites do juiz |
-| [Notebook](../../notebooks/avaliacao_ia.ipynb) | Tabelas reais e leitura reproduzível dos resultados |
-| [Plano de usuários](testes_usuarios.md) | Roteiro original para aplicação |
-| [Relatório de usuários](usuarios_2026-11-15.md) | Rodada informada de cinco participantes, 15 tarefas e 25 notas |
-| [Conferência dos requisitos](requisitos_ia.md) | Arquivos verificados, limitações e pendências |
-| [Fechamento v4](fechamento.md) | Correções, revisão confirmada, validação e publicação |
-| [Proveniência](proveniencia.json) | Originais, sete fichas e hashes do dataset |
+| 1. Executar | [Guia de configuração e execução](guia_execucao.md); opção 2 de `main.py`. Chave Groq somente no `.env` local. |
+| 2. Conferir a implementação | [Agente](../../modulos/documentos_ia/agente.py), [juiz](../../modulos/documentos_ia/avaliador.py), [fichas](../../modulos/documentos_ia/fichas/) e [golden dataset](../../modulos/documentos_ia/golden_dataset.json). |
+| 3. Entender a arquitetura | [Decisões e limitações](decisoes.md); diagrama [PNG](arquitetura.png) / [SVG](arquitetura.svg), incluído porque o protótipo é um script. |
+| 4. Avaliar antes/depois | [Notebook executado](../../notebooks/avaliacao_ia.ipynb), [análise do juiz](avaliacao.md) e [evidências automáticas](../../evidencias/ia/README.md). |
+| 5. Conferir os três indicadores | [Relatório de usuários](usuarios_2026-11-15.md): acerto do juiz, tempo humano e facilidade, com limites separados. [Arquivos da coleta](../../evidencias/ia/usuarios/rodada_2026-11-15/README.md). |
+| 6. Conferir revisão e correções | [Amostra confirmada](revisao_amostra.md), [fechamento v4](fechamento.md) e [conferência dos requisitos](requisitos_ia.md). |
+| 7. Localizar a entrega | [Mapa dos materiais de IA](../../entregas/ia.md), sem presumir TXT ou vídeo próprio não especificados no enunciado. |
 
-## Evidências
+## Resultados e versões
 
-`evidencias/ia/` contém as rodadas completas `antes.json`, `intermediaria_v2.json` e `depois.json`, comparação em CSV/JSON, snapshots anteriores sem chave, teste exploratório parcial identificado, conferência técnica assistida e testes de software.
+- Juiz sobre 26 mensagens: v1 com **20/26 — 76,92%**; v3 com **25/26 — 96,15%**, diferença de 19,23 pontos percentuais. As respostas e as avaliações do juiz estão nos arquivos das rodadas.
+- Nos testes com usuários: **5 pessoas externas**, **15 tarefas**, tempo humano médio **23,04 s** e facilidade **4,04/5**. Esses resultados são da v3, a mesma versão da avaliação automática.
+- Atendimento atual: **v4**, com correções posteriores de banco, lista documental do RG e recuperação de CPF. A v4 passou pelos testes de código, mas ainda não repetimos a avaliação com o juiz ou com usuários. Lucas conferiu seis casos da v3 com as fichas; as observações estão na revisão da amostra.
 
-Os modelos de registro continuam vazios para futuras coletas. A rodada informada de 15/11 está em [arquivos de usuários](../../evidencias/ia/usuarios/rodada_2026-11-15/README.md), com CSVs, transcrição extraída e indicadores. A conferência da amostra foi confirmada pelo aplicador e está registrada em `revisao_amostra.md`. A versão de atendimento atual é v4; os benchmarks e os tempos/notas preservados pertencem à v3. O notebook automático é um registro da etapa anterior; o relatório de usuários reúne os três indicadores da disciplina.
+## Organização e fontes
 
-Aurora é fictícia. As sete fichas de IA não são usadas em PCP e não valem como informações reais sobre documentos brasileiros. A chave está apenas no `.env` local ignorado pelo Git.
+O [plano de usuários](testes_usuarios.md) e os formulários vazios continuam disponíveis para novas coletas. [proveniencia.json](proveniencia.json) registra os hashes das sete fichas e do dataset extraído dos documentos fornecidos. Mantivemos as fichas como fonte do agente e tratamos tentativas de mudar suas instruções como entradas do usuário.
+
+Os resultados principais ficam em `evidencias/ia/`, a coleta em `usuarios/` e as versões antigas em `historico/`, conforme o [índice de evidências](../../evidencias/ia/README.md). O notebook continua com os resultados das rodadas já realizadas. A chave fica no `.env` local, fora do Git.
+
+[Voltar ao projeto](../../README.md) · [Entregas](../../entregas/README.md) · [Documentação das três disciplinas](../README.md).

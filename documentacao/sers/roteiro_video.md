@@ -1,18 +1,15 @@
-# Vídeo de SERS — roteiro da v3 para até 3 minutos
+# Conteúdo de SERS no vídeo técnico integrado
 
-Situação: não gravado; link pendente. Publicar no YouTube como **não listado**, máximo de **3 minutos**. Este roteiro prevê 2 min 50 s e prioriza o que sustenta a decisão do usuário.
+Lucas Lino Marques da Silva — RM 572863; Gabriel Martins Cordeiro Rodrigues — RM 570497; Gustavo Martins da Silva — RM 570584.
 
-Antes: entender a [análise](analise.md) e a [explicação do código](explicacao_codigo.md); ensaiar comandos; ocultar chaves e dados pessoais. Rode `python3 main.py --dados data/demonstracao_sers`, opção 3. Não é necessário mostrar todas as opções para demonstrar a contribuição.
+O vídeo técnico vai juntar PCP e SERS em **5 a 8 minutos no total**. O roteiro principal está em [planejamento integrado](../roteiro_video_tecnico.md). Esta página identifica o que SERS precisa demonstrar dentro desse vídeo.
 
-| Tempo | Mostrar e explicar |
-|---|---|
-| 0–20 s | Público: cidadãos afetados por desastres; necessidade: iluminação noturna de abrigo. O caso é estimado, sem medição de um abrigo real. |
-| 20–45 s | Opção 1: 20 × 9 W = 180 W; 6 h/noite × 30 dias = 32,4 kWh. Mesma demanda e período para rede e solar com bateria. |
-| 45–75 s | Ainda na comparação: aquisição + uso A R$ 532,40 e B R$ 6.910,00, em orçamento hipotético. A é mais barata nesse episódio com rede disponível; B pode oferecer continuidade, com limites. |
-| 75–115 s | Opção 6 → 2 → Enter. Mostrar os cinco dias de pouco sol: 3 noites completas, déficit nas outras. A bateria não se reinicia cheia a cada noite; a sequência não é previsão meteorológica. |
-| 115–140 s | Opção 3 → `50`: 3,84 h, insuficientes para uma noite de 6 h. A reserva nominal de 20% explica parte da diferença. |
-| 140–170 s | Opção 4: referência NASA POWER horizontal identificada em São Paulo, climatologia 2001–2025; referências de capacidade e hipóteses separadas. Solar é renovável no uso, mas equipamentos têm impactos; não há garantia de economia/geração ou projeto de instalação. |
+- Público do RECOMEÇO e necessidade de iluminação essencial noturna em abrigo temporário.
+- Mesma demanda e período nas alternativas: 20 LEDs de 9 W, 6 h/noite, 30 dias; 180 W, 1,08 kWh/dia e 32,4 kWh no período.
+- Comparação de rede e solar isolado com bateria, com custos de aquisição/operação, caráter estimado do orçamento, viabilidade e limites.
+- Funcionalidade no terminal, com código de cálculo explicado. Pode usar a sequência 4/1/0/1/4 HSP ou autonomia a 50% para mostrar por que bateria não garante luz indefinida.
+- Origem e limites: dados públicos NASA POWER horizontais para um ponto identificado, referências de capacidade e hipóteses restantes; sem previsão meteorológica ou certificação de instalação.
+- Impactos ambientais qualitativos e recomendação coerente com os resultados, sem prometer economia, impacto zero ou fornecimento garantido.
+- Avaliação S01 e melhoria da explicação de HSP, distinguindo o teste real da v2 e as verificações técnicas da v3. Ainda não houve reteste de compreensão da participante.
 
-Se quiser destacar o atendimento guiado, substitua parte da comparação pela opção 7 → 2 e volte com 0 antes da sequência de dias. É preciso ensaiar para respeitar a duração, sem ler saídas inteiras.
-
-Após gravar: conferir áudio, contas e legibilidade; abrir link sem autenticação; preencher URL no README de SERS e em `entrega_sers.txt`; publicar a versão do código demonstrada e conferir acesso. O prazo é o informado no Portal para SERS. A rodada de uma participante na v2 está documentada. Se mencionar a melhoria, explique que a dificuldade de HSP motivou a mensagem e a confirmação na v3; não houve nova avaliação da compreensão após a mudança.
+Depois de publicar, usar o mesmo link nos TXT das duas disciplinas; [entregas](../../entregas/README.md).

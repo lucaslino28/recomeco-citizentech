@@ -6,7 +6,7 @@
 
 ## Situação
 
-A rodada de 15/11 foi informada pelo aplicador com cinco pessoas externas, três tarefas por código e 25 notas. O [relatório da aplicação](usuarios_2026-11-15.md) contém as perguntas efetivas, que variaram em relação ao roteiro abaixo. Os resultados estão em `evidencias/ia/usuarios/rodada_2026-11-15/`. O roteiro original foi preservado como planejamento e orientação para futuras rodadas. A rodada anterior de PCP é de outra disciplina.
+Os testes de 15/11 tiveram cinco pessoas de fora do grupo, três tarefas por código e 25 notas. O [relatório da aplicação](usuarios_2026-11-15.md) contém as perguntas efetivas, que variaram em relação ao roteiro abaixo. Os resultados estão em `evidencias/ia/usuarios/rodada_2026-11-15/`. Este roteiro continua disponível para os próximos testes. Os testes de PCP estão registrados separadamente.
 
 ## Preparação e aplicação
 

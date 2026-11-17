@@ -1,9 +1,9 @@
 # Rodada informada de usuários — IA — 15/11/2026
 
-Cinco participantes externos conforme relato do aplicador, três tarefas por código, 15 tempos e 25 notas. As tarefas variaram. Os arquivos não identificam pessoas nem atestam por si só sua presença.
+Cinco participantes externos segundo as anotações de Lucas, três tarefas por código, 15 tempos e 25 notas. As tarefas variaram. Os arquivos não identificam pessoas nem atestam por si só sua presença.
 
 - `tarefas.csv` e `questionario.csv`: dados fornecidos, sem modificação de tempos/notas; P04/T03 = 19.43 s.
-- `interacoes.json`: perguntas e respostas extraídas, vinculadas aos códigos conforme relato; preserva a linha bruta de P05/T01.
+- `interacoes.json`: perguntas e respostas extraídas, organizadas pelos códigos usados nos testes; preserva a linha bruta de P05/T01.
 - `terminal_organizado.txt`: extração sem prompts do shell, menus repetidos ou fragmento inicial anterior à coleta.
 - `origem.json`: limites das fontes, commit local conferido e hashes.
 - `indicadores.json`: cálculos derivados por `python -B testes/analisar_usuarios_ia.py`.

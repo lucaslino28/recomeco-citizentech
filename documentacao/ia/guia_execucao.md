@@ -61,7 +61,7 @@ A melhoria v2 separou texto e códigos de fichas. A versão final v3 reforça a 
 python -B -m modulos.documentos_ia.avaliador --versao v3 --saida evidencias/ia/depois.json --pausa 25
 ```
 
-Para repetir uma rodada completa, escolha outro arquivo de saída; `--retomar` serve apenas para continuar uma execução com a mesma configuração. A versão inicial está preservada em `evidencias/ia/codigo_v1.zip`, sem chave ou arquivo .env. A rodada estruturada intermediária foi preservada em `intermediaria_v2.json` e seu código em `codigo_v2.zip`. O teste parcial anterior à complementação de custo está identificado como `exploratoria_v3_parcial.json`; ele não conta como uma rodada completa. Para gerar a comparação sem chamar a API novamente:
+Para repetir uma rodada completa, escolha outro arquivo de saída; `--retomar` serve apenas para continuar uma execução com a mesma configuração. A versão inicial está preservada em `evidencias/ia/historico/codigo_v1.zip`, sem chave ou arquivo .env. A rodada estruturada intermediária foi preservada em `intermediaria_v2.json` e seu código em `codigo_v2.zip`. O teste parcial anterior à complementação de custo está identificado como `exploratoria_v3_parcial.json`; ele não conta como uma rodada completa. Para gerar a comparação sem chamar a API novamente:
 
 ```bash
 python -B -m modulos.documentos_ia.relatorio
@@ -83,6 +83,6 @@ A coleta informada de 15/11 possui cinco participantes, 15 tarefas e 25 notas: v
 
 ## Versão atual e revisão da amostra
 
-A opção 2 usa v4. Os controles de banco, documentos do RG e limite de recuperação de CPF estão descritos no [fechamento](fechamento.md). O aplicador confirmou a [conferência da amostra](revisao_amostra.md). A v3 foi preservada em `evidencias/ia/codigo_v3.zip`.
+A opção 2 usa v4. Os controles de banco, documentos do RG e limite de recuperação de CPF estão descritos no [fechamento](fechamento.md). Lucas fez a [conferência da amostra](revisao_amostra.md). A v3 foi preservada em `evidencias/ia/historico/codigo_v3.zip`.
 
 A validação da v4 usou 135 testes locais, sem novas chamadas à API. Os 96,15% do juiz e os resultados humanos são da v3. Para uma eventual avaliação nova, use `--versao v4` e outro arquivo de saída; não reutilize os JSONs históricos.

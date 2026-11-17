@@ -1,6 +1,6 @@
 # Modelo para resultados reais dos testes externos de PCP
 
-**Modelo vazio para uma futura rodada. A avaliação de 14/11 já está documentada em [validação PCP](../documentacao/validacao_pcp.md). Este modelo não constitui evidência de testes realizados.** Substituir os campos somente após as sessões reais. Não incluir nomes, contatos ou perguntas pessoais.
+**Modelo vazio para uma futura rodada. A avaliação de 14/11 já está documentada em [validação PCP](../../../documentacao/pcp/avaliacao_usuarios.md). Este modelo não constitui evidência de testes realizados.** Substituir os campos somente após as sessões reais. Não incluir nomes, contatos ou perguntas pessoais.
 
 - Data da coleta: a preencher.
 - Quantidade real de pessoas externas: a preencher.

@@ -1,6 +1,6 @@
 # Decisões de PCP
 
-Atualização: 14/11/2026, após a avaliação documentada. A solução usa as três classes existentes, JSON e biblioteca padrão do Python. Não foram acrescentadas classes, serviços de IA ou dependências externas ao programa.
+Mantivemos as três classes pedidas na matéria e usamos JSON e a biblioteca padrão do Python. Os ajustes abaixo foram feitos depois dos testes de 14/11/2026.
 
 ## Busca e confiança
 
@@ -24,7 +24,7 @@ Os IDs 31 a 34 tratam de documentos no acolhimento, interrupção de energia, ca
 
 `avisar_risco_imediato()` usa condições simples: expressões de pessoa presa, veículo e inundação. Exibe encaminhamento ao 193 antes de possíveis escolhas; a busca e as pontuações continuam sendo executadas. É uma proteção limitada para expressões conhecidas, não um detector geral de emergência. O sistema não despacha resgate nem define como sair do veículo.
 
-O conteúdo documental não garante vaga ou procedimento universal de admissão. Os contatos da Enel são associados às áreas atendidas. Fontes e limites estão em [fontes PCP](fontes_pcp.md).
+O conteúdo documental não garante vaga ou procedimento universal de admissão. Os contatos da Enel são associados às áreas atendidas. Fontes e limites estão em [fontes PCP](fontes.md).
 
 ## Atendimento, tentativas e tempo
 
@@ -56,16 +56,16 @@ Caminhos relativos partem da pasta do projeto. `--dados` separa histórico e CSV
 
 A validação do JSON confere tipos, campos, IDs, pelo menos três chaves distintas, data ISO e formato de URL. A consulta a fontes ocorre na revisão manual, não durante a execução do programa.
 
-Gravações passam por arquivo temporário e substituição após completar a escrita. Em falha, os dados permanecem em memória. Histórico inteiramente ilegível e CSV anterior são preservados; a equipe deve recuperar o arquivo e reiniciar. Registros individuais inválidos são ignorados com aviso. O CSV usa `csv.DictWriter` e campos controlados.
+Gravações passam por arquivo temporário e substituição após completar a escrita. Em falha, os dados permanecem em memória. Se o histórico inteiro estiver ilegível, o programa mantém esse arquivo e o CSV anterior. Precisamos corrigir o arquivo e reiniciar para voltar a salvar. Registros individuais inválidos são ignorados com aviso. O CSV usa `csv.DictWriter` e campos controlados.
 
 Não há coordenação entre programas simultâneos na mesma pasta. Não encerrar esperando recuperar dados que ficaram apenas em memória após falha de gravação.
 
 ## Avaliação e melhoria de PCP
 
-O [relatório da rodada](validacao_pcp.md) documenta três participantes externos conforme relato da equipe, dez atendimentos nos arquivos, indicadores, dificuldades e ajustes aplicados. A divisão de atendimentos por pessoa não foi informada.
+O [relatório](avaliacao_usuarios.md) reúne os testes com três pessoas de fora do grupo, dez atendimentos e as mudanças que fizemos. Os dados estão organizados por sessão, sem uma divisão dos atendimentos por pessoa.
 
-A revisão técnica posterior passou em 89 testes e verificou as dez frases contra a versão anterior. Esses resultados não são uma nova coleta com pessoas. Os 80% encontrados, 70% de utilidade e facilidade 3,0 continuam sendo os valores da versão avaliada. Uma melhoria na satisfação só poderá ser afirmada após nova avaliação humana.
+A revisão técnica posterior passou em 89 testes e verificou as dez frases contra a versão anterior. Os resultados com pessoas continuam em 80% de orientações encontradas, 70% de utilidade e facilidade 3,0. Ainda não repetimos esse teste depois das mudanças.
 
 ## Limites
 
-As regras não entendem toda negação, sinônimo ou pergunta com várias intenções. O assistente não consulta serviços, vagas, previsões, rotas ou alertas em tempo real. Não diagnostica, não inspeciona imóveis e não garante concessões. IA e SERS permanecem separados e serão desenvolvidos depois. As referências e os registros técnicos de versões anteriores foram preservados para consulta histórica.
+As regras não entendem toda negação, sinônimo ou pergunta com várias intenções. O assistente não consulta serviços, vagas, previsões, rotas ou alertas em tempo real. Não diagnostica, não inspeciona imóveis e não garante concessões. IA e SERS têm módulos separados, acessados pelo mesmo menu principal. As referências e os registros técnicos de versões anteriores foram preservados para consulta histórica.

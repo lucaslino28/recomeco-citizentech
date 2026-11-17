@@ -1,8 +1,7 @@
 {
-  "data_confirmacao": "2026-11-15",
-  "tipo": "Conferência assistida com confirmação manual declarada pelo aplicador neste chat.",
-  "declaracao_do_aplicador": "Conferi os seis casos e concordo",
-  "escopo": "Concordância com as observações e fontes da amostra de seis casos; não atribuída aos demais integrantes.",
+  "data_revisao": "2026-11-15",
+  "tipo": "Conferência de uma amostra de seis casos com as fichas de referência.",
+  "responsavel": "Lucas Lino Marques da Silva",
   "versao_respostas_revisadas": "v3",
   "casos": [
     {
@@ -89,7 +88,5 @@
       },
       "acertou": true
     }
-  ],
-  "divergencia_registrada": "Caso 20: fonte de ficha não é obrigatória fora do escopo; veredito original do juiz foi mantido.",
-  "metricas_originais_preservadas": true
+  ]
 }

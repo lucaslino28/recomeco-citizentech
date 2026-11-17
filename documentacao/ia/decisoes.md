@@ -6,9 +6,9 @@
 
 ## Framework e arquitetura
 
-Foi escolhido **LangChain**, com `create_agent`, para atender ao requisito de framework usando um único agente. O framework já oferece integração com modelos Groq, mensagens e formatos de resposta. Não foi necessário criar um fluxo manual no LangGraph ou coordenar uma equipe de agentes no CrewAI: a tarefa é orientar com base em sete fichas pequenas, sem execução de serviços ou divisão em especialidades.
+Escolhemos **LangChain**, com `create_agent`, para montar um único agente. O framework já oferece integração com modelos Groq, mensagens e formatos de resposta. Como trabalhamos com sete fichas pequenas, preferimos essa opção a montar um fluxo no LangGraph ou dividir o atendimento entre agentes no CrewAI. A tarefa não precisa executar serviços ou separar especialidades.
 
-Um agente recebe todas as sete fichas em cada consulta. O conjunto é pequeno; a carga completa reduz a possibilidade de uma busca deixar de recuperar uma regra geral necessária. O programa não usa embeddings, banco vetorial, navegador, cadastro ou ferramentas de ação. Isso reduz dependências e facilita explicar a solução no primeiro ano.
+Um agente recebe todas as sete fichas em cada consulta. O conjunto é pequeno; a carga completa reduz a possibilidade de uma busca deixar de recuperar uma regra geral necessária. O programa não usa embeddings, banco vetorial, navegador, cadastro ou ferramentas de ação. Assim, conseguimos manter menos dependências e entender melhor o fluxo do programa.
 
 Veja o [diagrama da arquitetura](arquitetura.svg). O uso de um único agente não dispensa o juiz: a avaliação é uma etapa separada que compara respostas com referências e conteúdo esperado.
 
@@ -54,7 +54,7 @@ A resposta do juiz usa JSON com esquema explícito. Falha de conexão, limite de
 
 Os resultados são salvos após cada caso. A retomada verifica hashes de código, prompt, dataset e fichas e a configuração dos modelos. Não sobrescreve silenciosamente uma rodada existente. O tempo automático mede resposta do agente, e não navegação de participantes.
 
-A régua é a mesma antes e depois da melhoria. Um LLM juiz pode errar ou compartilhar vieses do modelo avaliado; por isso, a equipe deve conferir uma amostra de casos, registrando eventuais discordâncias sem alterar silenciosamente o veredito original.
+A régua é a mesma antes e depois da melhoria. Um LLM juiz pode errar ou compartilhar vieses do modelo avaliado; por isso, também fizemos uma conferência de parte das respostas e registramos onde discordamos do resultado.
 
 ## Melhoria após avaliação e conferência técnica
 
@@ -68,7 +68,7 @@ O LLM continua interpretando perguntas e produzindo orientação; campos verific
 
 Não há consulta cadastral, emissão de documentos, agendamento ou confirmação de serviços reais. Regras por palavras podem rejeitar formulações válidas ou deixar passar uma identificação não prevista. Referência bem formada não comprova verdade de todos os fatos: o conteúdo ainda precisa ser avaliado.
 
-A comparação antes/depois, a conferência técnica assistida e as limitações estão em [avaliação](avaliacao.md). A [amostra](revisao_amostra.md) teve confirmação manual declarada pelo aplicador, com as divergências registradas. Os tempos e as notas de cinco participantes externos, conforme relato do aplicador, foram registrados no [relatório da rodada](usuarios_2026-11-15.md). Essa coleta variou tarefas e não constitui comparação humana antes/depois. Encaminhamentos sem respaldo encontrados nela foram documentados para correção, sem alterar os resultados originais.
+A comparação antes/depois, a conferência técnica assistida e as limitações estão em [avaliação](avaliacao.md). Lucas conferiu manualmente os seis casos da [amostra](revisao_amostra.md), incluindo os pontos de discordância. Os tempos e as notas dos cinco participantes estão no [relatório dos testes](usuarios_2026-11-15.md). As tarefas variaram entre as pessoas. Depois de ler as respostas, corrigimos os encaminhamentos que não tinham apoio nas fichas. Os resultados anteriores continuam nos arquivos da v3.
 
 ## Documentação técnica consultada
 
